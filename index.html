@@ -393,20 +393,17 @@
 <h2 id="6、迪米特原则"><a href="#6、迪米特原则" class="headerlink" title="6、迪米特原则"></a>6、迪米特原则</h2><p>减少类之间的依赖，降低耦合。</p>
 <h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><p><strong>创建型模式</strong>，确保某一个类只有一个实例，并可以自行实例化并像整个系统提供这个实例</p>
 <hr>
-<p><strong>场景：</strong></p>
-<ul>
+<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><ul>
 <li>某个对象过多消耗资源</li>
 <li>某种类型的对象应该只有一个</li>
 </ul>
-<p><strong>实现：</strong></p>
-<ol>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><ol>
 <li>构造函数私有化</li>
 <li>通过静态函数或者枚举返回单例对象</li>
 <li>在多线程环境下，确保单例对象只有一个</li>
 <li>在反序列化时，确保不会重新创建对象</li>
 </ol>
-<p><strong>种类：</strong></p>
-<ol>
+<h2 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类</h2><ol>
 <li>饿汉式（实例化类时就直接创建，消耗资源）</li>
 <li>懒汉式（每次获取单例时，都会synchronized同步，消耗不必要的资源）</li>
 <li>双重检查式（DCL，由于java自身问题，不适用于高并发情况）</li>
@@ -414,39 +411,33 @@
 <li>枚举单例（线程安全、对象单一，无反序列化问题）</li>
 <li>容器式（使用map容器保存单例，如获取Android系统服务）</li>
 </ol>
-<p><strong>优点：</strong></p>
-<ul>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
 <li>减少内存开支，尤其是需要频繁创建销毁一个对象，性能又无法优化时</li>
 <li>所创建的对象占资源比较大，可以只创建一个对象，永驻内存</li>
 <li>避免同一资源的同时操作</li>
 <li>优化全局资源的共享</li>
 </ul>
-<p><strong>缺点：</strong></p>
-<ul>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
 <li>没有接口，扩建较为困难</li>
 <li>如果单例对象持有Context对象，容易发生内存泄漏，如果使用，最好使用ApplicationContext</li>
 </ul>
 <h1 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h1><p><strong>创建型模式</strong>，将一个复杂的对象的构建与表示分离，使得同样的构建过程可以表示为不同的形式，允许用户不知道内部的构造细节，但可以更加精确的控制对象的构造流程</p>
 <hr>
-<p><strong>场景：</strong></p>
-<ul>
+<h2 id="场景-1"><a href="#场景-1" class="headerlink" title="场景"></a>场景</h2><ul>
 <li>多个部件或者零件都可以装配到一个对象中，但产生的结果不同时</li>
 <li>初始化一个对象或者产品类特别复杂，如参数多，但有默认值时</li>
 </ul>
-<p><strong>实现：</strong></p>
-<ul>
+<h2 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h2><ul>
 <li>Product产品类——产品的抽象类</li>
 <li>Builder——抽象的Builder，规范组建，常使用调用链实现（返回值为本对象，代码简介、易懂）</li>
 <li>ConcreateBuilder——具体的Builder类</li>
 <li>Director——统一组装过程</li>
 </ul>
-<p><strong>优点：</strong></p>
-<ul>
+<h2 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h2><ul>
 <li>良好的封装性，构建时不比知晓内部构建细节</li>
 <li>良好的扩展性，建造者独立</li>
 </ul>
-<p><strong>缺点：</strong></p>
-<ul>
+<h2 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h2><ul>
 <li>产生多余的Builder和Dirctor对象，消耗内存</li>
 </ul>
 
@@ -1005,7 +996,7 @@ canvas.drawBitmapMesh(bitmap,WIDTH,HEIGHT,verts,0,null,0,null);
           
             <div class="site-state-item site-state-tags">
               <a href="/blog/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
