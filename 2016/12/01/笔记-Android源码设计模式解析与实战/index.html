@@ -85,36 +85,33 @@
 
 
 <meta name="description" content="面向对象的六大原则稳定性 扩展性 健壮性 灵活性 高内聚 低耦合
-
 1、单一职责原则一个类应该是一组相关性很高的函数、数据的封装。
 2、开闭原则软件中的对象（类、模块、函数等）应该对扩展是开放的，对修改是封闭的。
 3、里氏替换原则抽象，多态（行为多态、对象多态）。
 4、依赖倒置原则高层和低层都应该依赖抽象，抽象接口之间进行依赖。
 5、接口隔离原则客户端不应该依赖所不需要的接口。
-6、迪米特原则减少">
+6、迪米特原则减少类">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android源码设计模式解析与实战">
 <meta property="og:url" content="https://smallhamburger.github.io/2016/12/01/笔记-Android源码设计模式解析与实战/index.html">
 <meta property="og:site_name" content="学习笔记">
 <meta property="og:description" content="面向对象的六大原则稳定性 扩展性 健壮性 灵活性 高内聚 低耦合
-
 1、单一职责原则一个类应该是一组相关性很高的函数、数据的封装。
 2、开闭原则软件中的对象（类、模块、函数等）应该对扩展是开放的，对修改是封闭的。
 3、里氏替换原则抽象，多态（行为多态、对象多态）。
 4、依赖倒置原则高层和低层都应该依赖抽象，抽象接口之间进行依赖。
 5、接口隔离原则客户端不应该依赖所不需要的接口。
-6、迪米特原则减少">
-<meta property="og:updated_time" content="2017-02-27T09:42:28.178Z">
+6、迪米特原则减少类">
+<meta property="og:updated_time" content="2017-02-27T10:17:42.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android源码设计模式解析与实战">
 <meta name="twitter:description" content="面向对象的六大原则稳定性 扩展性 健壮性 灵活性 高内聚 低耦合
-
 1、单一职责原则一个类应该是一组相关性很高的函数、数据的封装。
 2、开闭原则软件中的对象（类、模块、函数等）应该对扩展是开放的，对修改是封闭的。
 3、里氏替换原则抽象，多态（行为多态、对象多态）。
 4、依赖倒置原则高层和低层都应该依赖抽象，抽象接口之间进行依赖。
 5、接口隔离原则客户端不应该依赖所不需要的接口。
-6、迪米特原则减少">
+6、迪米特原则减少类">
 
 
 
@@ -402,15 +399,14 @@
 
       
         <h1 id="面向对象的六大原则"><a href="#面向对象的六大原则" class="headerlink" title="面向对象的六大原则"></a>面向对象的六大原则</h1><p>稳定性 扩展性 健壮性 灵活性 高内聚 低耦合</p>
-<hr>
 <h2 id="1、单一职责原则"><a href="#1、单一职责原则" class="headerlink" title="1、单一职责原则"></a>1、单一职责原则</h2><p>一个类应该是一组相关性很高的函数、数据的封装。</p>
 <h2 id="2、开闭原则"><a href="#2、开闭原则" class="headerlink" title="2、开闭原则"></a>2、开闭原则</h2><p>软件中的对象（类、模块、函数等）应该对扩展是开放的，对修改是封闭的。</p>
 <h2 id="3、里氏替换原则"><a href="#3、里氏替换原则" class="headerlink" title="3、里氏替换原则"></a>3、里氏替换原则</h2><p>抽象，多态（行为多态、对象多态）。</p>
 <h2 id="4、依赖倒置原则"><a href="#4、依赖倒置原则" class="headerlink" title="4、依赖倒置原则"></a>4、依赖倒置原则</h2><p>高层和低层都应该依赖抽象，抽象接口之间进行依赖。</p>
 <h2 id="5、接口隔离原则"><a href="#5、接口隔离原则" class="headerlink" title="5、接口隔离原则"></a>5、接口隔离原则</h2><p>客户端不应该依赖所不需要的接口。</p>
 <h2 id="6、迪米特原则"><a href="#6、迪米特原则" class="headerlink" title="6、迪米特原则"></a>6、迪米特原则</h2><p>减少类之间的依赖，降低耦合。</p>
-<h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><p><strong>创建型模式</strong>，确保某一个类只有一个实例，并可以自行实例化并像整个系统提供这个实例</p>
 <hr>
+<h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><p><strong>创建型模式</strong>，确保某一个类只有一个实例，并可以自行实例化并像整个系统提供这个实例</p>
 <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><ul>
 <li>某个对象过多消耗资源</li>
 <li>某种类型的对象应该只有一个</li>
@@ -439,8 +435,8 @@
 <li>没有接口，扩建较为困难</li>
 <li>如果单例对象持有Context对象，容易发生内存泄漏，如果使用，最好使用ApplicationContext</li>
 </ul>
-<h1 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h1><p><strong>创建型模式</strong>，将一个复杂的对象的构建与表示分离，使得同样的构建过程可以表示为不同的形式，允许用户不知道内部的构造细节，但可以更加精确的控制对象的构造流程</p>
 <hr>
+<h1 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h1><p><strong>创建型模式</strong>，将一个复杂的对象的构建与表示分离，使得同样的构建过程可以表示为不同的形式，允许用户不知道内部的构造细节，但可以更加精确的控制对象的构造流程</p>
 <h2 id="场景-1"><a href="#场景-1" class="headerlink" title="场景"></a>场景</h2><ul>
 <li>多个部件或者零件都可以装配到一个对象中，但产生的结果不同时</li>
 <li>初始化一个对象或者产品类特别复杂，如参数多，但有默认值时</li>
@@ -458,6 +454,44 @@
 <h2 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h2><ul>
 <li>产生多余的Builder和Dirctor对象，消耗内存</li>
 </ul>
+<hr>
+<h1 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h1><p><strong>创建型模式</strong>，复制原型实例，创建一个相同的对象，不会执行构造函数</p>
+<h2 id="场景-2"><a href="#场景-2" class="headerlink" title="场景"></a>场景</h2><ul>
+<li>创建一个对象需要特别多的数据准备、访问权限，类初始化时消耗很多资源</li>
+<li>保护性拷贝，避免自己的对象被修改</li>
+</ul>
+<h2 id="实现-2"><a href="#实现-2" class="headerlink" title="实现"></a>实现</h2><h3 id="实现-3"><a href="#实现-3" class="headerlink" title="实现"></a>实现</h3><ol>
+<li>继承Cloneable接口</li>
+<li>重写方法<code>clone()</code></li>
+<li>修改<code>clone()</code>方法访问权限为protect或者public</li>
+<li><code>return super.clone()</code>等操作</li>
+</ol>
+<h3 id="浅拷贝（影子拷贝）"><a href="#浅拷贝（影子拷贝）" class="headerlink" title="浅拷贝（影子拷贝）"></a>浅拷贝（影子拷贝）</h3><p>内部引用类型数据还是使用的相同地址，数据对象为同一个</p>
+<h3 id="深拷贝（推荐使用）"><a href="#深拷贝（推荐使用）" class="headerlink" title="深拷贝（推荐使用）"></a>深拷贝（推荐使用）</h3><p>内部引用类型的数据也被clone，与原型数据不是同一个</p>
+<h2 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h2><p>在内存中进行二进制流拷贝，性能好，速度快</p>
+<h2 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a>缺点</h2><p>构造函数不会执行，开发时应该注意</p>
+<hr>
+<h1 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h1><p><strong>创建型模式</strong>，定义一个用于创建对象的接口，让子类决定实例化哪个类</p>
+<h2 id="场景-3"><a href="#场景-3" class="headerlink" title="场景"></a>场景</h2><ul>
+<li>生成复杂对象</li>
+</ul>
+<h2 id="实现-4"><a href="#实现-4" class="headerlink" title="实现"></a>实现</h2><h3 id="实现-5"><a href="#实现-5" class="headerlink" title="实现"></a>实现</h3><ol>
+<li>抽象工厂——Factory</li>
+<li>具体工厂——ConcreateFactory</li>
+<li>抽象产品——Product</li>
+<li>具体产品——ConcreateProduct</li>
+</ol>
+<h3 id="多工厂模式"><a href="#多工厂模式" class="headerlink" title="多工厂模式"></a>多工厂模式</h3><p>经常使用<strong>反射</strong>更简洁的生产某个对象</p>
+<h3 id="静态工厂模式"><a href="#静态工厂模式" class="headerlink" title="静态工厂模式"></a>静态工厂模式</h3><p>直接返回某个产品实例，工厂类比较多</p>
+<h2 id="优点-3"><a href="#优点-3" class="headerlink" title="优点"></a>优点</h2><ul>
+<li>扩展性好</li>
+<li>耦合低</li>
+</ul>
+<h2 id="缺点-3"><a href="#缺点-3" class="headerlink" title="缺点"></a>缺点</h2><ul>
+<li>新增加产品时，要引入抽象层，导致类结构复杂化</li>
+</ul>
+<hr>
+<h1 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h1><p><strong>行为型模式</strong>，</p>
 
       
     </div>
@@ -627,7 +661,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象的六大原则"><span class="nav-number">1.</span> <span class="nav-text">面向对象的六大原则</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、单一职责原则"><span class="nav-number">1.1.</span> <span class="nav-text">1、单一职责原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、开闭原则"><span class="nav-number">1.2.</span> <span class="nav-text">2、开闭原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、里氏替换原则"><span class="nav-number">1.3.</span> <span class="nav-text">3、里氏替换原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、依赖倒置原则"><span class="nav-number">1.4.</span> <span class="nav-text">4、依赖倒置原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、接口隔离原则"><span class="nav-number">1.5.</span> <span class="nav-text">5、接口隔离原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、迪米特原则"><span class="nav-number">1.6.</span> <span class="nav-text">6、迪米特原则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单例模式"><span class="nav-number">2.</span> <span class="nav-text">单例模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#场景"><span class="nav-number">2.1.</span> <span class="nav-text">场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">2.2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#种类"><span class="nav-number">2.3.</span> <span class="nav-text">种类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优点"><span class="nav-number">2.4.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点"><span class="nav-number">2.5.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建造者模式"><span class="nav-number">3.</span> <span class="nav-text">建造者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#场景-1"><span class="nav-number">3.1.</span> <span class="nav-text">场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现-1"><span class="nav-number">3.2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优点-1"><span class="nav-number">3.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点-1"><span class="nav-number">3.4.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象的六大原则"><span class="nav-number">1.</span> <span class="nav-text">面向对象的六大原则</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、单一职责原则"><span class="nav-number">1.1.</span> <span class="nav-text">1、单一职责原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、开闭原则"><span class="nav-number">1.2.</span> <span class="nav-text">2、开闭原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、里氏替换原则"><span class="nav-number">1.3.</span> <span class="nav-text">3、里氏替换原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、依赖倒置原则"><span class="nav-number">1.4.</span> <span class="nav-text">4、依赖倒置原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、接口隔离原则"><span class="nav-number">1.5.</span> <span class="nav-text">5、接口隔离原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、迪米特原则"><span class="nav-number">1.6.</span> <span class="nav-text">6、迪米特原则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单例模式"><span class="nav-number">2.</span> <span class="nav-text">单例模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#场景"><span class="nav-number">2.1.</span> <span class="nav-text">场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">2.2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#种类"><span class="nav-number">2.3.</span> <span class="nav-text">种类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优点"><span class="nav-number">2.4.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点"><span class="nav-number">2.5.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建造者模式"><span class="nav-number">3.</span> <span class="nav-text">建造者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#场景-1"><span class="nav-number">3.1.</span> <span class="nav-text">场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现-1"><span class="nav-number">3.2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优点-1"><span class="nav-number">3.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点-1"><span class="nav-number">3.4.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原型模式"><span class="nav-number">4.</span> <span class="nav-text">原型模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#场景-2"><span class="nav-number">4.1.</span> <span class="nav-text">场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现-2"><span class="nav-number">4.2.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现-3"><span class="nav-number">4.2.1.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浅拷贝（影子拷贝）"><span class="nav-number">4.2.2.</span> <span class="nav-text">浅拷贝（影子拷贝）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深拷贝（推荐使用）"><span class="nav-number">4.2.3.</span> <span class="nav-text">深拷贝（推荐使用）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优点-2"><span class="nav-number">4.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点-2"><span class="nav-number">4.4.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工厂模式"><span class="nav-number">5.</span> <span class="nav-text">工厂模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#场景-3"><span class="nav-number">5.1.</span> <span class="nav-text">场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现-4"><span class="nav-number">5.2.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现-5"><span class="nav-number">5.2.1.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多工厂模式"><span class="nav-number">5.2.2.</span> <span class="nav-text">多工厂模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态工厂模式"><span class="nav-number">5.2.3.</span> <span class="nav-text">静态工厂模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优点-3"><span class="nav-number">5.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点-3"><span class="nav-number">5.4.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#策略模式"><span class="nav-number">6.</span> <span class="nav-text">策略模式</span></a></li></ol></div>
             
 
           </div>
