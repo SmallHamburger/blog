@@ -121,8 +121,8 @@
 </ul>
 <hr>
 <h1 id="状态模式"><a href="#状态模式" class="headerlink" title="状态模式"></a>状态模式</h1><p><strong>行为型模式</strong>，当一个对象内在的状态改变时，允许改变它的行为</p>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
-<li>结构类似与策略模式，但是目的、本质不同。</li>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<li>结构类似于策略模式，但是目的、本质不同。</li>
 <li>状态模式的行为是平行的、不可替换的</li>
 <li>策略模式的行为是彼此独立、可相互替换的</li>
 <li>根据自身的情况将不同状态作为不同的独立对象，不同的状态对象之间不依赖其他对象，可独立变化</li>
@@ -153,7 +153,7 @@
 <li>Request——抽象请求，声明被处理时的方法</li>
 <li>ConcreteRequestA、ConcreteRequestB——具体请求，实现被处理时的方法</li>
 </ol>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<h2 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h2><ul>
 <li>纯的责任链：被某个对象处理</li>
 <li>不纯的责任联：没有被对象处理（常用）</li>
 <li>两个行为，一是处理请求，二是传递给下一个对象，不允许处理后传递给上一个对象</li>
@@ -191,7 +191,7 @@
 <li>无法或者不想直接访问这个对象时</li>
 <li>访问某个对象比较困难时</li>
 </ul>
-<h2 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h2><ul>
+<h2 id="注意-2"><a href="#注意-2" class="headerlink" title="注意"></a>注意</h2><ul>
 <li>为了保证客户端使用的透明性，委托对象需要与被代理对象实现相同的接口</li>
 </ul>
 <h2 id="实现-10"><a href="#实现-10" class="headerlink" title="实现"></a>实现</h2><h3 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h3><ol>
@@ -257,11 +257,73 @@
 <li>Decorator——抽象装饰者，继承自Component，保持一个Component的引用</li>
 <li>ConcreteDecoratorA、ConcreteDecoratorB——装饰者的具体实现类，对抽象装饰者做出具体的实现</li>
 </ol>
-<h2 id="注意-2"><a href="#注意-2" class="headerlink" title="注意"></a>注意</h2><p>装饰模式和代理模式相似，容易混淆</p>
+<h2 id="注意-3"><a href="#注意-3" class="headerlink" title="注意"></a>注意</h2><p>装饰模式和代理模式相似，容易混淆</p>
 <ol>
 <li>装饰模式是扩展对象功能，是对继承的一种替代方案</li>
 <li>代理模式是对拥有的对象进行控制，不会增强功能</li>
 </ol>
+<hr>
+<h1 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
+<li>MVC是一种框架模式，不是设计模式，但可以看作<strong>观察者模式、策略模式、组合模式</strong>的合体，核心在观察者模式。</li>
+<li>框架面向于相同行为代码的重用</li>
+<li>设计面向于相同结构代码的重用</li>
+<li>架构介于框架和设计模式之间</li>
+<li>框架是大智慧，用来对软件设计进行分工；设计模式是小技巧，对具体问题提出解决方案，以提高代码复用率，降低耦合度</li>
+</ul>
+<p><em>三种级别的重用</em></p>
+<ol>
+<li>内部重用：在同一应用中能公共使用的抽象块</li>
+<li>代码重用：将通用模块组合成库或者工具集，以便在多个应用和领域都能使用</li>
+<li>框架重用：为专用领域提供通用的或现成的基础结构，以获得最高级别的重用性</li>
+</ol>
+<p>Android中的MVC</p>
+<ol>
+<li>View——XML文件</li>
+<li>Controller——Activity</li>
+<li>Model——数据处理</li>
+</ol>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ul>
+<li>控制器Activity主要作用就是解耦，将视图View和模式Model进行分离，两者在Activity中进行绑定或者完成其他的逻辑</li>
+</ul>
+<hr>
+<h1 id="MVP"><a href="#MVP" class="headerlink" title="MVP"></a>MVP</h1><h2 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h2><ul>
+<li>MVP模式可以分离显示层和逻辑层，它们之间通过接口通信，依赖接口，降低耦合</li>
+</ul>
+<p>Android中的MVP</p>
+<ol>
+<li><p>Presenter——交互中间人</p>
+<p> Presenter主要作为沟通View和Model的桥梁，他从Model层检索数据之后，返回给View层，使View和Model之间没有耦合，也将业务逻辑从View上抽离出来。</p>
+</li>
+<li><p>View——用户界面</p>
+<p> View通常指Activity、Fragment或者某个View控件，它含有一个Presenter成员变量。通常View需要实现一个IView逻辑接口，将View上的操作通过会转交给Presenter进行实现，最后Presenter调用IView逻辑接口将结果返回给View元素。</p>
+</li>
+<li><p>Model——业务模型</p>
+<p> Model角色的主要功能是提供数据的存取。Model是封装了数据库DAO或者网络获取数据的角色。</p>
+</li>
+</ol>
+<h2 id="与MVC区别"><a href="#与MVC区别" class="headerlink" title="与MVC区别"></a>与MVC区别</h2><h3 id="MVC特点"><a href="#MVC特点" class="headerlink" title="MVC特点"></a>MVC特点</h3><ol>
+<li>用户可以向View发送指令，再由View直接调用Model改变状态</li>
+<li>用户也可以向Controller发送指令，再由Conroller调用View或者Model改变状态</li>
+<li>Controller起到事件路由的作用，同时部分业务逻辑也部署在Controller中</li>
+</ol>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ul>
+<li>MVC的耦合性还是相对较高的，View可以直接与Model交互，导致M、V、C直接构成回路</li>
+<li>MVP中的View和Model不能直接通信，需要经过Presenter间接发出请求通信</li>
+</ul>
+<h2 id="MVP的生命周期"><a href="#MVP的生命周期" class="headerlink" title="MVP的生命周期"></a>MVP的生命周期</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
+<li><p>内存泄漏</p>
+<p>  假设请求网络数据，Presenter拥有Activity的强引用，如果在请求结束之前Activity被销毁了，网络请求还没有返回，导致Presenter一直持有Activity对象，使得Activity对象无法被回收，此时发生了内存泄漏</p>
+</li>
+</ul>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ul>
+<li>在Activity的生命周期中添加Presenter创建、销毁的方法</li>
+<li>建立一个BaseActivity和BasePresenter，在BaseActivity的生命周期中添加BasePresenter的生命周期方法</li>
+<li>Presenter中最好对View的引用为软引用，如果Activity没有走生命周期方法直接销毁了，也不会造成内存泄漏，但可能出问题。</li>
+</ul>
+<h2 id="优点-9"><a href="#优点-9" class="headerlink" title="优点"></a>优点</h2><ul>
+<li>良好的扩展性、可测试性、稳定性、可维护性、整洁性、灵活性</li>
+<li>职责单一、抽象、最小化、低耦合</li>
+</ul>
 ]]></content>
     </entry>
     
