@@ -1,0 +1,1182 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Linux,Linux基本使用," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico" />
+
+
+
+
+
+
+<meta name="description" content="基本命令ls 查询目录中的内容ls [选项] [文件或者目录]
+    -a 所有文件，包括隐藏文件
+    -l 详细信息
+    -h 人性化显示，byte --&amp;gt; KB
+    -d 查看目录属性
+    -i 显示inode值
+ll=ls -l
+mkdir 创建目录mkdir [选项] 目录
+    -p 创建多级目录，递归创建
+cd 切换目录cd [目录]
+    ~/空值 进入当">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux基本使用">
+<meta property="og:url" content="https://smallhamburger.github.io/2016/09/01/笔记-Linux使用/index.html">
+<meta property="og:site_name" content="学习笔记">
+<meta property="og:description" content="基本命令ls 查询目录中的内容ls [选项] [文件或者目录]
+    -a 所有文件，包括隐藏文件
+    -l 详细信息
+    -h 人性化显示，byte --&amp;gt; KB
+    -d 查看目录属性
+    -i 显示inode值
+ll=ls -l
+mkdir 创建目录mkdir [选项] 目录
+    -p 创建多级目录，递归创建
+cd 切换目录cd [目录]
+    ~/空值 进入当">
+<meta property="og:updated_time" content="2017-03-01T03:27:41.725Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux基本使用">
+<meta name="twitter:description" content="基本命令ls 查询目录中的内容ls [选项] [文件或者目录]
+    -a 所有文件，包括隐藏文件
+    -l 详细信息
+    -h 人性化显示，byte --&amp;gt; KB
+    -d 查看目录属性
+    -i 显示inode值
+ll=ls -l
+mkdir 创建目录mkdir [选项] 目录
+    -p 创建多级目录，递归创建
+cd 切换目录cd [目录]
+    ~/空值 进入当">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://smallhamburger.github.io/2016/09/01/笔记-Linux使用/"/>
+
+
+
+
+
+  <title> Linux基本使用 | 学习笔记 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/blog/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">学习笔记</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">BIUBIUBIU...</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://smallhamburger.github.io/blog/2016/09/01/笔记-Linux使用/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="会飞的汉堡包">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/blog/images/zjs_blog_icon.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="学习笔记">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="学习笔记" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Linux基本使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-01T00:00:00+08:00">
+                2016-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/技术类/" itemprop="url" rel="index">
+                    <span itemprop="name">技术类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/2016/09/01/笔记-Linux使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/01/笔记-Linux使用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h1><h2 id="ls-查询目录中的内容"><a href="#ls-查询目录中的内容" class="headerlink" title="ls 查询目录中的内容"></a>ls 查询目录中的内容</h2><pre><code>ls [选项] [文件或者目录]
+    -a 所有文件，包括隐藏文件
+    -l 详细信息
+    -h 人性化显示，byte --&gt; KB
+    -d 查看目录属性
+    -i 显示inode值
+ll=ls -l
+</code></pre><h2 id="mkdir-创建目录"><a href="#mkdir-创建目录" class="headerlink" title="mkdir 创建目录"></a>mkdir 创建目录</h2><pre><code>mkdir [选项] 目录
+    -p 创建多级目录，递归创建
+</code></pre><h2 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd 切换目录"></a>cd 切换目录</h2><pre><code>cd [目录]
+    ~/空值 进入当前用户目录
+    - 进入上次进入的目录
+    .. 进入上级目录
+    . 进入当前目录
+    tab键 自动补全（点击一下）或者提示所有类似文件（点击两下）
+</code></pre><h2 id="rmdir-删除一个空白目录，目录不能有任何内容"><a href="#rmdir-删除一个空白目录，目录不能有任何内容" class="headerlink" title="rmdir 删除一个空白目录，目录不能有任何内容"></a>rmdir 删除一个空白目录，目录不能有任何内容</h2><pre><code>rmdir 空白目录
+</code></pre><h2 id="rm-删除目录或者文件"><a href="#rm-删除目录或者文件" class="headerlink" title="rm 删除目录或者文件"></a>rm 删除目录或者文件</h2><pre><code>rm [选项] 目录或者文件名
+    -r 删除目录
+    -f 强制删除，不会提醒删除
+rm -rf / 谨慎使用，删除根目录所有文件
+</code></pre><h2 id="cp-复制"><a href="#cp-复制" class="headerlink" title="cp 复制"></a>cp 复制</h2><pre><code>cp [选项] 源文件或者源目录 目标文件或者目标目录
+    -r 复制目录
+    -p 连带文件属性一同复制
+    -d 若源文件位链接文件，则复制链接属性
+    -a 复制所有属性，相当于-pdr
+</code></pre><h2 id="mv-剪切或者改名，同一目录下剪切就是改名字，不同目录下就是剪切"><a href="#mv-剪切或者改名，同一目录下剪切就是改名字，不同目录下就是剪切" class="headerlink" title="mv 剪切或者改名，同一目录下剪切就是改名字，不同目录下就是剪切"></a>mv 剪切或者改名，同一目录下剪切就是改名字，不同目录下就是剪切</h2><pre><code>mv 源文件或者目录 目标文件或者目录
+</code></pre><h2 id="ln-生成链接文件"><a href="#ln-生成链接文件" class="headerlink" title="ln 生成链接文件"></a>ln 生成链接文件</h2><pre><code>ln [选项] 源文件 目标文件
+    -s 创建软链接
+</code></pre><h2 id="一级目录作用"><a href="#一级目录作用" class="headerlink" title="/ 一级目录作用"></a>/ 一级目录作用</h2><pre><code>/bin 通用命令
+/sbin 超级用户命令
+/boot 启动
+/dev 硬件文件
+/etc 配置文件
+/home 普通用户家目录
+/root 超级用户家目录
+/lib 函数库
+/mnt 硬盘，光盘等存储设备挂载点
+/media 光盘挂载点
+/misc 磁带之类挂载点
+/proc 内存挂在点
+/sys 内存挂载点
+/tmp 临时文件目录
+/usr 系统软件资源目录
+/usr/bin 用户系统命令（通用）
+/usr/sbin 用户系统命令（超级）
+/var 系统的可变文档目录
+</code></pre><h2 id="locate-在后台数据库中按文件名搜索，搜索速度快，只能按照文件名搜索"><a href="#locate-在后台数据库中按文件名搜索，搜索速度快，只能按照文件名搜索" class="headerlink" title="locate 在后台数据库中按文件名搜索，搜索速度快，只能按照文件名搜索"></a>locate 在后台数据库中按文件名搜索，搜索速度快，只能按照文件名搜索</h2><pre><code>locate 文件名 
+    /etc/updatedb.conf 配置文件
+updatedb 更新数据库（默认一天一搜索） 
+    /var/lib/mlocate/mlocate.db
+</code></pre><h2 id="whereis-搜索命令所在的路径及帮助文档所在位置，找到的命令不是shell自带的"><a href="#whereis-搜索命令所在的路径及帮助文档所在位置，找到的命令不是shell自带的" class="headerlink" title="whereis 搜索命令所在的路径及帮助文档所在位置，找到的命令不是shell自带的"></a>whereis 搜索命令所在的路径及帮助文档所在位置，找到的命令不是shell自带的</h2><pre><code>whereis 命令名
+    -b 只查找可执行文件
+    -m 只查找帮助文件
+
+which 同whereis 但会增显别名（若存在），不显示帮助文档，无参数，不常用
+
+echo $PATH 环境变量
+</code></pre><h2 id="find-搜索文件"><a href="#find-搜索文件" class="headerlink" title="find 搜索文件"></a>find 搜索文件</h2><pre><code>find [搜索范围] [搜索条件，可以有多个] 搜索文件名
+    文件名作为过滤条件
+        -name 以文件名进行搜索
+        -iname 以文件名（不区分大小写）进行搜索
+    用户所有者作为过滤条件
+        -user 按所有者搜索
+            例：find /root -user root
+        -nouser 查找没有所有者的文件
+    时间作为过滤条件
+        -mtime 内容改变的时间
+        -ctime 属性改变的时间
+        -atime 最近访问的时间
+            例：find ./ -mtime +10(-10或者10) 查找10天前（10天内或者第10天前）的文件 
+    大小作为过滤条件
+        -size 文件占用空间大小，大小的单位默认位数据块，扇区，可选的大小为：b（小写，B）k（小写，KB），M（大写，MB），G（大写，GB）
+            例：find ./ -size 25k
+    节点信息作为过滤条件
+        -inum inode的节点信息
+            例：find ./ inum 26421
+通配符
+    * 匹配任意字符
+    ? 匹配任意一个字符
+    [abc] [a-z] [0-9]匹配[]内的任意一个字符
+    [^a-z] 匹配的内容不包含[]的任意一个字符
+条件逻辑
+    -a 代表and，并且
+    -o 代表or，或者
+        find ./ -size +20k -a -mtime -10
+结果处理
+    -exec 需要执行的命令 {} \;
+        find ./ -size +20k -a -mtime -10 -exec ls -l {} \;
+</code></pre><h2 id="grep-搜索字符串"><a href="#grep-搜索字符串" class="headerlink" title="grep 搜索字符串"></a>grep 搜索字符串</h2><pre><code>grep [选项] 字符串 文件名
+    -i 忽略大小写
+    -v 排除指定字符串
+</code></pre><h2 id="man-帮助命令"><a href="#man-帮助命令" class="headerlink" title="man 帮助命令"></a>man 帮助命令</h2><pre><code>man [等级] 命令
+man [选项] 命令
+    -f 相当于 whatis 命令 = man -f 命令
+    -k 所有含有关键字的命令或者文件
+</code></pre><h2 id="help-查询"><a href="#help-查询" class="headerlink" title="help 查询"></a>help 查询</h2><pre><code>help 命令
+</code></pre><h2 id="info-详细的帮助命令"><a href="#info-详细的帮助命令" class="headerlink" title="info 详细的帮助命令"></a>info 详细的帮助命令</h2><pre><code>info 命令
+</code></pre><h2 id="zip-压缩为zip格式，与windows通用"><a href="#zip-压缩为zip格式，与windows通用" class="headerlink" title="zip 压缩为zip格式，与windows通用"></a>zip 压缩为zip格式，与windows通用</h2><pre><code>zip [选项] 文件名 源文件
+    -r 压缩目录
+</code></pre><h2 id="unzip-解压缩zip格式"><a href="#unzip-解压缩zip格式" class="headerlink" title="unzip 解压缩zip格式"></a>unzip 解压缩zip格式</h2><pre><code>unzip 文件名
+</code></pre><h2 id="gzip-压缩为gzip格式或解压缩gzip格式文件"><a href="#gzip-压缩为gzip格式或解压缩gzip格式文件" class="headerlink" title="gzip 压缩为gzip格式或解压缩gzip格式文件"></a>gzip 压缩为gzip格式或解压缩gzip格式文件</h2><pre><code>gzip [选项] 源文件 [目标目录]
+    -c 保留源文件，需要加重定向符号
+        例：gzip -c test &gt; t1
+    -r 压缩目录下所有子文件，但不包括目录
+    -d 解压缩gzip文件，等同于gunzip  ？？？好像有问题
+</code></pre><h2 id="bzip-压缩为bzip2格式，不能压缩目录"><a href="#bzip-压缩为bzip2格式，不能压缩目录" class="headerlink" title="bzip 压缩为bzip2格式，不能压缩目录"></a>bzip 压缩为bzip2格式，不能压缩目录</h2><pre><code>bzip [选项] 源文件
+    -k 源文件，保留源文件
+    -d 解压缩，同bunzip2
+</code></pre><h2 id="tar-打包命令"><a href="#tar-打包命令" class="headerlink" title="tar 打包命令"></a>tar 打包命令</h2><pre><code>tar [选项] 打包文件名 源文件
+    -c 打包，与-x/-t
+    -v 显示过程
+    -f 指定打包的文件名
+        例：tar -cvf long.tar long
+    -x 解压缩包，与-c/-t对应
+    -z 打包时并压缩为gz格式
+    -j 打包时并压缩为bz2格式
+    -C 大写C，指定解压缩目录
+    -t 查看压缩文件内容，与-x/-c对应
+</code></pre><h2 id="shutdown-关机重启命令"><a href="#shutdown-关机重启命令" class="headerlink" title="shutdown 关机重启命令"></a>shutdown 关机重启命令</h2><pre><code>shutdown [选项] 时间
+    -c 取消前一个关机命令
+    -h 关机
+    -r 重启
+</code></pre><h2 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h2><pre><code>halt
+poweroff
+init 0 关机，不建议使用
+</code></pre><h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><pre><code>reboot/init 0
+</code></pre><h2 id="init-系统运行级别"><a href="#init-系统运行级别" class="headerlink" title="init 系统运行级别"></a>init 系统运行级别</h2><pre><code>init [level]
+    0 关机
+    1 单用户，类似于安全模式
+    2 不完全多用户，不含NFS服务
+    3 完全多用户，默认
+    4 未分配
+    5 图形界面
+    6 重启
+</code></pre><h2 id="logout-退出登录"><a href="#logout-退出登录" class="headerlink" title="logout 退出登录"></a>logout 退出登录</h2><h2 id="df-查询系统中已经挂载的设备"><a href="#df-查询系统中已经挂载的设备" class="headerlink" title="df 查询系统中已经挂载的设备"></a>df 查询系统中已经挂载的设备</h2><h2 id="mount-查询系统中已经挂载的设备"><a href="#mount-查询系统中已经挂载的设备" class="headerlink" title="mount 查询系统中已经挂载的设备"></a>mount 查询系统中已经挂载的设备</h2><pre><code>mount [-t 文件系统] [-o 特殊选项] 设备名 挂载点 
+    -a 依据配置文件/etc/fstab的内容自动挂载
+    -t 文件系统，（光盘，iso9660）
+    -o 特殊选项 
+        exec/noexec：可执行，默认为exec
+        rw/ro：读写权限，默认为rw
+    例：mount -t iso9660 -o ro /etc/sr0(或/etc/cdrom) /mnt/cdrom
+            mount /dev/sr0 /mnt/cdrom
+    例：mount -t vfat /dev/sdb1 /mnt/usb
+                挂载fat32位格式硬盘
+</code></pre><h2 id="umount-卸载，卸载时挂载点不在使用状态，也不可在当前目录"><a href="#umount-卸载，卸载时挂载点不在使用状态，也不可在当前目录" class="headerlink" title="umount 卸载，卸载时挂载点不在使用状态，也不可在当前目录"></a>umount 卸载，卸载时挂载点不在使用状态，也不可在当前目录</h2><pre><code>umount 设备文件名或挂载点
+例：umount /mnt/cdrom
+</code></pre><h2 id="fdisk-查看硬盘设备"><a href="#fdisk-查看硬盘设备" class="headerlink" title="fdisk 查看硬盘设备"></a>fdisk 查看硬盘设备</h2><pre><code>fdisk [选项]
+    -l 列出硬盘
+</code></pre><h2 id="w-查看用户登录信息"><a href="#w-查看用户登录信息" class="headerlink" title="w 查看用户登录信息"></a>w 查看用户登录信息</h2><pre><code>w [用户名]
+</code></pre><h2 id="who-查看用户登录信息"><a href="#who-查看用户登录信息" class="headerlink" title="who  查看用户登录信息"></a>who  查看用户登录信息</h2><pre><code>who [用户名]
+</code></pre><h2 id="last-查询当前目录和过去登录的用户信息"><a href="#last-查询当前目录和过去登录的用户信息" class="headerlink" title="last 查询当前目录和过去登录的用户信息"></a>last 查询当前目录和过去登录的用户信息</h2><pre><code>默认是读取/var/log/wtmp文件的数据
+</code></pre><h2 id="lastlog-查看用户最后一次登录时间"><a href="#lastlog-查看用户最后一次登录时间" class="headerlink" title="lastlog 查看用户最后一次登录时间"></a>lastlog 查看用户最后一次登录时间</h2><h2 id="shell-命令行解释器，配置在-etc-shells，可以通过exit退出"><a href="#shell-命令行解释器，配置在-etc-shells，可以通过exit退出" class="headerlink" title="shell 命令行解释器，配置在/etc/shells，可以通过exit退出"></a>shell 命令行解释器，配置在/etc/shells，可以通过exit退出</h2><pre><code>sh或csh 进入相应shell命令
+</code></pre><h2 id="echo-输出命令，输出的内容如果含有空格，则需要用双引号包裹"><a href="#echo-输出命令，输出的内容如果含有空格，则需要用双引号包裹" class="headerlink" title="echo 输出命令，输出的内容如果含有空格，则需要用双引号包裹"></a>echo 输出命令，输出的内容如果含有空格，则需要用双引号包裹</h2><pre><code>echo [选项] [输出内容]
+    -e 支持反斜线空值的字符转换
+        控制字符        作用
+            \a                输出警告音
+            \b                退格键，也就是一个向左删除键
+            \n                换行符
+            \r                回车符
+            \v                垂直制表符
+            \onnn            八进制输出字符
+            \xhh            十六进制输出字符
+            \t                制表符tab
+输出颜色
+    #30m = 黑，31m = 红，32m = 绿，33m = 黄，34m = 蓝，35m = 洋红，36m = 青，37m = 白
+例：echo -e &quot;\e[1;31mhelloworld\e[0m&quot;
+    \e 调用颜色
+    [1; 开启颜色，\e[1;31m
+    [0m 关闭颜色, \e[0m
+</code></pre><h2 id="脚本执行"><a href="#脚本执行" class="headerlink" title="脚本执行"></a>脚本执行</h2><pre><code>#代表注释
+#！/bin/bash 代表以下内容为shell脚本，如果不是纯shell语言则必须加
+执行方法：
+    1. 赋予执行权限，直接运行
+        chmod 755 hello.sh
+        ./hello.sh
+    2. 通过Bash调用执行脚本
+        bash shell.sh
+</code></pre><h2 id="alias-给命令添加别名（关机后消失）"><a href="#alias-给命令添加别名（关机后消失）" class="headerlink" title="alias 给命令添加别名（关机后消失）"></a>alias 给命令添加别名（关机后消失）</h2><pre><code>alias 别名=&apos;命令&apos;
+    例：alias ls=&apos;ls --color=never&apos;
+在~/.bashrc 添加别名，可永久生效，可通过source .bashrc
+命令生效顺序:
+    1. 用绝对路径或相对路径执行命令
+    2. 别名
+    3. Bash的内部命令
+    4. 按照$PATH环境变量找到的第一个命令
+</code></pre><h2 id="unalias-删除别名（临时删除）"><a href="#unalias-删除别名（临时删除）" class="headerlink" title="unalias 删除别名（临时删除）"></a>unalias 删除别名（临时删除）</h2><h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><pre><code>ctrl + c 终止当前命令
+ctrl + l 清屏
+ctrl + a 光标移至行首
+ctrl + e 光标移至行尾
+ctrl + u 从光标位置删除至行首
+ctrl + z 将命令放置后台
+ctrl + r 在历史命令中搜索
+</code></pre><h2 id="history-历史命令"><a href="#history-历史命令" class="headerlink" title="history 历史命令"></a>history 历史命令</h2><pre><code>history [选项] [历史命令保存文件]
+    -c 清空历史命令
+    -w 缓存中的历史命令保存文件 ~/.bash_history
+</code></pre><h2 id="wc-统计信息"><a href="#wc-统计信息" class="headerlink" title="wc 统计信息"></a>wc 统计信息</h2><pre><code>wc [选项] [文件名] 
+    -c 统计字符数
+    -w 统计单词数
+    -l 统计行数
+例：
+    wc -wcl test.txt
+    输出内容：
+        行数        单词数    字节数    路径
+</code></pre><h2 id="标准输入输出"><a href="#标准输入输出" class="headerlink" title="标准输入输出"></a>标准输入输出</h2><pre><code>键盘        /dev/stdin    0
+显示器    /dev/stdout    1
+显示器    /dev/stderr    2
+</code></pre><h2 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h2><pre><code>&gt; 覆盖
+&gt;&gt; 追加
+&gt; 只存储命令正确执行时内容
+    例：
+        ls &gt; test.txt            ls列表内容存入到test.txt文件中，只存命令正确执行时的内容
+2&gt; 只存储命令错误执行内容
+    例：
+        lss 2&gt; test.txt        ls列表内容存入到test.txt文件中，只存命令错误执行时的内容
+&amp;&gt; 或 2&gt;&amp;1 命令正确或者错误执行后输出内容都保存
+    例：
+        ls &gt; test.txt 2&gt;&amp;1
+        ls &amp;&gt; test.txt
+&gt; 文件一 2&gt; 文件二 命令正确和错误执行后内容分开执行
+    例：
+        ls &gt; test.txt 2&gt; test_error.txt
+</code></pre><h2 id="dev-null-黑洞"><a href="#dev-null-黑洞" class="headerlink" title="/dev/null 黑洞"></a>/dev/null 黑洞</h2><pre><code>例：
+    ls &gt; test.txt 2&gt; /dev/null
+</code></pre><h2 id="输入重定向-不懂"><a href="#输入重定向-不懂" class="headerlink" title="输入重定向, 不懂"></a>输入重定向, 不懂</h2><pre><code>&lt;
+&lt;&lt;
+</code></pre><h2 id="多命令顺序执行"><a href="#多命令顺序执行" class="headerlink" title="多命令顺序执行"></a>多命令顺序执行</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">多命令执行符</th>
+<th style="text-align:center">格式</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">;</td>
+<td style="text-align:center">cmd1;cmd2</td>
+<td>多个命令顺序执行，命令之间无任何逻辑关系，无论哪个cmd出错都会顺序执行下一个</td>
+</tr>
+<tr>
+<td style="text-align:center">&amp;&amp;</td>
+<td style="text-align:center">cmd1&amp;&amp;cmd2</td>
+<td>逻辑与，cmd1正确执行后才会执行cmd2</td>
+</tr>
+<tr>
+<td style="text-align:center">丨</td>
+<td style="text-align:center">cmd1丨丨cmd2</td>
+<td>逻辑或，cmd1正确执行后不会执行cmd2，cmd1错误执行后cmd2才会执行</td>
+</tr>
+</tbody>
+</table>
+<pre><code>例：
+    ls &amp;&amp; echo success || echo fail
+        正确 --&gt; success X--&gt;
+        错误 X--&gt;                 --&gt; fail
+    ls || echo fail &amp;&amp; echo success
+      逻辑混乱，不建议
+</code></pre><h2 id="管道符，管道符前面的命令输出作为后面命令的操作对象"><a href="#管道符，管道符前面的命令输出作为后面命令的操作对象" class="headerlink" title="| 管道符，管道符前面的命令输出作为后面命令的操作对象"></a>| 管道符，管道符前面的命令输出作为后面命令的操作对象</h2><pre><code>cmd1 | cmd2
+    cmd1的处理结果送于cmd2作为处理对象
+</code></pre><h2 id="Bash中其他特殊符号"><a href="#Bash中其他特殊符号" class="headerlink" title="Bash中其他特殊符号"></a>Bash中其他特殊符号</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">‘’</td>
+<td style="text-align:center">单引号</td>
+<td>在单引号中所有的特殊字符都无特殊含义</td>
+</tr>
+<tr>
+<td style="text-align:center">“”</td>
+<td style="text-align:center">双引号</td>
+<td>取消特殊含义，$和\</td>
+</tr>
+<tr>
+<td style="text-align:center">$()</td>
+<td style="text-align:center"></td>
+<td>变量的值，引用命令，转义符等特殊含义</td>
+</tr>
+<tr>
+<td style="text-align:center">··</td>
+<td style="text-align:center">反引号</td>
+<td>同$()， 建议使用$()</td>
+</tr>
+<tr>
+<td style="text-align:center">#</td>
+<td style="text-align:center">井号</td>
+<td>在shell脚本中代表注释</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:center"></td>
+<td>用于调用变量的值，例：$name</td>
+</tr>
+<tr>
+<td style="text-align:center">\</td>
+<td style="text-align:center">转义符</td>
+<td>转义其后的字符，相当于用单引号括起来</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/blog/tags/Linux基本使用/" rel="tag"># Linux基本使用</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2016/09/01/笔记-Android群英传/" rel="next" title="笔记-Android群英传">
+                <i class="fa fa-chevron-left"></i> 笔记-Android群英传
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2016/12/01/笔记-Android源码设计模式解析与实战/" rel="prev" title="Android源码设计模式解析与实战">
+                Android源码设计模式解析与实战 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/01/笔记-Linux使用/"
+           data-title="Linux基本使用" data-url="https://smallhamburger.github.io/blog/2016/09/01/笔记-Linux使用/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/blog/images/zjs_blog_icon.jpg"
+               alt="会飞的汉堡包" />
+          <p class="site-author-name" itemprop="name">会飞的汉堡包</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/blog/archives">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/blog/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本命令"><span class="nav-number">1.</span> <span class="nav-text">基本命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ls-查询目录中的内容"><span class="nav-number">1.1.</span> <span class="nav-text">ls 查询目录中的内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mkdir-创建目录"><span class="nav-number">1.2.</span> <span class="nav-text">mkdir 创建目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cd-切换目录"><span class="nav-number">1.3.</span> <span class="nav-text">cd 切换目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rmdir-删除一个空白目录，目录不能有任何内容"><span class="nav-number">1.4.</span> <span class="nav-text">rmdir 删除一个空白目录，目录不能有任何内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rm-删除目录或者文件"><span class="nav-number">1.5.</span> <span class="nav-text">rm 删除目录或者文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cp-复制"><span class="nav-number">1.6.</span> <span class="nav-text">cp 复制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mv-剪切或者改名，同一目录下剪切就是改名字，不同目录下就是剪切"><span class="nav-number">1.7.</span> <span class="nav-text">mv 剪切或者改名，同一目录下剪切就是改名字，不同目录下就是剪切</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ln-生成链接文件"><span class="nav-number">1.8.</span> <span class="nav-text">ln 生成链接文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一级目录作用"><span class="nav-number">1.9.</span> <span class="nav-text">/ 一级目录作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#locate-在后台数据库中按文件名搜索，搜索速度快，只能按照文件名搜索"><span class="nav-number">1.10.</span> <span class="nav-text">locate 在后台数据库中按文件名搜索，搜索速度快，只能按照文件名搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#whereis-搜索命令所在的路径及帮助文档所在位置，找到的命令不是shell自带的"><span class="nav-number">1.11.</span> <span class="nav-text">whereis 搜索命令所在的路径及帮助文档所在位置，找到的命令不是shell自带的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#find-搜索文件"><span class="nav-number">1.12.</span> <span class="nav-text">find 搜索文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grep-搜索字符串"><span class="nav-number">1.13.</span> <span class="nav-text">grep 搜索字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#man-帮助命令"><span class="nav-number">1.14.</span> <span class="nav-text">man 帮助命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#help-查询"><span class="nav-number">1.15.</span> <span class="nav-text">help 查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#info-详细的帮助命令"><span class="nav-number">1.16.</span> <span class="nav-text">info 详细的帮助命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zip-压缩为zip格式，与windows通用"><span class="nav-number">1.17.</span> <span class="nav-text">zip 压缩为zip格式，与windows通用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unzip-解压缩zip格式"><span class="nav-number">1.18.</span> <span class="nav-text">unzip 解压缩zip格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gzip-压缩为gzip格式或解压缩gzip格式文件"><span class="nav-number">1.19.</span> <span class="nav-text">gzip 压缩为gzip格式或解压缩gzip格式文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bzip-压缩为bzip2格式，不能压缩目录"><span class="nav-number">1.20.</span> <span class="nav-text">bzip 压缩为bzip2格式，不能压缩目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tar-打包命令"><span class="nav-number">1.21.</span> <span class="nav-text">tar 打包命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shutdown-关机重启命令"><span class="nav-number">1.22.</span> <span class="nav-text">shutdown 关机重启命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关机"><span class="nav-number">1.23.</span> <span class="nav-text">关机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重启"><span class="nav-number">1.24.</span> <span class="nav-text">重启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#init-系统运行级别"><span class="nav-number">1.25.</span> <span class="nav-text">init 系统运行级别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#logout-退出登录"><span class="nav-number">1.26.</span> <span class="nav-text">logout 退出登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#df-查询系统中已经挂载的设备"><span class="nav-number">1.27.</span> <span class="nav-text">df 查询系统中已经挂载的设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mount-查询系统中已经挂载的设备"><span class="nav-number">1.28.</span> <span class="nav-text">mount 查询系统中已经挂载的设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#umount-卸载，卸载时挂载点不在使用状态，也不可在当前目录"><span class="nav-number">1.29.</span> <span class="nav-text">umount 卸载，卸载时挂载点不在使用状态，也不可在当前目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fdisk-查看硬盘设备"><span class="nav-number">1.30.</span> <span class="nav-text">fdisk 查看硬盘设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#w-查看用户登录信息"><span class="nav-number">1.31.</span> <span class="nav-text">w 查看用户登录信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#who-查看用户登录信息"><span class="nav-number">1.32.</span> <span class="nav-text">who  查看用户登录信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#last-查询当前目录和过去登录的用户信息"><span class="nav-number">1.33.</span> <span class="nav-text">last 查询当前目录和过去登录的用户信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lastlog-查看用户最后一次登录时间"><span class="nav-number">1.34.</span> <span class="nav-text">lastlog 查看用户最后一次登录时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shell-命令行解释器，配置在-etc-shells，可以通过exit退出"><span class="nav-number">1.35.</span> <span class="nav-text">shell 命令行解释器，配置在/etc/shells，可以通过exit退出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#echo-输出命令，输出的内容如果含有空格，则需要用双引号包裹"><span class="nav-number">1.36.</span> <span class="nav-text">echo 输出命令，输出的内容如果含有空格，则需要用双引号包裹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本执行"><span class="nav-number">1.37.</span> <span class="nav-text">脚本执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alias-给命令添加别名（关机后消失）"><span class="nav-number">1.38.</span> <span class="nav-text">alias 给命令添加别名（关机后消失）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unalias-删除别名（临时删除）"><span class="nav-number">1.39.</span> <span class="nav-text">unalias 删除别名（临时删除）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快捷键"><span class="nav-number">1.40.</span> <span class="nav-text">快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#history-历史命令"><span class="nav-number">1.41.</span> <span class="nav-text">history 历史命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wc-统计信息"><span class="nav-number">1.42.</span> <span class="nav-text">wc 统计信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准输入输出"><span class="nav-number">1.43.</span> <span class="nav-text">标准输入输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出重定向"><span class="nav-number">1.44.</span> <span class="nav-text">输出重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dev-null-黑洞"><span class="nav-number">1.45.</span> <span class="nav-text">/dev/null 黑洞</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入重定向-不懂"><span class="nav-number">1.46.</span> <span class="nav-text">输入重定向, 不懂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多命令顺序执行"><span class="nav-number">1.47.</span> <span class="nav-text">多命令顺序执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管道符，管道符前面的命令输出作为后面命令的操作对象"><span class="nav-number">1.48.</span> <span class="nav-text">| 管道符，管道符前面的命令输出作为后面命令的操作对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bash中其他特殊符号"><span class="nav-number">1.49.</span> <span class="nav-text">Bash中其他特殊符号</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love"  style="display:none">
+    <i class="fa fa-heart"></i>
+  </span>&nbsp;
+  <span class="author" itemprop="copyrightHolder">会飞的汉堡包</span>
+</div>
+
+
+<div class="powered-by" style="display:none">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info" style="display:none">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"smallhamburger"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/blog/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/blog/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
