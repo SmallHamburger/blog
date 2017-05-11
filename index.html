@@ -1,2898 +1,683 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    
+
+    
+
+    
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
+    <meta charset="utf-8">
     
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
+    
+    <title>学习笔记 | BIUBIUBIU...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/blog/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico" />
-
-
-
-
-
-
-<meta property="og:type" content="website">
+    <meta name="keywords" content="undefined">
+    <meta property="og:type" content="website">
 <meta property="og:title" content="学习笔记">
 <meta property="og:url" content="https://smallhamburger.github.io/index.html">
 <meta property="og:site_name" content="学习笔记">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习笔记">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/blog/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="https://smallhamburger.github.io/"/>
-
-
-
-
-
-  <title> 学习笔记 </title>
+    
+        <link rel="alternate" type="application/atom+xml" title="学习笔记" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body>
+    <div id="loading" class="active"></div>
 
-  
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
-
-  <div class="custom-logo-site-title">
-    <a href="/blog/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">学习笔记</span>
-      <span class="logo-line-after"><i></i></span>
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
     </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">会飞的汉堡包</h5>
+          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect active">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
   </div>
-    
-      <p class="site-subtitle">BIUBIUBIU...</p>
-    
-</div>
+</aside>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">学习笔记</div>
         
-        <li class="menu-item menu-item-home">
-          <a href="/blog/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/blog/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/blog/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/blog/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup">
- <span class="search-icon fa fa-search"></span>
- <input type="text" id="local-search-input">
- <div id="local-search-result"></div>
- <span class="popup-btn-close">close</span>
-</div>
-
-
-    </div>
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://smallhamburger.github.io/blog/2017/04/23/Android常用框架/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="会飞的汉堡包">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/blog/images/zjs_blog_icon.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="学习笔记">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="学习笔记" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/2017/04/23/Android常用框架/" itemprop="url">
-                  Android中常用的第三方框架
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-23T00:00:00+08:00">
-                2017-04-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/技术类/" itemprop="url" rel="index">
-                    <span itemprop="name">技术类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/blog/2017/04/23/Android常用框架/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/23/Android常用框架/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
         
-          
-            <h1 id="Android中常用的第三方框架"><a href="#Android中常用的第三方框架" class="headerlink" title="Android中常用的第三方框架"></a>Android中常用的第三方框架</h1><h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>DiskLruCache</td>
-<td>Java实现基于LRU的磁盘缓存</td>
-</tr>
-</tbody>
-</table>
-<h2 id="图片加载"><a href="#图片加载" class="headerlink" title="图片加载"></a>图片加载</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Android Universal Image Loader</td>
-<td>一个强大的加载，缓存，展示图片的库</td>
-</tr>
-<tr>
-<td>Picasso</td>
-<td>一个强大的图片下载与缓存的库</td>
-</tr>
-<tr>
-<td>Fresco</td>
-<td>一个用于管理图像和他们使用的内存的库</td>
-</tr>
-<tr>
-<td>Glide</td>
-<td>一个图片加载和缓存的库</td>
-</tr>
-</tbody>
-</table>
-<h2 id="图片处理"><a href="#图片处理" class="headerlink" title="图片处理"></a>图片处理</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Picasso-transformations</td>
-<td>一个为Picasso提供多种图片变换的库</td>
-</tr>
-<tr>
-<td>Glide-transformations</td>
-<td>一个为Glide提供多种图片变换的库</td>
-</tr>
-<tr>
-<td>Android-gpuimage</td>
-<td>基于OpenGL的Android过滤器</td>
-</tr>
-</tbody>
-</table>
-<h2 id="网络请求"><a href="#网络请求" class="headerlink" title="网络请求"></a>网络请求</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Android Async HTTP</td>
-<td>Android异步HTTP库</td>
-</tr>
-<tr>
-<td>AndroidAsync</td>
-<td>异步Socket，HTTP(客户端+服务器)，WebSocket，和socket.io库。基于NIO而不是线程。</td>
-</tr>
-<tr>
-<td>OkHttp</td>
-<td>一个Http与Http/2的客户端</td>
-</tr>
-<tr>
-<td>Retrofit</td>
-<td>类型安全的Http客户端</td>
-</tr>
-<tr>
-<td>Volley</td>
-<td>Google推出的Android异步网络请求框架和图片加载框架</td>
-</tr>
-</tbody>
-</table>
-<h2 id="网络解析"><a href="#网络解析" class="headerlink" title="网络解析"></a>网络解析</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Gson</td>
-<td>一个Java序列化/反序列化库，可以将JSON和java对象互相转换</td>
-</tr>
-<tr>
-<td>Jackson</td>
-<td>Jackson可以轻松地将Java对象转换成json对象和xml文档，同样也可以将json、xml转换成Java对象</td>
-</tr>
-<tr>
-<td>Fastjson</td>
-<td>Java上一个快速的JSON解析器/生成器</td>
-</tr>
-<tr>
-<td>HtmlPaser</td>
-<td>一种用来解析单个独立html或嵌套html的方式</td>
-</tr>
-<tr>
-<td>Jsoup</td>
-<td>一个以最好的DOM，CSS和jQuery解析html的库</td>
-</tr>
-</tbody>
-</table>
-<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>OrmLite</td>
-<td>JDBC和Android的轻量级ORM java包</td>
-</tr>
-<tr>
-<td>Sugar</td>
-<td>用超级简单的方法处理Android数据库</td>
-</tr>
-<tr>
-<td>GreenDAO</td>
-<td>一种轻快地将对象映射到SQLite数据库的ORM解决方案</td>
-</tr>
-<tr>
-<td>ActiveAndroid</td>
-<td>以活动记录方式为Android SQLite提供持久化</td>
-</tr>
-<tr>
-<td>SQLBrite</td>
-<td>SQLiteOpenHelper 和ContentResolver的轻量级包装</td>
-</tr>
-<tr>
-<td>Realm</td>
-<td>移动数据库：一个SQLite和ORM的替换品</td>
-</tr>
-</tbody>
-</table>
-<h2 id="依赖注入"><a href="#依赖注入" class="headerlink" title="依赖注入"></a>依赖注入</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ButterKnife</td>
-<td>将Android视图和回调方法绑定到字段和方法上</td>
-</tr>
-<tr>
-<td>Dagger2</td>
-<td>一个Android和java快速依赖注射器。</td>
-</tr>
-<tr>
-<td>AndroidAnotations</td>
-<td>快速安卓开发。易于维护</td>
-</tr>
-<tr>
-<td>RoboGuice</td>
-<td>Android平台的Google Guice</td>
-</tr>
-</tbody>
-</table>
-<h2 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>WilliamChart</td>
-<td>创建图表的Android库</td>
-</tr>
-<tr>
-<td>HelloCharts</td>
-<td>兼容到API8的Android图表库</td>
-</tr>
-<tr>
-<td>MPAndroidChart</td>
-<td>一个强大的Android图表视图/图形库</td>
-</tr>
-</tbody>
-</table>
-<h2 id="后台处理"><a href="#后台处理" class="headerlink" title="后台处理"></a>后台处理</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Tape</td>
-<td>一个轻快的，事务性的，基于文件的FIFO的库</td>
-</tr>
-<tr>
-<td>Android Priority Job Queue</td>
-<td>一个专门为Android轻松调度任务的工作队列</td>
-</tr>
-</tbody>
-</table>
-<h2 id="事件总线"><a href="#事件总线" class="headerlink" title="事件总线"></a>事件总线</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>EventBus</td>
-<td>安卓优化的事件总线，简化了活动、片段、线程、服务等的通信</td>
-</tr>
-<tr>
-<td>Otto</td>
-<td>一个基于Guava的增强的事件总线</td>
-</tr>
-</tbody>
-</table>
-<h2 id="响应式编程"><a href="#响应式编程" class="headerlink" title="响应式编程"></a>响应式编程</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>RxJava</td>
-<td>JVM上的响应式扩展</td>
-</tr>
-<tr>
-<td>RxJavaJoins</td>
-<td>为RxJava提供Joins操作</td>
-</tr>
-<tr>
-<td>RxAndroid</td>
-<td>Android上的响应式扩展，在RxJava基础上添加了Android线程调度</td>
-</tr>
-<tr>
-<td>RxBinding</td>
-<td>提供用RxJava绑定Android UI的API</td>
-</tr>
-<tr>
-<td>Agera</td>
-<td>Android上的响应式编程</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Log框架"><a href="#Log框架" class="headerlink" title="Log框架"></a>Log框架</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Logger</td>
-<td>简单，漂亮，强大的Android日志工具</td>
-</tr>
-<tr>
-<td>Hugo</td>
-<td>在调试版本上注解的触发方法进行日志记录</td>
-</tr>
-<tr>
-<td>Timber</td>
-<td>一个小的，可扩展的日志工具</td>
-</tr>
-</tbody>
-</table>
-<h2 id="测试框架"><a href="#测试框架" class="headerlink" title="测试框架"></a>测试框架</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Mockito</td>
-<td>Java编写的Mocking单元测试框架</td>
-</tr>
-<tr>
-<td>Robotium</td>
-<td>Android UI 测试</td>
-</tr>
-<tr>
-<td>Robolectric</td>
-<td>Android单元测试框架</td>
-</tr>
-<tr>
-<td>Android自带很多测试工具：JUnit，Monkeyrunner，UiAutomator，Espresso等</td>
-</tr>
-</tbody>
-</table>
-<h2 id="调试框架"><a href="#调试框架" class="headerlink" title="调试框架"></a>调试框架</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Stetho</td>
-<td>调试Android应用的桥梁，使得可以利用Chrome开发者工具进行调试</td>
-</tr>
-</tbody>
-</table>
-<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>LeakCanary</td>
-<td>内存泄漏检测工具</td>
-</tr>
-<tr>
-<td>ACRA</td>
-<td>Android应用程序崩溃报告</td>
-</tr>
-</tbody>
-</table>
-
-          
         
-      
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header index-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">学习笔记</h1>
+        <h5 class="subtitle">
+            
+                BIUBIUBIU...
+            
+        </h5>
     </div>
 
-    <div>
-      
+    
+
+
+</header>
+
+<div class="container body-wrap">
+
+    <ul class="post-list">
+    
+        <li class="post-list-item fade">
+            <article id="post-Android常用框架"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-04-23 00:00:00" datetime="2017-04-22T16:00:00.000Z"  itemprop="datePublished">2017-04-23</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/技术类/">技术类</a></li></ul>
+
+
+
+        
+
     </div>
 
-    <div>
-      
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/2017/04/23/Android常用框架/">Android中常用的第三方框架</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Android中常用的第三方框架缓存
+
+
+名称
+描述
+
+
+
+
+DiskLruCache
+Java实现基于LRU的磁盘缓存
+
+
+
+图片加载
+
+
+名称
+描述
+
+
+
+
+Android Universal Image Loader
+一个强大的加载，缓存，展示图片的库
+
+
+Picasso
+一个强大的图片下载与缓存的库
+
+
+Fresco
+一个用于管理图像和他们使用的内存的库
+
+
+Glide
+一个图片加载...
+    
+
+        <a href="/blog/2017/04/23/Android常用框架/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/框架/">框架</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-程序员，你真的会写简历吗？"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-03-01 00:00:00" datetime="2017-02-28T16:00:00.000Z"  itemprop="datePublished">2017-03-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/职场类/">职场类</a></li></ul>
+
+
+
+        
+
     </div>
 
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://smallhamburger.github.io/blog/2017/03/01/程序员，你真的会写简历吗？/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="会飞的汉堡包">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/blog/images/zjs_blog_icon.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="学习笔记">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="学习笔记" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/2017/03/01/程序员，你真的会写简历吗？/" itemprop="url">
-                  程序员，你真的会写简历吗？
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-01T00:00:00+08:00">
-                2017-03-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/职场类/" itemprop="url" rel="index">
-                    <span itemprop="name">职场类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/blog/2017/03/01/程序员，你真的会写简历吗？/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/01/程序员，你真的会写简历吗？/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
     
 
 
-    <div class="post-body" itemprop="articleBody">
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/2017/03/01/程序员，你真的会写简历吗？/">程序员，你真的会写简历吗？</a>
+    </h3>
+  
 
-      
-      
 
-      
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        本文摘自慕课网，作者七月在夏天，程序员，你真的会写简历吗？
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;又是一年跳槽季，金三银四毫不夸张。 简历是我们找工作的行头，重要性不言而喻。可你真的会写简历吗？
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面试其实就是面试官和你的一次约会。他是女你是男，能不能在一起取决于你...
+    
+
+        <a href="/blog/2017/03/01/程序员，你真的会写简历吗？/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
         
-          
-            <p><em>本文摘自<strong>慕课网</strong>，作者<strong>七月在夏天</strong>，<a href="http://www.imooc.com/article/16649" target="_blank" rel="external">程序员，你真的会写简历吗？</a></em></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;又是一年跳槽季，金三银四毫不夸张。 简历是我们找工作的行头，重要性不言而喻。可你真的会写简历吗？</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面试其实就是面试官和你的一次约会。他是女你是男，能不能在一起取决于你能否讨他的欢心。一份整洁的简历，重要性不亚于你约会时的行头和装束。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;感谢这个时代简历不再需要手写，不然很多人的“字”都过不了关，比如说我，现在几乎是不会写字的。</p>
-<p>简历是一个行业性和时代性很强的东西，不同的时代和行业简历的最优形态都不同，但一份好的简历总会有一些共同的特质。当然，简历只是“形”，真正重要的还是你个人的综合素质、业务能力以及技术水平。如果个人不具备很强的竞争力，那么简历就成了各大直播平台网红主播的封面照，只能在列表里看看，是万万不能点进去的。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我不能说什么样的简历好，什么样的简历不好，每个简历审阅者都有自己的偏好。但我尝试从这些年看技术简历的经验中提取出一些我所关注的点，尝试和大家聊聊一份简历应该有的结构、细节、风格，以及一定不要有的内容。</p>
-<p><strong>简历这东西，说白了，就是你认真，他/她也认真。</strong></p>
-<h2 id="整体风格"><a href="#整体风格" class="headerlink" title="整体风格"></a>整体风格</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先，简历的第一要素是它必须要，<strong>简洁而不简单</strong>。这是整体风格。我们来看看整体风格上要注意哪些。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我看过很多同学的简历只有一页，字大行稀，这不好，3秒看完，还不知道你到底会干撒，这样的简历HR筛选简历这一关都过不了，根本到不了技术面试官手里；也看过很多简历，一页里密密麻麻的宋体4号字，这也不好，看的太累（但绝对比字大行稀要好）。通常来说选用宋体5号字，正文行间距在1.2左右。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;正文不要有任何的加粗，<strong>只加粗标题</strong>（目的是为了让结构清晰）。各种在正文里加粗的作法会让面试者觉得太做作，自信的人是不需要特意强调某个关键字的，你的整体风格看起来清爽简介，简历筛选者自然会认真对待，并自己去寻找她需要的信息，根本无需加粗。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;简历的页数很多文章推荐1到2页不超过3页，这说了和没说一样。我推荐的简历页数是2页，1页太少，3页太多，<strong>2页最佳</strong>。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不要做彩色的简历（设计师除外）。只有黑白两色即可。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于研发岗位，不要附加照片，不要附加照片，不要附加照片，长的美不美、帅不帅都没有太多的好处。你根本不知道看简历的会不会嫉妒你的美貌。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>简历的格式最好是PDF、PDF、PDF</strong>，重要的事情说3遍。很多人喜欢发Word，不是不行，但绝对没有一份PDF的看的舒服。一是PDF是只读模式，二是PDF打开更快速。Word这种东西，打开全屏的错别字检查，这体验简直是不能忍。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;简历的文件命名请采用以下格式 姓名-电话-职位.pdf。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不要在简历中写自己的微信号、QQ号。联系方式只留下一个邮箱和手机号即可。邮箱最好是163，outlook或者gmail，随意。qq邮箱这个怎么说吧，我个人认为是无所谓的，但遇到有些面试官就不好说了。</p>
-<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一份简历的结构非常的重要，基本上如果我至上到下扫一遍觉得结构非常混乱，不能让我对你有一个初步的了解，是不会继续往下看的，直接打回到HR那里。大家要知道每个人的时间都很宝贵，看简历的人没有义务为你的不认真买单。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;好的简历结构遵循以下的层次结构（并不是唯一结构，只是我推荐的一种）：</p>
-<ol>
-<li><strong>标题</strong>。标题只需要写XX的个人简历即可。</li>
-<li><strong>个人简介</strong>。个人简介包括姓名、毕业学校（大学以上）、年龄、出生年份（别写月日，看简历的不会想在你生日的时候给你一份惊喜）、学历、目前职位、籍贯、联系方式。要注意，这些内容通常都非常简单，不要每个属性单独一行，一行排3个属性最好。</li>
-<li><strong>工作经历</strong>。这是我很多同学完全忽略的地方，完全没有分清楚工作经历和项目经历。工作经历必须单独成为一块儿，每段经历不需要些太多，只需要以年份+公司名称+职位即可。比如</li>
-</ol>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2001~2003 xxx公司，PHP程序员</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2003~2005 xxx公司，架构师</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2005~2012 xxx公司，技术总监</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2012~2016 xxx公司，CTO</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;就是这么简单即可，具体的工作内容是在项目经验里描述的。我推荐的就是这些内容，如果你还要加上薪资多少、公司规模等附加内容，我并不推荐，因为这些内容都是可以虚构的，写上去没有任何好处，反而会给简历阅读者一种无法掌控的心里暗示，他根本无法去核对这些信息。所以简历一定要尽可能的写一些容易实在的内容。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注意，<strong>时间一定要按照顺序排列，不要倒叙排列</strong>。这里是为了让简历阅读者看到你的履历，没有必要倒叙排列。时间最好能够接上，如果时间有中断，比如中间自己出去瞎折腾创业去了，想好怎么回答面试者的提问。80%的概念，提问者会问你中间这段时间干嘛去了。</p>
-<ol>
-<li><strong>相关技能</strong>。 </li>
-</ol>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不要简单的罗列技术名词（这点太太太重要了），有些同学面试PHP岗位，技术名词从服务器到前端、从数据库到缓存、从PHP到Java，几乎我知道的技术名字他都写上去了。我一看工作年限，才不到3年。这样的简历，直接是被Pass的，对于一个正常智商水平的人来说，3年是不可能精通或者了解这么多技术和语言的。换句话说，如果你天赋异禀，我觉得你是不会投简历到我们这家小公司的，你早就是BAT、MS、Google的抢手货了。</p>
-<p>推荐技术<strong>以Tech Stack技术栈的形式出现，形成一个系统，而不要东一个西一个，前端就是前端、服务器就是服务器，清清楚楚明明白白</strong>，即使你认为你是一个FullStack开发者，也请偏重一端，而不是两端齐头并进。你认为的Full Stack在很多有资历的技术开发者面前也许只是玩具，自娱自乐可以，但并不能应用到真实的生产环境中（真实环境有非常多的细节，一个非专业的开发者很难兼顾到所有细节）。<strong>所以，如果你要以 Full Stack的姿态出现在面试官面前，请三思</strong>。毕竟像模像样的公司，前端和服务器是区分非常严格的，专人专事儿才能做好一个产品。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所以，请慎重填写技术名词，最好每个技术名词附加一个更加详细的使用点。比如你说你懂Redis，那么请这样写：熟悉Redis的常规操作，对Redis五种数据类型、pub\sub模式有较深入的理解，并将Redis应用在系统的缓存层以及秒杀系统中（如果你这样写，多半面试官会问你关于秒杀的细节，你就可以提前准备这方面的知识了）；</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这样写远比你把同类缓存系统全部罗列一边要好很多很多。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;还要提醒大家，<strong>同类技术最好只写一个，很少有人能精通两个以上</strong>。比如对于Vue、Ng、React，我推荐事实求是。只选1个来写，精通AngularJS（然后按照上诉举例的Redis，写出其特性，比如AngularJS的指令、双向数据绑定等）。其实只写精通AngularJS即可，没有必要再补充一句“熟悉Vue”。简历阅读者要的是精通而非“泛”。而且，相信我，<strong>一个资深的技术总监，都相信一个真理，你精通一个框架再熟悉其他的框架并不是一个难事儿。你完全不需要担心我只会Vue，但公司要的是NG怎么办</strong>？这是没办法的办法，那么多框架，你能学得完？比如TP和Laravel，你精通一个另外一个真的不是什么太大的问题，但前提条件是，你！要！精！通！</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;精通有点儿夸张，这个词在简历里已经被用烂了。事实上，严格意义上来讲，我们都只是能够很熟练的使用某个框架，要说到精通，个人认为等你把框架源代码看完了再来谈“精通”。<strong>所以，我认为是不是用精通这个词来描述技术，这取决于“精通”在你简历里出现的频度</strong>。如果你总共6项技能，4到5项都是精通、精通、精通、精通、精通，这很容易让你在面试的过程中相当的尴尬。合理分配精通、熟悉、了解这3个等级词汇的出现频度是非常重要的。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;另外一个建议是，<strong>对于你不熟悉的只是知道是干什么的技术，千万不要写</strong>。很多面试者很喜欢找你只是简单提了一下的技术来发问，当然他并没有指望你能回答的多么准确，可如果哥们你一脸懵逼，完全不知道他说的是什么，应付几句的话都说不出来，那真的是得不偿失。如果你万一被问的懵逼了，请直接了当的说抱歉，这个我了解的并不深入，切忌东拉西扯，欲盖弥彰。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于前端同学来说，不要过多的描述CSS和HTML相关的能力。在很多公司眼里CSS和HTML是属于非常基础的能力，重要的是什么，重要的是JavaScript。如果你用JavaScript写过或者开发过任何框架性的东西，这是相当加分的。很多同学对于前端的理解还停留在“前端就是做页面”这个阶段，但事实上前端已经和服务器没有差别，大量复杂的业务需要前端来处理。这也是为什么这些年前端框架这么流行的原因，早期的网页哪儿有框架这个说法，一个Jquery走天下，更早的时候还有extjs这些，注意jquery只是一个库或者说工具，并不是框架。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总结来说，CSS和HTML提一下即可，可以描述自己能够熟练使用LESS或者SASS。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>还有一个坑，如果你不是专业的DBA，切忌不要写精通MySQL</strong>，你根本不知道MySQL或者其他数据库精通是一个什么概念，随便问你几个数据库的锁机制你都答不上来，更何况很多同学连事务都没有使用过，只是简单的查询数据并不能说“精通MySQL”。当然，如果你应聘的是Web开发者，面试官也根本不会对你的MySQL要求有多高，<strong>会使用事务、能够很好的建立索引，避免过多的使用join查询，不会愚蠢的循环查询数据库即可</strong>。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;很多前端开发者喜欢附上自己个人作品，这个个人作品通常就是自己搭建的一个个人主页或者是博客，动效非常华丽，页面UI上佳，但相信我，HR筛选者看的都已经审美疲劳了。如果你的个人博客里没有什么有深度的技术文章，我并不建议附带这种纯粹的页面网页。原因还是在于我说的，你既然附上了作品，那么你肯定认为这是你最好的或者是最满意的。但你最好的最满意的作品，只是一个简单的效果网页，这会给面试官一种你根本不理解现在的前端是要做什么的感觉，他会潜意识的认为，你还停留在前端就是做网页这个阶段。得不偿失。当然，如果你有些博客的习惯，并且认真的对待每一篇的文章，那么无聊文章水平高低，都建议附加上。还有，不要附带自己的微信公众号在简历里，你是求职研发的，不是来做媒体的，这和技术不搭边。</p>
-<ol>
-<li><strong>项目经历、经验</strong></li>
-</ol>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;切忌多而杂，很多同学，4,5页简历十几个项目，不管大项目、小项目统统都罗列出来，这非常的不好。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;你需要挑选有代表性的项目，每个公司1到2个项目为佳。<strong>项目经验、描述把握一个原则，求质不求量</strong>。深度描述你在每个项目里的职责。推荐大家重点描述项目遇到了什么问题，你是如何解决的，或者是从业务、设计上巧妙规避或者是用什么技术来解决这个问题的。比如使用任务队列异步解耦订单的处理；使用Redis的pub\sub来做定时器，避免长连接轮询；前端使用事件注册机制传递参数避免类与类之间的耦合等。一个项目里技术点太多了，选择你认为最重要或者你最得意的技术点来描述项目是非常好的做法。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不要在项目里机械的写出自己的职位，很多同学罗列十几个项目，每个项目都机械的写上项目经理、产品经理、程序员、小组长、负责人。没有必要。现在的公司都喜欢说自己是扁平化管理, 不建议强调自己在每个项目中的职位。你只需要写出你在项目中做了什么事情，解决了什么问题，深度描述你所使用的技术即可。其他的奇淫技巧根本不需要。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;简历包括以上内容即可，如果你还有其他的比较有名气的开源项目可以附加上。我并不推荐杂七杂八的写一些个人的小作品，如果你在github上有一些高Star的开源项目，可以写上去，绝对是加分项。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最后，还是要提醒各位马上要换工作的同学，你的技术水平如何，一个稍微有资历的技术面试官问几个问题马上就能知道你的技术水平如何。所以，努力提升自己才是最重要的，如果你的技术功底深厚，不需要太多技巧简历也不会太差，<strong>但本文所提出的注意点并不属于技巧，而是一份优秀简历的基本要素</strong>。</p>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/简历/">简历</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/职场/">职场</a></li></ul>
 
-          
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-笔记-Android源码设计模式解析与实战"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-12-01 00:00:00" datetime="2016-11-30T16:00:00.000Z"  itemprop="datePublished">2016-12-01</time>
+
         
-      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/技术类/">技术类</a></li></ul>
+
+
+
+        
+
     </div>
 
-    <div>
-      
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/2016/12/01/笔记-Android源码设计模式解析与实战/">Android源码设计模式解析与实战</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        面向对象的六大原则稳定性 扩展性 健壮性 灵活性 高内聚 低耦合
+1、单一职责原则一个类应该是一组相关性很高的函数、数据的封装。
+2、开闭原则软件中的对象（类、模块、函数等）应该对扩展是开放的，对修改是封闭的。
+3、里氏替换原则抽象，多态（行为多态、对象多态）。
+4、依赖倒置原则高层和低层都应该依赖抽象，抽象接口之间进行依赖。
+5、接口隔离原则客户端不应该依赖所不需要的接口。
+6、迪米特原则...
+    
+
+        <a href="/blog/2016/12/01/笔记-Android源码设计模式解析与实战/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/设计模式/">设计模式</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-笔记-Android群英传"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-09-01 00:00:00" datetime="2016-08-31T16:00:00.000Z"  itemprop="datePublished">2016-09-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/技术类/">技术类</a></li></ul>
+
+
+
+        
+
     </div>
 
-    <div>
-      
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/2016/09/01/笔记-Android群英传/">笔记-Android群英传</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+大色块使用
+
+Material Design 主题
+
+Palette 提取颜色 依赖：com.android.support:palette-v7:21.0.2
+
+elevation 阴影
+xml--&gt;elevation
+
+Tinting 着色
+xml--&gt;tint/tintMode
+
+Clipping 裁剪
+java--&gt;
+    ViewOutlineProvider...
+    
+
+        <a href="/blog/2016/09/01/笔记-Android群英传/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/android5-0新特性/">android5.0新特性</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-笔记-Linux使用"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-09-01 00:00:00" datetime="2016-08-31T16:00:00.000Z"  itemprop="datePublished">2016-09-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/技术类/">技术类</a></li></ul>
+
+
+
+        
+
     </div>
 
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://smallhamburger.github.io/blog/2016/12/01/笔记-Android源码设计模式解析与实战/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="会飞的汉堡包">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/blog/images/zjs_blog_icon.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="学习笔记">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="学习笔记" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/2016/12/01/笔记-Android源码设计模式解析与实战/" itemprop="url">
-                  Android源码设计模式解析与实战
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-01T00:00:00+08:00">
-                2016-12-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/技术类/" itemprop="url" rel="index">
-                    <span itemprop="name">技术类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/blog/2016/12/01/笔记-Android源码设计模式解析与实战/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/01/笔记-Android源码设计模式解析与实战/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
     
 
 
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="面向对象的六大原则"><a href="#面向对象的六大原则" class="headerlink" title="面向对象的六大原则"></a>面向对象的六大原则</h1><p>稳定性 扩展性 健壮性 灵活性 高内聚 低耦合</p>
-<h2 id="1、单一职责原则"><a href="#1、单一职责原则" class="headerlink" title="1、单一职责原则"></a>1、单一职责原则</h2><p>一个类应该是一组相关性很高的函数、数据的封装。</p>
-<h2 id="2、开闭原则"><a href="#2、开闭原则" class="headerlink" title="2、开闭原则"></a>2、开闭原则</h2><p>软件中的对象（类、模块、函数等）应该对扩展是开放的，对修改是封闭的。</p>
-<h2 id="3、里氏替换原则"><a href="#3、里氏替换原则" class="headerlink" title="3、里氏替换原则"></a>3、里氏替换原则</h2><p>抽象，多态（行为多态、对象多态）。</p>
-<h2 id="4、依赖倒置原则"><a href="#4、依赖倒置原则" class="headerlink" title="4、依赖倒置原则"></a>4、依赖倒置原则</h2><p>高层和低层都应该依赖抽象，抽象接口之间进行依赖。</p>
-<h2 id="5、接口隔离原则"><a href="#5、接口隔离原则" class="headerlink" title="5、接口隔离原则"></a>5、接口隔离原则</h2><p>客户端不应该依赖所不需要的接口。</p>
-<h2 id="6、迪米特原则"><a href="#6、迪米特原则" class="headerlink" title="6、迪米特原则"></a>6、迪米特原则</h2><p>减少类之间的依赖，降低耦合。</p>
-<hr>
-<h1 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h1><p><strong>创建型模式</strong>，确保某一个类只有一个实例，并可以自行实例化并像整个系统提供这个实例</p>
-<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><ul>
-<li>某个对象过多消耗资源</li>
-<li>某种类型的对象应该只有一个</li>
-</ul>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><ol>
-<li>构造函数私有化</li>
-<li>通过静态函数或者枚举返回单例对象</li>
-<li>在多线程环境下，确保单例对象只有一个</li>
-<li>在反序列化时，确保不会重新创建对象</li>
-</ol>
-<h2 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类</h2><ol>
-<li>饿汉式（实例化类时就直接创建，消耗资源）</li>
-<li>懒汉式（每次获取单例时，都会synchronized同步，消耗不必要的资源）</li>
-<li>双重检查式（DCL，由于java自身问题，不适用于高并发情况）</li>
-<li>静态内部类式（推荐使用，实例化内部类时才会创建实例，线程安全、对象单一）</li>
-<li>枚举单例（线程安全、对象单一，无反序列化问题）</li>
-<li>容器式（使用map容器保存单例，如获取Android系统服务）</li>
-</ol>
-<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
-<li>减少内存开支，尤其是需要频繁创建销毁一个对象，性能又无法优化时</li>
-<li>所创建的对象占资源比较大，可以只创建一个对象，永驻内存</li>
-<li>避免同一资源的同时操作</li>
-<li>优化全局资源的共享</li>
-</ul>
-<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
-<li>没有接口，扩建较为困难</li>
-<li>如果单例对象持有Context对象，容易发生内存泄漏，如果使用，最好使用ApplicationContext</li>
-</ul>
-<hr>
-<h1 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h1><p><strong>创建型模式</strong>，将一个复杂的对象的构建与表示分离，使得同样的构建过程可以表示为不同的形式，允许用户不知道内部的构造细节，但可以更加精确的控制对象的构造流程</p>
-<h2 id="场景-1"><a href="#场景-1" class="headerlink" title="场景"></a>场景</h2><ul>
-<li>多个部件或者零件都可以装配到一个对象中，但产生的结果不同时</li>
-<li>初始化一个对象或者产品类特别复杂，如参数多，但有默认值时</li>
-</ul>
-<h2 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h2><ul>
-<li>Product产品类——产品的抽象类</li>
-<li>Builder——抽象的Builder，规范组建，常使用调用链实现（返回值为本对象，代码简介、易懂）</li>
-<li>ConcreteBuilder——具体的Builder类</li>
-<li>Director——统一组装过程</li>
-</ul>
-<h2 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h2><ul>
-<li>良好的封装性，构建时不比知晓内部构建细节</li>
-<li>良好的扩展性，建造者独立</li>
-</ul>
-<h2 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h2><ul>
-<li>产生多余的Builder和Dirctor对象，消耗内存</li>
-</ul>
-<hr>
-<h1 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h1><p><strong>创建型模式</strong>，复制原型实例，创建一个相同的对象，不会执行构造函数</p>
-<h2 id="场景-2"><a href="#场景-2" class="headerlink" title="场景"></a>场景</h2><ul>
-<li>创建一个对象需要特别多的数据准备、访问权限，类初始化时消耗很多资源</li>
-<li>保护性拷贝，避免自己的对象被修改</li>
-</ul>
-<h2 id="实现-2"><a href="#实现-2" class="headerlink" title="实现"></a>实现</h2><h3 id="实现-3"><a href="#实现-3" class="headerlink" title="实现"></a>实现</h3><ol>
-<li>继承Cloneable接口</li>
-<li>重写方法<code>clone()</code></li>
-<li>修改<code>clone()</code>方法访问权限为protect或者public</li>
-<li><code>return super.clone()</code>等操作</li>
-</ol>
-<h3 id="浅拷贝（影子拷贝）"><a href="#浅拷贝（影子拷贝）" class="headerlink" title="浅拷贝（影子拷贝）"></a>浅拷贝（影子拷贝）</h3><p>内部引用类型数据还是使用的相同地址，数据对象为同一个</p>
-<h3 id="深拷贝（推荐使用）"><a href="#深拷贝（推荐使用）" class="headerlink" title="深拷贝（推荐使用）"></a>深拷贝（推荐使用）</h3><p>内部引用类型的数据也被clone，与原型数据不是同一个</p>
-<h2 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h2><p>在内存中进行二进制流拷贝，性能好，速度快</p>
-<h2 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a>缺点</h2><p>构造函数不会执行，开发时应该注意</p>
-<hr>
-<h1 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h1><p><strong>创建型模式</strong>，定义一个用于创建对象的接口，让子类决定实例化哪个类</p>
-<h2 id="场景-3"><a href="#场景-3" class="headerlink" title="场景"></a>场景</h2><ul>
-<li>生成复杂对象</li>
-</ul>
-<h2 id="实现-4"><a href="#实现-4" class="headerlink" title="实现"></a>实现</h2><h3 id="实现-5"><a href="#实现-5" class="headerlink" title="实现"></a>实现</h3><ol>
-<li>抽象工厂——Factory</li>
-<li>具体工厂——ConcreteFactory</li>
-<li>抽象产品——Product</li>
-<li>具体产品——ConcreteProduct</li>
-</ol>
-<h3 id="多工厂模式"><a href="#多工厂模式" class="headerlink" title="多工厂模式"></a>多工厂模式</h3><p>经常使用<strong>反射</strong>更简洁的生产某个对象</p>
-<h3 id="静态工厂模式"><a href="#静态工厂模式" class="headerlink" title="静态工厂模式"></a>静态工厂模式</h3><p>直接返回某个产品实例，工厂类比较多</p>
-<h2 id="优点-3"><a href="#优点-3" class="headerlink" title="优点"></a>优点</h2><ul>
-<li>扩展性好</li>
-<li>耦合低</li>
-</ul>
-<h2 id="缺点-3"><a href="#缺点-3" class="headerlink" title="缺点"></a>缺点</h2><ul>
-<li>新增加产品时，要引入抽象层，导致类结构复杂化</li>
-</ul>
-<hr>
-<h1 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h1><p><strong>行为型模式</strong>，封装一系列的算法，它们可以相互替换，分离算法，让算法独立于它的客户端而独立变化</p>
-<h2 id="场景-4"><a href="#场景-4" class="headerlink" title="场景"></a>场景</h2><ul>
-<li>针对同种问题可用多种算法处理时</li>
-<li>需要<strong>安全的</strong>封装多种同类型操作时</li>
-<li>同一抽象有多个子类，需要用if-else/switch-case来具体选择子类时</li>
-</ul>
-<h2 id="实现-6"><a href="#实现-6" class="headerlink" title="实现"></a>实现</h2><p>Android中的时间插值器TimeInterpolator</p>
-<ol>
-<li>Context——用来操作策略的上下文环境，维护Strategy抽象的实例</li>
-<li>Strategy——策略的抽象</li>
-<li>ConcreteStrategyA、ConcreteStrategyB——具体的策略实现</li>
-</ol>
-<h2 id="优点-4"><a href="#优点-4" class="headerlink" title="优点"></a>优点</h2><ul>
-<li>结构清晰明了，简单直观</li>
-<li>耦合度相对较低，易扩展</li>
-<li>封装彻底，数据安全</li>
-</ul>
-<h2 id="缺点-4"><a href="#缺点-4" class="headerlink" title="缺点"></a>缺点</h2><ul>
-<li>随着策略的增加，类的数量也会增加</li>
-</ul>
-<hr>
-<h1 id="状态模式"><a href="#状态模式" class="headerlink" title="状态模式"></a>状态模式</h1><p><strong>行为型模式</strong>，当一个对象内在的状态改变时，允许改变它的行为</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
-<li>结构类似于策略模式，但是目的、本质不同。</li>
-<li>状态模式的行为是平行的、不可替换的</li>
-<li>策略模式的行为是彼此独立、可相互替换的</li>
-<li>根据自身的情况将不同状态作为不同的独立对象，不同的状态对象之间不依赖其他对象，可独立变化</li>
-</ul>
-<h2 id="场景-5"><a href="#场景-5" class="headerlink" title="场景"></a>场景</h2><ul>
-<li>一个对象的行为取决于它的状态，并且它必须在运行时根据状态改变它的行为，如Android中的Wi-Fi状态</li>
-<li>代码中包含大量的状态判断语句，如if-else、switch-case。</li>
-</ul>
-<h2 id="实现-7"><a href="#实现-7" class="headerlink" title="实现"></a>实现</h2><ol>
-<li>Context——环境类，维护一个State子类的实例，这个实例定义了对象的当前状态</li>
-<li>State——抽象状态类或者状态接口，定义一个或一组接口，表示该状态下的行为</li>
-<li>ConcreteStateA、ConcreteStateB——具体的状态类，实现State接口，不同状态有不同的行为</li>
-</ol>
-<h2 id="优点-5"><a href="#优点-5" class="headerlink" title="优点"></a>优点</h2><ul>
-<li>结构清晰，扩展性和维护性高，符合单一职责原则</li>
-</ul>
-<h2 id="缺点-5"><a href="#缺点-5" class="headerlink" title="缺点"></a>缺点</h2><ul>
-<li>增加类和对象的个数</li>
-</ul>
-<hr>
-<h1 id="责任链模式"><a href="#责任链模式" class="headerlink" title="责任链模式"></a>责任链模式</h1><p><strong>行为型模式</strong>，使多个对象都有机会处理同一个请求，将这些对象连成一条链，并沿着这条链传递该请求，直到有对象处理为止</p>
-<h2 id="场景-6"><a href="#场景-6" class="headerlink" title="场景"></a>场景</h2><ul>
-<li>多个对象可以处理同一个请求，但具体由谁处理动态决定</li>
-</ul>
-<h2 id="实现-8"><a href="#实现-8" class="headerlink" title="实现"></a>实现</h2><ol>
-<li>Handler——抽象处理角色，声明处理方法，并保持对下一个处理者的引用</li>
-<li>ConcreteHandlerA、ConcreteHandlerB——具体处理角色，处理请求或者转发给下一个处理者</li>
-<li>Request——抽象请求，声明被处理时的方法</li>
-<li>ConcreteRequestA、ConcreteRequestB——具体请求，实现被处理时的方法</li>
-</ol>
-<h2 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h2><ul>
-<li>纯的责任链：被某个对象处理</li>
-<li>不纯的责任联：没有被对象处理（常用）</li>
-<li>两个行为，一是处理请求，二是传递给下一个对象，不允许处理后传递给上一个对象</li>
-</ul>
-<h2 id="优点-6"><a href="#优点-6" class="headerlink" title="优点"></a>优点</h2><ul>
-<li>将请求者和处理者解耦，提高代码灵活性</li>
-</ul>
-<h2 id="缺点-6"><a href="#缺点-6" class="headerlink" title="缺点"></a>缺点</h2><ul>
-<li>如果处理者过多，会影响性能，尤其是递归调用</li>
-</ul>
-<hr>
-<h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1><p><strong>行为型模式</strong>，一对多的依赖关系，当被观察者改变时，所有依赖它的观察者对象都会得到通知并会自动更新</p>
-<h2 id="场景-7"><a href="#场景-7" class="headerlink" title="场景"></a>场景</h2><ul>
-<li>事件多级触发场景</li>
-<li>消息交换场景，如消息队列，事件总线等</li>
-<li>Android中数据库观察更新</li>
-</ul>
-<h2 id="实现-9"><a href="#实现-9" class="headerlink" title="实现"></a>实现</h2><ol>
-<li>Subject（Observable）——抽象主题，把所有观察者对象的引用保存在一个集合中，并提供接口，可以增删观察者对象</li>
-<li>ContreteSubject（ContreteObservable）——具体主题，当状态改变时，通知观察者</li>
-<li>Observer——抽象观察者，定义一个接口，当主题改变时通知时改变自己</li>
-<li>ConreteObserver——具体观察者，实现抽象观察者的接口</li>
-</ol>
-<h2 id="优点-7"><a href="#优点-7" class="headerlink" title="优点"></a>优点</h2><ul>
-<li>将观察者和被观察者抽象耦合，应对业务变化</li>
-<li>增强系统的灵活性和扩展性</li>
-</ul>
-<h2 id="缺点-7"><a href="#缺点-7" class="headerlink" title="缺点"></a>缺点</h2><ul>
-<li>观察者如果过多，会影响性能</li>
-<li>如果一个观察者中途卡顿，必定影响整体效率，这时候要考虑使用异步处理</li>
-</ul>
-<hr>
-<h1 id="代理模式（委托模式）"><a href="#代理模式（委托模式）" class="headerlink" title="代理模式（委托模式）"></a>代理模式（委托模式）</h1><p><strong>结构型模式</strong>，提供一种代理以控制对这个对象的访问</p>
-<h2 id="场景-8"><a href="#场景-8" class="headerlink" title="场景"></a>场景</h2><ul>
-<li>无法或者不想直接访问这个对象时</li>
-<li>访问某个对象比较困难时</li>
-</ul>
-<h2 id="注意-2"><a href="#注意-2" class="headerlink" title="注意"></a>注意</h2><ul>
-<li>为了保证客户端使用的透明性，委托对象需要与被代理对象实现相同的接口</li>
-</ul>
-<h2 id="实现-10"><a href="#实现-10" class="headerlink" title="实现"></a>实现</h2><h3 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h3><ol>
-<li>Subject——抽象主题类或者接口，声明真实主题与代理接口的共同方法</li>
-<li>RealSubject——真实主题类，被委托类或者被代理类，操作实际的业务逻辑</li>
-<li>ProxySubject——代理类，持有真实主题类的引用，实现的接口方法操作真实主题类实现的接口方法</li>
-</ol>
-<h3 id="动态代理-一脸懵逼中…"><a href="#动态代理-一脸懵逼中…" class="headerlink" title="动态代理(一脸懵逼中…)"></a>动态代理(一脸懵逼中…)</h3><p>java提供了动态代理接口InvocationHandler</p>
-<pre><code>public class DynamicProxy implements InvocationHandler{
-
-    private Object mRealSubject;
-
-    public DynamicProxy(Object mRealSubject){
-        this.mRealSubject = mRealSubject;
-    }
-
-    @Override
-    public Object invoke(Object proxy, Method method, Object[] args){
-        return method.invoke(mRealSubject, args);
-    }
-}
-</code></pre><pre><code>public static void main(String[] args){
-
-    Subject realSubject = new RealSubject();
-
-    DynamicProxy proxy = new DynamicProxy(realSubject);
-
-    Subject subject = (Subject)Proxy.newProxyInstance(realSubject.getClass.getClassLoader(), new Class[]{ Subject.class }, proxy);
-
-    subject.innerMethod();
-
-}
-</code></pre><hr>
-<h1 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h1><p><strong>结构型模式</strong>，将两个不同接口的对象粘合起来协同工作</p>
-<h2 id="场景-9"><a href="#场景-9" class="headerlink" title="场景"></a>场景</h2><ul>
-<li>接口不兼容或者彼此之间没有联系的类</li>
-<li>需要统一的输出接口，但输入类型未知</li>
-</ul>
-<h2 id="实现-11"><a href="#实现-11" class="headerlink" title="实现"></a>实现</h2><h3 id="类适配器模式"><a href="#类适配器模式" class="headerlink" title="类适配器模式"></a>类适配器模式</h3><p>容易暴露一些奇怪的接口，用户使用成本变高</p>
-<ol>
-<li>Target——目标角色，也就是所期待的接口</li>
-<li>Adaptee——现有类，自己的接口，需要去转换</li>
-<li>Adapter——适配器角色，<strong>继承自Adaptee</strong>，实现Target接口，将Adaptee现有接口转换为期待接口</li>
-</ol>
-<h3 id="对象适配器模式"><a href="#对象适配器模式" class="headerlink" title="对象适配器模式"></a>对象适配器模式</h3><p>灵活，更加实用</p>
-<ol>
-<li>Target——目标角色，也就是所期待的接口</li>
-<li>Adaptee——现有类，自己的接口，需要去转换</li>
-<li>Adapter——适配器角色，<strong>拥有Adaptee实例</strong>，实现Target接口，将Adaptee现有接口转换为期待接口</li>
-</ol>
-<h2 id="优点-8"><a href="#优点-8" class="headerlink" title="优点"></a>优点</h2><ul>
-<li>更好的复用性</li>
-<li>更好的扩展性</li>
-</ul>
-<h2 id="缺点-8"><a href="#缺点-8" class="headerlink" title="缺点"></a>缺点</h2><ul>
-<li>过多的使用适配器，会让系统显得凌乱，不易整体把握</li>
-</ul>
-<hr>
-<h1 id="装饰模式（包装模式）"><a href="#装饰模式（包装模式）" class="headerlink" title="装饰模式（包装模式）"></a>装饰模式（包装模式）</h1><p><strong>结构型模式</strong>，动态的给一个对象增加额外的功能，相比与继承更加灵活，是继承关系的一种替代方案，如<code>onCreate()</code>方法</p>
-<h2 id="实现-12"><a href="#实现-12" class="headerlink" title="实现"></a>实现</h2><ol>
-<li>Component——抽象组件，一个接口或者抽象类，充当被装饰的原始对象</li>
-<li>ConcreteComponent——组件具体实现类，实现Component接口，也就是被实际装饰的对象</li>
-<li>Decorator——抽象装饰者，继承自Component，保持一个Component的引用</li>
-<li>ConcreteDecoratorA、ConcreteDecoratorB——装饰者的具体实现类，对抽象装饰者做出具体的实现</li>
-</ol>
-<h2 id="注意-3"><a href="#注意-3" class="headerlink" title="注意"></a>注意</h2><p>装饰模式和代理模式相似，容易混淆</p>
-<ol>
-<li>装饰模式是扩展对象功能，是对继承的一种替代方案</li>
-<li>代理模式是对拥有的对象进行控制，不会增强功能</li>
-</ol>
-<hr>
-<h1 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
-<li>MVC是一种框架模式，不是设计模式，但可以看作<strong>观察者模式、策略模式、组合模式</strong>的合体，核心在观察者模式。</li>
-<li>框架面向于相同行为代码的重用</li>
-<li>设计面向于相同结构代码的重用</li>
-<li>架构介于框架和设计模式之间</li>
-<li>框架是大智慧，用来对软件设计进行分工；设计模式是小技巧，对具体问题提出解决方案，以提高代码复用率，降低耦合度</li>
-</ul>
-<p><em>三种级别的重用</em></p>
-<ol>
-<li>内部重用：在同一应用中能公共使用的抽象块</li>
-<li>代码重用：将通用模块组合成库或者工具集，以便在多个应用和领域都能使用</li>
-<li>框架重用：为专用领域提供通用的或现成的基础结构，以获得最高级别的重用性</li>
-</ol>
-<p>Android中的MVC</p>
-<ol>
-<li>View——XML文件</li>
-<li>Controller——Activity</li>
-<li>Model——数据处理</li>
-</ol>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ul>
-<li>控制器Activity主要作用就是解耦，将视图View和模式Model进行分离，两者在Activity中进行绑定或者完成其他的逻辑</li>
-</ul>
-<hr>
-<h1 id="MVP"><a href="#MVP" class="headerlink" title="MVP"></a>MVP</h1><h2 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h2><ul>
-<li>MVP模式可以分离显示层和逻辑层，它们之间通过接口通信，依赖接口，降低耦合</li>
-</ul>
-<p>Android中的MVP</p>
-<ol>
-<li><p>Presenter——交互中间人</p>
-<p> Presenter主要作为沟通View和Model的桥梁，他从Model层检索数据之后，返回给View层，使View和Model之间没有耦合，也将业务逻辑从View上抽离出来。</p>
-</li>
-<li><p>View——用户界面</p>
-<p> View通常指Activity、Fragment或者某个View控件，它含有一个Presenter成员变量。通常View需要实现一个IView逻辑接口，将View上的操作通过会转交给Presenter进行实现，最后Presenter调用IView逻辑接口将结果返回给View元素。</p>
-</li>
-<li><p>Model——业务模型</p>
-<p> Model角色的主要功能是提供数据的存取。Model是封装了数据库DAO或者网络获取数据的角色。</p>
-</li>
-</ol>
-<h2 id="与MVC区别"><a href="#与MVC区别" class="headerlink" title="与MVC区别"></a>与MVC区别</h2><h3 id="MVC特点"><a href="#MVC特点" class="headerlink" title="MVC特点"></a>MVC特点</h3><ol>
-<li>用户可以向View发送指令，再由View直接调用Model改变状态</li>
-<li>用户也可以向Controller发送指令，再由Conroller调用View或者Model改变状态</li>
-<li>Controller起到事件路由的作用，同时部分业务逻辑也部署在Controller中</li>
-</ol>
-<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ul>
-<li>MVC的耦合性还是相对较高的，View可以直接与Model交互，导致M、V、C直接构成回路</li>
-<li>MVP中的View和Model不能直接通信，需要经过Presenter间接发出请求通信</li>
-</ul>
-<h2 id="MVP的生命周期"><a href="#MVP的生命周期" class="headerlink" title="MVP的生命周期"></a>MVP的生命周期</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
-<li><p>内存泄漏</p>
-<p>  假设请求网络数据，Presenter拥有Activity的强引用，如果在请求结束之前Activity被销毁了，网络请求还没有返回，导致Presenter一直持有Activity对象，使得Activity对象无法被回收，此时发生了内存泄漏</p>
-</li>
-</ul>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ul>
-<li>在Activity的生命周期中添加Presenter创建、销毁的方法</li>
-<li>建立一个BaseActivity和BasePresenter，在BaseActivity的生命周期中添加BasePresenter的生命周期方法</li>
-<li>Presenter中最好对View的引用为软引用，如果Activity没有走生命周期方法直接销毁了，也不会造成内存泄漏，但可能出问题。</li>
-</ul>
-<h2 id="优点-9"><a href="#优点-9" class="headerlink" title="优点"></a>优点</h2><ul>
-<li>良好的扩展性、可测试性、稳定性、可维护性、整洁性、灵活性</li>
-<li>职责单一、抽象、最小化、低耦合</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/2016/09/01/笔记-Linux使用/">Linux基本使用</a>
+    </h3>
+  
 
 
-    <footer class="post-footer">
-      
 
-      
 
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
+    <div class="post-content" id="post-content" itemprop="postContent">
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://smallhamburger.github.io/blog/2016/09/01/笔记-Android群英传/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="会飞的汉堡包">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/blog/images/zjs_blog_icon.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="学习笔记">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="学习笔记" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/2016/09/01/笔记-Android群英传/" itemprop="url">
-                  笔记-Android群英传
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-01T00:00:00+08:00">
-                2016-09-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/技术类/" itemprop="url" rel="index">
-                    <span itemprop="name">技术类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/blog/2016/09/01/笔记-Android群英传/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/01/笔记-Android群英传/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>大色块使用</p>
-</li>
-<li><p>Material Design<br> 主题</p>
-</li>
-<li><p>Palette<br> 提取颜色<br> 依赖：<code>com.android.support:palette-v7:21.0.2</code></p>
-</li>
-<li><p>elevation<br> 阴影</p>
-<pre><code>xml--&gt;elevation
-</code></pre></li>
-<li><p>Tinting<br> 着色</p>
-<pre><code>xml--&gt;tint/tintMode
-</code></pre></li>
-<li><p>Clipping<br> 裁剪</p>
-<pre><code>java--&gt;
-    ViewOutlineProvider vopCircle = new ViewOutlineProvider() {
-        @Override
-        public void getOutline(View view, Outline outline) {
-            outline.setOval(0, 0, view.getWidth(), view.getHeight());
-        }
-    };
-    cicle.setOutlineProvider(vopCircle);
-注意：背景会覆盖裁剪
-</code></pre></li>
-<li><p>RecyclerView<br> 列表<br> 依赖：<code>com.android.support:recyclerview-v7:21.0.2</code><br> RecyclerView.Adapter</p>
-</li>
-<li><p>CardView<br> 卡片<br> 依赖：<code>com.android.support:cardview-v7:23.0.1</code></p>
-<pre><code>xml--&gt;
-    (1) xmlns:cardview=&quot;http://schemas.android.com/apk/res-auto&quot;
-    (2) cardview:cardBackgroundColor=&quot;#aaf&quot;
-       (3) cardview:cardCornerRadius=&quot;8dp&quot;
-</code></pre></li>
-<li><p>过渡动画<br> Explode/Slide/Fade<br> ActivityA:</p>
-<pre><code>java--&gt;startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
-</code></pre><p> ActivityB:</p>
-<pre><code>java--&gt;
-getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
-getWindow().setEnterTransition(new Explode());
-getWindow().setExitTransition(new Slide());
-</code></pre></li>
-<li><p>共享元素<br>ActivityA:</p>
-<pre><code>java--&gt;
-startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this, Pair.create(view,&quot;fab&quot;)).toBundle());
-startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this, view,&quot;fab&quot;).toBundle());
-</code></pre><p>XMLB–&gt;</p>
-<pre><code>android:transitionName=&quot;fab&quot;
-</code></pre></li>
-<li><p>Ripple<br>波纹效果</p>
-<pre><code>有界：android:backgroud=&quot;?android:attr/selectableItemBackgroud&quot;
-无界：android:backgroud=&quot;?android:attr/selectableItemBackgroudBorderless&quot;
-</code></pre><p>XML–&gt;</p>
-<pre><code>&lt;ripple 
-    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:color=&quot;#faa&quot;&gt;
-    &lt;!--可省略--&gt;
-    &lt;item&gt;
-        &lt;shape android:shape=&quot;oval&quot;&gt;
-            &lt;solid android:color=&quot;#aaf&quot;&gt;&lt;/solid&gt;
-        &lt;/shape&gt;
-    &lt;/item&gt;
-&lt;/ripple&gt;
-</code></pre></li>
-<li><p>Circular Reveal<br>圆形展示</p>
-<pre><code>final Animator animator;
-imageView.setOnTouchListener(new View.OnTouchListener() {
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        if(animator!=null &amp;&amp; animator.isRunning()){
-            return false;
-        }
-        animator = ViewAnimationUtils.createCircularReveal(imageView, (int) event.getX(),(int) event.getY(), 0, (float) Math.hypot(imageView.getWidth(), imageView.getHeight()));
-        animator.setInterpolator(new AccelerateDecelerateInterpolator());
-        animator.setDuration(1000);
-        animator.start();
-        return false;
-    }
-});
-</code></pre></li>
-<li><p>StateListAnimator<br>java–&gt;</p>
-<pre><code>imageView.setStateListAnimator(AnimatorInflater.loadStateListAnimator(this,R.drawable.state_selector));
-</code></pre><p>state_selector.XML–&gt;</p>
-<pre><code>&lt;ImageButton
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:src=&quot;@mipmap/ic_launcher&quot;
-    android:stateListAnimator=&quot;@drawable/state_selector&quot;/&gt;
-</code></pre><p>selector.XML–&gt;</p>
-<pre><code>&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
-    &lt;item android:state_pressed=&quot;true&quot;&gt;
-        &lt;set&gt;
-            &lt;objectAnimator android:propertyName=&quot;rotationY&quot;
-                android:duration=&quot;1000&quot;
-                android:valueTo=&quot;30&quot;
-                android:pivotY=&quot;0&quot;
-                android:valueType=&quot;floatType&quot;/&gt;
-        &lt;/set&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-        &lt;set&gt;
-            &lt;objectAnimator android:propertyName=&quot;rotationY&quot;
-                android:duration=&quot;1000&quot;
-                android:valueTo=&quot;0&quot;
-                android:pivotY=&quot;0&quot;
-                android:valueType=&quot;floatType&quot;/&gt;
-        &lt;/set&gt;
-    &lt;/item&gt;
-&lt;/selector&gt;
-</code></pre></li>
-<li><p>animated-selector</p>
-<pre><code>5.X新特性
---&gt;P290
-    无法复现
-</code></pre></li>
-<li><p>Toolbar</p>
-<pre><code>代替ActionBar
-compile &apos;com.android.support:appcompat-v7:21.0.3&apos;
---&gt;P294
-    无法复现================================================
-        java--&gt;
-    toolbar= (Toolbar) findViewById(android.R.id.toolbar);
-    toolbar.setLogo(R.mipmap.ic_launcher);
-    toolbar.setTitle(&quot;主标题&quot;);
-    toolbar.setSubtitle(&quot;副标题&quot;);
-    setSupportActionBar(toolbar);
-    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    mDrawerLayout= (DrawerLayout) findViewById(R.id.drawer);
-    mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout, toolbar, R.string.abc_action_bar_home_description,R.string.abc_action_bar_home_description_format);
-    mDrawerToggle.syncState();
-    mDrawerLayout.setDrawerListener(mDrawerToggle);
-style.XML--&gt;
-    &lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.Light.DarkActionBar&quot;&gt;
-        &lt;item name=&quot;colorPrimary&quot;&gt;#4876FF&lt;/item&gt;
-        &lt;item name=&quot;colorPrimaryDark&quot;&gt;#3A5FCD&lt;/item&gt;
-        &lt;item name=&quot;android:windowBackground&quot;&gt;@android:color/white&lt;/item&gt;
-        &lt;item name=&quot;android:searchViewStyle&quot;&gt;@style/MySearchView&lt;/item&gt;
-        &lt;/style&gt;
-        &lt;style name=&quot;MySearchView&quot; parent=&quot;Widget.AppCompat.SearchView&quot;&gt;&lt;/style&gt;
-</code></pre></li>
-<li><p>DrawerLayout</p>
-<pre><code>侧滑菜单--&gt;
-&lt;android.support.v4.widget.DrawerLayout
-    android:id=&quot;@+id/drawer&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    &gt;
-    &lt;LinearLayout
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;match_parent&quot;
-        android:background=&quot;@android:color/holo_blue_light&quot;
-        android:orientation=&quot;vertical&quot;&gt;
-        &lt;Button
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:text=&quot;内容界面&quot;/&gt;
-    &lt;/LinearLayout&gt;
-    &lt;ScrollView
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;match_parent&quot;
-        android:layout_gravity=&quot;start&quot;
-        &gt;
-        &lt;LinearLayout
-            android:layout_width=&quot;wrap_content&quot;
-            android:layout_height=&quot;match_parent&quot;
-            android:layout_gravity=&quot;start&quot;
-            android:background=&quot;@android:color/holo_blue_light&quot;
-            android:orientation=&quot;vertical&quot;&gt;
-            &lt;Button
-                android:layout_width=&quot;200dp&quot;
-                android:layout_height=&quot;wrap_content&quot;
-                android:text=&quot;菜单界面_1&quot;/&gt;
-        &lt;/LinearLayout&gt;
-    &lt;/ScrollView&gt;
-    &lt;ScrollView
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;match_parent&quot;
-        android:layout_gravity=&quot;end&quot;
-        &gt;
-        &lt;LinearLayout
-            android:layout_width=&quot;wrap_content&quot;
-            android:layout_height=&quot;match_parent&quot;
-            android:layout_gravity=&quot;end&quot;
-            android:background=&quot;@android:color/holo_blue_light&quot;
-            android:orientation=&quot;vertical&quot;&gt;
-            &lt;Button
-                android:layout_width=&quot;200dp&quot;
-                android:layout_height=&quot;wrap_content&quot;
-                android:text=&quot;菜单界面_2&quot;/&gt;
-        &lt;/LinearLayout&gt;
-    &lt;/ScrollView&gt;
-&lt;/android.support.v4.widget.DrawerLayout&gt;
-</code></pre></li>
-<li><p>Notification<br>通知<br>折叠式</p>
-<pre><code>notification.contentIntent = RemoteViews;
-</code></pre><p>展开式</p>
-<pre><code>notification.bigContentView = RemoteViews;
-</code></pre><p>悬挂式</p>
-<pre><code>builder.setFullScreenIntent(pendingIntent, true);
-</code></pre><p>等级式</p>
-<pre><code>builder.setVisibility(Notification.VISIBILITY_PUBLIC);
-</code></pre></li>
-<li><p>Layer</p>
-<pre><code>图层
-    XML--&gt;
-        &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        &lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
-            &lt;item android:drawable=&quot;@drawable/ic_launcher&quot;&gt;&lt;/item&gt;
-            &lt;item android:drawable=&quot;@drawable/ic_launcher&quot;
-                android:left=&quot;20dip&quot;
-                android:right=&quot;20dip&quot;
-                android:bottom=&quot;20dip&quot;
-                android:top=&quot;20dip&quot;&gt;&lt;/item&gt;
-        &lt;/layer-list&gt;
-    Java--&gt;
-Paint p =new Paint();
-p.setColor(Color.RED);
-canvas.drawCircle(getWidth()/3,getHeight()/3,getWidth()/2,p);
-
-canvas.saveLayerAlpha(0, 0 , getWidth() ,getHeight(),127);    &lt;----
-p.setColor(Color.GREEN);
-canvas.drawCircle(getWidth()*2/3,getHeight()*2/3,getWidth()/2,p);
-canvas.restore();
-</code></pre></li>
-<li><p>Bitmap</p>
-<pre><code>XML--&gt;
-    &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-    &lt;bitmap xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-        android:src=&quot;@drawable/ic_launcher&quot;&gt;
-    &lt;/bitmap&gt;
-</code></pre></li>
-<li><p>ViewStub<br>可以在XML中插入<viewstub>标签，在初次渲染时不会填充这个控件<br>只能调用一次inflate()方法，因为调用一次后，viewStub就变为了指定的控件</viewstub></p>
-</li>
-</ol>
-<p>XML<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;ViewStub</div><div class="line">	android:id=&quot;@+id/view_stub&quot;</div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;match_parent&quot;</div><div class="line">    android:layout=&quot;@layout/activity_main&quot;/&gt;</div></pre></td></tr></table></figure></p>
-<p>java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ViewStub viewStub = (ViewStub) findViewById(R.id.view_stub);</div><div class="line">//viewStub.setVisibility(View.VISIBLE);</div><div class="line">LinearLayout ll = (LinearLayout) viewStub.inflate();</div></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="色彩特效"><a href="#色彩特效" class="headerlink" title="色彩特效"></a>色彩特效</h2><h3 id="色彩矩阵分析"><a href="#色彩矩阵分析" class="headerlink" title="色彩矩阵分析"></a>色彩矩阵分析</h3><ul>
-<li>色调–物体传播的颜色</li>
-<li>饱和度–颜色的纯度，从0（灰）到100%（饱和）来进行描述</li>
-<li>亮度–颜色的相对明暗程度</li>
-</ul>
-<h3 id="颜色矩阵"><a href="#颜色矩阵" class="headerlink" title="颜色矩阵"></a>颜色矩阵</h3><p>ColorMatrix 4X5数字矩阵</p>
-<ol>
-<li>处理色调                                                 <pre><code>cm.setRotate()
-</code></pre></li>
-<li>处理饱和度<pre><code>cm.setSaturation()
-</code></pre></li>
-<li>处理亮度<pre><code>cm.setScale();
-</code></pre><h4 id="例"><a href="#例" class="headerlink" title="例"></a>例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">Paint p =new Paint();</div><div class="line">Bitmap bm = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);</div><div class="line">Bitmap bmp = Bitmap.createBitmap(bm);</div><div class="line">ColorMatrix cm = new ColorMatrix();</div><div class="line">//指定颜色矩阵数值4X5，灰度效果</div><div class="line">float[] matrix = &#123;</div><div class="line">        0.33f,0.59f,0.11f,0,0,</div><div class="line">        0.33f,0.59f,0.11f,0,0,</div><div class="line">        0.33f,0.59f,0.11f,0,0,</div><div class="line">        0,    0,    0,    1,0</div><div class="line">&#125;;</div><div class="line">cm.set(matrix);</div><div class="line">ColorMatrix cm2 = new ColorMatrix();</div><div class="line">cm2.setScale(1f,1f,0f,1);</div><div class="line">cm.postConcat(cm2);</div><div class="line">p.setColorFilter(new ColorMatrixColorFilter(cm));</div><div class="line">canvas.drawBitmap(bmp,0,0,p);</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="图形特效"><a href="#图形特效" class="headerlink" title="图形特效"></a>图形特效</h2><h3 id="变形矩阵"><a href="#变形矩阵" class="headerlink" title="变形矩阵"></a>变形矩阵</h3><p>Matrix 3X3数字矩阵</p>
-<p>前乘和后乘是不同的运算，影响变换的顺序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">m.postXXX();</div><div class="line">m.preXXX();</div></pre></td></tr></table></figure></p>
-<h4 id="图形变换"><a href="#图形变换" class="headerlink" title="图形变换"></a>图形变换</h4><ol>
-<li>平移变换<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">m.setTranslate();</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">| 1 0 Δx |</div><div class="line">| 0 1 Δy |</div><div class="line">| 0 0  1 |</div></pre></td></tr></table></figure>
-<ol>
-<li>旋转变换<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">m.setRotate();</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">| cosα -sinα  0 |</div><div class="line">| sinα  cosα  0 |</div><div class="line">|    0     0  1 |</div></pre></td></tr></table></figure>
-<ol>
-<li>缩放变换<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">m.setScale();</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">| k1  0  0 |</div><div class="line">|  0 k2  0 |</div><div class="line">|  0  0  1 |</div></pre></td></tr></table></figure>
-<ol>
-<li>错切变换<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">m.setSkew();</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">|  1 k1  0 |</div><div class="line">| k2  1  0 |</div><div class="line">|  0  0  1 |</div></pre></td></tr></table></figure>
-<h4 id="像素块分析"><a href="#像素块分析" class="headerlink" title="像素块分析"></a>像素块分析</h4><pre><code>/**
- * WIDTH 像素块的横向个数 
- * HEIGHT 像素块的纵向个数 
- * verts 分割线的交叉点坐标数组，包括与边界的交叉点，长度为 （WIDTH + 1）*（HEIGHT + 1）*2
- * /
-canvas.drawBitmapMesh(bitmap,WIDTH,HEIGHT,verts,0,null,0,null);
-</code></pre><h4 id="例-1"><a href="#例-1" class="headerlink" title="例"></a>例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">public MyTextView(Context context, AttributeSet attrs) &#123;</div><div class="line">    super(context, attrs);</div><div class="line">    init();</div><div class="line">&#125;</div><div class="line">private final int WIDTH = 200;</div><div class="line">private final int HEIGHT = 200;</div><div class="line">private Bitmap bm = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);</div><div class="line">private float mWidth;</div><div class="line">private float mHeight;</div><div class="line">private float[] orig = new float[(WIDTH+1)*(HEIGHT+1)*2];</div><div class="line">private float[] verts = new float[(WIDTH+1)*(HEIGHT+1)*2];</div><div class="line">private void init()&#123;</div><div class="line">    mWidth=bm.getWidth();</div><div class="line">    mHeight=bm.getHeight();</div><div class="line">    float dx = mWidth/WIDTH;</div><div class="line">    float dy = mHeight/HEIGHT;</div><div class="line">    for (int y=0;y&lt;=HEIGHT;y++)&#123;</div><div class="line">        for (int x=0;x&lt;=WIDTH;x++)&#123;</div><div class="line">            int index = (WIDTH+1)*y+x;</div><div class="line">            orig[index*2]=verts[index*2]=dx*x;</div><div class="line">            orig[index*2+1]=verts[index*2+1]=dy*y+100;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@Override</div><div class="line">protected void onDraw(Canvas canvas) &#123;</div><div class="line">    wave();</div><div class="line">    canvas.drawBitmapMesh(bm,WIDTH,HEIGHT,verts,0,null,0,null);</div><div class="line">    super.onDraw(canvas);</div><div class="line">    invalidate();</div><div class="line">&#125;</div><div class="line">private double k;</div><div class="line">private final int A = 10;</div><div class="line">private void wave()&#123;</div><div class="line">    for (int y=0;y&lt;=HEIGHT;y++)&#123;</div><div class="line">        for (int x=0;x&lt;=WIDTH;x++)&#123;</div><div class="line">            int index = (WIDTH+1)*y+x;</div><div class="line">            verts[index*2] = orig[index*2]+getMeasuredWidth()/2-bm.getWidth()/2;</div><div class="line">            float dy = (float) Math.sin(2*Math.PI/WIDTH*x + Math.PI*k);</div><div class="line">            verts[index*2+1]=orig[index*2+1]+dy*A;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    k+=0.1f;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="画笔特效（极其重要）"><a href="#画笔特效（极其重要）" class="headerlink" title="画笔特效（极其重要）"></a>画笔特效（极其重要）</h2><h3 id="PorterDuffXfermode"><a href="#PorterDuffXfermode" class="headerlink" title="PorterDuffXfermode"></a>PorterDuffXfermode</h3><p>遮盖效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));</div></pre></td></tr></table></figure></p>
-<p>更好的效果可以使用贝塞尔曲线，当前只使用圆滑效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mPaint.setStyle(Paint.Style.STROKE);</div><div class="line">mPaint.setStrokeJoin(Paint.Join.ROUND);</div><div class="line">mPaint.setStrokeWidth(100);</div><div class="line">mPaint.setStrokeCap(Paint.Cap.ROUND);</div><div class="line">mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));</div></pre></td></tr></table></figure></p>
-<p><strong><em>注意</em></strong>：</p>
-<ul>
-<li>最好关闭在绘图时关闭硬件加速，有些模式不支持硬件加速</li>
-</ul>
-<h4 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">private void init()&#123;</div><div class="line">	//低层的就是dst，上层的就是src</div><div class="line">    src = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);</div><div class="line">    dst =Bitmap.createBitmap(src.getWidth(),src.getHeight(), Bitmap.Config.ARGB_8888);</div><div class="line">    mCanvas = new Canvas(dst);</div><div class="line">    mPaint = new Paint();</div><div class="line">    mPaint.setColor(Color.RED);</div><div class="line">    mCanvas.drawCircle(src.getWidth()/2,src.getHeight()/2,src.getHeight()/3,mPaint);</div><div class="line">    mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));</div><div class="line">    mCanvas.drawBitmap(src,0,0,mPaint);</div><div class="line">    mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));</div><div class="line">    mCanvas.drawCircle(src.getWidth()/2,src.getHeight()/2,src.getHeight()/10,mPaint);</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Override</div><div class="line">protected void onDraw(Canvas canvas) &#123;</div><div class="line">    super.onDraw(canvas);</div><div class="line">    canvas.drawBitmap(dst,0,0,null);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Shader"><a href="#Shader" class="headerlink" title="Shader"></a>Shader</h3><p>着色器，渲染器<br>实现一系列的渐变和渲染效果</p>
-<p><strong>Shader</strong></p>
-<ol>
-<li>BitmapShader–位图Shader</li>
-<li>LinearGradient–线性Shader</li>
-<li>RadialGradient–光束Shader</li>
-<li>SweepGradient–梯度Shader</li>
-<li>ComposeShader–混合Shader</li>
-</ol>
-<h4 id="例–LinearGradient："><a href="#例–LinearGradient：" class="headerlink" title="例–LinearGradient："></a>例–LinearGradient：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">protected void onDraw(Canvas canvas) &#123;</div><div class="line">    mPaint.setShader(new LinearGradient(0,0,getMeasuredWidth(),0,Color.RED,Color.GREEN, Shader.TileMode.MIRROR));</div><div class="line">    canvas.drawRect(0,0,getMeasuredWidth(),getMeasuredHeight(),mPaint);</div><div class="line">    super.onDraw(canvas);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="例–PorterXfermode和Shader混合使用："><a href="#例–PorterXfermode和Shader混合使用：" class="headerlink" title="例–PorterXfermode和Shader混合使用："></a>例–PorterXfermode和Shader混合使用：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">private void init()&#123;</div><div class="line">    src = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);</div><div class="line">    Matrix matrix = new Matrix();</div><div class="line">    matrix.setScale(1f,-1f);</div><div class="line">    dust = Bitmap.createBitmap(src,0,0,src.getWidth(),src.getHeight(),matrix,true);</div><div class="line">    mPaint = new Paint();</div><div class="line">    mPaint.setShader(new LinearGradient(0,src.getHeight(),0,src.getHeight()*2,0xFF000000,0xffffffff, Shader.TileMode.CLAMP));</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Override</div><div class="line">protected void onDraw(Canvas canvas) &#123;</div><div class="line">    super.onDraw(canvas);</div><div class="line">    int saveCount = canvas.saveLayer(0,0,getMeasuredWidth(),getMeasuredHeight(),null,Canvas.ALL_SAVE_FLAG &amp; (~Canvas.CLIP_SAVE_FLAG));</div><div class="line">    canvas.drawBitmap(src,0,0,null);</div><div class="line">    canvas.drawBitmap(dust,0,src.getHeight(),null);</div><div class="line">    mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));</div><div class="line">    canvas.drawRect(0,src.getHeight(),src.getHeight(),src.getHeight()*2,mPaint);</div><div class="line">    mPaint.setXfermode(null);</div><div class="line">    canvas.restoreToCount(saveCount);</div></pre></td></tr></table></figure>
-<h3 id="PathEffect"><a href="#PathEffect" class="headerlink" title="PathEffect"></a>PathEffect</h3><p>路径效果</p>
-<ol>
-<li><p>null<br>无效果</p>
-</li>
-<li><p>CornerPathEffect<br>将拐角变得圆滑</p>
-</li>
-<li><p>DisctetePathEffect<br>线段上有很多的杂点</p>
-</li>
-<li><p>DashPathEffect<br>绘制虚线，可以控制每个点的间隔</p>
-</li>
-<li><p>PathDashPathEffect<br>DashPathEffect增强版，可以设置点的样式，矩形，圆点等</p>
-</li>
-<li><p>ComposePathEffect<br>组合方式</p>
-</li>
-</ol>
-<h4 id="例：-1"><a href="#例：-1" class="headerlink" title="例："></a>例：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">public class MyPathView extends View&#123;</div><div class="line">    private Path mPath;</div><div class="line">    private PathEffect[] mPathEffects = new PathEffect[6];</div><div class="line">    private Paint mPaint;</div><div class="line">    public MyPathView(Context context, AttributeSet attrs) &#123;</div><div class="line">        super(context, attrs);</div><div class="line">        mPath = new Path();</div><div class="line">        mPath.moveTo(0,200);</div><div class="line">        for(int i=1;i&lt;50;i++)&#123;</div><div class="line">            mPath.lineTo(i*20, (float) (Math.random()*100)+200);</div><div class="line">        &#125;</div><div class="line">        mPaint = new Paint();</div><div class="line">        mPaint.setColor(Color.parseColor(&quot;#000000&quot;));</div><div class="line">        mPaint.setStyle(Paint.Style.STROKE);</div><div class="line">        mPaint.setStrokeWidth(5);</div><div class="line">        mPathEffects[0] = null;</div><div class="line">        mPathEffects[1] = new CornerPathEffect(30);</div><div class="line">        mPathEffects[2] = new DiscretePathEffect(3f,5f);</div><div class="line">        mPathEffects[3] = new DashPathEffect(new float[]&#123;50f,10f,5f&#125;,0);</div><div class="line">        Path path = new Path();</div><div class="line">        path.addRect(0,0,8,8,Path.Direction.CCW);</div><div class="line">        mPathEffects[4] = new PathDashPathEffect(path,12,0,PathDashPathEffect.Style.ROTATE);</div><div class="line">        mPathEffects[5] = new ComposePathEffect( mPathEffects[3], mPathEffects[1]);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onDraw(Canvas canvas) &#123;</div><div class="line">        super.onDraw(canvas);</div><div class="line">        canvas.save();</div><div class="line">        for (int i = 0 ;i&lt; mPathEffects.length;i++)&#123;</div><div class="line">            mPaint.setPathEffect(mPathEffects[i]);</div><div class="line">            canvas.drawPath(mPath,mPaint);</div><div class="line">            canvas.translate(0, 200);</div><div class="line">        &#125;</div><div class="line">        canvas.restore();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong><em>效果图如下</em></strong><br><img src="https://raw.githubusercontent.com/SmallHamburger/blog/master/images/PathEffect.png" alt="PathEffect"></p>
-<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><h3 id="布局动画"><a href="#布局动画" class="headerlink" title="布局动画"></a>布局动画</h3><p>LinearLayout</p>
-<h4 id="例-2"><a href="#例-2" class="headerlink" title="例"></a>例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">LinearLayout ll = (LinearLayout) findViewById(R.id.ll);</div><div class="line">ScaleAnimation sa = new ScaleAnimation(0, 1, 0, 1);</div><div class="line">sa.setDuration(2000);</div><div class="line">LayoutAnimationController lac = new LayoutAnimationController(sa, 0.5f);</div><div class="line">lac.setOrder(LayoutAnimationController.ORDER_RANDOM);</div><div class="line">ll.setLayoutAnimation(lac);</div></pre></td></tr></table></figure>
-<h2 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h2>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://smallhamburger.github.io/blog/2016/09/01/笔记-Linux使用/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="会飞的汉堡包">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/blog/images/zjs_blog_icon.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="学习笔记">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="学习笔记" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/2016/09/01/笔记-Linux使用/" itemprop="url">
-                  Linux基本使用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-01T00:00:00+08:00">
-                2016-09-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/技术类/" itemprop="url" rel="index">
-                    <span itemprop="name">技术类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/blog/2016/09/01/笔记-Linux使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/01/笔记-Linux使用/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h1><h2 id="ls-查询目录中的内容"><a href="#ls-查询目录中的内容" class="headerlink" title="ls 查询目录中的内容"></a>ls 查询目录中的内容</h2><pre><code>ls [选项] [文件或者目录]
+        基本命令ls 查询目录中的内容ls [选项] [文件或者目录]
     -a 所有文件，包括隐藏文件
     -l 详细信息
     -h 人性化显示，byte --&gt; KB
     -d 查看目录属性
     -i 显示inode值
 ll=ls -l
-</code></pre><h2 id="mkdir-创建目录"><a href="#mkdir-创建目录" class="headerlink" title="mkdir 创建目录"></a>mkdir 创建目录</h2><pre><code>mkdir [选项] 目录
+mkdir 创建目录mkdir [选项] 目录
     -p 创建多级目录，递归创建
-</code></pre><h2 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd 切换目录"></a>cd 切换目录</h2><pre><code>cd [目录]
-    ~/空值 进入当前用户目录
-    - 进入上次进入的目录
-    .. 进入上级目录
-    . 进入当前目录
-    tab键 自动补全（点击一下）或者提示所有类似文件（点击两下）
-</code></pre><h2 id="rmdir-删除一个空白目录，目录不能有任何内容"><a href="#rmdir-删除一个空白目录，目录不能有任何内容" class="headerlink" title="rmdir 删除一个空白目录，目录不能有任何内容"></a>rmdir 删除一个空白目录，目录不能有任何内容</h2><pre><code>rmdir 空白目录
-</code></pre><h2 id="rm-删除目录或者文件"><a href="#rm-删除目录或者文件" class="headerlink" title="rm 删除目录或者文件"></a>rm 删除目录或者文件</h2><pre><code>rm [选项] 目录或者文件名
-    -r 删除目录
-    -f 强制删除，不会提醒删除
-rm -rf / 谨慎使用，删除根目录所有文件
-</code></pre><h2 id="cp-复制"><a href="#cp-复制" class="headerlink" title="cp 复制"></a>cp 复制</h2><pre><code>cp [选项] 源文件或者源目录 目标文件或者目标目录
-    -r 复制目录
-    -p 连带文件属性一同复制
-    -d 若源文件位链接文件，则复制链接属性
-    -a 复制所有属性，相当于-pdr
-</code></pre><h2 id="mv-剪切或者改名，同一目录下剪切就是改名字，不同目录下就是剪切"><a href="#mv-剪切或者改名，同一目录下剪切就是改名字，不同目录下就是剪切" class="headerlink" title="mv 剪切或者改名，同一目录下剪切就是改名字，不同目录下就是剪切"></a>mv 剪切或者改名，同一目录下剪切就是改名字，不同目录下就是剪切</h2><pre><code>mv 源文件或者目录 目标文件或者目录
-</code></pre><h2 id="ln-生成链接文件"><a href="#ln-生成链接文件" class="headerlink" title="ln 生成链接文件"></a>ln 生成链接文件</h2><pre><code>ln [选项] 源文件 目标文件
-    -s 创建软链接
-</code></pre><h2 id="一级目录作用"><a href="#一级目录作用" class="headerlink" title="/ 一级目录作用"></a>/ 一级目录作用</h2><pre><code>/bin 通用命令
-/sbin 超级用户命令
-/boot 启动
-/dev 硬件文件
-/etc 配置文件
-/home 普通用户家目录
-/root 超级用户家目录
-/lib 函数库
-/mnt 硬盘，光盘等存储设备挂载点
-/media 光盘挂载点
-/misc 磁带之类挂载点
-/proc 内存挂在点
-/sys 内存挂载点
-/tmp 临时文件目录
-/usr 系统软件资源目录
-/usr/bin 用户系统命令（通用）
-/usr/sbin 用户系统命令（超级）
-/var 系统的可变文档目录
-</code></pre><h2 id="locate-在后台数据库中按文件名搜索，搜索速度快，只能按照文件名搜索"><a href="#locate-在后台数据库中按文件名搜索，搜索速度快，只能按照文件名搜索" class="headerlink" title="locate 在后台数据库中按文件名搜索，搜索速度快，只能按照文件名搜索"></a>locate 在后台数据库中按文件名搜索，搜索速度快，只能按照文件名搜索</h2><pre><code>locate 文件名 
-    /etc/updatedb.conf 配置文件
-updatedb 更新数据库（默认一天一搜索） 
-    /var/lib/mlocate/mlocate.db
-</code></pre><h2 id="whereis-搜索命令所在的路径及帮助文档所在位置，找到的命令不是shell自带的"><a href="#whereis-搜索命令所在的路径及帮助文档所在位置，找到的命令不是shell自带的" class="headerlink" title="whereis 搜索命令所在的路径及帮助文档所在位置，找到的命令不是shell自带的"></a>whereis 搜索命令所在的路径及帮助文档所在位置，找到的命令不是shell自带的</h2><pre><code>whereis 命令名
-    -b 只查找可执行文件
-    -m 只查找帮助文件
+cd 切换目录cd [目录]
+    ~/空值 ...
+    
 
-which 同whereis 但会增显别名（若存在），不显示帮助文档，无参数，不常用
-
-echo $PATH 环境变量
-</code></pre><h2 id="find-搜索文件"><a href="#find-搜索文件" class="headerlink" title="find 搜索文件"></a>find 搜索文件</h2><pre><code>find [搜索范围] [搜索条件，可以有多个] 搜索文件名
-    文件名作为过滤条件
-        -name 以文件名进行搜索
-        -iname 以文件名（不区分大小写）进行搜索
-    用户所有者作为过滤条件
-        -user 按所有者搜索
-            例：find /root -user root
-        -nouser 查找没有所有者的文件
-    时间作为过滤条件
-        -mtime 内容改变的时间
-        -ctime 属性改变的时间
-        -atime 最近访问的时间
-            例：find ./ -mtime +10(-10或者10) 查找10天前（10天内或者第10天前）的文件 
-    大小作为过滤条件
-        -size 文件占用空间大小，大小的单位默认位数据块，扇区，可选的大小为：b（小写，B）k（小写，KB），M（大写，MB），G（大写，GB）
-            例：find ./ -size 25k
-    节点信息作为过滤条件
-        -inum inode的节点信息
-            例：find ./ inum 26421
-通配符
-    * 匹配任意字符
-    ? 匹配任意一个字符
-    [abc] [a-z] [0-9]匹配[]内的任意一个字符
-    [^a-z] 匹配的内容不包含[]的任意一个字符
-条件逻辑
-    -a 代表and，并且
-    -o 代表or，或者
-        find ./ -size +20k -a -mtime -10
-结果处理
-    -exec 需要执行的命令 {} \;
-        find ./ -size +20k -a -mtime -10 -exec ls -l {} \;
-</code></pre><h2 id="grep-搜索字符串"><a href="#grep-搜索字符串" class="headerlink" title="grep 搜索字符串"></a>grep 搜索字符串</h2><pre><code>grep [选项] 字符串 文件名
-    -i 忽略大小写
-    -v 排除指定字符串
-</code></pre><h2 id="man-帮助命令"><a href="#man-帮助命令" class="headerlink" title="man 帮助命令"></a>man 帮助命令</h2><pre><code>man [等级] 命令
-man [选项] 命令
-    -f 相当于 whatis 命令 = man -f 命令
-    -k 所有含有关键字的命令或者文件
-</code></pre><h2 id="help-查询"><a href="#help-查询" class="headerlink" title="help 查询"></a>help 查询</h2><pre><code>help 命令
-</code></pre><h2 id="info-详细的帮助命令"><a href="#info-详细的帮助命令" class="headerlink" title="info 详细的帮助命令"></a>info 详细的帮助命令</h2><pre><code>info 命令
-</code></pre><h2 id="zip-压缩为zip格式，与windows通用"><a href="#zip-压缩为zip格式，与windows通用" class="headerlink" title="zip 压缩为zip格式，与windows通用"></a>zip 压缩为zip格式，与windows通用</h2><pre><code>zip [选项] 文件名 源文件
-    -r 压缩目录
-</code></pre><h2 id="unzip-解压缩zip格式"><a href="#unzip-解压缩zip格式" class="headerlink" title="unzip 解压缩zip格式"></a>unzip 解压缩zip格式</h2><pre><code>unzip 文件名
-</code></pre><h2 id="gzip-压缩为gzip格式或解压缩gzip格式文件"><a href="#gzip-压缩为gzip格式或解压缩gzip格式文件" class="headerlink" title="gzip 压缩为gzip格式或解压缩gzip格式文件"></a>gzip 压缩为gzip格式或解压缩gzip格式文件</h2><pre><code>gzip [选项] 源文件 [目标目录]
-    -c 保留源文件，需要加重定向符号
-        例：gzip -c test &gt; t1
-    -r 压缩目录下所有子文件，但不包括目录
-    -d 解压缩gzip文件，等同于gunzip  ？？？好像有问题
-</code></pre><h2 id="bzip-压缩为bzip2格式，不能压缩目录"><a href="#bzip-压缩为bzip2格式，不能压缩目录" class="headerlink" title="bzip 压缩为bzip2格式，不能压缩目录"></a>bzip 压缩为bzip2格式，不能压缩目录</h2><pre><code>bzip [选项] 源文件
-    -k 源文件，保留源文件
-    -d 解压缩，同bunzip2
-</code></pre><h2 id="tar-打包命令"><a href="#tar-打包命令" class="headerlink" title="tar 打包命令"></a>tar 打包命令</h2><pre><code>tar [选项] 打包文件名 源文件
-    -c 打包，与-x/-t
-    -v 显示过程
-    -f 指定打包的文件名
-        例：tar -cvf long.tar long
-    -x 解压缩包，与-c/-t对应
-    -z 打包时并压缩为gz格式
-    -j 打包时并压缩为bz2格式
-    -C 大写C，指定解压缩目录
-    -t 查看压缩文件内容，与-x/-c对应
-</code></pre><h2 id="shutdown-关机重启命令"><a href="#shutdown-关机重启命令" class="headerlink" title="shutdown 关机重启命令"></a>shutdown 关机重启命令</h2><pre><code>shutdown [选项] 时间
-    -c 取消前一个关机命令
-    -h 关机
-    -r 重启
-</code></pre><h2 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h2><pre><code>halt
-poweroff
-init 0 关机，不建议使用
-</code></pre><h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><pre><code>reboot/init 0
-</code></pre><h2 id="init-系统运行级别"><a href="#init-系统运行级别" class="headerlink" title="init 系统运行级别"></a>init 系统运行级别</h2><pre><code>init [level]
-    0 关机
-    1 单用户，类似于安全模式
-    2 不完全多用户，不含NFS服务
-    3 完全多用户，默认
-    4 未分配
-    5 图形界面
-    6 重启
-</code></pre><h2 id="logout-退出登录"><a href="#logout-退出登录" class="headerlink" title="logout 退出登录"></a>logout 退出登录</h2><h2 id="df-查询系统中已经挂载的设备"><a href="#df-查询系统中已经挂载的设备" class="headerlink" title="df 查询系统中已经挂载的设备"></a>df 查询系统中已经挂载的设备</h2><h2 id="mount-查询系统中已经挂载的设备"><a href="#mount-查询系统中已经挂载的设备" class="headerlink" title="mount 查询系统中已经挂载的设备"></a>mount 查询系统中已经挂载的设备</h2><pre><code>mount [-t 文件系统] [-o 特殊选项] 设备名 挂载点 
-    -a 依据配置文件/etc/fstab的内容自动挂载
-    -t 文件系统，（光盘，iso9660）
-    -o 特殊选项 
-        exec/noexec：可执行，默认为exec
-        rw/ro：读写权限，默认为rw
-    例：mount -t iso9660 -o ro /etc/sr0(或/etc/cdrom) /mnt/cdrom
-            mount /dev/sr0 /mnt/cdrom
-    例：mount -t vfat /dev/sdb1 /mnt/usb
-                挂载fat32位格式硬盘
-</code></pre><h2 id="umount-卸载，卸载时挂载点不在使用状态，也不可在当前目录"><a href="#umount-卸载，卸载时挂载点不在使用状态，也不可在当前目录" class="headerlink" title="umount 卸载，卸载时挂载点不在使用状态，也不可在当前目录"></a>umount 卸载，卸载时挂载点不在使用状态，也不可在当前目录</h2><pre><code>umount 设备文件名或挂载点
-例：umount /mnt/cdrom
-</code></pre><h2 id="fdisk-查看硬盘设备"><a href="#fdisk-查看硬盘设备" class="headerlink" title="fdisk 查看硬盘设备"></a>fdisk 查看硬盘设备</h2><pre><code>fdisk [选项]
-    -l 列出硬盘
-</code></pre><h2 id="w-查看用户登录信息"><a href="#w-查看用户登录信息" class="headerlink" title="w 查看用户登录信息"></a>w 查看用户登录信息</h2><pre><code>w [用户名]
-</code></pre><h2 id="who-查看用户登录信息"><a href="#who-查看用户登录信息" class="headerlink" title="who  查看用户登录信息"></a>who  查看用户登录信息</h2><pre><code>who [用户名]
-</code></pre><h2 id="last-查询当前目录和过去登录的用户信息"><a href="#last-查询当前目录和过去登录的用户信息" class="headerlink" title="last 查询当前目录和过去登录的用户信息"></a>last 查询当前目录和过去登录的用户信息</h2><pre><code>默认是读取/var/log/wtmp文件的数据
-</code></pre><h2 id="lastlog-查看用户最后一次登录时间"><a href="#lastlog-查看用户最后一次登录时间" class="headerlink" title="lastlog 查看用户最后一次登录时间"></a>lastlog 查看用户最后一次登录时间</h2><h2 id="shell-命令行解释器，配置在-etc-shells，可以通过exit退出"><a href="#shell-命令行解释器，配置在-etc-shells，可以通过exit退出" class="headerlink" title="shell 命令行解释器，配置在/etc/shells，可以通过exit退出"></a>shell 命令行解释器，配置在/etc/shells，可以通过exit退出</h2><pre><code>sh或csh 进入相应shell命令
-</code></pre><h2 id="echo-输出命令，输出的内容如果含有空格，则需要用双引号包裹"><a href="#echo-输出命令，输出的内容如果含有空格，则需要用双引号包裹" class="headerlink" title="echo 输出命令，输出的内容如果含有空格，则需要用双引号包裹"></a>echo 输出命令，输出的内容如果含有空格，则需要用双引号包裹</h2><pre><code>echo [选项] [输出内容]
-    -e 支持反斜线空值的字符转换
-        控制字符        作用
-            \a                输出警告音
-            \b                退格键，也就是一个向左删除键
-            \n                换行符
-            \r                回车符
-            \v                垂直制表符
-            \onnn            八进制输出字符
-            \xhh            十六进制输出字符
-            \t                制表符tab
-输出颜色
-    #30m = 黑，31m = 红，32m = 绿，33m = 黄，34m = 蓝，35m = 洋红，36m = 青，37m = 白
-例：echo -e &quot;\e[1;31mhelloworld\e[0m&quot;
-    \e 调用颜色
-    [1; 开启颜色，\e[1;31m
-    [0m 关闭颜色, \e[0m
-</code></pre><h2 id="脚本执行"><a href="#脚本执行" class="headerlink" title="脚本执行"></a>脚本执行</h2><pre><code>#代表注释
-#！/bin/bash 代表以下内容为shell脚本，如果不是纯shell语言则必须加
-执行方法：
-    1. 赋予执行权限，直接运行
-        chmod 755 hello.sh
-        ./hello.sh
-    2. 通过Bash调用执行脚本
-        bash shell.sh
-</code></pre><h2 id="alias-给命令添加别名（关机后消失）"><a href="#alias-给命令添加别名（关机后消失）" class="headerlink" title="alias 给命令添加别名（关机后消失）"></a>alias 给命令添加别名（关机后消失）</h2><pre><code>alias 别名=&apos;命令&apos;
-    例：alias ls=&apos;ls --color=never&apos;
-在~/.bashrc 添加别名，可永久生效，可通过source .bashrc
-命令生效顺序:
-    1. 用绝对路径或相对路径执行命令
-    2. 别名
-    3. Bash的内部命令
-    4. 按照$PATH环境变量找到的第一个命令
-</code></pre><h2 id="unalias-删除别名（临时删除）"><a href="#unalias-删除别名（临时删除）" class="headerlink" title="unalias 删除别名（临时删除）"></a>unalias 删除别名（临时删除）</h2><h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><pre><code>ctrl + c 终止当前命令
-ctrl + l 清屏
-ctrl + a 光标移至行首
-ctrl + e 光标移至行尾
-ctrl + u 从光标位置删除至行首
-ctrl + z 将命令放置后台
-ctrl + r 在历史命令中搜索
-</code></pre><h2 id="history-历史命令"><a href="#history-历史命令" class="headerlink" title="history 历史命令"></a>history 历史命令</h2><pre><code>history [选项] [历史命令保存文件]
-    -c 清空历史命令
-    -w 缓存中的历史命令保存文件 ~/.bash_history
-</code></pre><h2 id="wc-统计信息"><a href="#wc-统计信息" class="headerlink" title="wc 统计信息"></a>wc 统计信息</h2><pre><code>wc [选项] [文件名] 
-    -c 统计字符数
-    -w 统计单词数
-    -l 统计行数
-例：
-    wc -wcl test.txt
-    输出内容：
-        行数        单词数    字节数    路径
-</code></pre><h2 id="标准输入输出"><a href="#标准输入输出" class="headerlink" title="标准输入输出"></a>标准输入输出</h2><pre><code>键盘        /dev/stdin    0
-显示器    /dev/stdout    1
-显示器    /dev/stderr    2
-</code></pre><h2 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h2><pre><code>&gt; 覆盖
-&gt;&gt; 追加
-&gt; 只存储命令正确执行时内容
-    例：
-        ls &gt; test.txt            ls列表内容存入到test.txt文件中，只存命令正确执行时的内容
-2&gt; 只存储命令错误执行内容
-    例：
-        lss 2&gt; test.txt        ls列表内容存入到test.txt文件中，只存命令错误执行时的内容
-&amp;&gt; 或 2&gt;&amp;1 命令正确或者错误执行后输出内容都保存
-    例：
-        ls &gt; test.txt 2&gt;&amp;1
-        ls &amp;&gt; test.txt
-&gt; 文件一 2&gt; 文件二 命令正确和错误执行后内容分开执行
-    例：
-        ls &gt; test.txt 2&gt; test_error.txt
-</code></pre><h2 id="dev-null-黑洞"><a href="#dev-null-黑洞" class="headerlink" title="/dev/null 黑洞"></a>/dev/null 黑洞</h2><pre><code>例：
-    ls &gt; test.txt 2&gt; /dev/null
-</code></pre><h2 id="输入重定向-不懂"><a href="#输入重定向-不懂" class="headerlink" title="输入重定向, 不懂"></a>输入重定向, 不懂</h2><pre><code>&lt;
-&lt;&lt;
-</code></pre><h2 id="多命令顺序执行"><a href="#多命令顺序执行" class="headerlink" title="多命令顺序执行"></a>多命令顺序执行</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">多命令执行符</th>
-<th style="text-align:center">格式</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">;</td>
-<td style="text-align:center">cmd1;cmd2</td>
-<td>多个命令顺序执行，命令之间无任何逻辑关系，无论哪个cmd出错都会顺序执行下一个</td>
-</tr>
-<tr>
-<td style="text-align:center">&amp;&amp;</td>
-<td style="text-align:center">cmd1&amp;&amp;cmd2</td>
-<td>逻辑与，cmd1正确执行后才会执行cmd2</td>
-</tr>
-<tr>
-<td style="text-align:center">丨</td>
-<td style="text-align:center">cmd1丨丨cmd2</td>
-<td>逻辑或，cmd1正确执行后不会执行cmd2，cmd1错误执行后cmd2才会执行</td>
-</tr>
-</tbody>
-</table>
-<pre><code>例：
-    ls &amp;&amp; echo success || echo fail
-        正确 --&gt; success X--&gt;
-        错误 X--&gt;                 --&gt; fail
-    ls || echo fail &amp;&amp; echo success
-      逻辑混乱，不建议
-</code></pre><h2 id="管道符，管道符前面的命令输出作为后面命令的操作对象"><a href="#管道符，管道符前面的命令输出作为后面命令的操作对象" class="headerlink" title="| 管道符，管道符前面的命令输出作为后面命令的操作对象"></a>| 管道符，管道符前面的命令输出作为后面命令的操作对象</h2><pre><code>cmd1 | cmd2
-    cmd1的处理结果送于cmd2作为处理对象
-</code></pre><h2 id="Bash中其他特殊符号"><a href="#Bash中其他特殊符号" class="headerlink" title="Bash中其他特殊符号"></a>Bash中其他特殊符号</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">符号</th>
-<th style="text-align:center">名称</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">‘’</td>
-<td style="text-align:center">单引号</td>
-<td>在单引号中所有的特殊字符都无特殊含义</td>
-</tr>
-<tr>
-<td style="text-align:center">“”</td>
-<td style="text-align:center">双引号</td>
-<td>取消特殊含义，$和\</td>
-</tr>
-<tr>
-<td style="text-align:center">$()</td>
-<td style="text-align:center"></td>
-<td>变量的值，引用命令，转义符等特殊含义</td>
-</tr>
-<tr>
-<td style="text-align:center">··</td>
-<td style="text-align:center">反引号</td>
-<td>同$()， 建议使用$()</td>
-</tr>
-<tr>
-<td style="text-align:center">#</td>
-<td style="text-align:center">井号</td>
-<td>在shell脚本中代表注释</td>
-</tr>
-<tr>
-<td style="text-align:center">$</td>
-<td style="text-align:center"></td>
-<td>用于调用变量的值，例：$name</td>
-</tr>
-<tr>
-<td style="text-align:center">\</td>
-<td style="text-align:center">转义符</td>
-<td>转义其后的字符，相当于用单引号括起来</td>
-</tr>
-</tbody>
-</table>
-
-          
+        <a href="/blog/2016/09/01/笔记-Linux使用/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
         
-      
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Linux基本使用/">Linux基本使用</a></li></ul>
+
     </div>
+    
+</article>
 
-    <div>
-      
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-IT技术网站"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016-08-01 00:00:00" datetime="2016-07-31T16:00:00.000Z"  itemprop="datePublished">2016-08-01</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/参考类/">参考类</a></li></ul>
+
+
+
+        
+
     </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
 
     
-      
+
 
   
-
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/2016/08/01/IT技术网站/">IT技术网站</a>
+    </h3>
   
-  
-  
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://smallhamburger.github.io/blog/2016/08/01/IT技术网站/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="会飞的汉堡包">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/blog/images/zjs_blog_icon.jpg">
-  </span>
 
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="学习笔记">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="学习笔记" src="">
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        慕课网：免费视频教学
+CSDN：最大的中文IT社区
+开源中国社区：很多源码
+51CTO：技术论坛
+安卓社区
+Linux在线学习网站：
+测试相关网站
+CTS框架解析
+Gradle自学合集
+Android常用adb命令总结
+Android测试常用脚本
+图标库
+手机app设计
+JS/CSS开源库
+环信即时通信
+免费服务器
+json转换为实体类
+RecyclerView介绍使用
+安卓源码网站1
+安卓...
+    
+
+        <a href="/blog/2016/08/01/IT技术网站/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/网站/">网站</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+    </ul>
+
+    
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
     </span>
-  </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
 
-    
-      <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <p>
             
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-              
-                
-                <a class="post-title-link" href="/blog/2016/08/01/IT技术网站/" itemprop="url">
-                  IT技术网站
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-01T00:00:00+08:00">
-                2016-08-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/参考类/" itemprop="url" rel="index">
-                    <span itemprop="name">参考类</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/blog/2016/08/01/IT技术网站/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/01/IT技术网站/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="http://www.imooc.com/" target="_blank" rel="external">慕课网：免费视频教学</a></p>
-<p><a href="http://www.csdn.net/" target="_blank" rel="external">CSDN：最大的中文IT社区</a></p>
-<p><a href="http://www.oschina.net/" target="_blank" rel="external">开源中国社区：很多源码</a></p>
-<p><a href="http://www.51cto.com/" target="_blank" rel="external">51CTO：技术论坛</a></p>
-<p><a href="http://www.eoeandroid.com" target="_blank" rel="external">安卓社区</a></p>
-<p><a href="https://www.shiyanlou.com/" target="_blank" rel="external">Linux在线学习网站：</a></p>
-<p><a href="https://testerhome.com" target="_blank" rel="external">测试相关网站</a></p>
-<p><a href="https://testerhome.com/topic/1808" target="_blank" rel="external">CTS框架解析</a></p>
-<p><a href="https://testerhome.com/topic/1867" target="_blank" rel="external">Gradle自学合集</a></p>
-<p><a href="https://testerhome.com/topic/2565" target="_blank" rel="external">Android常用adb命令总结</a></p>
-<p><a href="https://github.com.gb112211/AndroidTestScripts" target="_blank" rel="external">Android测试常用脚本</a></p>
-<p><a href="http://iconfont.cn/collections?spm=a313x.7781069.0.0.Z4E6l5&amp;personal=1" target="_blank" rel="external">图标库</a></p>
-<p><a href="https://www.pinterest.com/" target="_blank" rel="external">手机app设计</a></p>
-<p><a href="http://www.jq22.com/" target="_blank" rel="external">JS/CSS开源库</a></p>
-<p><a href="http://www.easemob.com/" target="_blank" rel="external">环信即时通信</a></p>
-<p><a href="http://www.bmob.cn/" target="_blank" rel="external">免费服务器</a></p>
-<p><a href="http://www.bejson.com/" target="_blank" rel="external">json转换为实体类</a></p>
-<p><a href="http://frank-zhu.github.io/android/2015/01/16/android-recyclerview-part-1/" target="_blank" rel="external">RecyclerView介绍使用</a></p>
-<p><a href="http://www.javaapk.com" target="_blank" rel="external">安卓源码网站1</a></p>
-<p><a href="http://www.androidym.com" target="_blank" rel="external">安卓源码网站2</a></p>
-<p><a href="http://blog.csdn.net/rhljiayou/article/details/7212620" target="_blank" rel="external">Android利用canvas画各种图形</a></p>
-<p><a href="https://github.com/wasabeef/awesome-android-ui" target="_blank" rel="external">android控件效果</a></p>
-<p><a href="http://androidxref.com/" target="_blank" rel="external">查看安卓源码</a></p>
-<p><a href="http://www.open-open.com/lib/view/open1468121618489.html" target="_blank" rel="external">android studio 安装以及简单使用教程/技巧1</a></p>
-<p><a href="http://www.open-open.com/lib/view/open1458715872710.html" target="_blank" rel="external">android studio 安装以及简单使用教程/技巧2</a></p>
-<p><a href="http://www.androiddevtools.cn" target="_blank" rel="external">安卓镜像网站</a></p>
-<p><a href="http://www.infinistudio.cn/" target="_blank" rel="external">映纷创意</a></p>
-<p><a href="http://ming-fanglin.iteye.com/blog/1061312/" target="_blank" rel="external">隐式调用 Intent 大全</a></p>
-
-          
-        
-      
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
     </div>
-
-    <div>
-      
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>会飞的汉堡包 &copy; 2015 - 2017</span>
+        </p>
     </div>
+</footer>
 
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-
-          
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/blog/images/zjs_blog_icon.jpg"
-               alt="会飞的汉堡包" />
-          <p class="site-author-name" itemprop="name">会飞的汉堡包</p>
-          <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-        <nav class="site-state motion-element">
-        
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/blog/archives">
-                <span class="site-state-item-count">6</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/blog/categories">
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/blog/tags">
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
     </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love"  style="display:none">
-    <i class="fa fa-heart"></i>
-  </span>&nbsp;
-  <span class="author" itemprop="copyrightHolder">会飞的汉堡包</span>
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallhamburger.github.io/&title=学习笔记&pic=https://smallhamburger.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallhamburger.github.io/&title=学习笔记&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallhamburger.github.io/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=学习笔记&url=https://smallhamburger.github.io/&via=https://smallhamburger.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallhamburger.github.io/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABxElEQVR42u3aQY6DMAwF0N7/0sx2FiV825BhpJdVVVJ46sKKv/l84nX8Wmffn+3J73bbwsXFHXOP5UoeUL1DfvXLE3FxcTdyzxC9PevfnnHX98fFxX0/9whWTsTFxf3v3LzhSa7i4uK+mZs0J+uiVo1CHu/VcHFxB9w8pXzu8yP5Li4ubot7FNe6AFUPQ+Wn4+LibuH2DijrR67L3w3jWFxc3Ie5vYHo0++AXJQwXFzcF3B7x5FqvBL9Wbi4uBu56zKU78kbpGbggouLu4XbO3ZUS1tv/+jYhIuL+zC3N1JNQpN7f4WLi/scNykok7hkQsfFxd3D7YUXSTOzbl3yCOZLr4aLi7uFOzm+zBGF5gcXF3cLN3+Fojr2mAxcL6JSXFzcP+UmpSpvnPKQ5WIMg4uLu52bDzijdiVupQp/HC4u7kbuZMiaNDPVgLV7GRcXd8o9iuu2Y0pvBIuLi7uFW40qJjFHtSkaPRcXF3fM7RWvagnLC9lF8IqLi7uRWx5pDCKPyfgWFxf3ndzqQKU6oC2/94GLi/sa7iQuqTZRNxQyXFzcFrc6CEkam14RvNiJi4u7hVstJZMopHq4GeW7uLi4He4PU9NxsMF/yW4AAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
-<div class="powered-by" style="display:none">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info" style="display:none">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
 
 
-        
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: false };
 
-        
-      </div>
-    </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
-  </div>
 
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
 </script>
 
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
 
 
 
-
-
-  
-
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
-  
-  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.0"></script>
-
-
-
-  
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"smallhamburger"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    
-    <script src="/blog/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/blog/js/src/hook-duoshuo.js"></script>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length == 0) {
-      search_path = "search.xml";
-    }
-    var path = "/blog/" + search_path;
-    // monitor main search box;
-
-    function proceedsearch() {
-      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
-      $('.popup').toggle();
-    }
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-      $.ajax({
-        url: path,
-        dataType: "xml",
-        async: true,
-        success: function( xmlResponse ) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = $( "entry", xmlResponse ).map(function() {
-            return {
-              title: $( "title", this ).text(),
-              content: $("content",this).text(),
-              url: $( "url" , this).text()
-            };
-          }).get();
-          var $input = document.getElementById(search_id);
-          var $resultContent = document.getElementById(content_id);
-          $input.addEventListener('input', function(){
-            var matchcounts = 0;
-            var str='<ul class=\"search-result-list\">';
-            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-            $resultContent.innerHTML = "";
-            if (this.value.trim().length > 1) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var content_index = [];
-                var data_title = data.title.trim().toLowerCase();
-                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                var data_url = decodeURIComponent(data.url);
-                var index_title = -1;
-                var index_content = -1;
-                var first_occur = -1;
-                // only match artiles with not empty titles and contents
-                if(data_title != '') {
-                  keywords.forEach(function(keyword, i) {
-                    index_title = data_title.indexOf(keyword);
-                    index_content = data_content.indexOf(keyword);
-                    if( index_title >= 0 || index_content >= 0 ){
-                      isMatch = true;
-                      if (i == 0) {
-                        first_occur = index_content;
-                      }
-                    }
-
-                  });
-                }
-                // show search results
-                if (isMatch) {
-                  matchcounts += 1;
-                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                  var content = data.content.trim().replace(/<[^>]+>/g,"");
-                  if (first_occur >= 0) {
-                    // cut out 100 characters
-                    var start = first_occur - 20;
-                    var end = first_occur + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if(start == 0){
-                      end = 50;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    var match_content = content.substring(start, end);
-                    // highlight all keywords
-                    keywords.forEach(function(keyword){
-                      var regS = new RegExp(keyword, "gi");
-                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
-                    });
-
-                    str += "<p class=\"search-result\">" + match_content +"...</p>"
-                  }
-                  str += "</li>";
-                }
-              })};
-            str += "</ul>";
-            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-            $resultContent.innerHTML = str;
-          });
-          proceedsearch();
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
         }
-      });}
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched == false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
     });
+})();
+</script>
 
-    $('.popup-btn-close').click(function(e){
-      $('.popup').hide();
-      $(".popoverlay").remove();
-      $('body').css('overflow', '');
-    });
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-  </script>
-
-
-  
-
-  
-
-  
-
-  
 
 
 </body>
