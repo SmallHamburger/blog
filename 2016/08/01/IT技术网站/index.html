@@ -2,6 +2,15 @@
 <html>
 <head>
     
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'true', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
 
     
 
@@ -10,6 +19,8 @@
 
 
     <meta charset="utf-8">
+    
+    <meta name="google-site-verification" content="true">
     
     
     
@@ -110,7 +121,7 @@ RecyclerView介绍使用
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">会飞的汉堡包</h5>
-          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+          <a href="mailto:zhangjisong@live.com" title="zhangjisong@live.com" class="mail">zhangjisong@live.com</a>
         </hgroup>
       </div>
     </div>
@@ -127,42 +138,21 @@ RecyclerView介绍使用
             <li class="waves-block waves-effect">
               <a href="/blog/archives"  >
                 <i class="icon icon-lg icon-archives"></i>
-                Archives
+                归档
               </a>
             </li>
         
             <li class="waves-block waves-effect">
               <a href="/blog/tags"  >
                 <i class="icon icon-lg icon-tags"></i>
-                Tags
+                标签
               </a>
             </li>
         
             <li class="waves-block waves-effect">
               <a href="/blog/categories"  >
                 <i class="icon icon-lg icon-th-list"></i>
-                Categories
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/yscoder" target="_blank" >
-                <i class="icon icon-lg icon-github"></i>
-                Github
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="http://www.weibo.com/ysweb" target="_blank" >
-                <i class="icon icon-lg icon-weibo"></i>
-                Weibo
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/blog/custom"  >
-                <i class="icon icon-lg icon-link"></i>
-                测试
+                分类
               </a>
             </li>
         
@@ -362,9 +352,9 @@ RecyclerView介绍使用
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/blog/2016/09/01/笔记-Linux使用/" id="post-prev" class="post-nav-link">
+      <a href="/blog/2016/09/01/笔记-Android群英传/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Linux基本使用</h4>
+        <h4 class="title">笔记-Android群英传</h4>
       </a>
     </div>
   
@@ -402,17 +392,7 @@ RecyclerView介绍使用
     </h3>
     <ul class="reward-items">
         
-        <li>
-            <img src="/blog/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
-            <p>微信</p>
-        </li>
-        
 
-        
-        <li>
-            <img src="/blog/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
-            <p>支付宝</p>
-        </li>
         
     </ul>
 </div>
@@ -434,7 +414,7 @@ RecyclerView介绍使用
 </p>
 
 
-        <p>
+        <p style="display:none;">
             
                 <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
@@ -443,8 +423,8 @@ RecyclerView介绍使用
     </div>
     <div class="bottom">
         <p>
-            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
-            <span>会飞的汉堡包 &copy; 2015 - 2017</span>
+            <span style="display:none;">Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>会飞的汉堡包 &copy; 2016 - 2017</span>
         </p>
     </div>
 </footer>
@@ -532,6 +512,27 @@ var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
 
 
 
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
 
 
 
@@ -544,10 +545,10 @@ var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '死鬼去哪里了！';
+            document.title = '会飞的汉堡包';
             clearTimeout(titleTime);
         } else {
-            document.title = '(つェ⊂)咦!又好了!';
+            document.title = '会飞的汉堡包';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);

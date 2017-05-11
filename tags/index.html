@@ -2,6 +2,15 @@
 <html>
 <head>
     
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'true', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
 
     
 
@@ -10,6 +19,8 @@
 
 
     <meta charset="utf-8">
+    
+    <meta name="google-site-verification" content="true">
     
     
     
@@ -24,7 +35,7 @@
 <meta property="og:title" content="标签">
 <meta property="og:url" content="https://smallhamburger.github.io/tags/index.html">
 <meta property="og:site_name" content="学习笔记">
-<meta property="og:updated_time" content="2017-03-01T03:53:17.020Z">
+<meta property="og:updated_time" content="2017-05-11T14:37:01.823Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="标签">
     
@@ -38,7 +49,7 @@
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide" >
+    <aside id="menu"  >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -50,7 +61,7 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">会飞的汉堡包</h5>
-          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+          <a href="mailto:zhangjisong@live.com" title="zhangjisong@live.com" class="mail">zhangjisong@live.com</a>
         </hgroup>
       </div>
     </div>
@@ -67,42 +78,21 @@
             <li class="waves-block waves-effect">
               <a href="/blog/archives"  >
                 <i class="icon icon-lg icon-archives"></i>
-                Archives
+                归档
               </a>
             </li>
         
             <li class="waves-block waves-effect active">
               <a href="/blog/tags"  >
                 <i class="icon icon-lg icon-tags"></i>
-                Tags
+                标签
               </a>
             </li>
         
             <li class="waves-block waves-effect">
               <a href="/blog/categories"  >
                 <i class="icon icon-lg icon-th-list"></i>
-                Categories
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/yscoder" target="_blank" >
-                <i class="icon icon-lg icon-github"></i>
-                Github
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="http://www.weibo.com/ysweb" target="_blank" >
-                <i class="icon icon-lg icon-weibo"></i>
-                Weibo
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/blog/custom"  >
-                <i class="icon icon-lg icon-link"></i>
-                测试
+                分类
               </a>
             </li>
         
@@ -136,7 +126,7 @@
         
     </div>
 </header>
-<header class="content-header page-header">
+<header class="content-header tags-header">
 
     <div class="container fade-scale">
         <h1 class="title">标签</h1>
@@ -146,113 +136,554 @@
     </div>
 
     
+<div class="tabs-bar container">
+    <nav class="tags-list">
+        <a href="/blog/tags" style="-webkit-order:-1;order:-1" class="tags-list-item waves-effect waves-button waves-light
+             active">全部</a>
+        
+
+            <a href="/blog/tags/android/" style="-webkit-order:0;order:0" class="tags-list-item waves-effect waves-button waves-light">android</a>
+
+        
+
+            <a href="/blog/tags/技术/" style="-webkit-order:1;order:1" class="tags-list-item waves-effect waves-button waves-light">技术</a>
+
+        
+
+            <a href="/blog/tags/网站/" style="-webkit-order:2;order:2" class="tags-list-item waves-effect waves-button waves-light">网站</a>
+
+        
+
+            <a href="/blog/tags/Linux/" style="-webkit-order:3;order:3" class="tags-list-item waves-effect waves-button waves-light">Linux</a>
+
+        
+
+            <a href="/blog/tags/Linux基本使用/" style="-webkit-order:4;order:4" class="tags-list-item waves-effect waves-button waves-light">Linux基本使用</a>
+
+        
+
+            <a href="/blog/tags/Android/" style="-webkit-order:5;order:5" class="tags-list-item waves-effect waves-button waves-light">Android</a>
+
+        
+
+            <a href="/blog/tags/框架/" style="-webkit-order:6;order:6" class="tags-list-item waves-effect waves-button waves-light">框架</a>
+
+        
+
+            <a href="/blog/tags/简历/" style="-webkit-order:7;order:7" class="tags-list-item waves-effect waves-button waves-light">简历</a>
+
+        
+
+            <a href="/blog/tags/职场/" style="-webkit-order:8;order:8" class="tags-list-item waves-effect waves-button waves-light">职场</a>
+
+        
+
+            <a href="/blog/tags/设计模式/" style="-webkit-order:9;order:9" class="tags-list-item waves-effect waves-button waves-light">设计模式</a>
+
+        
+
+            <a href="/blog/tags/android5-0新特性/" style="-webkit-order:10;order:10" class="tags-list-item waves-effect waves-button waves-light">android5.0新特性</a>
+
+        
+    </nav>
+    <!-- PC show more-->
+    <div class="tags-list-more">
+        <a href="javascript:;" onclick="BLOG.tabBar(this)" class="action tags-list-item waves-effect waves-circle waves-light"><i class="icon icon-ellipsis-h"></i></a>
+    </div>
+</div>
+
 
 
 </header>
 
-
-<div class="container body-wrap">
-    <article class="page-article fade" itemprop="blogPage">
-        <div class="post-content page-content" id="page-content" itemprop="pageContent">
-            
-        </div>
-
-        
-        <div class="card page-about-me flex-row">
-            <a href="/" class="avatar waves-effect waves-circle waves-light"><img src="/blog/img/avatar.jpg"></a>
-            <div class="content flex-col">
-                <p><strong>会飞的汉堡包</strong></p>
-                <p><em>BIUBIUBIU...</em></p>
-                <p>用户页面中作者相关的描述性文字，如不需要设为 false</p>
-            </div>
-
-            
-<div class="page-share-wrap">
+<div class="container body-wrap fade">
     
 
-<div class="page-share" id="pageShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallhamburger.github.io/tags/&title=《标签》 — 学习笔记&pic=https://smallhamburger.github.io/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallhamburger.github.io/tags/&title=《标签》 — 学习笔记&source=" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallhamburger.github.io/tags/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《标签》 — 学习笔记&url=https://smallhamburger.github.io/tags/&via=https://smallhamburger.github.io" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallhamburger.github.io/tags/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
+            <h3 class="archive-separator" id="tag-android">android</h3>
+
+            <div class="waterfall">
+            
+
+                <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2016-08-01 00:00:00" datetime="2016-07-31T16:00:00.000Z"  itemprop="datePublished">2016-08-01</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/参考类/">参考类</a></li></ul>
 
 
 
-    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
-        <i class="icon icon-share-alt icon-lg"></i>
-    </a>
-</div>
-
-
-
-        </div>
-        
-
-        
-<div class="page-reward">
-    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
-</div>
-
-
-
-        
-
-    </article>
+    </div>
     
-<div id="reward" class="page-modal reward-lay">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <h3 class="reward-title">
-        <i class="icon icon-quote-left"></i>
-        谢谢大爷~
-        <i class="icon icon-quote-right"></i>
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/2016/08/01/IT技术网站/">IT技术网站</a>
     </h3>
-    <ul class="reward-items">
-        
-        <li>
-            <img src="/blog/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
-            <p>微信</p>
-        </li>
-        
+  
 
+
+
+    
+    <div class="post-footer">
         
-        <li>
-            <img src="/blog/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
-            <p>支付宝</p>
-        </li>
-        
-    </ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/网站/">网站</a></li></ul>
+
+    </div>
+    
+  </article>
 </div>
 
+            
 
+                <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2016-12-01 00:00:00" datetime="2016-11-30T16:00:00.000Z"  itemprop="datePublished">2016-12-01</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/技术类/">技术类</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/2016/12/01/笔记-Android源码设计模式解析与实战/">Android源码设计模式解析与实战</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/设计模式/">设计模式</a></li></ul>
+
+    </div>
+    
+  </article>
+</div>
+
+            
+            </div>
+            
+
+            <h3 class="archive-separator" id="tag-技术">技术</h3>
+
+            <div class="waterfall">
+            
+
+                <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2016-08-01 00:00:00" datetime="2016-07-31T16:00:00.000Z"  itemprop="datePublished">2016-08-01</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/参考类/">参考类</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/2016/08/01/IT技术网站/">IT技术网站</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/网站/">网站</a></li></ul>
+
+    </div>
+    
+  </article>
+</div>
+
+            
+            </div>
+            
+
+            <h3 class="archive-separator" id="tag-网站">网站</h3>
+
+            <div class="waterfall">
+            
+
+                <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2016-08-01 00:00:00" datetime="2016-07-31T16:00:00.000Z"  itemprop="datePublished">2016-08-01</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/参考类/">参考类</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/2016/08/01/IT技术网站/">IT技术网站</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/技术/">技术</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/网站/">网站</a></li></ul>
+
+    </div>
+    
+  </article>
+</div>
+
+            
+            </div>
+            
+
+            <h3 class="archive-separator" id="tag-Linux">Linux</h3>
+
+            <div class="waterfall">
+            
+
+                <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2016-09-01 00:00:00" datetime="2016-08-31T16:00:00.000Z"  itemprop="datePublished">2016-09-01</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/技术类/">技术类</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/2016/09/01/笔记-Linux使用/">Linux基本使用</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Linux基本使用/">Linux基本使用</a></li></ul>
+
+    </div>
+    
+  </article>
+</div>
+
+            
+            </div>
+            
+
+            <h3 class="archive-separator" id="tag-Linux基本使用">Linux基本使用</h3>
+
+            <div class="waterfall">
+            
+
+                <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2016-09-01 00:00:00" datetime="2016-08-31T16:00:00.000Z"  itemprop="datePublished">2016-09-01</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/技术类/">技术类</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/2016/09/01/笔记-Linux使用/">Linux基本使用</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Linux基本使用/">Linux基本使用</a></li></ul>
+
+    </div>
+    
+  </article>
+</div>
+
+            
+            </div>
+            
+
+            <h3 class="archive-separator" id="tag-Android">Android</h3>
+
+            <div class="waterfall">
+            
+
+                <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2017-04-23 00:00:00" datetime="2017-04-22T16:00:00.000Z"  itemprop="datePublished">2017-04-23</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/技术类/">技术类</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/2017/04/23/Android常用框架/">Android中常用的第三方框架</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/框架/">框架</a></li></ul>
+
+    </div>
+    
+  </article>
+</div>
+
+            
+            </div>
+            
+
+            <h3 class="archive-separator" id="tag-框架">框架</h3>
+
+            <div class="waterfall">
+            
+
+                <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2017-04-23 00:00:00" datetime="2017-04-22T16:00:00.000Z"  itemprop="datePublished">2017-04-23</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/技术类/">技术类</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/2017/04/23/Android常用框架/">Android中常用的第三方框架</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/框架/">框架</a></li></ul>
+
+    </div>
+    
+  </article>
+</div>
+
+            
+            </div>
+            
+
+            <h3 class="archive-separator" id="tag-简历">简历</h3>
+
+            <div class="waterfall">
+            
+
+                <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2017-03-01 00:00:00" datetime="2017-02-28T16:00:00.000Z"  itemprop="datePublished">2017-03-01</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/职场类/">职场类</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/2017/03/01/程序员，你真的会写简历吗？/">程序员，你真的会写简历吗？</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/简历/">简历</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/职场/">职场</a></li></ul>
+
+    </div>
+    
+  </article>
+</div>
+
+            
+            </div>
+            
+
+            <h3 class="archive-separator" id="tag-职场">职场</h3>
+
+            <div class="waterfall">
+            
+
+                <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2017-03-01 00:00:00" datetime="2017-02-28T16:00:00.000Z"  itemprop="datePublished">2017-03-01</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/职场类/">职场类</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/2017/03/01/程序员，你真的会写简历吗？/">程序员，你真的会写简历吗？</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/简历/">简历</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/职场/">职场</a></li></ul>
+
+    </div>
+    
+  </article>
+</div>
+
+            
+            </div>
+            
+
+            <h3 class="archive-separator" id="tag-设计模式">设计模式</h3>
+
+            <div class="waterfall">
+            
+
+                <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2016-12-01 00:00:00" datetime="2016-11-30T16:00:00.000Z"  itemprop="datePublished">2016-12-01</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/技术类/">技术类</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/2016/12/01/笔记-Android源码设计模式解析与实战/">Android源码设计模式解析与实战</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/设计模式/">设计模式</a></li></ul>
+
+    </div>
+    
+  </article>
+</div>
+
+            
+            </div>
+            
+
+            <h3 class="archive-separator" id="tag-android5.0新特性">android5.0新特性</h3>
+
+            <div class="waterfall">
+            
+
+                <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
+      <time class="post-time" title="2016-09-01 00:00:00" datetime="2016-08-31T16:00:00.000Z"  itemprop="datePublished">2016-09-01</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/技术类/">技术类</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/blog/2016/09/01/笔记-Android群英传/">笔记-Android群英传</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/android5-0新特性/">android5.0新特性</a></li></ul>
+
+    </div>
+    
+  </article>
+</div>
+
+            
+            </div>
+            
+    
 </div>
 
         <footer class="footer">
@@ -268,7 +699,7 @@
 </p>
 
 
-        <p>
+        <p style="display:none;">
             
                 <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
@@ -277,8 +708,8 @@
     </div>
     <div class="bottom">
         <p>
-            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
-            <span>会飞的汉堡包 &copy; 2015 - 2017</span>
+            <span style="display:none;">Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>会飞的汉堡包 &copy; 2016 - 2017</span>
         </p>
     </div>
 </footer>
@@ -336,7 +767,7 @@
 
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: false };
 
 
 
@@ -366,6 +797,27 @@ var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
 
 
 
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
 
 
 
@@ -378,10 +830,10 @@ var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '死鬼去哪里了！';
+            document.title = '会飞的汉堡包';
             clearTimeout(titleTime);
         } else {
-            document.title = '(つェ⊂)咦!又好了!';
+            document.title = '会飞的汉堡包';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);
