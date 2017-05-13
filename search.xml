@@ -4,6 +4,64 @@
   
     
     <entry>
+      <title><![CDATA[笔记-JavaWeb]]></title>
+      <url>https://smallhamburger.github.io/2017/04/25/%E7%AC%94%E8%AE%B0-JavaWeb/</url>
+      <content type="html"><![CDATA[<h1 id="Java-Web-学习笔记"><a href="#Java-Web-学习笔记" class="headerlink" title="Java Web 学习笔记"></a>Java Web 学习笔记</h1><hr>
+<h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><h3 id="JDBC接口"><a href="#JDBC接口" class="headerlink" title="JDBC接口"></a>JDBC接口</h3><ol>
+<li><p>驱动管理</p>
+<ul>
+<li>DriveManager</li>
+</ul>
+</li>
+<li><p>连接接口</p>
+<ul>
+<li>Connection</li>
+<li>DatabaseMetaData</li>
+</ul>
+</li>
+<li><p>语句对象接口</p>
+<ul>
+<li>Statement</li>
+<li>PrepareStatement</li>
+<li>CallableStatement</li>
+</ul>
+</li>
+<li><p>结果集接口</p>
+<ul>
+<li>ResultSet</li>
+<li>ResultSetMetaData</li>
+</ul>
+</li>
+</ol>
+<h3 id="JDBC使用步骤"><a href="#JDBC使用步骤" class="headerlink" title="JDBC使用步骤"></a>JDBC使用步骤</h3><ol>
+<li>导入JDBC的jar包</li>
+<li>加载驱动</li>
+<li>获取Connection对象</li>
+<li>创建Statement语句对象</li>
+<li>执行SQL语句<ul>
+<li><code>execute(DDL)</code>常用于执行DDL,DCL</li>
+<li><code>executeUpdate(DML)</code>常用于执行DML语句</li>
+<li><code>executeQuery(DQL)</code>常用于之赐你个DQL语句</li>
+</ul>
+</li>
+<li>处理执行结果<ul>
+<li><code>execute(DDL)</code>如果没有异常则成功, 返回值为boolean, true为有数据集, false没有数据集</li>
+<li><code>executeUpdate(DML)</code>如果没有异常则成功, 返回数字, 更新记录的行数</li>
+<li><code>executeQuery(DQL)</code>如果没有异常则成功, 返回ResultSet结果集, 二维查询结果</li>
+</ul>
+</li>
+<li>关闭数据连接!<ul>
+<li>必须关闭, 否则数据库可能会瘫痪</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>例:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.jeson.jdbc;</div><div class="line"><span class="keyword">import</span> java.sql.Connection;</div><div class="line"><span class="keyword">import</span> java.sql.DriverManager;</div><div class="line"><span class="keyword">import</span> java.sql.ResultSet;</div><div class="line"><span class="keyword">import</span> java.sql.SQLException;</div><div class="line"><span class="keyword">import</span> java.sql.Statement;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JDBC</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String url = <span class="string">"jdbc:mysql://192.168.31.132:3306/db_jeson?user=jeson&amp;password=password"</span>;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String sql = <span class="string">"SELECT * FROM users"</span>;</div><div class="line">	<span class="keyword">static</span> &#123;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			<span class="comment">// 2. 加载驱动</span></div><div class="line">			Class.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);</div><div class="line">		&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span> </span>&#123;</div><div class="line">		Connection conn = <span class="keyword">null</span>;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			<span class="comment">// 3. 获取连接</span></div><div class="line">			conn = DriverManager.getConnection(url);</div><div class="line">			<span class="comment">// 4. 创建Statement对象</span></div><div class="line">			Statement stmt = conn.createStatement();</div><div class="line">			<span class="comment">// 5. 执行SQL语句</span></div><div class="line">			ResultSet result = stmt.executeQuery(sql);</div><div class="line">			System.out.println(<span class="string">"id\tname\t\tpassword\tage\tsex"</span>);</div><div class="line">			<span class="comment">// 6. 处理SQL执行结果</span></div><div class="line">			<span class="keyword">while</span> (result.next()) &#123;</div><div class="line">				System.out.println(result.getInt(<span class="string">"id"</span>) + <span class="string">"\t"</span></div><div class="line">						+ result.getString(<span class="string">"name"</span>) + <span class="string">"\t"</span></div><div class="line">						+ result.getString(<span class="string">"password"</span>) + <span class="string">"\t\t"</span></div><div class="line">						+ result.getInt(<span class="string">"age"</span>) + <span class="string">"\t"</span> + result.getInt(<span class="string">"sex"</span>));</div><div class="line">			&#125;</div><div class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125; <span class="keyword">finally</span> &#123;</div><div class="line">			<span class="comment">// 7. 关闭连接</span></div><div class="line">			<span class="keyword">if</span> (conn != <span class="keyword">null</span>) &#123;</div><div class="line">				<span class="keyword">try</span> &#123;</div><div class="line">					conn.close();</div><div class="line">				&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">					e.printStackTrace();</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Android中常用的第三方框架]]></title>
       <url>https://smallhamburger.github.io/2017/04/23/Android%E5%B8%B8%E7%94%A8%E6%A1%86%E6%9E%B6/</url>
       <content type="html"><![CDATA[<h1 id="Android中常用的第三方框架"><a href="#Android中常用的第三方框架" class="headerlink" title="Android中常用的第三方框架"></a>Android中常用的第三方框架</h1><h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><table>
@@ -359,6 +417,877 @@
     </entry>
     
     <entry>
+      <title><![CDATA[Android群英传-笔记]]></title>
+      <url>https://smallhamburger.github.io/2017/04/23/%E7%AC%94%E8%AE%B0-Android%E7%BE%A4%E8%8B%B1%E4%BC%A0/</url>
+      <content type="html"><![CDATA[<ol>
+<li><p>大色块使用</p>
+</li>
+<li><p>Material Design<br> 主题</p>
+</li>
+<li><p>Palette<br> 提取颜色<br> 依赖：<code>com.android.support:palette-v7:21.0.2</code></p>
+</li>
+<li><p>elevation<br> 阴影</p>
+<pre><code>xml--&gt;elevation
+</code></pre></li>
+<li><p>Tinting<br> 着色</p>
+<pre><code>xml--&gt;tint/tintMode
+</code></pre></li>
+<li><p>Clipping<br> 裁剪</p>
+<pre><code>java--&gt;
+    ViewOutlineProvider vopCircle = new ViewOutlineProvider() {
+        @Override
+        public void getOutline(View view, Outline outline) {
+            outline.setOval(0, 0, view.getWidth(), view.getHeight());
+        }
+    };
+    cicle.setOutlineProvider(vopCircle);
+注意：背景会覆盖裁剪
+</code></pre></li>
+<li><p>RecyclerView<br> 列表<br> 依赖：<code>com.android.support:recyclerview-v7:21.0.2</code><br> RecyclerView.Adapter</p>
+</li>
+<li><p>CardView<br> 卡片<br> 依赖：<code>com.android.support:cardview-v7:23.0.1</code></p>
+<pre><code>xml--&gt;
+    (1) xmlns:cardview=&quot;http://schemas.android.com/apk/res-auto&quot;
+    (2) cardview:cardBackgroundColor=&quot;#aaf&quot;
+       (3) cardview:cardCornerRadius=&quot;8dp&quot;
+</code></pre></li>
+<li><p>过渡动画<br> Explode/Slide/Fade<br> ActivityA:</p>
+<pre><code>java--&gt;startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+</code></pre><p> ActivityB:</p>
+<pre><code>java--&gt;
+getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+getWindow().setEnterTransition(new Explode());
+getWindow().setExitTransition(new Slide());
+</code></pre></li>
+<li><p>共享元素<br>ActivityA:</p>
+<pre><code>java--&gt;
+startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this, Pair.create(view,&quot;fab&quot;)).toBundle());
+startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this, view,&quot;fab&quot;).toBundle());
+</code></pre><p>XMLB–&gt;</p>
+<pre><code>android:transitionName=&quot;fab&quot;
+</code></pre></li>
+<li><p>Ripple<br>波纹效果</p>
+<pre><code>有界：android:backgroud=&quot;?android:attr/selectableItemBackgroud&quot;
+无界：android:backgroud=&quot;?android:attr/selectableItemBackgroudBorderless&quot;
+</code></pre><p>XML–&gt;</p>
+<pre><code>&lt;ripple 
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:color=&quot;#faa&quot;&gt;
+    &lt;!--可省略--&gt;
+    &lt;item&gt;
+        &lt;shape android:shape=&quot;oval&quot;&gt;
+            &lt;solid android:color=&quot;#aaf&quot;&gt;&lt;/solid&gt;
+        &lt;/shape&gt;
+    &lt;/item&gt;
+&lt;/ripple&gt;
+</code></pre></li>
+<li><p>Circular Reveal<br>圆形展示</p>
+<pre><code>final Animator animator;
+imageView.setOnTouchListener(new View.OnTouchListener() {
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        if(animator!=null &amp;&amp; animator.isRunning()){
+            return false;
+        }
+        animator = ViewAnimationUtils.createCircularReveal(imageView, (int) event.getX(),(int) event.getY(), 0, (float) Math.hypot(imageView.getWidth(), imageView.getHeight()));
+        animator.setInterpolator(new AccelerateDecelerateInterpolator());
+        animator.setDuration(1000);
+        animator.start();
+        return false;
+    }
+});
+</code></pre></li>
+<li><p>StateListAnimator<br>java–&gt;</p>
+<pre><code>imageView.setStateListAnimator(AnimatorInflater.loadStateListAnimator(this,R.drawable.state_selector));
+</code></pre><p>state_selector.XML–&gt;</p>
+<pre><code>&lt;ImageButton
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:src=&quot;@mipmap/ic_launcher&quot;
+    android:stateListAnimator=&quot;@drawable/state_selector&quot;/&gt;
+</code></pre><p>selector.XML–&gt;</p>
+<pre><code>&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+    &lt;item android:state_pressed=&quot;true&quot;&gt;
+        &lt;set&gt;
+            &lt;objectAnimator android:propertyName=&quot;rotationY&quot;
+                android:duration=&quot;1000&quot;
+                android:valueTo=&quot;30&quot;
+                android:pivotY=&quot;0&quot;
+                android:valueType=&quot;floatType&quot;/&gt;
+        &lt;/set&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+        &lt;set&gt;
+            &lt;objectAnimator android:propertyName=&quot;rotationY&quot;
+                android:duration=&quot;1000&quot;
+                android:valueTo=&quot;0&quot;
+                android:pivotY=&quot;0&quot;
+                android:valueType=&quot;floatType&quot;/&gt;
+        &lt;/set&gt;
+    &lt;/item&gt;
+&lt;/selector&gt;
+</code></pre></li>
+<li><p>animated-selector</p>
+<pre><code>5.X新特性
+--&gt;P290
+    无法复现
+</code></pre></li>
+<li><p>Toolbar</p>
+<pre><code>代替ActionBar
+compile &apos;com.android.support:appcompat-v7:21.0.3&apos;
+--&gt;P294
+    无法复现================================================
+        java--&gt;
+    toolbar= (Toolbar) findViewById(android.R.id.toolbar);
+    toolbar.setLogo(R.mipmap.ic_launcher);
+    toolbar.setTitle(&quot;主标题&quot;);
+    toolbar.setSubtitle(&quot;副标题&quot;);
+    setSupportActionBar(toolbar);
+    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    mDrawerLayout= (DrawerLayout) findViewById(R.id.drawer);
+    mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout, toolbar, R.string.abc_action_bar_home_description,R.string.abc_action_bar_home_description_format);
+    mDrawerToggle.syncState();
+    mDrawerLayout.setDrawerListener(mDrawerToggle);
+style.XML--&gt;
+    &lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.Light.DarkActionBar&quot;&gt;
+        &lt;item name=&quot;colorPrimary&quot;&gt;#4876FF&lt;/item&gt;
+        &lt;item name=&quot;colorPrimaryDark&quot;&gt;#3A5FCD&lt;/item&gt;
+        &lt;item name=&quot;android:windowBackground&quot;&gt;@android:color/white&lt;/item&gt;
+        &lt;item name=&quot;android:searchViewStyle&quot;&gt;@style/MySearchView&lt;/item&gt;
+        &lt;/style&gt;
+        &lt;style name=&quot;MySearchView&quot; parent=&quot;Widget.AppCompat.SearchView&quot;&gt;&lt;/style&gt;
+</code></pre></li>
+<li><p>DrawerLayout</p>
+<pre><code>侧滑菜单--&gt;
+&lt;android.support.v4.widget.DrawerLayout
+    android:id=&quot;@+id/drawer&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    &gt;
+    &lt;LinearLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;
+        android:background=&quot;@android:color/holo_blue_light&quot;
+        android:orientation=&quot;vertical&quot;&gt;
+        &lt;Button
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;内容界面&quot;/&gt;
+    &lt;/LinearLayout&gt;
+    &lt;ScrollView
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;
+        android:layout_gravity=&quot;start&quot;
+        &gt;
+        &lt;LinearLayout
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;match_parent&quot;
+            android:layout_gravity=&quot;start&quot;
+            android:background=&quot;@android:color/holo_blue_light&quot;
+            android:orientation=&quot;vertical&quot;&gt;
+            &lt;Button
+                android:layout_width=&quot;200dp&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:text=&quot;菜单界面_1&quot;/&gt;
+        &lt;/LinearLayout&gt;
+    &lt;/ScrollView&gt;
+    &lt;ScrollView
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;
+        android:layout_gravity=&quot;end&quot;
+        &gt;
+        &lt;LinearLayout
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;match_parent&quot;
+            android:layout_gravity=&quot;end&quot;
+            android:background=&quot;@android:color/holo_blue_light&quot;
+            android:orientation=&quot;vertical&quot;&gt;
+            &lt;Button
+                android:layout_width=&quot;200dp&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:text=&quot;菜单界面_2&quot;/&gt;
+        &lt;/LinearLayout&gt;
+    &lt;/ScrollView&gt;
+&lt;/android.support.v4.widget.DrawerLayout&gt;
+</code></pre></li>
+<li><p>Notification<br>通知<br>折叠式</p>
+<pre><code>notification.contentIntent = RemoteViews;
+</code></pre><p>展开式</p>
+<pre><code>notification.bigContentView = RemoteViews;
+</code></pre><p>悬挂式</p>
+<pre><code>builder.setFullScreenIntent(pendingIntent, true);
+</code></pre><p>等级式</p>
+<pre><code>builder.setVisibility(Notification.VISIBILITY_PUBLIC);
+</code></pre></li>
+<li><p>Layer</p>
+<pre><code>图层
+    XML--&gt;
+        &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        &lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+            &lt;item android:drawable=&quot;@drawable/ic_launcher&quot;&gt;&lt;/item&gt;
+            &lt;item android:drawable=&quot;@drawable/ic_launcher&quot;
+                android:left=&quot;20dip&quot;
+                android:right=&quot;20dip&quot;
+                android:bottom=&quot;20dip&quot;
+                android:top=&quot;20dip&quot;&gt;&lt;/item&gt;
+        &lt;/layer-list&gt;
+    Java--&gt;
+Paint p =new Paint();
+p.setColor(Color.RED);
+canvas.drawCircle(getWidth()/3,getHeight()/3,getWidth()/2,p);
+
+canvas.saveLayerAlpha(0, 0 , getWidth() ,getHeight(),127);    &lt;----
+p.setColor(Color.GREEN);
+canvas.drawCircle(getWidth()*2/3,getHeight()*2/3,getWidth()/2,p);
+canvas.restore();
+</code></pre></li>
+<li><p>Bitmap</p>
+<pre><code>XML--&gt;
+    &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+    &lt;bitmap xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+        android:src=&quot;@drawable/ic_launcher&quot;&gt;
+    &lt;/bitmap&gt;
+</code></pre></li>
+<li><p>ViewStub<br>可以在XML中插入<viewstub>标签，在初次渲染时不会填充这个控件<br>只能调用一次inflate()方法，因为调用一次后，viewStub就变为了指定的控件</viewstub></p>
+</li>
+</ol>
+<p>XML<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;ViewStub</div><div class="line">	android:id=&quot;@+id/view_stub&quot;</div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;match_parent&quot;</div><div class="line">    android:layout=&quot;@layout/activity_main&quot;/&gt;</div></pre></td></tr></table></figure></p>
+<p>java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ViewStub viewStub = (ViewStub) findViewById(R.id.view_stub);</div><div class="line">//viewStub.setVisibility(View.VISIBLE);</div><div class="line">LinearLayout ll = (LinearLayout) viewStub.inflate();</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="色彩特效"><a href="#色彩特效" class="headerlink" title="色彩特效"></a>色彩特效</h2><h3 id="色彩矩阵分析"><a href="#色彩矩阵分析" class="headerlink" title="色彩矩阵分析"></a>色彩矩阵分析</h3><ul>
+<li>色调–物体传播的颜色</li>
+<li>饱和度–颜色的纯度，从0（灰）到100%（饱和）来进行描述</li>
+<li>亮度–颜色的相对明暗程度</li>
+</ul>
+<h3 id="颜色矩阵"><a href="#颜色矩阵" class="headerlink" title="颜色矩阵"></a>颜色矩阵</h3><p>ColorMatrix 4X5数字矩阵</p>
+<ol>
+<li>处理色调                                                 <pre><code>cm.setRotate()
+</code></pre></li>
+<li>处理饱和度<pre><code>cm.setSaturation()
+</code></pre></li>
+<li>处理亮度<pre><code>cm.setScale();
+</code></pre><h4 id="例"><a href="#例" class="headerlink" title="例"></a>例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">Paint p =new Paint();</div><div class="line">Bitmap bm = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);</div><div class="line">Bitmap bmp = Bitmap.createBitmap(bm);</div><div class="line">ColorMatrix cm = new ColorMatrix();</div><div class="line">//指定颜色矩阵数值4X5，灰度效果</div><div class="line">float[] matrix = &#123;</div><div class="line">        0.33f,0.59f,0.11f,0,0,</div><div class="line">        0.33f,0.59f,0.11f,0,0,</div><div class="line">        0.33f,0.59f,0.11f,0,0,</div><div class="line">        0,    0,    0,    1,0</div><div class="line">&#125;;</div><div class="line">cm.set(matrix);</div><div class="line">ColorMatrix cm2 = new ColorMatrix();</div><div class="line">cm2.setScale(1f,1f,0f,1);</div><div class="line">cm.postConcat(cm2);</div><div class="line">p.setColorFilter(new ColorMatrixColorFilter(cm));</div><div class="line">canvas.drawBitmap(bmp,0,0,p);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="图形特效"><a href="#图形特效" class="headerlink" title="图形特效"></a>图形特效</h2><h3 id="变形矩阵"><a href="#变形矩阵" class="headerlink" title="变形矩阵"></a>变形矩阵</h3><p>Matrix 3X3数字矩阵</p>
+<p>前乘和后乘是不同的运算，影响变换的顺序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">m.postXXX();</div><div class="line">m.preXXX();</div></pre></td></tr></table></figure></p>
+<h4 id="图形变换"><a href="#图形变换" class="headerlink" title="图形变换"></a>图形变换</h4><ol>
+<li>平移变换<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">m.setTranslate();</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">| 1 0 Δx |</div><div class="line">| 0 1 Δy |</div><div class="line">| 0 0  1 |</div></pre></td></tr></table></figure>
+<ol>
+<li>旋转变换<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">m.setRotate();</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">| cosα -sinα  0 |</div><div class="line">| sinα  cosα  0 |</div><div class="line">|    0     0  1 |</div></pre></td></tr></table></figure>
+<ol>
+<li>缩放变换<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">m.setScale();</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">| k1  0  0 |</div><div class="line">|  0 k2  0 |</div><div class="line">|  0  0  1 |</div></pre></td></tr></table></figure>
+<ol>
+<li>错切变换<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">m.setSkew();</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">|  1 k1  0 |</div><div class="line">| k2  1  0 |</div><div class="line">|  0  0  1 |</div></pre></td></tr></table></figure>
+<h4 id="像素块分析"><a href="#像素块分析" class="headerlink" title="像素块分析"></a>像素块分析</h4><pre><code>/**
+ * WIDTH 像素块的横向个数 
+ * HEIGHT 像素块的纵向个数 
+ * verts 分割线的交叉点坐标数组，包括与边界的交叉点，长度为 （WIDTH + 1）*（HEIGHT + 1）*2
+ * /
+canvas.drawBitmapMesh(bitmap,WIDTH,HEIGHT,verts,0,null,0,null);
+</code></pre><h4 id="例-1"><a href="#例-1" class="headerlink" title="例"></a>例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">public MyTextView(Context context, AttributeSet attrs) &#123;</div><div class="line">    super(context, attrs);</div><div class="line">    init();</div><div class="line">&#125;</div><div class="line">private final int WIDTH = 200;</div><div class="line">private final int HEIGHT = 200;</div><div class="line">private Bitmap bm = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);</div><div class="line">private float mWidth;</div><div class="line">private float mHeight;</div><div class="line">private float[] orig = new float[(WIDTH+1)*(HEIGHT+1)*2];</div><div class="line">private float[] verts = new float[(WIDTH+1)*(HEIGHT+1)*2];</div><div class="line">private void init()&#123;</div><div class="line">    mWidth=bm.getWidth();</div><div class="line">    mHeight=bm.getHeight();</div><div class="line">    float dx = mWidth/WIDTH;</div><div class="line">    float dy = mHeight/HEIGHT;</div><div class="line">    for (int y=0;y&lt;=HEIGHT;y++)&#123;</div><div class="line">        for (int x=0;x&lt;=WIDTH;x++)&#123;</div><div class="line">            int index = (WIDTH+1)*y+x;</div><div class="line">            orig[index*2]=verts[index*2]=dx*x;</div><div class="line">            orig[index*2+1]=verts[index*2+1]=dy*y+100;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@Override</div><div class="line">protected void onDraw(Canvas canvas) &#123;</div><div class="line">    wave();</div><div class="line">    canvas.drawBitmapMesh(bm,WIDTH,HEIGHT,verts,0,null,0,null);</div><div class="line">    super.onDraw(canvas);</div><div class="line">    invalidate();</div><div class="line">&#125;</div><div class="line">private double k;</div><div class="line">private final int A = 10;</div><div class="line">private void wave()&#123;</div><div class="line">    for (int y=0;y&lt;=HEIGHT;y++)&#123;</div><div class="line">        for (int x=0;x&lt;=WIDTH;x++)&#123;</div><div class="line">            int index = (WIDTH+1)*y+x;</div><div class="line">            verts[index*2] = orig[index*2]+getMeasuredWidth()/2-bm.getWidth()/2;</div><div class="line">            float dy = (float) Math.sin(2*Math.PI/WIDTH*x + Math.PI*k);</div><div class="line">            verts[index*2+1]=orig[index*2+1]+dy*A;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    k+=0.1f;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="画笔特效（极其重要）"><a href="#画笔特效（极其重要）" class="headerlink" title="画笔特效（极其重要）"></a>画笔特效（极其重要）</h2><h3 id="PorterDuffXfermode"><a href="#PorterDuffXfermode" class="headerlink" title="PorterDuffXfermode"></a>PorterDuffXfermode</h3><p>遮盖效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));</div></pre></td></tr></table></figure></p>
+<p>更好的效果可以使用贝塞尔曲线，当前只使用圆滑效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mPaint.setStyle(Paint.Style.STROKE);</div><div class="line">mPaint.setStrokeJoin(Paint.Join.ROUND);</div><div class="line">mPaint.setStrokeWidth(100);</div><div class="line">mPaint.setStrokeCap(Paint.Cap.ROUND);</div><div class="line">mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));</div></pre></td></tr></table></figure></p>
+<p><strong><em>注意</em></strong>：</p>
+<ul>
+<li>最好关闭在绘图时关闭硬件加速，有些模式不支持硬件加速</li>
+</ul>
+<h4 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">private void init()&#123;</div><div class="line">	//低层的就是dst，上层的就是src</div><div class="line">    src = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);</div><div class="line">    dst =Bitmap.createBitmap(src.getWidth(),src.getHeight(), Bitmap.Config.ARGB_8888);</div><div class="line">    mCanvas = new Canvas(dst);</div><div class="line">    mPaint = new Paint();</div><div class="line">    mPaint.setColor(Color.RED);</div><div class="line">    mCanvas.drawCircle(src.getWidth()/2,src.getHeight()/2,src.getHeight()/3,mPaint);</div><div class="line">    mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));</div><div class="line">    mCanvas.drawBitmap(src,0,0,mPaint);</div><div class="line">    mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));</div><div class="line">    mCanvas.drawCircle(src.getWidth()/2,src.getHeight()/2,src.getHeight()/10,mPaint);</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Override</div><div class="line">protected void onDraw(Canvas canvas) &#123;</div><div class="line">    super.onDraw(canvas);</div><div class="line">    canvas.drawBitmap(dst,0,0,null);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Shader"><a href="#Shader" class="headerlink" title="Shader"></a>Shader</h3><p>着色器，渲染器<br>实现一系列的渐变和渲染效果</p>
+<p><strong>Shader</strong></p>
+<ol>
+<li>BitmapShader–位图Shader</li>
+<li>LinearGradient–线性Shader</li>
+<li>RadialGradient–光束Shader</li>
+<li>SweepGradient–梯度Shader</li>
+<li>ComposeShader–混合Shader</li>
+</ol>
+<h4 id="例–LinearGradient："><a href="#例–LinearGradient：" class="headerlink" title="例–LinearGradient："></a>例–LinearGradient：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">protected void onDraw(Canvas canvas) &#123;</div><div class="line">    mPaint.setShader(new LinearGradient(0,0,getMeasuredWidth(),0,Color.RED,Color.GREEN, Shader.TileMode.MIRROR));</div><div class="line">    canvas.drawRect(0,0,getMeasuredWidth(),getMeasuredHeight(),mPaint);</div><div class="line">    super.onDraw(canvas);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="例–PorterXfermode和Shader混合使用："><a href="#例–PorterXfermode和Shader混合使用：" class="headerlink" title="例–PorterXfermode和Shader混合使用："></a>例–PorterXfermode和Shader混合使用：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">private void init()&#123;</div><div class="line">    src = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);</div><div class="line">    Matrix matrix = new Matrix();</div><div class="line">    matrix.setScale(1f,-1f);</div><div class="line">    dust = Bitmap.createBitmap(src,0,0,src.getWidth(),src.getHeight(),matrix,true);</div><div class="line">    mPaint = new Paint();</div><div class="line">    mPaint.setShader(new LinearGradient(0,src.getHeight(),0,src.getHeight()*2,0xFF000000,0xffffffff, Shader.TileMode.CLAMP));</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Override</div><div class="line">protected void onDraw(Canvas canvas) &#123;</div><div class="line">    super.onDraw(canvas);</div><div class="line">    int saveCount = canvas.saveLayer(0,0,getMeasuredWidth(),getMeasuredHeight(),null,Canvas.ALL_SAVE_FLAG &amp; (~Canvas.CLIP_SAVE_FLAG));</div><div class="line">    canvas.drawBitmap(src,0,0,null);</div><div class="line">    canvas.drawBitmap(dust,0,src.getHeight(),null);</div><div class="line">    mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));</div><div class="line">    canvas.drawRect(0,src.getHeight(),src.getHeight(),src.getHeight()*2,mPaint);</div><div class="line">    mPaint.setXfermode(null);</div><div class="line">    canvas.restoreToCount(saveCount);</div></pre></td></tr></table></figure>
+<h3 id="PathEffect"><a href="#PathEffect" class="headerlink" title="PathEffect"></a>PathEffect</h3><p>路径效果</p>
+<ol>
+<li><p>null<br>无效果</p>
+</li>
+<li><p>CornerPathEffect<br>将拐角变得圆滑</p>
+</li>
+<li><p>DisctetePathEffect<br>线段上有很多的杂点</p>
+</li>
+<li><p>DashPathEffect<br>绘制虚线，可以控制每个点的间隔</p>
+</li>
+<li><p>PathDashPathEffect<br>DashPathEffect增强版，可以设置点的样式，矩形，圆点等</p>
+</li>
+<li><p>ComposePathEffect<br>组合方式</p>
+</li>
+</ol>
+<h4 id="例：-1"><a href="#例：-1" class="headerlink" title="例："></a>例：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">public class MyPathView extends View&#123;</div><div class="line">    private Path mPath;</div><div class="line">    private PathEffect[] mPathEffects = new PathEffect[6];</div><div class="line">    private Paint mPaint;</div><div class="line">    public MyPathView(Context context, AttributeSet attrs) &#123;</div><div class="line">        super(context, attrs);</div><div class="line">        mPath = new Path();</div><div class="line">        mPath.moveTo(0,200);</div><div class="line">        for(int i=1;i&lt;50;i++)&#123;</div><div class="line">            mPath.lineTo(i*20, (float) (Math.random()*100)+200);</div><div class="line">        &#125;</div><div class="line">        mPaint = new Paint();</div><div class="line">        mPaint.setColor(Color.parseColor(&quot;#000000&quot;));</div><div class="line">        mPaint.setStyle(Paint.Style.STROKE);</div><div class="line">        mPaint.setStrokeWidth(5);</div><div class="line">        mPathEffects[0] = null;</div><div class="line">        mPathEffects[1] = new CornerPathEffect(30);</div><div class="line">        mPathEffects[2] = new DiscretePathEffect(3f,5f);</div><div class="line">        mPathEffects[3] = new DashPathEffect(new float[]&#123;50f,10f,5f&#125;,0);</div><div class="line">        Path path = new Path();</div><div class="line">        path.addRect(0,0,8,8,Path.Direction.CCW);</div><div class="line">        mPathEffects[4] = new PathDashPathEffect(path,12,0,PathDashPathEffect.Style.ROTATE);</div><div class="line">        mPathEffects[5] = new ComposePathEffect( mPathEffects[3], mPathEffects[1]);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onDraw(Canvas canvas) &#123;</div><div class="line">        super.onDraw(canvas);</div><div class="line">        canvas.save();</div><div class="line">        for (int i = 0 ;i&lt; mPathEffects.length;i++)&#123;</div><div class="line">            mPaint.setPathEffect(mPathEffects[i]);</div><div class="line">            canvas.drawPath(mPath,mPaint);</div><div class="line">            canvas.translate(0, 200);</div><div class="line">        &#125;</div><div class="line">        canvas.restore();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong><em>效果图如下</em></strong><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/PathEffect.png" alt="PathEffect" title="">
+                </div>
+                <div class="image-caption">PathEffect</div>
+            </figure></p>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><h3 id="布局动画"><a href="#布局动画" class="headerlink" title="布局动画"></a>布局动画</h3><p>LinearLayout</p>
+<h4 id="例-2"><a href="#例-2" class="headerlink" title="例"></a>例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">LinearLayout ll = (LinearLayout) findViewById(R.id.ll);</div><div class="line">ScaleAnimation sa = new ScaleAnimation(0, 1, 0, 1);</div><div class="line">sa.setDuration(2000);</div><div class="line">LayoutAnimationController lac = new LayoutAnimationController(sa, 0.5f);</div><div class="line">lac.setOrder(LayoutAnimationController.ORDER_RANDOM);</div><div class="line">ll.setLayoutAnimation(lac);</div></pre></td></tr></table></figure>
+<h2 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h2>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[笔记-MYSQL使用]]></title>
+      <url>https://smallhamburger.github.io/2017/04/20/%E7%AC%94%E8%AE%B0-MYSQL%E4%BD%BF%E7%94%A8/</url>
+      <content type="html"><![CDATA[<h1 id="MYSQL学习笔记"><a href="#MYSQL学习笔记" class="headerlink" title="MYSQL学习笔记"></a>MYSQL学习笔记</h1><hr>
+<h2 id="MYSQL提示符"><a href="#MYSQL提示符" class="headerlink" title="MYSQL提示符"></a>MYSQL提示符</h2><blockquote>
+<p><code>prompt \u</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\D</td>
+<td>完整的日期</td>
+</tr>
+<tr>
+<td style="text-align:left">\d</td>
+<td>当前数据库</td>
+</tr>
+<tr>
+<td style="text-align:left">\h</td>
+<td>服务器名称</td>
+</tr>
+<tr>
+<td style="text-align:left">\u</td>
+<td>当前用户名</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<hr>
+<h2 id="MYSQL语句规范"><a href="#MYSQL语句规范" class="headerlink" title="MYSQL语句规范"></a>MYSQL语句规范</h2><ol>
+<li>关键字和函数名全部<strong>大写</strong></li>
+<li>数据库名称,表名称,字段名称全部<strong>小写</strong></li>
+<li>SQL语句必须以<code>;</code>结尾</li>
+</ol>
+<hr>
+<hr>
+<h2 id="MYSQL数据类型"><a href="#MYSQL数据类型" class="headerlink" title="MYSQL数据类型"></a>MYSQL数据类型</h2><h3 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">存储字节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TINYINT</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:left">SMALLINT</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:left">MEDIUMINT</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:left">INT</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:left">BIGINT</td>
+<td style="text-align:center">8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">存储字节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">FLOAT[(M, D)]</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:left">DOUBLE[(M, D)]</td>
+<td style="text-align:center">8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">日期类型</th>
+<th style="text-align:center">范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">YEAR</td>
+<td style="text-align:center">年份yyyy</td>
+</tr>
+<tr>
+<td style="text-align:left">TIME</td>
+<td style="text-align:center">时间(hh-mm-ss)</td>
+</tr>
+<tr>
+<td style="text-align:left">DATE</td>
+<td style="text-align:center">日期(yyyy-mm-dd)</td>
+</tr>
+<tr>
+<td style="text-align:left">DATETIME</td>
+<td style="text-align:center">日期与时间組合(yyyy-mm-dd hh-mm-ss)</td>
+</tr>
+<tr>
+<td style="text-align:left">TIMESTAMP</td>
+<td style="text-align:center">yyyymmddhhmmss</td>
+</tr>
+</tbody>
+</table>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">最大长度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">CHAR(M)</td>
+<td style="text-align:center">255</td>
+</tr>
+<tr>
+<td style="text-align:left">VARCHAR(M)</td>
+<td style="text-align:center">255</td>
+</tr>
+<tr>
+<td style="text-align:left">TINYTEXT</td>
+<td style="text-align:center">255</td>
+</tr>
+<tr>
+<td style="text-align:left">TEXT</td>
+<td style="text-align:center">65535</td>
+</tr>
+<tr>
+<td style="text-align:left">MEDIUMTEXT</td>
+<td style="text-align:center">2^24 - 1</td>
+</tr>
+<tr>
+<td style="text-align:left">LONGTEXT</td>
+<td style="text-align:center">2^32 - 1</td>
+</tr>
+<tr>
+<td style="text-align:left">ENUM(‘value1’, ‘value2’, …)</td>
+<td style="text-align:center">集合最大数目为65535</td>
+</tr>
+<tr>
+<td style="text-align:left">SET(‘value1’, ‘value2’, …)</td>
+<td style="text-align:center">集合最大数目为64</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<hr>
+<h2 id="MYSQL常用命令"><a href="#MYSQL常用命令" class="headerlink" title="MYSQL常用命令"></a>MYSQL常用命令</h2><h3 id="常用mysql数据库信息"><a href="#常用mysql数据库信息" class="headerlink" title="常用mysql数据库信息"></a>常用mysql数据库信息</h3><h4 id="显示当前服务器版本"><a href="#显示当前服务器版本" class="headerlink" title="显示当前服务器版本"></a>显示当前服务器版本</h4><blockquote>
+<p><code>SELECT VERSION();</code></p>
+</blockquote>
+<h4 id="显示当前日期"><a href="#显示当前日期" class="headerlink" title="显示当前日期"></a>显示当前日期</h4><blockquote>
+<p><code>SELCET NOW();</code></p>
+</blockquote>
+<h4 id="显示当前用户"><a href="#显示当前用户" class="headerlink" title="显示当前用户"></a>显示当前用户</h4><blockquote>
+<p><code>SELECT USER();</code></p>
+</blockquote>
+<h4 id="查看打开的数据库"><a href="#查看打开的数据库" class="headerlink" title="查看打开的数据库"></a>查看打开的数据库</h4><blockquote>
+<p><code>SELECT DATABASE();</code></p>
+</blockquote>
+<h4 id="查找记录"><a href="#查找记录" class="headerlink" title="查找记录"></a>查找记录</h4><blockquote>
+<p><code>SELECT FROM expr, ... FROM tbl_name;</code></p>
+</blockquote>
+<h4 id="打开数据库"><a href="#打开数据库" class="headerlink" title="打开数据库"></a>打开数据库</h4><blockquote>
+<p><code>USE db_name;</code></p>
+</blockquote>
+<hr>
+<h3 id="查看数据库-表信息"><a href="#查看数据库-表信息" class="headerlink" title="查看数据库/表信息"></a>查看数据库/表信息</h3><h4 id="查看服务器下的数据库列表"><a href="#查看服务器下的数据库列表" class="headerlink" title="查看服务器下的数据库列表"></a>查看服务器下的数据库列表</h4><blockquote>
+<p><code>SHOW {DATABASES | SCHEMA} [LIKE &#39;pattern&#39; | WHERE expr]};</code></p>
+</blockquote>
+<h4 id="查看创建数据库的语句以及编码方式"><a href="#查看创建数据库的语句以及编码方式" class="headerlink" title="查看创建数据库的语句以及编码方式"></a>查看创建数据库的语句以及编码方式</h4><blockquote>
+<p><code>SHOW CREATE DATABASE db_name;</code></p>
+</blockquote>
+<h4 id="查看-当前-数据库的数据表"><a href="#查看-当前-数据库的数据表" class="headerlink" title="查看(当前)数据库的数据表"></a>查看(当前)数据库的数据表</h4><blockquote>
+<p><code>SHOW TABLES [FROM db_name] [LIKE &#39;pattern&#39; | WHERE expr];</code></p>
+</blockquote>
+<h4 id="查看数据表的结构"><a href="#查看数据表的结构" class="headerlink" title="查看数据表的结构"></a>查看数据表的结构</h4><blockquote>
+<p><code>SHOW COLUMNS FROM tbl_name;</code></p>
+</blockquote>
+<h4 id="查看索引"><a href="#查看索引" class="headerlink" title="查看索引"></a>查看索引</h4><blockquote>
+<p><code>SHOW INDEXES FROM provinces[\G];</code></p>
+</blockquote>
+<hr>
+<h3 id="创建数据库-表"><a href="#创建数据库-表" class="headerlink" title="创建数据库/表"></a>创建数据库/表</h3><h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4><blockquote>
+<p><code>CREATE {DATABASE | SCHEMA} [IF NOT EXISTS] db_name [DEFAULT] CHARACTER SET [=] character_name;</code></p>
+</blockquote>
+<h4 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h4><blockquote>
+<p><code>CREATE TABLE [IF NOT EXISTS] jeson( id INT UNSIGNED, name VARCHAR(30), age TINYINT UNSIGNED, salary FLOAT(8,2) UNSIGNED );</code></p>
+</blockquote>
+<h4 id="创建带有外键的数据表"><a href="#创建带有外键的数据表" class="headerlink" title="创建带有外键的数据表"></a>创建带有外键的数据表</h4><ol>
+<li><p>先创建父表</p>
+<blockquote>
+<p><code>CREATE TABLE provinces (id SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT, name VARCHAR(30) NOT NULL);</code></p>
+</blockquote>
+</li>
+<li><p>创建子表</p>
+<blockquote>
+<p><code>CREATE TABLE users(id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT, name VARCHAR(30) NOT NULL,pid SMALLINT UNSIGNED, FOREIGN KEY (pid) REFERENCES provinces (id));</code></p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<h3 id="修改数据表"><a href="#修改数据表" class="headerlink" title="修改数据表"></a>修改数据表</h3><h4 id="修改数据的编码方式"><a href="#修改数据的编码方式" class="headerlink" title="修改数据的编码方式"></a>修改数据的编码方式</h4><blockquote>
+<p><code>ALTER {DATABASE | SCHEMA} [db_name] [DEFAULT] CHARACHTER SET [=] character_name;</code></p>
+</blockquote>
+<h4 id="修改数据表名称"><a href="#修改数据表名称" class="headerlink" title="修改数据表名称"></a>修改数据表名称</h4><blockquote>
+<p><code>ALTER TABLE tbl_name RENAME [TO | AS] new_tbl_name;</code></p>
+<p><code>RENAME TABLE tbl_name TO new_tbl_name [, tbl_name2 TO new_tbl_name2, ...]</code></p>
+</blockquote>
+<h4 id="添加单列-可以指定列的位置"><a href="#添加单列-可以指定列的位置" class="headerlink" title="添加单列, 可以指定列的位置"></a>添加单列, 可以指定列的位置</h4><blockquote>
+<p><code>ALTER TABLE tbl_name ADD [COLUMN] col_name col_definition [FIRST | AFTER col_name];</code></p>
+</blockquote>
+<h4 id="添加多列-不可以指定列的位置"><a href="#添加多列-不可以指定列的位置" class="headerlink" title="添加多列, 不可以指定列的位置"></a>添加多列, 不可以指定列的位置</h4><blockquote>
+<p><code>ALTER TABLE tbl_name ADD [COLUMN] (col_name1 col_definition , col_name2 col_definition, ...);</code></p>
+</blockquote>
+<h4 id="删除一列或多列"><a href="#删除一列或多列" class="headerlink" title="删除一列或多列"></a>删除一列或多列</h4><blockquote>
+<p><code>ALTER TABLE tbl_name DROP [COLUMNS] col_name [, DROP [COLUMNS] col_name1, DROP [COLUMNS] col_name2, ...];</code></p>
+</blockquote>
+<h4 id="添加主键约束-只能有一个"><a href="#添加主键约束-只能有一个" class="headerlink" title="添加主键约束, 只能有一个"></a>添加主键约束, 只能有一个</h4><blockquote>
+<p><code>ALTER TABLE tbl_name ADD [CONSTRAINT [symbol]] PRIMARY KEY [index_type] (index_col_name, ...);</code></p>
+</blockquote>
+<h4 id="添加唯一约束-可以有多个"><a href="#添加唯一约束-可以有多个" class="headerlink" title="添加唯一约束, 可以有多个"></a>添加唯一约束, 可以有多个</h4><blockquote>
+<p><code>ALTER TABLE tbl_name ADD [CONSTRAINT [symbol]] UNIQUE [INDEX|KEY]  [index_name] [index_type] (index_col_name, ...);</code></p>
+</blockquote>
+<h4 id="添加外键约束"><a href="#添加外键约束" class="headerlink" title="添加外键约束"></a>添加外键约束</h4><blockquote>
+<p><code>ALTER TABLE tbl_name ADD [CONSTRAINT [symbol]] FOREIGN KEY  [index_name] (index_col_name, ...) REFERENCES tbl_name (index_col_name);</code></p>
+</blockquote>
+<h4 id="添加-删除默认约束"><a href="#添加-删除默认约束" class="headerlink" title="添加/删除默认约束"></a>添加/删除<strong>默认约束</strong></h4><blockquote>
+<p><code>ALTER TABLE tbl_name ALTER [COLUMNS] COL_NAME {SET DEFAULT literal | DROP DEFAULT};</code></p>
+</blockquote>
+<h4 id="删除主键约束"><a href="#删除主键约束" class="headerlink" title="删除主键约束"></a>删除主键约束</h4><blockquote>
+<p><code>ALTER TABLE tbl_name DROP PRIMARY KEY;</code></p>
+</blockquote>
+<h4 id="删除唯一约束"><a href="#删除唯一约束" class="headerlink" title="删除唯一约束"></a>删除唯一约束</h4><blockquote>
+<p><code>ALTER TABLE tbl_name DROP {INDEX | KEY} index_name;</code></p>
+</blockquote>
+<h4 id="删除外键约束"><a href="#删除外键约束" class="headerlink" title="删除外键约束"></a>删除外键约束</h4><blockquote>
+<p><code>ALTER TABLE tbl_name DROP FOREIGN KEY fk_symbol;</code></p>
+</blockquote>
+<h4 id="修改列定义-数据类型从大类型改为小类型时会造成数据丢失"><a href="#修改列定义-数据类型从大类型改为小类型时会造成数据丢失" class="headerlink" title="修改列定义, 数据类型从大类型改为小类型时会造成数据丢失"></a>修改列定义, 数据类型从大类型改为小类型时会造成数据丢失</h4><blockquote>
+<p><code>ALTER TABLE tbl_name MODIFY [COLUMNS] col_name col_definition [FIRST | AFTER col_name];</code></p>
+</blockquote>
+<h4 id="修改列名称-也包含列定义的功能"><a href="#修改列名称-也包含列定义的功能" class="headerlink" title="修改列名称, 也包含列定义的功能"></a>修改列名称, 也包含列定义的功能</h4><blockquote>
+<p><code>ALTER TABLE tbl_name CHANGE [COLUMNS] old_col_name new_col_name col_definition [FIRST | AFTER col_name];</code></p>
+</blockquote>
+<hr>
+<h3 id="删除数据库-表-记录"><a href="#删除数据库-表-记录" class="headerlink" title="删除数据库/表/记录"></a>删除数据库/表/记录</h3><h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><blockquote>
+<p><code>DROP {DATABASE | SCHEMA} [IF EXISTS] db_name;</code></p>
+</blockquote>
+<h3 id="删除数据表"><a href="#删除数据表" class="headerlink" title="删除数据表"></a>删除数据表</h3><blockquote>
+<p><code>DROP TABLE [IF EXISTS] tbl_name;</code></p>
+</blockquote>
+<h3 id="删除数据表中的记录"><a href="#删除数据表中的记录" class="headerlink" title="删除数据表中的记录"></a>删除数据表中的记录</h3><blockquote>
+<p><code>DELETE FROM provinces WHERE id = 3;</code></p>
+</blockquote>
+<hr>
+<h3 id="向数据表插入记录"><a href="#向数据表插入记录" class="headerlink" title="向数据表插入记录"></a>向数据表插入记录</h3><blockquote>
+<p><code>INSERT [INTO] tabl_name [(col_name, ...)] VALUES(val, ...);</code></p>
+</blockquote>
+<hr>
+<hr>
+<h2 id="字段约束"><a href="#字段约束" class="headerlink" title="字段约束"></a>字段约束</h2><h3 id="字段创建时约束"><a href="#字段创建时约束" class="headerlink" title="字段创建时约束"></a>字段创建时约束</h3><ol>
+<li><code>NULL</code> <ul>
+<li>默认值可以为空</li>
+</ul>
+</li>
+<li><code>NOT NULL</code> <ul>
+<li>默认值不可以为空</li>
+</ul>
+</li>
+<li><code>AUTO_INCREMENT</code><ul>
+<li>自动编号, 且必须与主键组合使用</li>
+<li>默认情况下起始值为1, 每次的增量为1</li>
+</ul>
+</li>
+<li><code>PRIMARY KEY</code><ul>
+<li>主键约束</li>
+<li>每张表只能存在一个主键</li>
+<li>主键保证记录的唯一性</li>
+<li>主键自动为<code>NOT NULL</code></li>
+</ul>
+</li>
+<li><code>UNIQUE KEY</code><ul>
+<li>唯一约束</li>
+<li>每张数据表可以存在多个唯一约束</li>
+<li>唯一约束可以保证记录的唯一性</li>
+<li>唯一约束的字段可以为<code>NULL</code></li>
+</ul>
+</li>
+<li><code>DEFAULT</code><ul>
+<li>字段的默认值</li>
+</ul>
+</li>
+<li><code>FOREIGN KEY</code><ul>
+<li>保持数据一致性, 完整性</li>
+<li>实现一对一或一对多的关系</li>
+<li>外键约束的要求<ul>
+<li>父表和子表必须使用相同的存储引擎, 而且禁止使用临时表</li>
+<li>数据表的存储引擎只能为<strong>INNODB</strong></li>
+<li>外检列和参照列必须具有相似的数据类型. 其中数字的长度或者是否有符号位必须相同; 而字符的长度则可以不同</li>
+<li>外键列和参照列必须创建索引. 如果外键列不存在索引的话, MySQL将自动创建索引</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="外键约束的参照操作"><a href="#外键约束的参照操作" class="headerlink" title="外键约束的参照操作"></a>外键约束的参照操作</h3><ol>
+<li><code>CASCADE</code> <ul>
+<li>从父表删除或更新时, 自动删除或更新子表中匹配的行</li>
+</ul>
+</li>
+<li><code>SET NULL</code><ul>
+<li>从父表删除或更新时, 自动设置子表中的外键列为<code>NULL</code>, 如果使用该选项, 必须保证子表列没有指定<code>NOT NULL</code></li>
+</ul>
+</li>
+<li><code>RESTRICT</code><ul>
+<li>拒绝对父表的删除或更新操作</li>
+</ul>
+</li>
+<li><code>NO ACTION</code><ul>
+<li>标准的SQL关键字, 与RESTRICT相同</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>例:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE provinces(</div><div class="line">	id SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT, </div><div class="line">	name VARCHAR(30) NOT NULL</div><div class="line">);</div><div class="line"></div><div class="line">CREATE TABLE users(</div><div class="line">	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT, </div><div class="line">	name VARCHAR(30) NOT NULL, </div><div class="line">	pid SMALLINT UNSIGNED,</div><div class="line">	FOREIGN KEY (pid) REFERENCES provinces (id) ON DELETE CASCADE</div><div class="line">);</div></pre></td></tr></table></figure>
+<h3 id="表级约束和列级约束"><a href="#表级约束和列级约束" class="headerlink" title="表级约束和列级约束"></a>表级约束和列级约束</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;列级约束既可以在列定义时声明, 也可以在列定义后声明; 表级约束只能在列定义后声明.    </p>
+<ol>
+<li><p>表级约束</p>
+<p> 对一个数据列建立的约束, 开发中经常使用</p>
+</li>
+<li><p>表级约束</p>
+<p> 对多个数据列建立的约束</p>
+</li>
+</ol>
+<h2 id="记录操作"><a href="#记录操作" class="headerlink" title="记录操作"></a>记录操作</h2><h3 id="插入记录"><a href="#插入记录" class="headerlink" title="插入记录"></a>插入记录</h3><ol>
+<li><code>INSERT [INTO] tbl_name [(col_name, ...)] {VALUES | VALUE} ({expr | DEFAULT}, ...),(...),...;</code><ul>
+<li>插入时主键可以使用<code>NULL</code>或者<code>DEFALUT</code>使用自动的默认值</li>
+<li>拥有默认值得字段可以使用<code>DEFAULT</code></li>
+<li>可以在<code>VALUES</code>后加多个记录</li>
+<li>可以在值中加入函数</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>例:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">INSERT users VALUES</div><div class="line">	(DEFAULT, &apos;zhangsan&apos;, &apos;1230&apos;, 20*8-100, &apos;1&apos;), </div><div class="line">	(NULL, &apos;lisi&apos;, md5(&apos;123&apos;), DEFAULT, 2);</div></pre></td></tr></table></figure>
+<ol>
+<li><p><code>INSERT [INTO] tbl_name SET col_name={expr | DEFAULT}, ...;</code></p>
+<ul>
+<li>与第一种方式区别在于, 此方法可以使用子查询</li>
+<li>一次性只能插入一条数据</li>
+</ul>
+</li>
+<li><p><code>INSERT [INTO] tbl_name [(col_name, ...)] SELECT ...;</code></p>
+<ul>
+<li>此方法可以将查询结果插入到指定的数据表中</li>
+</ul>
+</li>
+</ol>
+<h3 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h3><ol>
+<li>单表更新<ul>
+<li><code>INSERT [LOW_PRIORUTY] [IGNORE] tbl_reference SET col_name1={expr | DEFAULT} [, col_name2={expr2|DEFAULT}] ... [WHERE where_condition];</code></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>例:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UPDATE users SET age = age + 10 WHERE id % 2 =0;</div></pre></td></tr></table></figure>
+<ol>
+<li>多表更新<ul>
+<li><code>UPDATE tbl_references SET col_name1 ={expr1 | DEFAULT} [, col_name2={expr2 | DEFAULT}], ... [WHERE where_condition];</code></li>
+<li>语法结构<ul>
+<li><code>tbl_reference {[INNER | CROSS] JOIN | {LEFT | RIGHT} [OUTER] JOIN} tbl_reference ON conditional_expr;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UPDATE goods INNER JOIN category ON goods_cate=name SET goods_cate=id;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="删除记录"><a href="#删除记录" class="headerlink" title="删除记录"></a>删除记录</h3><ol>
+<li><p>单表删除</p>
+<ul>
+<li><code>DELETE FROM tbl_name [WHERE where_condition];</code></li>
+</ul>
+</li>
+<li><p>多表删除</p>
+<ul>
+<li><code>DELETE tbl_name[.*] [, tbl_name[.*]] ... FROM tbl_references [WHERE where_condition]</code></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>例: 删除自身重复的数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">DELETE t1 FROM goods AS t1 LEFT JOIN</div><div class="line">	(SELECT MIN(goods_id) goods_id, goods_name FROM goods GROUP BY goods_name HAVING COUNT(goods_name)&gt;= 2) AS t2 </div><div class="line">	ON t1.goods_name = t2.goods_name </div><div class="line">	WHERE t1.goods_id &lt; t2.goods_id;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="查找记录-1"><a href="#查找记录-1" class="headerlink" title="查找记录"></a>查找记录</h3><ol>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">SELECT select_expr [, select_expr2, ...]</div><div class="line">[</div><div class="line">	FROM tbl_references</div><div class="line">	[WHERE where_condition]</div><div class="line">	[GROUP BY &#123;col_name | position&#125; [ASC | DESC], ...]</div><div class="line">	[HAVING where_condition]</div><div class="line">	[ORDER BY &#123;col_name | expr | position&#125; [ASC | DESC], ...]</div><div class="line">	[LIMIT &#123;[offset, ] row_count | row_count OFFSET offset&#125;]</div><div class="line">];</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>查询表达式<ul>
+<li>每一个表达式表示想要的一列, 必须至少有一个</li>
+<li>多个列之间以英文逗号分隔</li>
+<li>星号<code>*</code>表示所有列, <code>tbl_name.*</code> 可以表示命名表的所有列</li>
+<li>查询表达式可以使用<code>[ AS ] alias_name</code>为其赋予别名</li>
+<li>别名可用于<code>GROUP BY, ORDER BY, HAVING</code>子句</li>
+</ul>
+</li>
+</ul>
+<h3 id="条件表达式"><a href="#条件表达式" class="headerlink" title="条件表达式"></a>条件表达式</h3><ol>
+<li><code>WHERE expr;</code><ul>
+<li>对记录进行过滤, 如果没有指定<code>WHERE</code>子句, 则显示所有子句</li>
+<li>在<code>WHERE</code>表达式中,可以使用MySql支持的函数或运算符</li>
+</ul>
+</li>
+</ol>
+<h3 id="查询结果分组"><a href="#查询结果分组" class="headerlink" title="查询结果分组"></a>查询结果分组</h3><ol>
+<li><code>[GROUP BY {col_name | position} [ASC | DESC], ...];</code></li>
+</ol>
+<h3 id="分组条件"><a href="#分组条件" class="headerlink" title="分组条件"></a>分组条件</h3><ol>
+<li><code>[HAVING where_condition];</code><ul>
+<li>根据部分记录进行分组</li>
+<li>条件必须出现在分组条件所选择的字段或者是聚合函数,如count()</li>
+</ul>
+</li>
+</ol>
+<h3 id="对查询结果进行排序"><a href="#对查询结果进行排序" class="headerlink" title="对查询结果进行排序"></a>对查询结果进行排序</h3><ol>
+<li><code>[ORDER BY {col_name | expr | position} [ASC | DESC], ...];</code></li>
+</ol>
+<h3 id="限制查询结果返回的数量"><a href="#限制查询结果返回的数量" class="headerlink" title="限制查询结果返回的数量"></a>限制查询结果返回的数量</h3><ol>
+<li><code>[LIMIT {[offset, ] row_count | row_count OFFSET offset}];</code></li>
+</ol>
+<h2 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h2><h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><ul>
+<li><p>子查询(Subquery)是指出现在其他SQL语句内的<code>SELECT</code>子句</p>
+</li>
+<li><p>子查询指嵌套在查询内部, 且必须始终出现在<strong>圆括号内</strong></p>
+</li>
+<li><p>子查询可以包含多个关键字或条件, 如<code>DISTINCT</code>,<code>GROUP BY</code>, <code>ORDER BY</code>, <code>LIMIT</code>, 函数等</p>
+</li>
+<li><p>子查询的外层查询可以是:<code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>SET</code>, <code>DO</code>等</p>
+</li>
+<li><p>子查询可以返回标量, 一行, 一列或者子查询</p>
+</li>
+</ul>
+<blockquote>
+<p>例:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM tb_name1 WHERE col_name1 = (SELECT col_name2 FROM tbl_name2);</div></pre></td></tr></table></figure>
+<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><h5 id="使用比较运算符的子查询"><a href="#使用比较运算符的子查询" class="headerlink" title="使用比较运算符的子查询"></a>使用比较运算符的子查询</h5><p><code>=  &gt;  &lt;  &gt;=  &lt;=  &lt;&gt;  !=  &lt;=&gt;</code></p>
+<h5 id="用ANY-SOME-ALL修饰的比较运算符"><a href="#用ANY-SOME-ALL修饰的比较运算符" class="headerlink" title="用ANY  SOME  ALL修饰的比较运算符"></a>用<code>ANY  SOME  ALL</code>修饰的比较运算符</h5><table>
+<thead>
+<tr>
+<th style="text-align:center">运算符 \ 关键字</th>
+<th style="text-align:center"><code>ANY</code></th>
+<th style="text-align:center"><code>SOME</code></th>
+<th style="text-align:center"><code>ALL</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>&gt;, &gt;=</code></td>
+<td style="text-align:center">最小值</td>
+<td style="text-align:center">最小值</td>
+<td style="text-align:center">最大值</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;, &lt;=</code></td>
+<td style="text-align:center">最大值</td>
+<td style="text-align:center">最大值</td>
+<td style="text-align:center">最小值</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>=</code></td>
+<td style="text-align:center">任意值</td>
+<td style="text-align:center">任意值</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;&gt;, !=</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">任意值</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>例:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT goods_name,brand_name, goods_price FROM goods WHERE goods_price &lt;= ALL(SELECT goods_price FROM goods WHERE goods_cate = &apos;超级本&apos;);</div></pre></td></tr></table></figure>
+<h5 id="使用IN-NOT-IN的子查询"><a href="#使用IN-NOT-IN的子查询" class="headerlink" title="使用IN, NOT IN的子查询"></a>使用<code>IN, NOT IN</code>的子查询</h5><p><code>IN</code> 作用等同于 <code>=ANY()</code></p>
+<p><code>NOT IN</code> 作用等同于 <code>!=ALL()</code></p>
+<h5 id="使用NOT-EXIST-EXIST的子查询"><a href="#使用NOT-EXIST-EXIST的子查询" class="headerlink" title="使用NOT EXIST, EXIST的子查询"></a>使用<code>NOT EXIST, EXIST</code>的子查询</h5><p>如果子查询返回任何行, <code>EXIST</code>则返回<code>TRUE</code>, 否则为<code>FALSE</code></p>
+<h4 id="将查询结果插入到数据表"><a href="#将查询结果插入到数据表" class="headerlink" title="将查询结果插入到数据表"></a>将查询结果插入到数据表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INSERT [INTO] tbl_name [(col_name, ...)] SELECT ...</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INSERT category (name) (SELECT brand_name FROM goods);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="创建表的同时将查询结果写入到数据表"><a href="#创建表的同时将查询结果写入到数据表" class="headerlink" title="创建表的同时将查询结果写入到数据表"></a>创建表的同时将查询结果写入到数据表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE [IF NOT EXIST] tbl_name [(create_definition, ...)] select_statement;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE brands (</div><div class="line">	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,</div><div class="line">	brand_name VARCHAR(40) NOT NULL</div><div class="line">)</div><div class="line">(SELECT brand_name FROM goods GROUP BY brand_name);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h3><p><code>tbl_reference {[INNER | CROSS] | { LEFT | RIGHT} [OUTER]} JOIN tbl_reference ON confitional_expr</code></p>
+<h4 id="内连接INNER-JOIN-JOIN-CROSS-JOIN"><a href="#内连接INNER-JOIN-JOIN-CROSS-JOIN" class="headerlink" title="内连接INNER JOIN/JOIN/CROSS JOIN"></a>内连接<code>INNER JOIN</code>/<code>JOIN</code>/<code>CROSS JOIN</code></h4><p>交集, 显示左表和右表符合连接条件的记录</p>
+<blockquote>
+<p>例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT goods_id, goods_name, cate_name FROM goods INNER JOIN category ON goods.cate_id=category.cate_id;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="左外连接LEFT-OUTER-JOIN"><a href="#左外连接LEFT-OUTER-JOIN" class="headerlink" title="左外连接LEFT [OUTER] JOIN"></a>左外连接<code>LEFT [OUTER] JOIN</code></h4><p>显示左表的全部记录及右表符合连接条件的记录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT goods_id, goods_name, cate_name FROM goods LEFT JOIN category ON goods.cate_id=category.cate_id;</div></pre></td></tr></table></figure></p>
+<h4 id="右外连接RIGHT-OUTER-JOIN"><a href="#右外连接RIGHT-OUTER-JOIN" class="headerlink" title="右外连接RIGHT [OUTER] JOIN"></a>右外连接<code>RIGHT [OUTER] JOIN</code></h4><p>显示右表的全部记录及左表符合连接条件的记录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT goods_id, goods_name, cate_name FROM goods RIGHT JOIN category ON goods.cate_id=category.cate_id;</div></pre></td></tr></table></figure></p>
+<h4 id="连接条件ON或者WHERE"><a href="#连接条件ON或者WHERE" class="headerlink" title="连接条件ON或者WHERE"></a>连接条件<code>ON</code>或者<code>WHERE</code></h4><p>通常使用<code>ON</code>关键字来设定连接条件, 使用<code>WHERE</code>关键字进行结果集记录的过滤</p>
+<h4 id="多表连接"><a href="#多表连接" class="headerlink" title="多表连接"></a>多表连接</h4><p><code>tbl_reference</code> <code>({[INNER | CROSS] | { LEFT | RIGHT} [OUTER]} JOIN tbl_reference ON confitional_expr)</code> * n</p>
+<h4 id="自身连接"><a href="#自身连接" class="headerlink" title="自身连接"></a>自身连接</h4><blockquote>
+<p>例:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT c.type_id,c.type_name,p.type_name FROM tdb_goods_types c LEFT JOIN tdb_goods_types p ON c.parent_id=p.type_id;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT p.type_id,p.type_name,c.type_name FROM tdb_goods_types p LEFT JOIN tdb_goods_types c ON c.parent_id=p.type_id;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT p.type_id,p.type_name,COUNT(c.type_name) FROM tdb_goods_types p LEFT JOIN tdb_goods_types c ON c.parent_id=p.type_id GROUP BY  p.type_id;</div></pre></td></tr></table></figure>
+<h3 id="无限级数据表设计"><a href="#无限级数据表设计" class="headerlink" title="无限级数据表设计"></a>无限级数据表设计</h3><blockquote>
+<p>例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE tdb_goods_types(</div><div class="line">	type_id   SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,</div><div class="line">	type_name VARCHAR(20) NOT NULL,</div><div class="line">	parent_id SMALLINT UNSIGNED NOT NULL DEFAULT 0</div><div class="line">);</div></pre></td></tr></table></figure></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[程序员，你真的会写简历吗？]]></title>
       <url>https://smallhamburger.github.io/2017/03/01/%E7%A8%8B%E5%BA%8F%E5%91%98%EF%BC%8C%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E5%86%99%E7%AE%80%E5%8E%86%E5%90%97%EF%BC%9F/</url>
       <content type="html"><![CDATA[<p><em>本文摘自<strong>慕课网</strong>，作者<strong>七月在夏天</strong>，<a href="http://www.imooc.com/article/16649" target="_blank" rel="external">程序员，你真的会写简历吗？</a></em></p>
@@ -413,6 +1342,12 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;简历包括以上内容即可，如果你还有其他的比较有名气的开源项目可以附加上。我并不推荐杂七杂八的写一些个人的小作品，如果你在github上有一些高Star的开源项目，可以写上去，绝对是加分项。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最后，还是要提醒各位马上要换工作的同学，你的技术水平如何，一个稍微有资历的技术面试官问几个问题马上就能知道你的技术水平如何。所以，努力提升自己才是最重要的，如果你的技术功底深厚，不需要太多技巧简历也不会太差，<strong>但本文所提出的注意点并不属于技巧，而是一份优秀简历的基本要素</strong>。</p>
 ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[第一行代码（第二版）]]></title>
+      <url>https://smallhamburger.github.io/2017/01/01/%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89/</url>
+      <content type="html"></content>
     </entry>
     
     <entry>
@@ -1048,334 +1983,6 @@ ctrl + r 在历史命令中搜索
 </tbody>
 </table>
 ]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[笔记-Android群英传]]></title>
-      <url>https://smallhamburger.github.io/2016/09/01/%E7%AC%94%E8%AE%B0-Android%E7%BE%A4%E8%8B%B1%E4%BC%A0/</url>
-      <content type="html"><![CDATA[<ol>
-<li><p>大色块使用</p>
-</li>
-<li><p>Material Design<br> 主题</p>
-</li>
-<li><p>Palette<br> 提取颜色<br> 依赖：<code>com.android.support:palette-v7:21.0.2</code></p>
-</li>
-<li><p>elevation<br> 阴影</p>
-<pre><code>xml--&gt;elevation
-</code></pre></li>
-<li><p>Tinting<br> 着色</p>
-<pre><code>xml--&gt;tint/tintMode
-</code></pre></li>
-<li><p>Clipping<br> 裁剪</p>
-<pre><code>java--&gt;
-    ViewOutlineProvider vopCircle = new ViewOutlineProvider() {
-        @Override
-        public void getOutline(View view, Outline outline) {
-            outline.setOval(0, 0, view.getWidth(), view.getHeight());
-        }
-    };
-    cicle.setOutlineProvider(vopCircle);
-注意：背景会覆盖裁剪
-</code></pre></li>
-<li><p>RecyclerView<br> 列表<br> 依赖：<code>com.android.support:recyclerview-v7:21.0.2</code><br> RecyclerView.Adapter</p>
-</li>
-<li><p>CardView<br> 卡片<br> 依赖：<code>com.android.support:cardview-v7:23.0.1</code></p>
-<pre><code>xml--&gt;
-    (1) xmlns:cardview=&quot;http://schemas.android.com/apk/res-auto&quot;
-    (2) cardview:cardBackgroundColor=&quot;#aaf&quot;
-       (3) cardview:cardCornerRadius=&quot;8dp&quot;
-</code></pre></li>
-<li><p>过渡动画<br> Explode/Slide/Fade<br> ActivityA:</p>
-<pre><code>java--&gt;startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
-</code></pre><p> ActivityB:</p>
-<pre><code>java--&gt;
-getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
-getWindow().setEnterTransition(new Explode());
-getWindow().setExitTransition(new Slide());
-</code></pre></li>
-<li><p>共享元素<br>ActivityA:</p>
-<pre><code>java--&gt;
-startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this, Pair.create(view,&quot;fab&quot;)).toBundle());
-startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this, view,&quot;fab&quot;).toBundle());
-</code></pre><p>XMLB–&gt;</p>
-<pre><code>android:transitionName=&quot;fab&quot;
-</code></pre></li>
-<li><p>Ripple<br>波纹效果</p>
-<pre><code>有界：android:backgroud=&quot;?android:attr/selectableItemBackgroud&quot;
-无界：android:backgroud=&quot;?android:attr/selectableItemBackgroudBorderless&quot;
-</code></pre><p>XML–&gt;</p>
-<pre><code>&lt;ripple 
-    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:color=&quot;#faa&quot;&gt;
-    &lt;!--可省略--&gt;
-    &lt;item&gt;
-        &lt;shape android:shape=&quot;oval&quot;&gt;
-            &lt;solid android:color=&quot;#aaf&quot;&gt;&lt;/solid&gt;
-        &lt;/shape&gt;
-    &lt;/item&gt;
-&lt;/ripple&gt;
-</code></pre></li>
-<li><p>Circular Reveal<br>圆形展示</p>
-<pre><code>final Animator animator;
-imageView.setOnTouchListener(new View.OnTouchListener() {
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        if(animator!=null &amp;&amp; animator.isRunning()){
-            return false;
-        }
-        animator = ViewAnimationUtils.createCircularReveal(imageView, (int) event.getX(),(int) event.getY(), 0, (float) Math.hypot(imageView.getWidth(), imageView.getHeight()));
-        animator.setInterpolator(new AccelerateDecelerateInterpolator());
-        animator.setDuration(1000);
-        animator.start();
-        return false;
-    }
-});
-</code></pre></li>
-<li><p>StateListAnimator<br>java–&gt;</p>
-<pre><code>imageView.setStateListAnimator(AnimatorInflater.loadStateListAnimator(this,R.drawable.state_selector));
-</code></pre><p>state_selector.XML–&gt;</p>
-<pre><code>&lt;ImageButton
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:src=&quot;@mipmap/ic_launcher&quot;
-    android:stateListAnimator=&quot;@drawable/state_selector&quot;/&gt;
-</code></pre><p>selector.XML–&gt;</p>
-<pre><code>&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
-    &lt;item android:state_pressed=&quot;true&quot;&gt;
-        &lt;set&gt;
-            &lt;objectAnimator android:propertyName=&quot;rotationY&quot;
-                android:duration=&quot;1000&quot;
-                android:valueTo=&quot;30&quot;
-                android:pivotY=&quot;0&quot;
-                android:valueType=&quot;floatType&quot;/&gt;
-        &lt;/set&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-        &lt;set&gt;
-            &lt;objectAnimator android:propertyName=&quot;rotationY&quot;
-                android:duration=&quot;1000&quot;
-                android:valueTo=&quot;0&quot;
-                android:pivotY=&quot;0&quot;
-                android:valueType=&quot;floatType&quot;/&gt;
-        &lt;/set&gt;
-    &lt;/item&gt;
-&lt;/selector&gt;
-</code></pre></li>
-<li><p>animated-selector</p>
-<pre><code>5.X新特性
---&gt;P290
-    无法复现
-</code></pre></li>
-<li><p>Toolbar</p>
-<pre><code>代替ActionBar
-compile &apos;com.android.support:appcompat-v7:21.0.3&apos;
---&gt;P294
-    无法复现================================================
-        java--&gt;
-    toolbar= (Toolbar) findViewById(android.R.id.toolbar);
-    toolbar.setLogo(R.mipmap.ic_launcher);
-    toolbar.setTitle(&quot;主标题&quot;);
-    toolbar.setSubtitle(&quot;副标题&quot;);
-    setSupportActionBar(toolbar);
-    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    mDrawerLayout= (DrawerLayout) findViewById(R.id.drawer);
-    mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout, toolbar, R.string.abc_action_bar_home_description,R.string.abc_action_bar_home_description_format);
-    mDrawerToggle.syncState();
-    mDrawerLayout.setDrawerListener(mDrawerToggle);
-style.XML--&gt;
-    &lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.Light.DarkActionBar&quot;&gt;
-        &lt;item name=&quot;colorPrimary&quot;&gt;#4876FF&lt;/item&gt;
-        &lt;item name=&quot;colorPrimaryDark&quot;&gt;#3A5FCD&lt;/item&gt;
-        &lt;item name=&quot;android:windowBackground&quot;&gt;@android:color/white&lt;/item&gt;
-        &lt;item name=&quot;android:searchViewStyle&quot;&gt;@style/MySearchView&lt;/item&gt;
-        &lt;/style&gt;
-        &lt;style name=&quot;MySearchView&quot; parent=&quot;Widget.AppCompat.SearchView&quot;&gt;&lt;/style&gt;
-</code></pre></li>
-<li><p>DrawerLayout</p>
-<pre><code>侧滑菜单--&gt;
-&lt;android.support.v4.widget.DrawerLayout
-    android:id=&quot;@+id/drawer&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    &gt;
-    &lt;LinearLayout
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;match_parent&quot;
-        android:background=&quot;@android:color/holo_blue_light&quot;
-        android:orientation=&quot;vertical&quot;&gt;
-        &lt;Button
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:text=&quot;内容界面&quot;/&gt;
-    &lt;/LinearLayout&gt;
-    &lt;ScrollView
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;match_parent&quot;
-        android:layout_gravity=&quot;start&quot;
-        &gt;
-        &lt;LinearLayout
-            android:layout_width=&quot;wrap_content&quot;
-            android:layout_height=&quot;match_parent&quot;
-            android:layout_gravity=&quot;start&quot;
-            android:background=&quot;@android:color/holo_blue_light&quot;
-            android:orientation=&quot;vertical&quot;&gt;
-            &lt;Button
-                android:layout_width=&quot;200dp&quot;
-                android:layout_height=&quot;wrap_content&quot;
-                android:text=&quot;菜单界面_1&quot;/&gt;
-        &lt;/LinearLayout&gt;
-    &lt;/ScrollView&gt;
-    &lt;ScrollView
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;match_parent&quot;
-        android:layout_gravity=&quot;end&quot;
-        &gt;
-        &lt;LinearLayout
-            android:layout_width=&quot;wrap_content&quot;
-            android:layout_height=&quot;match_parent&quot;
-            android:layout_gravity=&quot;end&quot;
-            android:background=&quot;@android:color/holo_blue_light&quot;
-            android:orientation=&quot;vertical&quot;&gt;
-            &lt;Button
-                android:layout_width=&quot;200dp&quot;
-                android:layout_height=&quot;wrap_content&quot;
-                android:text=&quot;菜单界面_2&quot;/&gt;
-        &lt;/LinearLayout&gt;
-    &lt;/ScrollView&gt;
-&lt;/android.support.v4.widget.DrawerLayout&gt;
-</code></pre></li>
-<li><p>Notification<br>通知<br>折叠式</p>
-<pre><code>notification.contentIntent = RemoteViews;
-</code></pre><p>展开式</p>
-<pre><code>notification.bigContentView = RemoteViews;
-</code></pre><p>悬挂式</p>
-<pre><code>builder.setFullScreenIntent(pendingIntent, true);
-</code></pre><p>等级式</p>
-<pre><code>builder.setVisibility(Notification.VISIBILITY_PUBLIC);
-</code></pre></li>
-<li><p>Layer</p>
-<pre><code>图层
-    XML--&gt;
-        &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        &lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
-            &lt;item android:drawable=&quot;@drawable/ic_launcher&quot;&gt;&lt;/item&gt;
-            &lt;item android:drawable=&quot;@drawable/ic_launcher&quot;
-                android:left=&quot;20dip&quot;
-                android:right=&quot;20dip&quot;
-                android:bottom=&quot;20dip&quot;
-                android:top=&quot;20dip&quot;&gt;&lt;/item&gt;
-        &lt;/layer-list&gt;
-    Java--&gt;
-Paint p =new Paint();
-p.setColor(Color.RED);
-canvas.drawCircle(getWidth()/3,getHeight()/3,getWidth()/2,p);
-
-canvas.saveLayerAlpha(0, 0 , getWidth() ,getHeight(),127);    &lt;----
-p.setColor(Color.GREEN);
-canvas.drawCircle(getWidth()*2/3,getHeight()*2/3,getWidth()/2,p);
-canvas.restore();
-</code></pre></li>
-<li><p>Bitmap</p>
-<pre><code>XML--&gt;
-    &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-    &lt;bitmap xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-        android:src=&quot;@drawable/ic_launcher&quot;&gt;
-    &lt;/bitmap&gt;
-</code></pre></li>
-<li><p>ViewStub<br>可以在XML中插入<viewstub>标签，在初次渲染时不会填充这个控件<br>只能调用一次inflate()方法，因为调用一次后，viewStub就变为了指定的控件</viewstub></p>
-</li>
-</ol>
-<p>XML<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;ViewStub</div><div class="line">	android:id=&quot;@+id/view_stub&quot;</div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;match_parent&quot;</div><div class="line">    android:layout=&quot;@layout/activity_main&quot;/&gt;</div></pre></td></tr></table></figure></p>
-<p>java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ViewStub viewStub = (ViewStub) findViewById(R.id.view_stub);</div><div class="line">//viewStub.setVisibility(View.VISIBLE);</div><div class="line">LinearLayout ll = (LinearLayout) viewStub.inflate();</div></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="色彩特效"><a href="#色彩特效" class="headerlink" title="色彩特效"></a>色彩特效</h2><h3 id="色彩矩阵分析"><a href="#色彩矩阵分析" class="headerlink" title="色彩矩阵分析"></a>色彩矩阵分析</h3><ul>
-<li>色调–物体传播的颜色</li>
-<li>饱和度–颜色的纯度，从0（灰）到100%（饱和）来进行描述</li>
-<li>亮度–颜色的相对明暗程度</li>
-</ul>
-<h3 id="颜色矩阵"><a href="#颜色矩阵" class="headerlink" title="颜色矩阵"></a>颜色矩阵</h3><p>ColorMatrix 4X5数字矩阵</p>
-<ol>
-<li>处理色调                                                 <pre><code>cm.setRotate()
-</code></pre></li>
-<li>处理饱和度<pre><code>cm.setSaturation()
-</code></pre></li>
-<li>处理亮度<pre><code>cm.setScale();
-</code></pre><h4 id="例"><a href="#例" class="headerlink" title="例"></a>例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">Paint p =new Paint();</div><div class="line">Bitmap bm = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);</div><div class="line">Bitmap bmp = Bitmap.createBitmap(bm);</div><div class="line">ColorMatrix cm = new ColorMatrix();</div><div class="line">//指定颜色矩阵数值4X5，灰度效果</div><div class="line">float[] matrix = &#123;</div><div class="line">        0.33f,0.59f,0.11f,0,0,</div><div class="line">        0.33f,0.59f,0.11f,0,0,</div><div class="line">        0.33f,0.59f,0.11f,0,0,</div><div class="line">        0,    0,    0,    1,0</div><div class="line">&#125;;</div><div class="line">cm.set(matrix);</div><div class="line">ColorMatrix cm2 = new ColorMatrix();</div><div class="line">cm2.setScale(1f,1f,0f,1);</div><div class="line">cm.postConcat(cm2);</div><div class="line">p.setColorFilter(new ColorMatrixColorFilter(cm));</div><div class="line">canvas.drawBitmap(bmp,0,0,p);</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="图形特效"><a href="#图形特效" class="headerlink" title="图形特效"></a>图形特效</h2><h3 id="变形矩阵"><a href="#变形矩阵" class="headerlink" title="变形矩阵"></a>变形矩阵</h3><p>Matrix 3X3数字矩阵</p>
-<p>前乘和后乘是不同的运算，影响变换的顺序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">m.postXXX();</div><div class="line">m.preXXX();</div></pre></td></tr></table></figure></p>
-<h4 id="图形变换"><a href="#图形变换" class="headerlink" title="图形变换"></a>图形变换</h4><ol>
-<li>平移变换<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">m.setTranslate();</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">| 1 0 Δx |</div><div class="line">| 0 1 Δy |</div><div class="line">| 0 0  1 |</div></pre></td></tr></table></figure>
-<ol>
-<li>旋转变换<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">m.setRotate();</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">| cosα -sinα  0 |</div><div class="line">| sinα  cosα  0 |</div><div class="line">|    0     0  1 |</div></pre></td></tr></table></figure>
-<ol>
-<li>缩放变换<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">m.setScale();</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">| k1  0  0 |</div><div class="line">|  0 k2  0 |</div><div class="line">|  0  0  1 |</div></pre></td></tr></table></figure>
-<ol>
-<li>错切变换<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">m.setSkew();</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">|  1 k1  0 |</div><div class="line">| k2  1  0 |</div><div class="line">|  0  0  1 |</div></pre></td></tr></table></figure>
-<h4 id="像素块分析"><a href="#像素块分析" class="headerlink" title="像素块分析"></a>像素块分析</h4><pre><code>/**
- * WIDTH 像素块的横向个数 
- * HEIGHT 像素块的纵向个数 
- * verts 分割线的交叉点坐标数组，包括与边界的交叉点，长度为 （WIDTH + 1）*（HEIGHT + 1）*2
- * /
-canvas.drawBitmapMesh(bitmap,WIDTH,HEIGHT,verts,0,null,0,null);
-</code></pre><h4 id="例-1"><a href="#例-1" class="headerlink" title="例"></a>例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">public MyTextView(Context context, AttributeSet attrs) &#123;</div><div class="line">    super(context, attrs);</div><div class="line">    init();</div><div class="line">&#125;</div><div class="line">private final int WIDTH = 200;</div><div class="line">private final int HEIGHT = 200;</div><div class="line">private Bitmap bm = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);</div><div class="line">private float mWidth;</div><div class="line">private float mHeight;</div><div class="line">private float[] orig = new float[(WIDTH+1)*(HEIGHT+1)*2];</div><div class="line">private float[] verts = new float[(WIDTH+1)*(HEIGHT+1)*2];</div><div class="line">private void init()&#123;</div><div class="line">    mWidth=bm.getWidth();</div><div class="line">    mHeight=bm.getHeight();</div><div class="line">    float dx = mWidth/WIDTH;</div><div class="line">    float dy = mHeight/HEIGHT;</div><div class="line">    for (int y=0;y&lt;=HEIGHT;y++)&#123;</div><div class="line">        for (int x=0;x&lt;=WIDTH;x++)&#123;</div><div class="line">            int index = (WIDTH+1)*y+x;</div><div class="line">            orig[index*2]=verts[index*2]=dx*x;</div><div class="line">            orig[index*2+1]=verts[index*2+1]=dy*y+100;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@Override</div><div class="line">protected void onDraw(Canvas canvas) &#123;</div><div class="line">    wave();</div><div class="line">    canvas.drawBitmapMesh(bm,WIDTH,HEIGHT,verts,0,null,0,null);</div><div class="line">    super.onDraw(canvas);</div><div class="line">    invalidate();</div><div class="line">&#125;</div><div class="line">private double k;</div><div class="line">private final int A = 10;</div><div class="line">private void wave()&#123;</div><div class="line">    for (int y=0;y&lt;=HEIGHT;y++)&#123;</div><div class="line">        for (int x=0;x&lt;=WIDTH;x++)&#123;</div><div class="line">            int index = (WIDTH+1)*y+x;</div><div class="line">            verts[index*2] = orig[index*2]+getMeasuredWidth()/2-bm.getWidth()/2;</div><div class="line">            float dy = (float) Math.sin(2*Math.PI/WIDTH*x + Math.PI*k);</div><div class="line">            verts[index*2+1]=orig[index*2+1]+dy*A;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    k+=0.1f;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="画笔特效（极其重要）"><a href="#画笔特效（极其重要）" class="headerlink" title="画笔特效（极其重要）"></a>画笔特效（极其重要）</h2><h3 id="PorterDuffXfermode"><a href="#PorterDuffXfermode" class="headerlink" title="PorterDuffXfermode"></a>PorterDuffXfermode</h3><p>遮盖效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));</div></pre></td></tr></table></figure></p>
-<p>更好的效果可以使用贝塞尔曲线，当前只使用圆滑效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mPaint.setStyle(Paint.Style.STROKE);</div><div class="line">mPaint.setStrokeJoin(Paint.Join.ROUND);</div><div class="line">mPaint.setStrokeWidth(100);</div><div class="line">mPaint.setStrokeCap(Paint.Cap.ROUND);</div><div class="line">mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));</div></pre></td></tr></table></figure></p>
-<p><strong><em>注意</em></strong>：</p>
-<ul>
-<li>最好关闭在绘图时关闭硬件加速，有些模式不支持硬件加速</li>
-</ul>
-<h4 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">private void init()&#123;</div><div class="line">	//低层的就是dst，上层的就是src</div><div class="line">    src = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);</div><div class="line">    dst =Bitmap.createBitmap(src.getWidth(),src.getHeight(), Bitmap.Config.ARGB_8888);</div><div class="line">    mCanvas = new Canvas(dst);</div><div class="line">    mPaint = new Paint();</div><div class="line">    mPaint.setColor(Color.RED);</div><div class="line">    mCanvas.drawCircle(src.getWidth()/2,src.getHeight()/2,src.getHeight()/3,mPaint);</div><div class="line">    mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));</div><div class="line">    mCanvas.drawBitmap(src,0,0,mPaint);</div><div class="line">    mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));</div><div class="line">    mCanvas.drawCircle(src.getWidth()/2,src.getHeight()/2,src.getHeight()/10,mPaint);</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Override</div><div class="line">protected void onDraw(Canvas canvas) &#123;</div><div class="line">    super.onDraw(canvas);</div><div class="line">    canvas.drawBitmap(dst,0,0,null);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="Shader"><a href="#Shader" class="headerlink" title="Shader"></a>Shader</h3><p>着色器，渲染器<br>实现一系列的渐变和渲染效果</p>
-<p><strong>Shader</strong></p>
-<ol>
-<li>BitmapShader–位图Shader</li>
-<li>LinearGradient–线性Shader</li>
-<li>RadialGradient–光束Shader</li>
-<li>SweepGradient–梯度Shader</li>
-<li>ComposeShader–混合Shader</li>
-</ol>
-<h4 id="例–LinearGradient："><a href="#例–LinearGradient：" class="headerlink" title="例–LinearGradient："></a>例–LinearGradient：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">protected void onDraw(Canvas canvas) &#123;</div><div class="line">    mPaint.setShader(new LinearGradient(0,0,getMeasuredWidth(),0,Color.RED,Color.GREEN, Shader.TileMode.MIRROR));</div><div class="line">    canvas.drawRect(0,0,getMeasuredWidth(),getMeasuredHeight(),mPaint);</div><div class="line">    super.onDraw(canvas);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="例–PorterXfermode和Shader混合使用："><a href="#例–PorterXfermode和Shader混合使用：" class="headerlink" title="例–PorterXfermode和Shader混合使用："></a>例–PorterXfermode和Shader混合使用：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">private void init()&#123;</div><div class="line">    src = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);</div><div class="line">    Matrix matrix = new Matrix();</div><div class="line">    matrix.setScale(1f,-1f);</div><div class="line">    dust = Bitmap.createBitmap(src,0,0,src.getWidth(),src.getHeight(),matrix,true);</div><div class="line">    mPaint = new Paint();</div><div class="line">    mPaint.setShader(new LinearGradient(0,src.getHeight(),0,src.getHeight()*2,0xFF000000,0xffffffff, Shader.TileMode.CLAMP));</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Override</div><div class="line">protected void onDraw(Canvas canvas) &#123;</div><div class="line">    super.onDraw(canvas);</div><div class="line">    int saveCount = canvas.saveLayer(0,0,getMeasuredWidth(),getMeasuredHeight(),null,Canvas.ALL_SAVE_FLAG &amp; (~Canvas.CLIP_SAVE_FLAG));</div><div class="line">    canvas.drawBitmap(src,0,0,null);</div><div class="line">    canvas.drawBitmap(dust,0,src.getHeight(),null);</div><div class="line">    mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));</div><div class="line">    canvas.drawRect(0,src.getHeight(),src.getHeight(),src.getHeight()*2,mPaint);</div><div class="line">    mPaint.setXfermode(null);</div><div class="line">    canvas.restoreToCount(saveCount);</div></pre></td></tr></table></figure>
-<h3 id="PathEffect"><a href="#PathEffect" class="headerlink" title="PathEffect"></a>PathEffect</h3><p>路径效果</p>
-<ol>
-<li><p>null<br>无效果</p>
-</li>
-<li><p>CornerPathEffect<br>将拐角变得圆滑</p>
-</li>
-<li><p>DisctetePathEffect<br>线段上有很多的杂点</p>
-</li>
-<li><p>DashPathEffect<br>绘制虚线，可以控制每个点的间隔</p>
-</li>
-<li><p>PathDashPathEffect<br>DashPathEffect增强版，可以设置点的样式，矩形，圆点等</p>
-</li>
-<li><p>ComposePathEffect<br>组合方式</p>
-</li>
-</ol>
-<h4 id="例：-1"><a href="#例：-1" class="headerlink" title="例："></a>例：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">public class MyPathView extends View&#123;</div><div class="line">    private Path mPath;</div><div class="line">    private PathEffect[] mPathEffects = new PathEffect[6];</div><div class="line">    private Paint mPaint;</div><div class="line">    public MyPathView(Context context, AttributeSet attrs) &#123;</div><div class="line">        super(context, attrs);</div><div class="line">        mPath = new Path();</div><div class="line">        mPath.moveTo(0,200);</div><div class="line">        for(int i=1;i&lt;50;i++)&#123;</div><div class="line">            mPath.lineTo(i*20, (float) (Math.random()*100)+200);</div><div class="line">        &#125;</div><div class="line">        mPaint = new Paint();</div><div class="line">        mPaint.setColor(Color.parseColor(&quot;#000000&quot;));</div><div class="line">        mPaint.setStyle(Paint.Style.STROKE);</div><div class="line">        mPaint.setStrokeWidth(5);</div><div class="line">        mPathEffects[0] = null;</div><div class="line">        mPathEffects[1] = new CornerPathEffect(30);</div><div class="line">        mPathEffects[2] = new DiscretePathEffect(3f,5f);</div><div class="line">        mPathEffects[3] = new DashPathEffect(new float[]&#123;50f,10f,5f&#125;,0);</div><div class="line">        Path path = new Path();</div><div class="line">        path.addRect(0,0,8,8,Path.Direction.CCW);</div><div class="line">        mPathEffects[4] = new PathDashPathEffect(path,12,0,PathDashPathEffect.Style.ROTATE);</div><div class="line">        mPathEffects[5] = new ComposePathEffect( mPathEffects[3], mPathEffects[1]);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onDraw(Canvas canvas) &#123;</div><div class="line">        super.onDraw(canvas);</div><div class="line">        canvas.save();</div><div class="line">        for (int i = 0 ;i&lt; mPathEffects.length;i++)&#123;</div><div class="line">            mPaint.setPathEffect(mPathEffects[i]);</div><div class="line">            canvas.drawPath(mPath,mPaint);</div><div class="line">            canvas.translate(0, 200);</div><div class="line">        &#125;</div><div class="line">        canvas.restore();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong><em>效果图如下</em></strong><br><figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="https://raw.githubusercontent.com/SmallHamburger/blog/master/images/PathEffect.png" alt="PathEffect" title="">
-                </div>
-                <div class="image-caption">PathEffect</div>
-            </figure></p>
-<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><h3 id="布局动画"><a href="#布局动画" class="headerlink" title="布局动画"></a>布局动画</h3><p>LinearLayout</p>
-<h4 id="例-2"><a href="#例-2" class="headerlink" title="例"></a>例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">LinearLayout ll = (LinearLayout) findViewById(R.id.ll);</div><div class="line">ScaleAnimation sa = new ScaleAnimation(0, 1, 0, 1);</div><div class="line">sa.setDuration(2000);</div><div class="line">LayoutAnimationController lac = new LayoutAnimationController(sa, 0.5f);</div><div class="line">lac.setOrder(LayoutAnimationController.ORDER_RANDOM);</div><div class="line">ll.setLayoutAnimation(lac);</div></pre></td></tr></table></figure>
-<h2 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h2>]]></content>
     </entry>
     
     <entry>

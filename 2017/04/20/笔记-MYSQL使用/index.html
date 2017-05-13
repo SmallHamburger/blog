@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'true', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    <meta name="google-site-verification" content="true">
+    
+    
+    
+    <title>笔记-MYSQL使用 | 学习笔记 | BIUBIUBIU...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="MySQL,数据库">
+    <meta name="description" content="MYSQL学习笔记
+MYSQL提示符
+prompt \u
+
+
+
+
+参数
+描述
+
+
+
+
+\D
+完整的日期
+
+
+\d
+当前数据库
+
+
+\h
+服务器名称
+
+
+\u
+当前用户名
+
+
+
+
+
+MYSQL语句规范
+关键字和函数名全部大写
+数据库名称,表名称,字段名称全部小写
+SQL语句必须以;结尾
+
+
+
+MYSQL数据类型整型
+
+
+数据类型
+存储字节
+
+
+
+
+TINYINT
+1
+
+
+SMALLINT
+2
+
+
+M">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记-MYSQL使用">
+<meta property="og:url" content="https://smallhamburger.github.io/2017/04/20/笔记-MYSQL使用/index.html">
+<meta property="og:site_name" content="学习笔记">
+<meta property="og:description" content="MYSQL学习笔记
+MYSQL提示符
+prompt \u
+
+
+
+
+参数
+描述
+
+
+
+
+\D
+完整的日期
+
+
+\d
+当前数据库
+
+
+\h
+服务器名称
+
+
+\u
+当前用户名
+
+
+
+
+
+MYSQL语句规范
+关键字和函数名全部大写
+数据库名称,表名称,字段名称全部小写
+SQL语句必须以;结尾
+
+
+
+MYSQL数据类型整型
+
+
+数据类型
+存储字节
+
+
+
+
+TINYINT
+1
+
+
+SMALLINT
+2
+
+
+M">
+<meta property="og:updated_time" content="2017-05-13T10:50:31.366Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="笔记-MYSQL使用">
+<meta name="twitter:description" content="MYSQL学习笔记
+MYSQL提示符
+prompt \u
+
+
+
+
+参数
+描述
+
+
+
+
+\D
+完整的日期
+
+
+\d
+当前数据库
+
+
+\h
+服务器名称
+
+
+\u
+当前用户名
+
+
+
+
+
+MYSQL语句规范
+关键字和函数名全部大写
+数据库名称,表名称,字段名称全部小写
+SQL语句必须以;结尾
+
+
+
+MYSQL数据类型整型
+
+
+数据类型
+存储字节
+
+
+
+
+TINYINT
+1
+
+
+SMALLINT
+2
+
+
+M">
+    
+        <link rel="alternate" type="application/atom+xml" title="学习笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">会飞的汉堡包</h5>
+          <a href="mailto:zhangjisong@live.com" title="zhangjisong@live.com" class="mail">zhangjisong@live.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">笔记-MYSQL使用</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">笔记-MYSQL使用</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-04-19T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2017-04-20
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术类/">技术类</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MYSQL学习笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">MYSQL学习笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MYSQL提示符"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">MYSQL提示符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MYSQL语句规范"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">MYSQL语句规范</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MYSQL数据类型"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">MYSQL数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#整型"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">整型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#浮点型"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">浮点型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#日期"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">日期</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符串"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">字符串</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MYSQL常用命令"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">MYSQL常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常用mysql数据库信息"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">常用mysql数据库信息</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#显示当前服务器版本"><span class="post-toc-number">1.4.1.1.</span> <span class="post-toc-text">显示当前服务器版本</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#显示当前日期"><span class="post-toc-number">1.4.1.2.</span> <span class="post-toc-text">显示当前日期</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#显示当前用户"><span class="post-toc-number">1.4.1.3.</span> <span class="post-toc-text">显示当前用户</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查看打开的数据库"><span class="post-toc-number">1.4.1.4.</span> <span class="post-toc-text">查看打开的数据库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查找记录"><span class="post-toc-number">1.4.1.5.</span> <span class="post-toc-text">查找记录</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#打开数据库"><span class="post-toc-number">1.4.1.6.</span> <span class="post-toc-text">打开数据库</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看数据库-表信息"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">查看数据库/表信息</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查看服务器下的数据库列表"><span class="post-toc-number">1.4.2.1.</span> <span class="post-toc-text">查看服务器下的数据库列表</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查看创建数据库的语句以及编码方式"><span class="post-toc-number">1.4.2.2.</span> <span class="post-toc-text">查看创建数据库的语句以及编码方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查看-当前-数据库的数据表"><span class="post-toc-number">1.4.2.3.</span> <span class="post-toc-text">查看(当前)数据库的数据表</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查看数据表的结构"><span class="post-toc-number">1.4.2.4.</span> <span class="post-toc-text">查看数据表的结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查看索引"><span class="post-toc-number">1.4.2.5.</span> <span class="post-toc-text">查看索引</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建数据库-表"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">创建数据库/表</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建数据库"><span class="post-toc-number">1.4.3.1.</span> <span class="post-toc-text">创建数据库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建数据表"><span class="post-toc-number">1.4.3.2.</span> <span class="post-toc-text">创建数据表</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建带有外键的数据表"><span class="post-toc-number">1.4.3.3.</span> <span class="post-toc-text">创建带有外键的数据表</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修改数据表"><span class="post-toc-number">1.4.4.</span> <span class="post-toc-text">修改数据表</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修改数据的编码方式"><span class="post-toc-number">1.4.4.1.</span> <span class="post-toc-text">修改数据的编码方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修改数据表名称"><span class="post-toc-number">1.4.4.2.</span> <span class="post-toc-text">修改数据表名称</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加单列-可以指定列的位置"><span class="post-toc-number">1.4.4.3.</span> <span class="post-toc-text">添加单列, 可以指定列的位置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加多列-不可以指定列的位置"><span class="post-toc-number">1.4.4.4.</span> <span class="post-toc-text">添加多列, 不可以指定列的位置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#删除一列或多列"><span class="post-toc-number">1.4.4.5.</span> <span class="post-toc-text">删除一列或多列</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加主键约束-只能有一个"><span class="post-toc-number">1.4.4.6.</span> <span class="post-toc-text">添加主键约束, 只能有一个</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加唯一约束-可以有多个"><span class="post-toc-number">1.4.4.7.</span> <span class="post-toc-text">添加唯一约束, 可以有多个</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加外键约束"><span class="post-toc-number">1.4.4.8.</span> <span class="post-toc-text">添加外键约束</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加-删除默认约束"><span class="post-toc-number">1.4.4.9.</span> <span class="post-toc-text">添加/删除默认约束</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#删除主键约束"><span class="post-toc-number">1.4.4.10.</span> <span class="post-toc-text">删除主键约束</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#删除唯一约束"><span class="post-toc-number">1.4.4.11.</span> <span class="post-toc-text">删除唯一约束</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#删除外键约束"><span class="post-toc-number">1.4.4.12.</span> <span class="post-toc-text">删除外键约束</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修改列定义-数据类型从大类型改为小类型时会造成数据丢失"><span class="post-toc-number">1.4.4.13.</span> <span class="post-toc-text">修改列定义, 数据类型从大类型改为小类型时会造成数据丢失</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修改列名称-也包含列定义的功能"><span class="post-toc-number">1.4.4.14.</span> <span class="post-toc-text">修改列名称, 也包含列定义的功能</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除数据库-表-记录"><span class="post-toc-number">1.4.5.</span> <span class="post-toc-text">删除数据库/表/记录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除数据库"><span class="post-toc-number">1.4.6.</span> <span class="post-toc-text">删除数据库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除数据表"><span class="post-toc-number">1.4.7.</span> <span class="post-toc-text">删除数据表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除数据表中的记录"><span class="post-toc-number">1.4.8.</span> <span class="post-toc-text">删除数据表中的记录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#向数据表插入记录"><span class="post-toc-number">1.4.9.</span> <span class="post-toc-text">向数据表插入记录</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字段约束"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">字段约束</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字段创建时约束"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">字段创建时约束</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#外键约束的参照操作"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">外键约束的参照操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#表级约束和列级约束"><span class="post-toc-number">1.5.3.</span> <span class="post-toc-text">表级约束和列级约束</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#记录操作"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">记录操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插入记录"><span class="post-toc-number">1.6.1.</span> <span class="post-toc-text">插入记录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#更新记录"><span class="post-toc-number">1.6.2.</span> <span class="post-toc-text">更新记录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除记录"><span class="post-toc-number">1.6.3.</span> <span class="post-toc-text">删除记录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查找记录-1"><span class="post-toc-number">1.6.4.</span> <span class="post-toc-text">查找记录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#条件表达式"><span class="post-toc-number">1.6.5.</span> <span class="post-toc-text">条件表达式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查询结果分组"><span class="post-toc-number">1.6.6.</span> <span class="post-toc-text">查询结果分组</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分组条件"><span class="post-toc-number">1.6.7.</span> <span class="post-toc-text">分组条件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对查询结果进行排序"><span class="post-toc-number">1.6.8.</span> <span class="post-toc-text">对查询结果进行排序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#限制查询结果返回的数量"><span class="post-toc-number">1.6.9.</span> <span class="post-toc-text">限制查询结果返回的数量</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查询操作"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">查询操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#子查询"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">子查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#分类"><span class="post-toc-number">1.7.1.1.</span> <span class="post-toc-text">分类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#使用比较运算符的子查询"><span class="post-toc-number">1.7.1.1.1.</span> <span class="post-toc-text">使用比较运算符的子查询</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#用ANY-SOME-ALL修饰的比较运算符"><span class="post-toc-number">1.7.1.1.2.</span> <span class="post-toc-text">用ANY  SOME  ALL修饰的比较运算符</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#使用IN-NOT-IN的子查询"><span class="post-toc-number">1.7.1.1.3.</span> <span class="post-toc-text">使用IN, NOT IN的子查询</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#使用NOT-EXIST-EXIST的子查询"><span class="post-toc-number">1.7.1.1.4.</span> <span class="post-toc-text">使用NOT EXIST, EXIST的子查询</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#将查询结果插入到数据表"><span class="post-toc-number">1.7.1.2.</span> <span class="post-toc-text">将查询结果插入到数据表</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建表的同时将查询结果写入到数据表"><span class="post-toc-number">1.7.2.</span> <span class="post-toc-text">创建表的同时将查询结果写入到数据表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#连接"><span class="post-toc-number">1.7.3.</span> <span class="post-toc-text">连接</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#内连接INNER-JOIN-JOIN-CROSS-JOIN"><span class="post-toc-number">1.7.3.1.</span> <span class="post-toc-text">内连接INNER JOIN/JOIN/CROSS JOIN</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#左外连接LEFT-OUTER-JOIN"><span class="post-toc-number">1.7.3.2.</span> <span class="post-toc-text">左外连接LEFT [OUTER] JOIN</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#右外连接RIGHT-OUTER-JOIN"><span class="post-toc-number">1.7.3.3.</span> <span class="post-toc-text">右外连接RIGHT [OUTER] JOIN</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#连接条件ON或者WHERE"><span class="post-toc-number">1.7.3.4.</span> <span class="post-toc-text">连接条件ON或者WHERE</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多表连接"><span class="post-toc-number">1.7.3.5.</span> <span class="post-toc-text">多表连接</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自身连接"><span class="post-toc-number">1.7.3.6.</span> <span class="post-toc-text">自身连接</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#无限级数据表设计"><span class="post-toc-number">1.7.4.</span> <span class="post-toc-text">无限级数据表设计</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-笔记-MYSQL使用"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">笔记-MYSQL使用</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-04-20 00:00:00" datetime="2017-04-19T16:00:00.000Z"  itemprop="datePublished">2017-04-20</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术类/">技术类</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="MYSQL学习笔记"><a href="#MYSQL学习笔记" class="headerlink" title="MYSQL学习笔记"></a>MYSQL学习笔记</h1><hr>
+<h2 id="MYSQL提示符"><a href="#MYSQL提示符" class="headerlink" title="MYSQL提示符"></a>MYSQL提示符</h2><blockquote>
+<p><code>prompt \u</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\D</td>
+<td>完整的日期</td>
+</tr>
+<tr>
+<td style="text-align:left">\d</td>
+<td>当前数据库</td>
+</tr>
+<tr>
+<td style="text-align:left">\h</td>
+<td>服务器名称</td>
+</tr>
+<tr>
+<td style="text-align:left">\u</td>
+<td>当前用户名</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<hr>
+<h2 id="MYSQL语句规范"><a href="#MYSQL语句规范" class="headerlink" title="MYSQL语句规范"></a>MYSQL语句规范</h2><ol>
+<li>关键字和函数名全部<strong>大写</strong></li>
+<li>数据库名称,表名称,字段名称全部<strong>小写</strong></li>
+<li>SQL语句必须以<code>;</code>结尾</li>
+</ol>
+<hr>
+<hr>
+<h2 id="MYSQL数据类型"><a href="#MYSQL数据类型" class="headerlink" title="MYSQL数据类型"></a>MYSQL数据类型</h2><h3 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">存储字节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TINYINT</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:left">SMALLINT</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:left">MEDIUMINT</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:left">INT</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:left">BIGINT</td>
+<td style="text-align:center">8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">存储字节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">FLOAT[(M, D)]</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:left">DOUBLE[(M, D)]</td>
+<td style="text-align:center">8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">日期类型</th>
+<th style="text-align:center">范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">YEAR</td>
+<td style="text-align:center">年份yyyy</td>
+</tr>
+<tr>
+<td style="text-align:left">TIME</td>
+<td style="text-align:center">时间(hh-mm-ss)</td>
+</tr>
+<tr>
+<td style="text-align:left">DATE</td>
+<td style="text-align:center">日期(yyyy-mm-dd)</td>
+</tr>
+<tr>
+<td style="text-align:left">DATETIME</td>
+<td style="text-align:center">日期与时间組合(yyyy-mm-dd hh-mm-ss)</td>
+</tr>
+<tr>
+<td style="text-align:left">TIMESTAMP</td>
+<td style="text-align:center">yyyymmddhhmmss</td>
+</tr>
+</tbody>
+</table>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:center">最大长度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">CHAR(M)</td>
+<td style="text-align:center">255</td>
+</tr>
+<tr>
+<td style="text-align:left">VARCHAR(M)</td>
+<td style="text-align:center">255</td>
+</tr>
+<tr>
+<td style="text-align:left">TINYTEXT</td>
+<td style="text-align:center">255</td>
+</tr>
+<tr>
+<td style="text-align:left">TEXT</td>
+<td style="text-align:center">65535</td>
+</tr>
+<tr>
+<td style="text-align:left">MEDIUMTEXT</td>
+<td style="text-align:center">2^24 - 1</td>
+</tr>
+<tr>
+<td style="text-align:left">LONGTEXT</td>
+<td style="text-align:center">2^32 - 1</td>
+</tr>
+<tr>
+<td style="text-align:left">ENUM(‘value1’, ‘value2’, …)</td>
+<td style="text-align:center">集合最大数目为65535</td>
+</tr>
+<tr>
+<td style="text-align:left">SET(‘value1’, ‘value2’, …)</td>
+<td style="text-align:center">集合最大数目为64</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<hr>
+<h2 id="MYSQL常用命令"><a href="#MYSQL常用命令" class="headerlink" title="MYSQL常用命令"></a>MYSQL常用命令</h2><h3 id="常用mysql数据库信息"><a href="#常用mysql数据库信息" class="headerlink" title="常用mysql数据库信息"></a>常用mysql数据库信息</h3><h4 id="显示当前服务器版本"><a href="#显示当前服务器版本" class="headerlink" title="显示当前服务器版本"></a>显示当前服务器版本</h4><blockquote>
+<p><code>SELECT VERSION();</code></p>
+</blockquote>
+<h4 id="显示当前日期"><a href="#显示当前日期" class="headerlink" title="显示当前日期"></a>显示当前日期</h4><blockquote>
+<p><code>SELCET NOW();</code></p>
+</blockquote>
+<h4 id="显示当前用户"><a href="#显示当前用户" class="headerlink" title="显示当前用户"></a>显示当前用户</h4><blockquote>
+<p><code>SELECT USER();</code></p>
+</blockquote>
+<h4 id="查看打开的数据库"><a href="#查看打开的数据库" class="headerlink" title="查看打开的数据库"></a>查看打开的数据库</h4><blockquote>
+<p><code>SELECT DATABASE();</code></p>
+</blockquote>
+<h4 id="查找记录"><a href="#查找记录" class="headerlink" title="查找记录"></a>查找记录</h4><blockquote>
+<p><code>SELECT FROM expr, ... FROM tbl_name;</code></p>
+</blockquote>
+<h4 id="打开数据库"><a href="#打开数据库" class="headerlink" title="打开数据库"></a>打开数据库</h4><blockquote>
+<p><code>USE db_name;</code></p>
+</blockquote>
+<hr>
+<h3 id="查看数据库-表信息"><a href="#查看数据库-表信息" class="headerlink" title="查看数据库/表信息"></a>查看数据库/表信息</h3><h4 id="查看服务器下的数据库列表"><a href="#查看服务器下的数据库列表" class="headerlink" title="查看服务器下的数据库列表"></a>查看服务器下的数据库列表</h4><blockquote>
+<p><code>SHOW {DATABASES | SCHEMA} [LIKE &#39;pattern&#39; | WHERE expr]};</code></p>
+</blockquote>
+<h4 id="查看创建数据库的语句以及编码方式"><a href="#查看创建数据库的语句以及编码方式" class="headerlink" title="查看创建数据库的语句以及编码方式"></a>查看创建数据库的语句以及编码方式</h4><blockquote>
+<p><code>SHOW CREATE DATABASE db_name;</code></p>
+</blockquote>
+<h4 id="查看-当前-数据库的数据表"><a href="#查看-当前-数据库的数据表" class="headerlink" title="查看(当前)数据库的数据表"></a>查看(当前)数据库的数据表</h4><blockquote>
+<p><code>SHOW TABLES [FROM db_name] [LIKE &#39;pattern&#39; | WHERE expr];</code></p>
+</blockquote>
+<h4 id="查看数据表的结构"><a href="#查看数据表的结构" class="headerlink" title="查看数据表的结构"></a>查看数据表的结构</h4><blockquote>
+<p><code>SHOW COLUMNS FROM tbl_name;</code></p>
+</blockquote>
+<h4 id="查看索引"><a href="#查看索引" class="headerlink" title="查看索引"></a>查看索引</h4><blockquote>
+<p><code>SHOW INDEXES FROM provinces[\G];</code></p>
+</blockquote>
+<hr>
+<h3 id="创建数据库-表"><a href="#创建数据库-表" class="headerlink" title="创建数据库/表"></a>创建数据库/表</h3><h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4><blockquote>
+<p><code>CREATE {DATABASE | SCHEMA} [IF NOT EXISTS] db_name [DEFAULT] CHARACTER SET [=] character_name;</code></p>
+</blockquote>
+<h4 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h4><blockquote>
+<p><code>CREATE TABLE [IF NOT EXISTS] jeson( id INT UNSIGNED, name VARCHAR(30), age TINYINT UNSIGNED, salary FLOAT(8,2) UNSIGNED );</code></p>
+</blockquote>
+<h4 id="创建带有外键的数据表"><a href="#创建带有外键的数据表" class="headerlink" title="创建带有外键的数据表"></a>创建带有外键的数据表</h4><ol>
+<li><p>先创建父表</p>
+<blockquote>
+<p><code>CREATE TABLE provinces (id SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT, name VARCHAR(30) NOT NULL);</code></p>
+</blockquote>
+</li>
+<li><p>创建子表</p>
+<blockquote>
+<p><code>CREATE TABLE users(id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT, name VARCHAR(30) NOT NULL,pid SMALLINT UNSIGNED, FOREIGN KEY (pid) REFERENCES provinces (id));</code></p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<h3 id="修改数据表"><a href="#修改数据表" class="headerlink" title="修改数据表"></a>修改数据表</h3><h4 id="修改数据的编码方式"><a href="#修改数据的编码方式" class="headerlink" title="修改数据的编码方式"></a>修改数据的编码方式</h4><blockquote>
+<p><code>ALTER {DATABASE | SCHEMA} [db_name] [DEFAULT] CHARACHTER SET [=] character_name;</code></p>
+</blockquote>
+<h4 id="修改数据表名称"><a href="#修改数据表名称" class="headerlink" title="修改数据表名称"></a>修改数据表名称</h4><blockquote>
+<p><code>ALTER TABLE tbl_name RENAME [TO | AS] new_tbl_name;</code></p>
+<p><code>RENAME TABLE tbl_name TO new_tbl_name [, tbl_name2 TO new_tbl_name2, ...]</code></p>
+</blockquote>
+<h4 id="添加单列-可以指定列的位置"><a href="#添加单列-可以指定列的位置" class="headerlink" title="添加单列, 可以指定列的位置"></a>添加单列, 可以指定列的位置</h4><blockquote>
+<p><code>ALTER TABLE tbl_name ADD [COLUMN] col_name col_definition [FIRST | AFTER col_name];</code></p>
+</blockquote>
+<h4 id="添加多列-不可以指定列的位置"><a href="#添加多列-不可以指定列的位置" class="headerlink" title="添加多列, 不可以指定列的位置"></a>添加多列, 不可以指定列的位置</h4><blockquote>
+<p><code>ALTER TABLE tbl_name ADD [COLUMN] (col_name1 col_definition , col_name2 col_definition, ...);</code></p>
+</blockquote>
+<h4 id="删除一列或多列"><a href="#删除一列或多列" class="headerlink" title="删除一列或多列"></a>删除一列或多列</h4><blockquote>
+<p><code>ALTER TABLE tbl_name DROP [COLUMNS] col_name [, DROP [COLUMNS] col_name1, DROP [COLUMNS] col_name2, ...];</code></p>
+</blockquote>
+<h4 id="添加主键约束-只能有一个"><a href="#添加主键约束-只能有一个" class="headerlink" title="添加主键约束, 只能有一个"></a>添加主键约束, 只能有一个</h4><blockquote>
+<p><code>ALTER TABLE tbl_name ADD [CONSTRAINT [symbol]] PRIMARY KEY [index_type] (index_col_name, ...);</code></p>
+</blockquote>
+<h4 id="添加唯一约束-可以有多个"><a href="#添加唯一约束-可以有多个" class="headerlink" title="添加唯一约束, 可以有多个"></a>添加唯一约束, 可以有多个</h4><blockquote>
+<p><code>ALTER TABLE tbl_name ADD [CONSTRAINT [symbol]] UNIQUE [INDEX|KEY]  [index_name] [index_type] (index_col_name, ...);</code></p>
+</blockquote>
+<h4 id="添加外键约束"><a href="#添加外键约束" class="headerlink" title="添加外键约束"></a>添加外键约束</h4><blockquote>
+<p><code>ALTER TABLE tbl_name ADD [CONSTRAINT [symbol]] FOREIGN KEY  [index_name] (index_col_name, ...) REFERENCES tbl_name (index_col_name);</code></p>
+</blockquote>
+<h4 id="添加-删除默认约束"><a href="#添加-删除默认约束" class="headerlink" title="添加/删除默认约束"></a>添加/删除<strong>默认约束</strong></h4><blockquote>
+<p><code>ALTER TABLE tbl_name ALTER [COLUMNS] COL_NAME {SET DEFAULT literal | DROP DEFAULT};</code></p>
+</blockquote>
+<h4 id="删除主键约束"><a href="#删除主键约束" class="headerlink" title="删除主键约束"></a>删除主键约束</h4><blockquote>
+<p><code>ALTER TABLE tbl_name DROP PRIMARY KEY;</code></p>
+</blockquote>
+<h4 id="删除唯一约束"><a href="#删除唯一约束" class="headerlink" title="删除唯一约束"></a>删除唯一约束</h4><blockquote>
+<p><code>ALTER TABLE tbl_name DROP {INDEX | KEY} index_name;</code></p>
+</blockquote>
+<h4 id="删除外键约束"><a href="#删除外键约束" class="headerlink" title="删除外键约束"></a>删除外键约束</h4><blockquote>
+<p><code>ALTER TABLE tbl_name DROP FOREIGN KEY fk_symbol;</code></p>
+</blockquote>
+<h4 id="修改列定义-数据类型从大类型改为小类型时会造成数据丢失"><a href="#修改列定义-数据类型从大类型改为小类型时会造成数据丢失" class="headerlink" title="修改列定义, 数据类型从大类型改为小类型时会造成数据丢失"></a>修改列定义, 数据类型从大类型改为小类型时会造成数据丢失</h4><blockquote>
+<p><code>ALTER TABLE tbl_name MODIFY [COLUMNS] col_name col_definition [FIRST | AFTER col_name];</code></p>
+</blockquote>
+<h4 id="修改列名称-也包含列定义的功能"><a href="#修改列名称-也包含列定义的功能" class="headerlink" title="修改列名称, 也包含列定义的功能"></a>修改列名称, 也包含列定义的功能</h4><blockquote>
+<p><code>ALTER TABLE tbl_name CHANGE [COLUMNS] old_col_name new_col_name col_definition [FIRST | AFTER col_name];</code></p>
+</blockquote>
+<hr>
+<h3 id="删除数据库-表-记录"><a href="#删除数据库-表-记录" class="headerlink" title="删除数据库/表/记录"></a>删除数据库/表/记录</h3><h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><blockquote>
+<p><code>DROP {DATABASE | SCHEMA} [IF EXISTS] db_name;</code></p>
+</blockquote>
+<h3 id="删除数据表"><a href="#删除数据表" class="headerlink" title="删除数据表"></a>删除数据表</h3><blockquote>
+<p><code>DROP TABLE [IF EXISTS] tbl_name;</code></p>
+</blockquote>
+<h3 id="删除数据表中的记录"><a href="#删除数据表中的记录" class="headerlink" title="删除数据表中的记录"></a>删除数据表中的记录</h3><blockquote>
+<p><code>DELETE FROM provinces WHERE id = 3;</code></p>
+</blockquote>
+<hr>
+<h3 id="向数据表插入记录"><a href="#向数据表插入记录" class="headerlink" title="向数据表插入记录"></a>向数据表插入记录</h3><blockquote>
+<p><code>INSERT [INTO] tabl_name [(col_name, ...)] VALUES(val, ...);</code></p>
+</blockquote>
+<hr>
+<hr>
+<h2 id="字段约束"><a href="#字段约束" class="headerlink" title="字段约束"></a>字段约束</h2><h3 id="字段创建时约束"><a href="#字段创建时约束" class="headerlink" title="字段创建时约束"></a>字段创建时约束</h3><ol>
+<li><code>NULL</code> <ul>
+<li>默认值可以为空</li>
+</ul>
+</li>
+<li><code>NOT NULL</code> <ul>
+<li>默认值不可以为空</li>
+</ul>
+</li>
+<li><code>AUTO_INCREMENT</code><ul>
+<li>自动编号, 且必须与主键组合使用</li>
+<li>默认情况下起始值为1, 每次的增量为1</li>
+</ul>
+</li>
+<li><code>PRIMARY KEY</code><ul>
+<li>主键约束</li>
+<li>每张表只能存在一个主键</li>
+<li>主键保证记录的唯一性</li>
+<li>主键自动为<code>NOT NULL</code></li>
+</ul>
+</li>
+<li><code>UNIQUE KEY</code><ul>
+<li>唯一约束</li>
+<li>每张数据表可以存在多个唯一约束</li>
+<li>唯一约束可以保证记录的唯一性</li>
+<li>唯一约束的字段可以为<code>NULL</code></li>
+</ul>
+</li>
+<li><code>DEFAULT</code><ul>
+<li>字段的默认值</li>
+</ul>
+</li>
+<li><code>FOREIGN KEY</code><ul>
+<li>保持数据一致性, 完整性</li>
+<li>实现一对一或一对多的关系</li>
+<li>外键约束的要求<ul>
+<li>父表和子表必须使用相同的存储引擎, 而且禁止使用临时表</li>
+<li>数据表的存储引擎只能为<strong>INNODB</strong></li>
+<li>外检列和参照列必须具有相似的数据类型. 其中数字的长度或者是否有符号位必须相同; 而字符的长度则可以不同</li>
+<li>外键列和参照列必须创建索引. 如果外键列不存在索引的话, MySQL将自动创建索引</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="外键约束的参照操作"><a href="#外键约束的参照操作" class="headerlink" title="外键约束的参照操作"></a>外键约束的参照操作</h3><ol>
+<li><code>CASCADE</code> <ul>
+<li>从父表删除或更新时, 自动删除或更新子表中匹配的行</li>
+</ul>
+</li>
+<li><code>SET NULL</code><ul>
+<li>从父表删除或更新时, 自动设置子表中的外键列为<code>NULL</code>, 如果使用该选项, 必须保证子表列没有指定<code>NOT NULL</code></li>
+</ul>
+</li>
+<li><code>RESTRICT</code><ul>
+<li>拒绝对父表的删除或更新操作</li>
+</ul>
+</li>
+<li><code>NO ACTION</code><ul>
+<li>标准的SQL关键字, 与RESTRICT相同</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>例:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE provinces(</div><div class="line">	id SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT, </div><div class="line">	name VARCHAR(30) NOT NULL</div><div class="line">);</div><div class="line"></div><div class="line">CREATE TABLE users(</div><div class="line">	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT, </div><div class="line">	name VARCHAR(30) NOT NULL, </div><div class="line">	pid SMALLINT UNSIGNED,</div><div class="line">	FOREIGN KEY (pid) REFERENCES provinces (id) ON DELETE CASCADE</div><div class="line">);</div></pre></td></tr></table></figure>
+<h3 id="表级约束和列级约束"><a href="#表级约束和列级约束" class="headerlink" title="表级约束和列级约束"></a>表级约束和列级约束</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;列级约束既可以在列定义时声明, 也可以在列定义后声明; 表级约束只能在列定义后声明.    </p>
+<ol>
+<li><p>表级约束</p>
+<p> 对一个数据列建立的约束, 开发中经常使用</p>
+</li>
+<li><p>表级约束</p>
+<p> 对多个数据列建立的约束</p>
+</li>
+</ol>
+<h2 id="记录操作"><a href="#记录操作" class="headerlink" title="记录操作"></a>记录操作</h2><h3 id="插入记录"><a href="#插入记录" class="headerlink" title="插入记录"></a>插入记录</h3><ol>
+<li><code>INSERT [INTO] tbl_name [(col_name, ...)] {VALUES | VALUE} ({expr | DEFAULT}, ...),(...),...;</code><ul>
+<li>插入时主键可以使用<code>NULL</code>或者<code>DEFALUT</code>使用自动的默认值</li>
+<li>拥有默认值得字段可以使用<code>DEFAULT</code></li>
+<li>可以在<code>VALUES</code>后加多个记录</li>
+<li>可以在值中加入函数</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>例:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">INSERT users VALUES</div><div class="line">	(DEFAULT, &apos;zhangsan&apos;, &apos;1230&apos;, 20*8-100, &apos;1&apos;), </div><div class="line">	(NULL, &apos;lisi&apos;, md5(&apos;123&apos;), DEFAULT, 2);</div></pre></td></tr></table></figure>
+<ol>
+<li><p><code>INSERT [INTO] tbl_name SET col_name={expr | DEFAULT}, ...;</code></p>
+<ul>
+<li>与第一种方式区别在于, 此方法可以使用子查询</li>
+<li>一次性只能插入一条数据</li>
+</ul>
+</li>
+<li><p><code>INSERT [INTO] tbl_name [(col_name, ...)] SELECT ...;</code></p>
+<ul>
+<li>此方法可以将查询结果插入到指定的数据表中</li>
+</ul>
+</li>
+</ol>
+<h3 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h3><ol>
+<li>单表更新<ul>
+<li><code>INSERT [LOW_PRIORUTY] [IGNORE] tbl_reference SET col_name1={expr | DEFAULT} [, col_name2={expr2|DEFAULT}] ... [WHERE where_condition];</code></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>例:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UPDATE users SET age = age + 10 WHERE id % 2 =0;</div></pre></td></tr></table></figure>
+<ol>
+<li>多表更新<ul>
+<li><code>UPDATE tbl_references SET col_name1 ={expr1 | DEFAULT} [, col_name2={expr2 | DEFAULT}], ... [WHERE where_condition];</code></li>
+<li>语法结构<ul>
+<li><code>tbl_reference {[INNER | CROSS] JOIN | {LEFT | RIGHT} [OUTER] JOIN} tbl_reference ON conditional_expr;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UPDATE goods INNER JOIN category ON goods_cate=name SET goods_cate=id;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="删除记录"><a href="#删除记录" class="headerlink" title="删除记录"></a>删除记录</h3><ol>
+<li><p>单表删除</p>
+<ul>
+<li><code>DELETE FROM tbl_name [WHERE where_condition];</code></li>
+</ul>
+</li>
+<li><p>多表删除</p>
+<ul>
+<li><code>DELETE tbl_name[.*] [, tbl_name[.*]] ... FROM tbl_references [WHERE where_condition]</code></li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>例: 删除自身重复的数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">DELETE t1 FROM goods AS t1 LEFT JOIN</div><div class="line">	(SELECT MIN(goods_id) goods_id, goods_name FROM goods GROUP BY goods_name HAVING COUNT(goods_name)&gt;= 2) AS t2 </div><div class="line">	ON t1.goods_name = t2.goods_name </div><div class="line">	WHERE t1.goods_id &lt; t2.goods_id;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="查找记录-1"><a href="#查找记录-1" class="headerlink" title="查找记录"></a>查找记录</h3><ol>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">SELECT select_expr [, select_expr2, ...]</div><div class="line">[</div><div class="line">	FROM tbl_references</div><div class="line">	[WHERE where_condition]</div><div class="line">	[GROUP BY &#123;col_name | position&#125; [ASC | DESC], ...]</div><div class="line">	[HAVING where_condition]</div><div class="line">	[ORDER BY &#123;col_name | expr | position&#125; [ASC | DESC], ...]</div><div class="line">	[LIMIT &#123;[offset, ] row_count | row_count OFFSET offset&#125;]</div><div class="line">];</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>查询表达式<ul>
+<li>每一个表达式表示想要的一列, 必须至少有一个</li>
+<li>多个列之间以英文逗号分隔</li>
+<li>星号<code>*</code>表示所有列, <code>tbl_name.*</code> 可以表示命名表的所有列</li>
+<li>查询表达式可以使用<code>[ AS ] alias_name</code>为其赋予别名</li>
+<li>别名可用于<code>GROUP BY, ORDER BY, HAVING</code>子句</li>
+</ul>
+</li>
+</ul>
+<h3 id="条件表达式"><a href="#条件表达式" class="headerlink" title="条件表达式"></a>条件表达式</h3><ol>
+<li><code>WHERE expr;</code><ul>
+<li>对记录进行过滤, 如果没有指定<code>WHERE</code>子句, 则显示所有子句</li>
+<li>在<code>WHERE</code>表达式中,可以使用MySql支持的函数或运算符</li>
+</ul>
+</li>
+</ol>
+<h3 id="查询结果分组"><a href="#查询结果分组" class="headerlink" title="查询结果分组"></a>查询结果分组</h3><ol>
+<li><code>[GROUP BY {col_name | position} [ASC | DESC], ...];</code></li>
+</ol>
+<h3 id="分组条件"><a href="#分组条件" class="headerlink" title="分组条件"></a>分组条件</h3><ol>
+<li><code>[HAVING where_condition];</code><ul>
+<li>根据部分记录进行分组</li>
+<li>条件必须出现在分组条件所选择的字段或者是聚合函数,如count()</li>
+</ul>
+</li>
+</ol>
+<h3 id="对查询结果进行排序"><a href="#对查询结果进行排序" class="headerlink" title="对查询结果进行排序"></a>对查询结果进行排序</h3><ol>
+<li><code>[ORDER BY {col_name | expr | position} [ASC | DESC], ...];</code></li>
+</ol>
+<h3 id="限制查询结果返回的数量"><a href="#限制查询结果返回的数量" class="headerlink" title="限制查询结果返回的数量"></a>限制查询结果返回的数量</h3><ol>
+<li><code>[LIMIT {[offset, ] row_count | row_count OFFSET offset}];</code></li>
+</ol>
+<h2 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h2><h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><ul>
+<li><p>子查询(Subquery)是指出现在其他SQL语句内的<code>SELECT</code>子句</p>
+</li>
+<li><p>子查询指嵌套在查询内部, 且必须始终出现在<strong>圆括号内</strong></p>
+</li>
+<li><p>子查询可以包含多个关键字或条件, 如<code>DISTINCT</code>,<code>GROUP BY</code>, <code>ORDER BY</code>, <code>LIMIT</code>, 函数等</p>
+</li>
+<li><p>子查询的外层查询可以是:<code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>SET</code>, <code>DO</code>等</p>
+</li>
+<li><p>子查询可以返回标量, 一行, 一列或者子查询</p>
+</li>
+</ul>
+<blockquote>
+<p>例:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM tb_name1 WHERE col_name1 = (SELECT col_name2 FROM tbl_name2);</div></pre></td></tr></table></figure>
+<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><h5 id="使用比较运算符的子查询"><a href="#使用比较运算符的子查询" class="headerlink" title="使用比较运算符的子查询"></a>使用比较运算符的子查询</h5><p><code>=  &gt;  &lt;  &gt;=  &lt;=  &lt;&gt;  !=  &lt;=&gt;</code></p>
+<h5 id="用ANY-SOME-ALL修饰的比较运算符"><a href="#用ANY-SOME-ALL修饰的比较运算符" class="headerlink" title="用ANY  SOME  ALL修饰的比较运算符"></a>用<code>ANY  SOME  ALL</code>修饰的比较运算符</h5><table>
+<thead>
+<tr>
+<th style="text-align:center">运算符 \ 关键字</th>
+<th style="text-align:center"><code>ANY</code></th>
+<th style="text-align:center"><code>SOME</code></th>
+<th style="text-align:center"><code>ALL</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>&gt;, &gt;=</code></td>
+<td style="text-align:center">最小值</td>
+<td style="text-align:center">最小值</td>
+<td style="text-align:center">最大值</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;, &lt;=</code></td>
+<td style="text-align:center">最大值</td>
+<td style="text-align:center">最大值</td>
+<td style="text-align:center">最小值</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>=</code></td>
+<td style="text-align:center">任意值</td>
+<td style="text-align:center">任意值</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>&lt;&gt;, !=</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">任意值</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>例:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT goods_name,brand_name, goods_price FROM goods WHERE goods_price &lt;= ALL(SELECT goods_price FROM goods WHERE goods_cate = &apos;超级本&apos;);</div></pre></td></tr></table></figure>
+<h5 id="使用IN-NOT-IN的子查询"><a href="#使用IN-NOT-IN的子查询" class="headerlink" title="使用IN, NOT IN的子查询"></a>使用<code>IN, NOT IN</code>的子查询</h5><p><code>IN</code> 作用等同于 <code>=ANY()</code></p>
+<p><code>NOT IN</code> 作用等同于 <code>!=ALL()</code></p>
+<h5 id="使用NOT-EXIST-EXIST的子查询"><a href="#使用NOT-EXIST-EXIST的子查询" class="headerlink" title="使用NOT EXIST, EXIST的子查询"></a>使用<code>NOT EXIST, EXIST</code>的子查询</h5><p>如果子查询返回任何行, <code>EXIST</code>则返回<code>TRUE</code>, 否则为<code>FALSE</code></p>
+<h4 id="将查询结果插入到数据表"><a href="#将查询结果插入到数据表" class="headerlink" title="将查询结果插入到数据表"></a>将查询结果插入到数据表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INSERT [INTO] tbl_name [(col_name, ...)] SELECT ...</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INSERT category (name) (SELECT brand_name FROM goods);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="创建表的同时将查询结果写入到数据表"><a href="#创建表的同时将查询结果写入到数据表" class="headerlink" title="创建表的同时将查询结果写入到数据表"></a>创建表的同时将查询结果写入到数据表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE [IF NOT EXIST] tbl_name [(create_definition, ...)] select_statement;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE brands (</div><div class="line">	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,</div><div class="line">	brand_name VARCHAR(40) NOT NULL</div><div class="line">)</div><div class="line">(SELECT brand_name FROM goods GROUP BY brand_name);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h3><p><code>tbl_reference {[INNER | CROSS] | { LEFT | RIGHT} [OUTER]} JOIN tbl_reference ON confitional_expr</code></p>
+<h4 id="内连接INNER-JOIN-JOIN-CROSS-JOIN"><a href="#内连接INNER-JOIN-JOIN-CROSS-JOIN" class="headerlink" title="内连接INNER JOIN/JOIN/CROSS JOIN"></a>内连接<code>INNER JOIN</code>/<code>JOIN</code>/<code>CROSS JOIN</code></h4><p>交集, 显示左表和右表符合连接条件的记录</p>
+<blockquote>
+<p>例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT goods_id, goods_name, cate_name FROM goods INNER JOIN category ON goods.cate_id=category.cate_id;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="左外连接LEFT-OUTER-JOIN"><a href="#左外连接LEFT-OUTER-JOIN" class="headerlink" title="左外连接LEFT [OUTER] JOIN"></a>左外连接<code>LEFT [OUTER] JOIN</code></h4><p>显示左表的全部记录及右表符合连接条件的记录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT goods_id, goods_name, cate_name FROM goods LEFT JOIN category ON goods.cate_id=category.cate_id;</div></pre></td></tr></table></figure></p>
+<h4 id="右外连接RIGHT-OUTER-JOIN"><a href="#右外连接RIGHT-OUTER-JOIN" class="headerlink" title="右外连接RIGHT [OUTER] JOIN"></a>右外连接<code>RIGHT [OUTER] JOIN</code></h4><p>显示右表的全部记录及左表符合连接条件的记录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT goods_id, goods_name, cate_name FROM goods RIGHT JOIN category ON goods.cate_id=category.cate_id;</div></pre></td></tr></table></figure></p>
+<h4 id="连接条件ON或者WHERE"><a href="#连接条件ON或者WHERE" class="headerlink" title="连接条件ON或者WHERE"></a>连接条件<code>ON</code>或者<code>WHERE</code></h4><p>通常使用<code>ON</code>关键字来设定连接条件, 使用<code>WHERE</code>关键字进行结果集记录的过滤</p>
+<h4 id="多表连接"><a href="#多表连接" class="headerlink" title="多表连接"></a>多表连接</h4><p><code>tbl_reference</code> <code>({[INNER | CROSS] | { LEFT | RIGHT} [OUTER]} JOIN tbl_reference ON confitional_expr)</code> * n</p>
+<h4 id="自身连接"><a href="#自身连接" class="headerlink" title="自身连接"></a>自身连接</h4><blockquote>
+<p>例:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT c.type_id,c.type_name,p.type_name FROM tdb_goods_types c LEFT JOIN tdb_goods_types p ON c.parent_id=p.type_id;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT p.type_id,p.type_name,c.type_name FROM tdb_goods_types p LEFT JOIN tdb_goods_types c ON c.parent_id=p.type_id;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT p.type_id,p.type_name,COUNT(c.type_name) FROM tdb_goods_types p LEFT JOIN tdb_goods_types c ON c.parent_id=p.type_id GROUP BY  p.type_id;</div></pre></td></tr></table></figure>
+<h3 id="无限级数据表设计"><a href="#无限级数据表设计" class="headerlink" title="无限级数据表设计"></a>无限级数据表设计</h3><blockquote>
+<p>例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE tdb_goods_types(</div><div class="line">	type_id   SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,</div><div class="line">	type_name VARCHAR(20) NOT NULL,</div><div class="line">	parent_id SMALLINT UNSIGNED NOT NULL DEFAULT 0</div><div class="line">);</div></pre></td></tr></table></figure></p>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-05-13T10:50:31.366Z" itemprop="dateUpdated">2017-05-13 18:50:31</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/04/20/笔记-MYSQL使用/" target="_blank" rel="external">https://smallhamburger.github.io/2017/04/20/笔记-MYSQL使用/</a>
+        
+    </div>
+    <footer>
+        <a href="https://smallhamburger.github.io">
+            <img src="/img/avatar.jpg" alt="会飞的汉堡包">
+            会飞的汉堡包
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallhamburger.github.io/2017/04/20/笔记-MYSQL使用/&title=《笔记-MYSQL使用》 — 学习笔记&pic=https://smallhamburger.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallhamburger.github.io/2017/04/20/笔记-MYSQL使用/&title=《笔记-MYSQL使用》 — 学习笔记&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallhamburger.github.io/2017/04/20/笔记-MYSQL使用/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《笔记-MYSQL使用》 — 学习笔记&url=https://smallhamburger.github.io/2017/04/20/笔记-MYSQL使用/&via=https://smallhamburger.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallhamburger.github.io/2017/04/20/笔记-MYSQL使用/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/04/23/笔记-Android群英传/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Android群英传-笔记</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/03/01/程序员，你真的会写简历吗？/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">程序员，你真的会写简历吗？</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p style="display:none;">
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span style="display:none;">Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>会飞的汉堡包 &copy; 2016 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallhamburger.github.io/2017/04/20/笔记-MYSQL使用/&title=《笔记-MYSQL使用》 — 学习笔记&pic=https://smallhamburger.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallhamburger.github.io/2017/04/20/笔记-MYSQL使用/&title=《笔记-MYSQL使用》 — 学习笔记&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallhamburger.github.io/2017/04/20/笔记-MYSQL使用/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《笔记-MYSQL使用》 — 学习笔记&url=https://smallhamburger.github.io/2017/04/20/笔记-MYSQL使用/&via=https://smallhamburger.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallhamburger.github.io/2017/04/20/笔记-MYSQL使用/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACu0lEQVR42u3awW7bMBAE0Pz/T6dATwVayzO7ZJICTydBtiU+BeAys/z4iI/P38fz+fOv/r7+55F8+vys1YGHh4c3GvqrIxno831m35/99h/jxMPDw7vGy4vBpjw8l4Fkbs/HjIeHh/cTeLOh5Hd+HhUeHh7e/8jLJ+vZcHMSHh4e3k/gJdHAWVL7Eq9nLXh4eHgx71QD7CvPv6G/h4eHhxdMr+3R3rlta9XjwcPDw7s21bWL0Ta82IQaSWzxZuR4eHh4R3nPA32OADZT+azBVv8B8PDw8C7w6mZS3PpKltqzZ7WNOjw8PLyzvFMhQntlX2CiV4CHh4d3gdeGDrMCsF+455FEgcTDw8Nb8DYFII8P8mijLSpvPsXDw8M7ymuXrW20mnfh2m9Gd8PDw8O7zJstnffhbBIHDzcx4OHh4V3gnRpoviBOqMnLbYMMPDw8vFO8ZHB5QDCbstu2WXIFDw8P7zavbrrH0UDOPtXBe5lP4+Hh4R3lzULVdil8byvVy9Hi4eHhXeDloWpLSgpJHua2vDc7I/Dw8PAWvDwYTc7zKb4NONrXgYeHh/c1vHapuo99840Is2fh4eHh3eDNBnSsQRU3vVZxMx4eHt5R3uyRs+ZWMulvFvFFgIuHh4e34OWPb4OAJN7NS04b4L5ZXuPh4eEd4s0aV/uyMVugr/5vwMPDw1vzklC13Uo122qQLLjbxTceHh7ePV4yl24C3DxcyKONqArg4eHhHeV9lsds6dyWnLaF9mbTFR4eHt5R3qntBcn1vD22aYYdSGLw8PDwgvvPikEeQCSbFZJXMIs88PDw8O7x2pB0szkgKQB5HRtuGsDDw8P7Qt5+o8Am7MiLEx4eHt5P4OUL37yd1kYMeXMODw8P7zZvs32qDWQ3r+9ijIuHh4d3rQG2mdzbhlZ7tyESDw8PL33WL4qec6gCTO4lAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '会飞的汉堡包';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '会飞的汉堡包';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

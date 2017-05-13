@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'true', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    <meta name="google-site-verification" content="true">
+    
+    
+    
+    <title>笔记-JavaWeb | 学习笔记 | BIUBIUBIU...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="java,JDBC">
+    <meta name="description" content="Java Web 学习笔记
+JDBCJDBC接口
+驱动管理
+
+DriveManager
+
+
+连接接口
+
+Connection
+DatabaseMetaData
+
+
+语句对象接口
+
+Statement
+PrepareStatement
+CallableStatement
+
+
+结果集接口
+
+ResultSet
+ResultSetMetaData
+
+
+
+JDBC使用步骤
+导入JDBC的jar包
+加载驱动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记-JavaWeb">
+<meta property="og:url" content="https://smallhamburger.github.io/2017/04/25/笔记-JavaWeb/index.html">
+<meta property="og:site_name" content="学习笔记">
+<meta property="og:description" content="Java Web 学习笔记
+JDBCJDBC接口
+驱动管理
+
+DriveManager
+
+
+连接接口
+
+Connection
+DatabaseMetaData
+
+
+语句对象接口
+
+Statement
+PrepareStatement
+CallableStatement
+
+
+结果集接口
+
+ResultSet
+ResultSetMetaData
+
+
+
+JDBC使用步骤
+导入JDBC的jar包
+加载驱动">
+<meta property="og:updated_time" content="2017-05-13T10:49:50.848Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="笔记-JavaWeb">
+<meta name="twitter:description" content="Java Web 学习笔记
+JDBCJDBC接口
+驱动管理
+
+DriveManager
+
+
+连接接口
+
+Connection
+DatabaseMetaData
+
+
+语句对象接口
+
+Statement
+PrepareStatement
+CallableStatement
+
+
+结果集接口
+
+ResultSet
+ResultSetMetaData
+
+
+
+JDBC使用步骤
+导入JDBC的jar包
+加载驱动">
+    
+        <link rel="alternate" type="application/atom+xml" title="学习笔记" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">会飞的汉堡包</h5>
+          <a href="mailto:zhangjisong@live.com" title="zhangjisong@live.com" class="mail">zhangjisong@live.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">笔记-JavaWeb</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">笔记-JavaWeb</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-04-24T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2017-04-25
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术类/">技术类</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Java-Web-学习笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">Java Web 学习笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JDBC"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">JDBC</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JDBC接口"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">JDBC接口</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JDBC使用步骤"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">JDBC使用步骤</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-笔记-JavaWeb"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">笔记-JavaWeb</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-04-25 00:00:00" datetime="2017-04-24T16:00:00.000Z"  itemprop="datePublished">2017-04-25</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术类/">技术类</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Java-Web-学习笔记"><a href="#Java-Web-学习笔记" class="headerlink" title="Java Web 学习笔记"></a>Java Web 学习笔记</h1><hr>
+<h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><h3 id="JDBC接口"><a href="#JDBC接口" class="headerlink" title="JDBC接口"></a>JDBC接口</h3><ol>
+<li><p>驱动管理</p>
+<ul>
+<li>DriveManager</li>
+</ul>
+</li>
+<li><p>连接接口</p>
+<ul>
+<li>Connection</li>
+<li>DatabaseMetaData</li>
+</ul>
+</li>
+<li><p>语句对象接口</p>
+<ul>
+<li>Statement</li>
+<li>PrepareStatement</li>
+<li>CallableStatement</li>
+</ul>
+</li>
+<li><p>结果集接口</p>
+<ul>
+<li>ResultSet</li>
+<li>ResultSetMetaData</li>
+</ul>
+</li>
+</ol>
+<h3 id="JDBC使用步骤"><a href="#JDBC使用步骤" class="headerlink" title="JDBC使用步骤"></a>JDBC使用步骤</h3><ol>
+<li>导入JDBC的jar包</li>
+<li>加载驱动</li>
+<li>获取Connection对象</li>
+<li>创建Statement语句对象</li>
+<li>执行SQL语句<ul>
+<li><code>execute(DDL)</code>常用于执行DDL,DCL</li>
+<li><code>executeUpdate(DML)</code>常用于执行DML语句</li>
+<li><code>executeQuery(DQL)</code>常用于之赐你个DQL语句</li>
+</ul>
+</li>
+<li>处理执行结果<ul>
+<li><code>execute(DDL)</code>如果没有异常则成功, 返回值为boolean, true为有数据集, false没有数据集</li>
+<li><code>executeUpdate(DML)</code>如果没有异常则成功, 返回数字, 更新记录的行数</li>
+<li><code>executeQuery(DQL)</code>如果没有异常则成功, 返回ResultSet结果集, 二维查询结果</li>
+</ul>
+</li>
+<li>关闭数据连接!<ul>
+<li>必须关闭, 否则数据库可能会瘫痪</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>例:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.jeson.jdbc;</div><div class="line"><span class="keyword">import</span> java.sql.Connection;</div><div class="line"><span class="keyword">import</span> java.sql.DriverManager;</div><div class="line"><span class="keyword">import</span> java.sql.ResultSet;</div><div class="line"><span class="keyword">import</span> java.sql.SQLException;</div><div class="line"><span class="keyword">import</span> java.sql.Statement;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JDBC</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String url = <span class="string">"jdbc:mysql://192.168.31.132:3306/db_jeson?user=jeson&amp;password=password"</span>;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String sql = <span class="string">"SELECT * FROM users"</span>;</div><div class="line">	<span class="keyword">static</span> &#123;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			<span class="comment">// 2. 加载驱动</span></div><div class="line">			Class.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);</div><div class="line">		&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span> </span>&#123;</div><div class="line">		Connection conn = <span class="keyword">null</span>;</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line">			<span class="comment">// 3. 获取连接</span></div><div class="line">			conn = DriverManager.getConnection(url);</div><div class="line">			<span class="comment">// 4. 创建Statement对象</span></div><div class="line">			Statement stmt = conn.createStatement();</div><div class="line">			<span class="comment">// 5. 执行SQL语句</span></div><div class="line">			ResultSet result = stmt.executeQuery(sql);</div><div class="line">			System.out.println(<span class="string">"id\tname\t\tpassword\tage\tsex"</span>);</div><div class="line">			<span class="comment">// 6. 处理SQL执行结果</span></div><div class="line">			<span class="keyword">while</span> (result.next()) &#123;</div><div class="line">				System.out.println(result.getInt(<span class="string">"id"</span>) + <span class="string">"\t"</span></div><div class="line">						+ result.getString(<span class="string">"name"</span>) + <span class="string">"\t"</span></div><div class="line">						+ result.getString(<span class="string">"password"</span>) + <span class="string">"\t\t"</span></div><div class="line">						+ result.getInt(<span class="string">"age"</span>) + <span class="string">"\t"</span> + result.getInt(<span class="string">"sex"</span>));</div><div class="line">			&#125;</div><div class="line">		&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125; <span class="keyword">finally</span> &#123;</div><div class="line">			<span class="comment">// 7. 关闭连接</span></div><div class="line">			<span class="keyword">if</span> (conn != <span class="keyword">null</span>) &#123;</div><div class="line">				<span class="keyword">try</span> &#123;</div><div class="line">					conn.close();</div><div class="line">				&#125; <span class="keyword">catch</span> (SQLException e) &#123;</div><div class="line">					e.printStackTrace();</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-05-13T10:49:50.848Z" itemprop="dateUpdated">2017-05-13 18:49:50</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/04/25/笔记-JavaWeb/" target="_blank" rel="external">https://smallhamburger.github.io/2017/04/25/笔记-JavaWeb/</a>
+        
+    </div>
+    <footer>
+        <a href="https://smallhamburger.github.io">
+            <img src="/img/avatar.jpg" alt="会飞的汉堡包">
+            会飞的汉堡包
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDBC/">JDBC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallhamburger.github.io/2017/04/25/笔记-JavaWeb/&title=《笔记-JavaWeb》 — 学习笔记&pic=https://smallhamburger.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallhamburger.github.io/2017/04/25/笔记-JavaWeb/&title=《笔记-JavaWeb》 — 学习笔记&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallhamburger.github.io/2017/04/25/笔记-JavaWeb/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《笔记-JavaWeb》 — 学习笔记&url=https://smallhamburger.github.io/2017/04/25/笔记-JavaWeb/&via=https://smallhamburger.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallhamburger.github.io/2017/04/25/笔记-JavaWeb/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/04/23/Android常用框架/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Android中常用的第三方框架</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p style="display:none;">
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span style="display:none;">Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>会飞的汉堡包 &copy; 2016 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://smallhamburger.github.io/2017/04/25/笔记-JavaWeb/&title=《笔记-JavaWeb》 — 学习笔记&pic=https://smallhamburger.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://smallhamburger.github.io/2017/04/25/笔记-JavaWeb/&title=《笔记-JavaWeb》 — 学习笔记&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://smallhamburger.github.io/2017/04/25/笔记-JavaWeb/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《笔记-JavaWeb》 — 学习笔记&url=https://smallhamburger.github.io/2017/04/25/笔记-JavaWeb/&via=https://smallhamburger.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://smallhamburger.github.io/2017/04/25/笔记-JavaWeb/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3awY6DMAxFUf7/pxmpq1Yj6H02jAbnsqpaCjlZPMVxtg1f++t6//x+HX1/dCd58nbHJUOGjMcyyIt/P5rcT/BHz+RjkyFDxjqMThSeRyT59WjKgjfKkCFDBohIMiASnTJkyJDRD9w0QNMolyFDhoxOEUsCtDZ0Pn0X1OIyZMh4IKPWGPibz7f3N2TIkPHvGXt4ncdluunWaYV+/EuGDBmjGecvIMmWFq58S46UuGieZMiQMYKRbvfz//JJ6US5DBkyVmPwBmRno//8Of3GgwwZMmYzOn+Iy068PE2XoTJkyJjE6Bx0IAs4ErV8Gw4ds5AhQ8Y4Bj9IkbL7zQa+PSdDhowVGFfFZf+gGIngL8tWGTJkDGXUGpNpmPaXmzJkyJBBIo+HY60BKUOGDBlkt78TuOlikTQJipMiQ4aMQYy4q1k6ztW5E02xDBkyRjNqi7NaENcinv8qQ4aMqYzOCTI0K43oDI5cyJAhYzQjLTVTGGk58A07dMxChgwZ4xi8pEyjsDYpadDLkCFjHQbfVuPD5QHab0XIkCFjNiMdUFrQpltptbaEDBkyZjP28AqWayVqbekpQ4aM2YxapJKDFCmMg2XIkLEmg4RsZ5ssLVmLQS9DhowFGFe1JNOhp+Xrl1JWhgwZyzOu2m5LoxatbWXIkCEDD+6OFiZajMqQIWMBBl/88dAkbUg+9GInVoYMGSMYnQKy1oDkpIsxMmTIeB7jB1d3Qc/c/1+bAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '会飞的汉堡包';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '会飞的汉堡包';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
