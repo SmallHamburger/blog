@@ -746,7 +746,7 @@ canvas.drawBitmapMesh(bitmap,WIDTH,HEIGHT,verts,0,null,0,null);
     
     <entry>
       <title><![CDATA[笔记-MYSQL使用]]></title>
-      <url>https://smallhamburger.github.io/2017/04/20/%E7%AC%94%E8%AE%B0-MYSQL%E4%BD%BF%E7%94%A8/</url>
+      <url>https://smallhamburger.github.io/2017/04/20/%E7%AC%94%E8%AE%B0-MySQL%E4%BD%BF%E7%94%A8/</url>
       <content type="html"><![CDATA[<h1 id="MYSQL学习笔记"><a href="#MYSQL学习笔记" class="headerlink" title="MYSQL学习笔记"></a>MYSQL学习笔记</h1><hr>
 <h2 id="MYSQL提示符"><a href="#MYSQL提示符" class="headerlink" title="MYSQL提示符"></a>MYSQL提示符</h2><blockquote>
 <p><code>prompt \u</code></p>
@@ -941,6 +941,9 @@ canvas.drawBitmapMesh(bitmap,WIDTH,HEIGHT,verts,0,null,0,null);
 </blockquote>
 <h4 id="查看索引"><a href="#查看索引" class="headerlink" title="查看索引"></a>查看索引</h4><blockquote>
 <p><code>SHOW INDEXES FROM provinces[\G];</code></p>
+</blockquote>
+<h4 id="设置编码方式"><a href="#设置编码方式" class="headerlink" title="设置编码方式"></a>设置编码方式</h4><blockquote>
+<p><code>SET NAMES GBK;</code></p>
 </blockquote>
 <hr>
 <h3 id="创建数据库-表"><a href="#创建数据库-表" class="headerlink" title="创建数据库/表"></a>创建数据库/表</h3><h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4><blockquote>
@@ -1284,6 +1287,311 @@ canvas.drawBitmapMesh(bitmap,WIDTH,HEIGHT,verts,0,null,0,null);
 <h3 id="无限级数据表设计"><a href="#无限级数据表设计" class="headerlink" title="无限级数据表设计"></a>无限级数据表设计</h3><blockquote>
 <p>例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">CREATE TABLE tdb_goods_types(</div><div class="line">	type_id   SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,</div><div class="line">	type_name VARCHAR(20) NOT NULL,</div><div class="line">	parent_id SMALLINT UNSIGNED NOT NULL DEFAULT 0</div><div class="line">);</div></pre></td></tr></table></figure></p>
 </blockquote>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="字符函数"><a href="#字符函数" class="headerlink" title="字符函数"></a>字符函数</h3><table>
+<thead>
+<tr>
+<th>函数名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CONCAT()</td>
+<td>字符连接</td>
+</tr>
+<tr>
+<td>CONCAT_WS()</td>
+<td>使用指定的分隔符进行字符连接</td>
+</tr>
+<tr>
+<td>FORMAT()</td>
+<td>数字格式化, 返回值为字符型</td>
+</tr>
+<tr>
+<td>LOWER()</td>
+<td>转换成小写字母</td>
+</tr>
+<tr>
+<td>UPPER()</td>
+<td>转换成大写字母</td>
+</tr>
+<tr>
+<td>LEFT()</td>
+<td>获取左侧n个字符</td>
+</tr>
+<tr>
+<td>RIGHT()</td>
+<td>获取右侧n个字符</td>
+</tr>
+<tr>
+<td>LENGTH()</td>
+<td>获取字符串的长度</td>
+</tr>
+<tr>
+<td>LTRIM()</td>
+<td>删除前导空格</td>
+</tr>
+<tr>
+<td>RTRIM()</td>
+<td>删除后续空格</td>
+</tr>
+<tr>
+<td>TRIM()</td>
+<td>删除前导和后续空格</td>
+</tr>
+<tr>
+<td>SUBSTRING()</td>
+<td>字符串截取</td>
+</tr>
+<tr>
+<td>[NOT] LIKE</td>
+<td>模式匹配</td>
+</tr>
+<tr>
+<td>REPLACE()</td>
+<td>字符串替换</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>例: <code>CONCAT()</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT CONCAT(&apos;HELLO&apos;, &apos; &apos;, &apos;WORLD&apos;);</div><div class="line">SELECT CONCAT(firstname, lastname) as fullname FROM users;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例: <code>CONCAT_WS()</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT CONCAT_WS(&apos;.&apos;, &apos;firstname&apos;, &apos;lastname&apos;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例: <code>FORMAT()</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT FORMAT(123456.7890, 2);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例: <code>LOWER()``UPPER()</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT LOWER(&apos;HELLO WORLD&apos;);</div><div class="line">SELECT UPPER(&apos;hello world&apos;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例: <code>LEFT()``RIGHT()</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT LEFT(&apos;HELLO&apos;, 2);</div><div class="line">SELECT RIGHT(&apos;WORLD&apos;, 2);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例: <code>TRIM()</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SELECT TRIM(LEADING &apos;!&apos; FROM &apos;!! hello world !!&apos;); //删除前导 !</div><div class="line">SELECT TRIM(TRAILING&apos;!&apos; FROM &apos;!! hello world !!&apos;); //删除后续 !</div><div class="line">SELECT TRIM(BOTH&apos;!&apos; FROM &apos;!! hello world !!&apos;); //删除前导和后续 !</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例: <code>REPLACE()</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT REPLACE(&apos;!! hello !! world !!&apos;, &apos;!&apos;, &apos;?&apos;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例: <code>SUBSTRING()</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT SUBSTRING(&apos;HELLO WORLD&apos;, 3);</div><div class="line">SELECT SUBSTRING(&apos;HELLO WORLD&apos;, 3, 6);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例: <code>SUBSTRING()</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">SELECT SUBSTRING(&apos;HELLO WORLD&apos;, 3);</div><div class="line">SELECT SUBSTRING(&apos;HELLO WORLD&apos;, 3, 5);</div><div class="line">SELECT SUBSTRING(&apos;HELLO WORLD&apos;, -1);</div><div class="line">SELECT SUBSTRING(&apos;HELLO WORLD&apos;, -5, 2); //从尾部数第5个开始截取(包含), 截取2个</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例: <code>LIKE()</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT &apos;MYSQL&apos; LIKE &apos;MY%&apos;; //%匹配零个至多个字符, _匹配一个字符, 返回值为true</div><div class="line">SELECT &apos;MYSQL%&apos; LIKE &apos;%1%%&apos; ESCAPE &apos;1&apos;; //1后面的%不再认作通配符</div></pre></td></tr></table></figure>
+<h3 id="数值运算符与函数"><a href="#数值运算符与函数" class="headerlink" title="数值运算符与函数"></a>数值运算符与函数</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">函数名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">CEIL()</td>
+<td style="text-align:left">向上取整</td>
+</tr>
+<tr>
+<td style="text-align:left">FLOOR()</td>
+<td style="text-align:left">向下取整</td>
+</tr>
+<tr>
+<td style="text-align:left">ROUND()</td>
+<td style="text-align:left">四舍五入</td>
+</tr>
+<tr>
+<td style="text-align:left">DIV</td>
+<td style="text-align:left">整数除法</td>
+</tr>
+<tr>
+<td style="text-align:left">MOD</td>
+<td style="text-align:left">取余数(取模, %)</td>
+</tr>
+<tr>
+<td style="text-align:left">POWER()</td>
+<td style="text-align:left">幂运算</td>
+</tr>
+<tr>
+<td style="text-align:left">TRUNCATE()</td>
+<td style="text-align:left">数字截取</td>
+</tr>
+<tr>
+<td style="text-align:left">[NOT] BETWEEN AND</td>
+<td style="text-align:left">[不]在范围之内,闭合区间</td>
+</tr>
+<tr>
+<td style="text-align:left">[NOT] IN()</td>
+<td style="text-align:left">[不]在列出值范围内</td>
+</tr>
+<tr>
+<td style="text-align:left">IS [NOT] NULL</td>
+<td style="text-align:left">[不]为空</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>例: <code>ROUND()</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT ROUND(123456.789, 2);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例: <code>TRUNCATE()</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT TRUNCATE(123456.789, 2); //没有四舍五入</div><div class="line">SELECT TRUNCATE(123456.789, -1);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例: <code>[NOT] BETWEEN AND</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT 6 BETWEEN 2 AND 10; //左右都闭合的区间</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例: <code>IN()</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT 6 IN(2, 4, 6, 8);</div></pre></td></tr></table></figure>
+<h3 id="日期时间函数"><a href="#日期时间函数" class="headerlink" title="日期时间函数"></a>日期时间函数</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">函数名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">NOW()</td>
+<td style="text-align:left">当前日期和时间</td>
+</tr>
+<tr>
+<td style="text-align:left">CURDATE()</td>
+<td style="text-align:left">当前日期</td>
+</tr>
+<tr>
+<td style="text-align:left">CURTIME()</td>
+<td style="text-align:left">当前时间</td>
+</tr>
+<tr>
+<td style="text-align:left">DATE_ADD()</td>
+<td style="text-align:left">日期变化</td>
+</tr>
+<tr>
+<td style="text-align:left">DATEDIFF()</td>
+<td style="text-align:left">日期差值</td>
+</tr>
+<tr>
+<td style="text-align:left">DATE_FORMAT()</td>
+<td style="text-align:left">日期格式化</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>例: <code>DATE_ADD()</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT DATE_ADD(CURDATE(), INTERVAL 365 DAY);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例: <code>DATEDIFF()</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT DATEDIFF(CURDATE(), &apos;2018-05-13&apos;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例: <code>DATE_FORMAT()</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT DATE_FORMAT(CURDATE(), &apos;%m/%d/%Y&apos;);</div></pre></td></tr></table></figure>
+<h3 id="信息函数"><a href="#信息函数" class="headerlink" title="信息函数"></a>信息函数</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">函数名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">CONNECTION_ID()</td>
+<td style="text-align:left">连接ID</td>
+</tr>
+<tr>
+<td style="text-align:left">DATABASE()</td>
+<td style="text-align:left">当前数据库</td>
+</tr>
+<tr>
+<td style="text-align:left">LAST_INSERT_ID()</td>
+<td style="text-align:left">最后插入记录的ID号</td>
+</tr>
+<tr>
+<td style="text-align:left">USER()</td>
+<td style="text-align:left">当前用户</td>
+</tr>
+<tr>
+<td style="text-align:left">VERSION()</td>
+<td style="text-align:left">版本信息</td>
+</tr>
+</tbody>
+</table>
+<h3 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h3><p>返回值只有一个</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">函数名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">AVG()</td>
+<td style="text-align:left">平局值</td>
+</tr>
+<tr>
+<td style="text-align:left">COUNT()</td>
+<td style="text-align:left">计数</td>
+</tr>
+<tr>
+<td style="text-align:left">MAX()</td>
+<td style="text-align:left">最大值</td>
+</tr>
+<tr>
+<td style="text-align:left">MIN()</td>
+<td style="text-align:left">最小值</td>
+</tr>
+<tr>
+<td style="text-align:left">SUM()</td>
+<td style="text-align:left">求和</td>
+</tr>
+</tbody>
+</table>
+<h3 id="加密函数"><a href="#加密函数" class="headerlink" title="加密函数"></a>加密函数</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">函数名称</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">MD5()</td>
+<td style="text-align:left">信息摘要算法</td>
+</tr>
+<tr>
+<td style="text-align:left">PASSWORD()</td>
+<td style="text-align:left">密码算法, 常用于修改密码</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>例: <code>MD5()</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT MD5(&apos;admin&apos;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>例: <code>PASSWORD()</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT PASSWORD(&apos;admin&apos;);</div><div class="line">SET PASSWORD = PASSWORD(&apos;admin&apos;);</div></pre></td></tr></table></figure>
 ]]></content>
     </entry>
     
