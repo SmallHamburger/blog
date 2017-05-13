@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[Android中常用的第三方框架]]></title>
-      <url>https://smallhamburger.github.io/blog/2017/04/23/Android%E5%B8%B8%E7%94%A8%E6%A1%86%E6%9E%B6/</url>
+      <url>https://smallhamburger.github.io/2017/04/23/Android%E5%B8%B8%E7%94%A8%E6%A1%86%E6%9E%B6/</url>
       <content type="html"><![CDATA[<h1 id="Android中常用的第三方框架"><a href="#Android中常用的第三方框架" class="headerlink" title="Android中常用的第三方框架"></a>Android中常用的第三方框架</h1><h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><table>
 <thead>
 <tr>
@@ -360,7 +360,7 @@
     
     <entry>
       <title><![CDATA[程序员，你真的会写简历吗？]]></title>
-      <url>https://smallhamburger.github.io/blog/2017/03/01/%E7%A8%8B%E5%BA%8F%E5%91%98%EF%BC%8C%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E5%86%99%E7%AE%80%E5%8E%86%E5%90%97%EF%BC%9F/</url>
+      <url>https://smallhamburger.github.io/2017/03/01/%E7%A8%8B%E5%BA%8F%E5%91%98%EF%BC%8C%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E5%86%99%E7%AE%80%E5%8E%86%E5%90%97%EF%BC%9F/</url>
       <content type="html"><![CDATA[<p><em>本文摘自<strong>慕课网</strong>，作者<strong>七月在夏天</strong>，<a href="http://www.imooc.com/article/16649" target="_blank" rel="external">程序员，你真的会写简历吗？</a></em></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;又是一年跳槽季，金三银四毫不夸张。 简历是我们找工作的行头，重要性不言而喻。可你真的会写简历吗？</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面试其实就是面试官和你的一次约会。他是女你是男，能不能在一起取决于你能否讨他的欢心。一份整洁的简历，重要性不亚于你约会时的行头和装束。</p>
@@ -417,7 +417,7 @@
     
     <entry>
       <title><![CDATA[Android源码设计模式解析与实战]]></title>
-      <url>https://smallhamburger.github.io/blog/2016/12/01/%E7%AC%94%E8%AE%B0-Android%E6%BA%90%E7%A0%81%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90%E4%B8%8E%E5%AE%9E%E6%88%98/</url>
+      <url>https://smallhamburger.github.io/2016/12/01/%E7%AC%94%E8%AE%B0-Android%E6%BA%90%E7%A0%81%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90%E4%B8%8E%E5%AE%9E%E6%88%98/</url>
       <content type="html"><![CDATA[<h1 id="面向对象的六大原则"><a href="#面向对象的六大原则" class="headerlink" title="面向对象的六大原则"></a>面向对象的六大原则</h1><p>稳定性 扩展性 健壮性 灵活性 高内聚 低耦合</p>
 <h2 id="1、单一职责原则"><a href="#1、单一职责原则" class="headerlink" title="1、单一职责原则"></a>1、单一职责原则</h2><p>一个类应该是一组相关性很高的函数、数据的封装。</p>
 <h2 id="2、开闭原则"><a href="#2、开闭原则" class="headerlink" title="2、开闭原则"></a>2、开闭原则</h2><p>软件中的对象（类、模块、函数等）应该对扩展是开放的，对修改是封闭的。</p>
@@ -740,8 +740,319 @@
     </entry>
     
     <entry>
+      <title><![CDATA[Linux基本使用]]></title>
+      <url>https://smallhamburger.github.io/2016/09/01/%E7%AC%94%E8%AE%B0-Linux%E4%BD%BF%E7%94%A8/</url>
+      <content type="html"><![CDATA[<h1 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h1><h2 id="ls-查询目录中的内容"><a href="#ls-查询目录中的内容" class="headerlink" title="ls 查询目录中的内容"></a>ls 查询目录中的内容</h2><pre><code>ls [选项] [文件或者目录]
+    -a 所有文件，包括隐藏文件
+    -l 详细信息
+    -h 人性化显示，byte --&gt; KB
+    -d 查看目录属性
+    -i 显示inode值
+ll=ls -l
+</code></pre><h2 id="mkdir-创建目录"><a href="#mkdir-创建目录" class="headerlink" title="mkdir 创建目录"></a>mkdir 创建目录</h2><pre><code>mkdir [选项] 目录
+    -p 创建多级目录，递归创建
+</code></pre><h2 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd 切换目录"></a>cd 切换目录</h2><pre><code>cd [目录]
+    ~/空值 进入当前用户目录
+    - 进入上次进入的目录
+    .. 进入上级目录
+    . 进入当前目录
+    tab键 自动补全（点击一下）或者提示所有类似文件（点击两下）
+</code></pre><h2 id="rmdir-删除一个空白目录，目录不能有任何内容"><a href="#rmdir-删除一个空白目录，目录不能有任何内容" class="headerlink" title="rmdir 删除一个空白目录，目录不能有任何内容"></a>rmdir 删除一个空白目录，目录不能有任何内容</h2><pre><code>rmdir 空白目录
+</code></pre><h2 id="rm-删除目录或者文件"><a href="#rm-删除目录或者文件" class="headerlink" title="rm 删除目录或者文件"></a>rm 删除目录或者文件</h2><pre><code>rm [选项] 目录或者文件名
+    -r 删除目录
+    -f 强制删除，不会提醒删除
+rm -rf / 谨慎使用，删除根目录所有文件
+</code></pre><h2 id="cp-复制"><a href="#cp-复制" class="headerlink" title="cp 复制"></a>cp 复制</h2><pre><code>cp [选项] 源文件或者源目录 目标文件或者目标目录
+    -r 复制目录
+    -p 连带文件属性一同复制
+    -d 若源文件位链接文件，则复制链接属性
+    -a 复制所有属性，相当于-pdr
+</code></pre><h2 id="mv-剪切或者改名，同一目录下剪切就是改名字，不同目录下就是剪切"><a href="#mv-剪切或者改名，同一目录下剪切就是改名字，不同目录下就是剪切" class="headerlink" title="mv 剪切或者改名，同一目录下剪切就是改名字，不同目录下就是剪切"></a>mv 剪切或者改名，同一目录下剪切就是改名字，不同目录下就是剪切</h2><pre><code>mv 源文件或者目录 目标文件或者目录
+</code></pre><h2 id="ln-生成链接文件"><a href="#ln-生成链接文件" class="headerlink" title="ln 生成链接文件"></a>ln 生成链接文件</h2><pre><code>ln [选项] 源文件 目标文件
+    -s 创建软链接
+</code></pre><h2 id="一级目录作用"><a href="#一级目录作用" class="headerlink" title="/ 一级目录作用"></a>/ 一级目录作用</h2><pre><code>/bin 通用命令
+/sbin 超级用户命令
+/boot 启动
+/dev 硬件文件
+/etc 配置文件
+/home 普通用户家目录
+/root 超级用户家目录
+/lib 函数库
+/mnt 硬盘，光盘等存储设备挂载点
+/media 光盘挂载点
+/misc 磁带之类挂载点
+/proc 内存挂在点
+/sys 内存挂载点
+/tmp 临时文件目录
+/usr 系统软件资源目录
+/usr/bin 用户系统命令（通用）
+/usr/sbin 用户系统命令（超级）
+/var 系统的可变文档目录
+</code></pre><h2 id="locate-在后台数据库中按文件名搜索，搜索速度快，只能按照文件名搜索"><a href="#locate-在后台数据库中按文件名搜索，搜索速度快，只能按照文件名搜索" class="headerlink" title="locate 在后台数据库中按文件名搜索，搜索速度快，只能按照文件名搜索"></a>locate 在后台数据库中按文件名搜索，搜索速度快，只能按照文件名搜索</h2><pre><code>locate 文件名 
+    /etc/updatedb.conf 配置文件
+updatedb 更新数据库（默认一天一搜索） 
+    /var/lib/mlocate/mlocate.db
+</code></pre><h2 id="whereis-搜索命令所在的路径及帮助文档所在位置，找到的命令不是shell自带的"><a href="#whereis-搜索命令所在的路径及帮助文档所在位置，找到的命令不是shell自带的" class="headerlink" title="whereis 搜索命令所在的路径及帮助文档所在位置，找到的命令不是shell自带的"></a>whereis 搜索命令所在的路径及帮助文档所在位置，找到的命令不是shell自带的</h2><pre><code>whereis 命令名
+    -b 只查找可执行文件
+    -m 只查找帮助文件
+
+which 同whereis 但会增显别名（若存在），不显示帮助文档，无参数，不常用
+
+echo $PATH 环境变量
+</code></pre><h2 id="find-搜索文件"><a href="#find-搜索文件" class="headerlink" title="find 搜索文件"></a>find 搜索文件</h2><pre><code>find [搜索范围] [搜索条件，可以有多个] 搜索文件名
+    文件名作为过滤条件
+        -name 以文件名进行搜索
+        -iname 以文件名（不区分大小写）进行搜索
+    用户所有者作为过滤条件
+        -user 按所有者搜索
+            例：find /root -user root
+        -nouser 查找没有所有者的文件
+    时间作为过滤条件
+        -mtime 内容改变的时间
+        -ctime 属性改变的时间
+        -atime 最近访问的时间
+            例：find ./ -mtime +10(-10或者10) 查找10天前（10天内或者第10天前）的文件 
+    大小作为过滤条件
+        -size 文件占用空间大小，大小的单位默认位数据块，扇区，可选的大小为：b（小写，B）k（小写，KB），M（大写，MB），G（大写，GB）
+            例：find ./ -size 25k
+    节点信息作为过滤条件
+        -inum inode的节点信息
+            例：find ./ inum 26421
+通配符
+    * 匹配任意字符
+    ? 匹配任意一个字符
+    [abc] [a-z] [0-9]匹配[]内的任意一个字符
+    [^a-z] 匹配的内容不包含[]的任意一个字符
+条件逻辑
+    -a 代表and，并且
+    -o 代表or，或者
+        find ./ -size +20k -a -mtime -10
+结果处理
+    -exec 需要执行的命令 {} \;
+        find ./ -size +20k -a -mtime -10 -exec ls -l {} \;
+</code></pre><h2 id="grep-搜索字符串"><a href="#grep-搜索字符串" class="headerlink" title="grep 搜索字符串"></a>grep 搜索字符串</h2><pre><code>grep [选项] 字符串 文件名
+    -i 忽略大小写
+    -v 排除指定字符串
+</code></pre><h2 id="man-帮助命令"><a href="#man-帮助命令" class="headerlink" title="man 帮助命令"></a>man 帮助命令</h2><pre><code>man [等级] 命令
+man [选项] 命令
+    -f 相当于 whatis 命令 = man -f 命令
+    -k 所有含有关键字的命令或者文件
+</code></pre><h2 id="help-查询"><a href="#help-查询" class="headerlink" title="help 查询"></a>help 查询</h2><pre><code>help 命令
+</code></pre><h2 id="info-详细的帮助命令"><a href="#info-详细的帮助命令" class="headerlink" title="info 详细的帮助命令"></a>info 详细的帮助命令</h2><pre><code>info 命令
+</code></pre><h2 id="zip-压缩为zip格式，与windows通用"><a href="#zip-压缩为zip格式，与windows通用" class="headerlink" title="zip 压缩为zip格式，与windows通用"></a>zip 压缩为zip格式，与windows通用</h2><pre><code>zip [选项] 文件名 源文件
+    -r 压缩目录
+</code></pre><h2 id="unzip-解压缩zip格式"><a href="#unzip-解压缩zip格式" class="headerlink" title="unzip 解压缩zip格式"></a>unzip 解压缩zip格式</h2><pre><code>unzip 文件名
+</code></pre><h2 id="gzip-压缩为gzip格式或解压缩gzip格式文件"><a href="#gzip-压缩为gzip格式或解压缩gzip格式文件" class="headerlink" title="gzip 压缩为gzip格式或解压缩gzip格式文件"></a>gzip 压缩为gzip格式或解压缩gzip格式文件</h2><pre><code>gzip [选项] 源文件 [目标目录]
+    -c 保留源文件，需要加重定向符号
+        例：gzip -c test &gt; t1
+    -r 压缩目录下所有子文件，但不包括目录
+    -d 解压缩gzip文件，等同于gunzip  ？？？好像有问题
+</code></pre><h2 id="bzip-压缩为bzip2格式，不能压缩目录"><a href="#bzip-压缩为bzip2格式，不能压缩目录" class="headerlink" title="bzip 压缩为bzip2格式，不能压缩目录"></a>bzip 压缩为bzip2格式，不能压缩目录</h2><pre><code>bzip [选项] 源文件
+    -k 源文件，保留源文件
+    -d 解压缩，同bunzip2
+</code></pre><h2 id="tar-打包命令"><a href="#tar-打包命令" class="headerlink" title="tar 打包命令"></a>tar 打包命令</h2><pre><code>tar [选项] 打包文件名 源文件
+    -c 打包，与-x/-t
+    -v 显示过程
+    -f 指定打包的文件名
+        例：tar -cvf long.tar long
+    -x 解压缩包，与-c/-t对应
+    -z 打包时并压缩为gz格式
+    -j 打包时并压缩为bz2格式
+    -C 大写C，指定解压缩目录
+    -t 查看压缩文件内容，与-x/-c对应
+</code></pre><h2 id="shutdown-关机重启命令"><a href="#shutdown-关机重启命令" class="headerlink" title="shutdown 关机重启命令"></a>shutdown 关机重启命令</h2><pre><code>shutdown [选项] 时间
+    -c 取消前一个关机命令
+    -h 关机
+    -r 重启
+</code></pre><h2 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h2><pre><code>halt
+poweroff
+init 0 关机，不建议使用
+</code></pre><h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><pre><code>reboot/init 0
+</code></pre><h2 id="init-系统运行级别"><a href="#init-系统运行级别" class="headerlink" title="init 系统运行级别"></a>init 系统运行级别</h2><pre><code>init [level]
+    0 关机
+    1 单用户，类似于安全模式
+    2 不完全多用户，不含NFS服务
+    3 完全多用户，默认
+    4 未分配
+    5 图形界面
+    6 重启
+</code></pre><h2 id="logout-退出登录"><a href="#logout-退出登录" class="headerlink" title="logout 退出登录"></a>logout 退出登录</h2><h2 id="df-查询系统中已经挂载的设备"><a href="#df-查询系统中已经挂载的设备" class="headerlink" title="df 查询系统中已经挂载的设备"></a>df 查询系统中已经挂载的设备</h2><h2 id="mount-查询系统中已经挂载的设备"><a href="#mount-查询系统中已经挂载的设备" class="headerlink" title="mount 查询系统中已经挂载的设备"></a>mount 查询系统中已经挂载的设备</h2><pre><code>mount [-t 文件系统] [-o 特殊选项] 设备名 挂载点 
+    -a 依据配置文件/etc/fstab的内容自动挂载
+    -t 文件系统，（光盘，iso9660）
+    -o 特殊选项 
+        exec/noexec：可执行，默认为exec
+        rw/ro：读写权限，默认为rw
+    例：mount -t iso9660 -o ro /etc/sr0(或/etc/cdrom) /mnt/cdrom
+            mount /dev/sr0 /mnt/cdrom
+    例：mount -t vfat /dev/sdb1 /mnt/usb
+                挂载fat32位格式硬盘
+</code></pre><h2 id="umount-卸载，卸载时挂载点不在使用状态，也不可在当前目录"><a href="#umount-卸载，卸载时挂载点不在使用状态，也不可在当前目录" class="headerlink" title="umount 卸载，卸载时挂载点不在使用状态，也不可在当前目录"></a>umount 卸载，卸载时挂载点不在使用状态，也不可在当前目录</h2><pre><code>umount 设备文件名或挂载点
+例：umount /mnt/cdrom
+</code></pre><h2 id="fdisk-查看硬盘设备"><a href="#fdisk-查看硬盘设备" class="headerlink" title="fdisk 查看硬盘设备"></a>fdisk 查看硬盘设备</h2><pre><code>fdisk [选项]
+    -l 列出硬盘
+</code></pre><h2 id="w-查看用户登录信息"><a href="#w-查看用户登录信息" class="headerlink" title="w 查看用户登录信息"></a>w 查看用户登录信息</h2><pre><code>w [用户名]
+</code></pre><h2 id="who-查看用户登录信息"><a href="#who-查看用户登录信息" class="headerlink" title="who  查看用户登录信息"></a>who  查看用户登录信息</h2><pre><code>who [用户名]
+</code></pre><h2 id="last-查询当前目录和过去登录的用户信息"><a href="#last-查询当前目录和过去登录的用户信息" class="headerlink" title="last 查询当前目录和过去登录的用户信息"></a>last 查询当前目录和过去登录的用户信息</h2><pre><code>默认是读取/var/log/wtmp文件的数据
+</code></pre><h2 id="lastlog-查看用户最后一次登录时间"><a href="#lastlog-查看用户最后一次登录时间" class="headerlink" title="lastlog 查看用户最后一次登录时间"></a>lastlog 查看用户最后一次登录时间</h2><h2 id="shell-命令行解释器，配置在-etc-shells，可以通过exit退出"><a href="#shell-命令行解释器，配置在-etc-shells，可以通过exit退出" class="headerlink" title="shell 命令行解释器，配置在/etc/shells，可以通过exit退出"></a>shell 命令行解释器，配置在/etc/shells，可以通过exit退出</h2><pre><code>sh或csh 进入相应shell命令
+</code></pre><h2 id="echo-输出命令，输出的内容如果含有空格，则需要用双引号包裹"><a href="#echo-输出命令，输出的内容如果含有空格，则需要用双引号包裹" class="headerlink" title="echo 输出命令，输出的内容如果含有空格，则需要用双引号包裹"></a>echo 输出命令，输出的内容如果含有空格，则需要用双引号包裹</h2><pre><code>echo [选项] [输出内容]
+    -e 支持反斜线空值的字符转换
+        控制字符        作用
+            \a                输出警告音
+            \b                退格键，也就是一个向左删除键
+            \n                换行符
+            \r                回车符
+            \v                垂直制表符
+            \onnn            八进制输出字符
+            \xhh            十六进制输出字符
+            \t                制表符tab
+输出颜色
+    #30m = 黑，31m = 红，32m = 绿，33m = 黄，34m = 蓝，35m = 洋红，36m = 青，37m = 白
+例：echo -e &quot;\e[1;31mhelloworld\e[0m&quot;
+    \e 调用颜色
+    [1; 开启颜色，\e[1;31m
+    [0m 关闭颜色, \e[0m
+</code></pre><h2 id="脚本执行"><a href="#脚本执行" class="headerlink" title="脚本执行"></a>脚本执行</h2><pre><code>#代表注释
+#！/bin/bash 代表以下内容为shell脚本，如果不是纯shell语言则必须加
+执行方法：
+    1. 赋予执行权限，直接运行
+        chmod 755 hello.sh
+        ./hello.sh
+    2. 通过Bash调用执行脚本
+        bash shell.sh
+</code></pre><h2 id="alias-给命令添加别名（关机后消失）"><a href="#alias-给命令添加别名（关机后消失）" class="headerlink" title="alias 给命令添加别名（关机后消失）"></a>alias 给命令添加别名（关机后消失）</h2><pre><code>alias 别名=&apos;命令&apos;
+    例：alias ls=&apos;ls --color=never&apos;
+在~/.bashrc 添加别名，可永久生效，可通过source .bashrc
+命令生效顺序:
+    1. 用绝对路径或相对路径执行命令
+    2. 别名
+    3. Bash的内部命令
+    4. 按照$PATH环境变量找到的第一个命令
+</code></pre><h2 id="unalias-删除别名（临时删除）"><a href="#unalias-删除别名（临时删除）" class="headerlink" title="unalias 删除别名（临时删除）"></a>unalias 删除别名（临时删除）</h2><h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><pre><code>ctrl + c 终止当前命令
+ctrl + l 清屏
+ctrl + a 光标移至行首
+ctrl + e 光标移至行尾
+ctrl + u 从光标位置删除至行首
+ctrl + z 将命令放置后台
+ctrl + r 在历史命令中搜索
+</code></pre><h2 id="history-历史命令"><a href="#history-历史命令" class="headerlink" title="history 历史命令"></a>history 历史命令</h2><pre><code>history [选项] [历史命令保存文件]
+    -c 清空历史命令
+    -w 缓存中的历史命令保存文件 ~/.bash_history
+</code></pre><h2 id="wc-统计信息"><a href="#wc-统计信息" class="headerlink" title="wc 统计信息"></a>wc 统计信息</h2><pre><code>wc [选项] [文件名] 
+    -c 统计字符数
+    -w 统计单词数
+    -l 统计行数
+例：
+    wc -wcl test.txt
+    输出内容：
+        行数        单词数    字节数    路径
+</code></pre><h2 id="标准输入输出"><a href="#标准输入输出" class="headerlink" title="标准输入输出"></a>标准输入输出</h2><pre><code>键盘        /dev/stdin    0
+显示器    /dev/stdout    1
+显示器    /dev/stderr    2
+</code></pre><h2 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h2><pre><code>&gt; 覆盖
+&gt;&gt; 追加
+&gt; 只存储命令正确执行时内容
+    例：
+        ls &gt; test.txt            ls列表内容存入到test.txt文件中，只存命令正确执行时的内容
+2&gt; 只存储命令错误执行内容
+    例：
+        lss 2&gt; test.txt        ls列表内容存入到test.txt文件中，只存命令错误执行时的内容
+&amp;&gt; 或 2&gt;&amp;1 命令正确或者错误执行后输出内容都保存
+    例：
+        ls &gt; test.txt 2&gt;&amp;1
+        ls &amp;&gt; test.txt
+&gt; 文件一 2&gt; 文件二 命令正确和错误执行后内容分开执行
+    例：
+        ls &gt; test.txt 2&gt; test_error.txt
+</code></pre><h2 id="dev-null-黑洞"><a href="#dev-null-黑洞" class="headerlink" title="/dev/null 黑洞"></a>/dev/null 黑洞</h2><pre><code>例：
+    ls &gt; test.txt 2&gt; /dev/null
+</code></pre><h2 id="输入重定向-不懂"><a href="#输入重定向-不懂" class="headerlink" title="输入重定向, 不懂"></a>输入重定向, 不懂</h2><pre><code>&lt;
+&lt;&lt;
+</code></pre><h2 id="多命令顺序执行"><a href="#多命令顺序执行" class="headerlink" title="多命令顺序执行"></a>多命令顺序执行</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">多命令执行符</th>
+<th style="text-align:center">格式</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">;</td>
+<td style="text-align:center">cmd1;cmd2</td>
+<td>多个命令顺序执行，命令之间无任何逻辑关系，无论哪个cmd出错都会顺序执行下一个</td>
+</tr>
+<tr>
+<td style="text-align:center">&amp;&amp;</td>
+<td style="text-align:center">cmd1&amp;&amp;cmd2</td>
+<td>逻辑与，cmd1正确执行后才会执行cmd2</td>
+</tr>
+<tr>
+<td style="text-align:center">丨</td>
+<td style="text-align:center">cmd1丨丨cmd2</td>
+<td>逻辑或，cmd1正确执行后不会执行cmd2，cmd1错误执行后cmd2才会执行</td>
+</tr>
+</tbody>
+</table>
+<pre><code>例：
+    ls &amp;&amp; echo success || echo fail
+        正确 --&gt; success X--&gt;
+        错误 X--&gt;                 --&gt; fail
+    ls || echo fail &amp;&amp; echo success
+      逻辑混乱，不建议
+</code></pre><h2 id="管道符，管道符前面的命令输出作为后面命令的操作对象"><a href="#管道符，管道符前面的命令输出作为后面命令的操作对象" class="headerlink" title="| 管道符，管道符前面的命令输出作为后面命令的操作对象"></a>| 管道符，管道符前面的命令输出作为后面命令的操作对象</h2><pre><code>cmd1 | cmd2
+    cmd1的处理结果送于cmd2作为处理对象
+</code></pre><h2 id="Bash中其他特殊符号"><a href="#Bash中其他特殊符号" class="headerlink" title="Bash中其他特殊符号"></a>Bash中其他特殊符号</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">‘’</td>
+<td style="text-align:center">单引号</td>
+<td>在单引号中所有的特殊字符都无特殊含义</td>
+</tr>
+<tr>
+<td style="text-align:center">“”</td>
+<td style="text-align:center">双引号</td>
+<td>取消特殊含义，$和\</td>
+</tr>
+<tr>
+<td style="text-align:center">$()</td>
+<td style="text-align:center"></td>
+<td>变量的值，引用命令，转义符等特殊含义</td>
+</tr>
+<tr>
+<td style="text-align:center">··</td>
+<td style="text-align:center">反引号</td>
+<td>同$()， 建议使用$()</td>
+</tr>
+<tr>
+<td style="text-align:center">#</td>
+<td style="text-align:center">井号</td>
+<td>在shell脚本中代表注释</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:center"></td>
+<td>用于调用变量的值，例：$name</td>
+</tr>
+<tr>
+<td style="text-align:center">\</td>
+<td style="text-align:center">转义符</td>
+<td>转义其后的字符，相当于用单引号括起来</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[笔记-Android群英传]]></title>
-      <url>https://smallhamburger.github.io/blog/2016/09/01/%E7%AC%94%E8%AE%B0-Android%E7%BE%A4%E8%8B%B1%E4%BC%A0/</url>
+      <url>https://smallhamburger.github.io/2016/09/01/%E7%AC%94%E8%AE%B0-Android%E7%BE%A4%E8%8B%B1%E4%BC%A0/</url>
       <content type="html"><![CDATA[<ol>
 <li><p>大色块使用</p>
 </li>
@@ -1068,319 +1379,8 @@ canvas.drawBitmapMesh(bitmap,WIDTH,HEIGHT,verts,0,null,0,null);
     </entry>
     
     <entry>
-      <title><![CDATA[Linux基本使用]]></title>
-      <url>https://smallhamburger.github.io/blog/2016/09/01/%E7%AC%94%E8%AE%B0-Linux%E4%BD%BF%E7%94%A8/</url>
-      <content type="html"><![CDATA[<h1 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h1><h2 id="ls-查询目录中的内容"><a href="#ls-查询目录中的内容" class="headerlink" title="ls 查询目录中的内容"></a>ls 查询目录中的内容</h2><pre><code>ls [选项] [文件或者目录]
-    -a 所有文件，包括隐藏文件
-    -l 详细信息
-    -h 人性化显示，byte --&gt; KB
-    -d 查看目录属性
-    -i 显示inode值
-ll=ls -l
-</code></pre><h2 id="mkdir-创建目录"><a href="#mkdir-创建目录" class="headerlink" title="mkdir 创建目录"></a>mkdir 创建目录</h2><pre><code>mkdir [选项] 目录
-    -p 创建多级目录，递归创建
-</code></pre><h2 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd 切换目录"></a>cd 切换目录</h2><pre><code>cd [目录]
-    ~/空值 进入当前用户目录
-    - 进入上次进入的目录
-    .. 进入上级目录
-    . 进入当前目录
-    tab键 自动补全（点击一下）或者提示所有类似文件（点击两下）
-</code></pre><h2 id="rmdir-删除一个空白目录，目录不能有任何内容"><a href="#rmdir-删除一个空白目录，目录不能有任何内容" class="headerlink" title="rmdir 删除一个空白目录，目录不能有任何内容"></a>rmdir 删除一个空白目录，目录不能有任何内容</h2><pre><code>rmdir 空白目录
-</code></pre><h2 id="rm-删除目录或者文件"><a href="#rm-删除目录或者文件" class="headerlink" title="rm 删除目录或者文件"></a>rm 删除目录或者文件</h2><pre><code>rm [选项] 目录或者文件名
-    -r 删除目录
-    -f 强制删除，不会提醒删除
-rm -rf / 谨慎使用，删除根目录所有文件
-</code></pre><h2 id="cp-复制"><a href="#cp-复制" class="headerlink" title="cp 复制"></a>cp 复制</h2><pre><code>cp [选项] 源文件或者源目录 目标文件或者目标目录
-    -r 复制目录
-    -p 连带文件属性一同复制
-    -d 若源文件位链接文件，则复制链接属性
-    -a 复制所有属性，相当于-pdr
-</code></pre><h2 id="mv-剪切或者改名，同一目录下剪切就是改名字，不同目录下就是剪切"><a href="#mv-剪切或者改名，同一目录下剪切就是改名字，不同目录下就是剪切" class="headerlink" title="mv 剪切或者改名，同一目录下剪切就是改名字，不同目录下就是剪切"></a>mv 剪切或者改名，同一目录下剪切就是改名字，不同目录下就是剪切</h2><pre><code>mv 源文件或者目录 目标文件或者目录
-</code></pre><h2 id="ln-生成链接文件"><a href="#ln-生成链接文件" class="headerlink" title="ln 生成链接文件"></a>ln 生成链接文件</h2><pre><code>ln [选项] 源文件 目标文件
-    -s 创建软链接
-</code></pre><h2 id="一级目录作用"><a href="#一级目录作用" class="headerlink" title="/ 一级目录作用"></a>/ 一级目录作用</h2><pre><code>/bin 通用命令
-/sbin 超级用户命令
-/boot 启动
-/dev 硬件文件
-/etc 配置文件
-/home 普通用户家目录
-/root 超级用户家目录
-/lib 函数库
-/mnt 硬盘，光盘等存储设备挂载点
-/media 光盘挂载点
-/misc 磁带之类挂载点
-/proc 内存挂在点
-/sys 内存挂载点
-/tmp 临时文件目录
-/usr 系统软件资源目录
-/usr/bin 用户系统命令（通用）
-/usr/sbin 用户系统命令（超级）
-/var 系统的可变文档目录
-</code></pre><h2 id="locate-在后台数据库中按文件名搜索，搜索速度快，只能按照文件名搜索"><a href="#locate-在后台数据库中按文件名搜索，搜索速度快，只能按照文件名搜索" class="headerlink" title="locate 在后台数据库中按文件名搜索，搜索速度快，只能按照文件名搜索"></a>locate 在后台数据库中按文件名搜索，搜索速度快，只能按照文件名搜索</h2><pre><code>locate 文件名 
-    /etc/updatedb.conf 配置文件
-updatedb 更新数据库（默认一天一搜索） 
-    /var/lib/mlocate/mlocate.db
-</code></pre><h2 id="whereis-搜索命令所在的路径及帮助文档所在位置，找到的命令不是shell自带的"><a href="#whereis-搜索命令所在的路径及帮助文档所在位置，找到的命令不是shell自带的" class="headerlink" title="whereis 搜索命令所在的路径及帮助文档所在位置，找到的命令不是shell自带的"></a>whereis 搜索命令所在的路径及帮助文档所在位置，找到的命令不是shell自带的</h2><pre><code>whereis 命令名
-    -b 只查找可执行文件
-    -m 只查找帮助文件
-
-which 同whereis 但会增显别名（若存在），不显示帮助文档，无参数，不常用
-
-echo $PATH 环境变量
-</code></pre><h2 id="find-搜索文件"><a href="#find-搜索文件" class="headerlink" title="find 搜索文件"></a>find 搜索文件</h2><pre><code>find [搜索范围] [搜索条件，可以有多个] 搜索文件名
-    文件名作为过滤条件
-        -name 以文件名进行搜索
-        -iname 以文件名（不区分大小写）进行搜索
-    用户所有者作为过滤条件
-        -user 按所有者搜索
-            例：find /root -user root
-        -nouser 查找没有所有者的文件
-    时间作为过滤条件
-        -mtime 内容改变的时间
-        -ctime 属性改变的时间
-        -atime 最近访问的时间
-            例：find ./ -mtime +10(-10或者10) 查找10天前（10天内或者第10天前）的文件 
-    大小作为过滤条件
-        -size 文件占用空间大小，大小的单位默认位数据块，扇区，可选的大小为：b（小写，B）k（小写，KB），M（大写，MB），G（大写，GB）
-            例：find ./ -size 25k
-    节点信息作为过滤条件
-        -inum inode的节点信息
-            例：find ./ inum 26421
-通配符
-    * 匹配任意字符
-    ? 匹配任意一个字符
-    [abc] [a-z] [0-9]匹配[]内的任意一个字符
-    [^a-z] 匹配的内容不包含[]的任意一个字符
-条件逻辑
-    -a 代表and，并且
-    -o 代表or，或者
-        find ./ -size +20k -a -mtime -10
-结果处理
-    -exec 需要执行的命令 {} \;
-        find ./ -size +20k -a -mtime -10 -exec ls -l {} \;
-</code></pre><h2 id="grep-搜索字符串"><a href="#grep-搜索字符串" class="headerlink" title="grep 搜索字符串"></a>grep 搜索字符串</h2><pre><code>grep [选项] 字符串 文件名
-    -i 忽略大小写
-    -v 排除指定字符串
-</code></pre><h2 id="man-帮助命令"><a href="#man-帮助命令" class="headerlink" title="man 帮助命令"></a>man 帮助命令</h2><pre><code>man [等级] 命令
-man [选项] 命令
-    -f 相当于 whatis 命令 = man -f 命令
-    -k 所有含有关键字的命令或者文件
-</code></pre><h2 id="help-查询"><a href="#help-查询" class="headerlink" title="help 查询"></a>help 查询</h2><pre><code>help 命令
-</code></pre><h2 id="info-详细的帮助命令"><a href="#info-详细的帮助命令" class="headerlink" title="info 详细的帮助命令"></a>info 详细的帮助命令</h2><pre><code>info 命令
-</code></pre><h2 id="zip-压缩为zip格式，与windows通用"><a href="#zip-压缩为zip格式，与windows通用" class="headerlink" title="zip 压缩为zip格式，与windows通用"></a>zip 压缩为zip格式，与windows通用</h2><pre><code>zip [选项] 文件名 源文件
-    -r 压缩目录
-</code></pre><h2 id="unzip-解压缩zip格式"><a href="#unzip-解压缩zip格式" class="headerlink" title="unzip 解压缩zip格式"></a>unzip 解压缩zip格式</h2><pre><code>unzip 文件名
-</code></pre><h2 id="gzip-压缩为gzip格式或解压缩gzip格式文件"><a href="#gzip-压缩为gzip格式或解压缩gzip格式文件" class="headerlink" title="gzip 压缩为gzip格式或解压缩gzip格式文件"></a>gzip 压缩为gzip格式或解压缩gzip格式文件</h2><pre><code>gzip [选项] 源文件 [目标目录]
-    -c 保留源文件，需要加重定向符号
-        例：gzip -c test &gt; t1
-    -r 压缩目录下所有子文件，但不包括目录
-    -d 解压缩gzip文件，等同于gunzip  ？？？好像有问题
-</code></pre><h2 id="bzip-压缩为bzip2格式，不能压缩目录"><a href="#bzip-压缩为bzip2格式，不能压缩目录" class="headerlink" title="bzip 压缩为bzip2格式，不能压缩目录"></a>bzip 压缩为bzip2格式，不能压缩目录</h2><pre><code>bzip [选项] 源文件
-    -k 源文件，保留源文件
-    -d 解压缩，同bunzip2
-</code></pre><h2 id="tar-打包命令"><a href="#tar-打包命令" class="headerlink" title="tar 打包命令"></a>tar 打包命令</h2><pre><code>tar [选项] 打包文件名 源文件
-    -c 打包，与-x/-t
-    -v 显示过程
-    -f 指定打包的文件名
-        例：tar -cvf long.tar long
-    -x 解压缩包，与-c/-t对应
-    -z 打包时并压缩为gz格式
-    -j 打包时并压缩为bz2格式
-    -C 大写C，指定解压缩目录
-    -t 查看压缩文件内容，与-x/-c对应
-</code></pre><h2 id="shutdown-关机重启命令"><a href="#shutdown-关机重启命令" class="headerlink" title="shutdown 关机重启命令"></a>shutdown 关机重启命令</h2><pre><code>shutdown [选项] 时间
-    -c 取消前一个关机命令
-    -h 关机
-    -r 重启
-</code></pre><h2 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h2><pre><code>halt
-poweroff
-init 0 关机，不建议使用
-</code></pre><h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><pre><code>reboot/init 0
-</code></pre><h2 id="init-系统运行级别"><a href="#init-系统运行级别" class="headerlink" title="init 系统运行级别"></a>init 系统运行级别</h2><pre><code>init [level]
-    0 关机
-    1 单用户，类似于安全模式
-    2 不完全多用户，不含NFS服务
-    3 完全多用户，默认
-    4 未分配
-    5 图形界面
-    6 重启
-</code></pre><h2 id="logout-退出登录"><a href="#logout-退出登录" class="headerlink" title="logout 退出登录"></a>logout 退出登录</h2><h2 id="df-查询系统中已经挂载的设备"><a href="#df-查询系统中已经挂载的设备" class="headerlink" title="df 查询系统中已经挂载的设备"></a>df 查询系统中已经挂载的设备</h2><h2 id="mount-查询系统中已经挂载的设备"><a href="#mount-查询系统中已经挂载的设备" class="headerlink" title="mount 查询系统中已经挂载的设备"></a>mount 查询系统中已经挂载的设备</h2><pre><code>mount [-t 文件系统] [-o 特殊选项] 设备名 挂载点 
-    -a 依据配置文件/etc/fstab的内容自动挂载
-    -t 文件系统，（光盘，iso9660）
-    -o 特殊选项 
-        exec/noexec：可执行，默认为exec
-        rw/ro：读写权限，默认为rw
-    例：mount -t iso9660 -o ro /etc/sr0(或/etc/cdrom) /mnt/cdrom
-            mount /dev/sr0 /mnt/cdrom
-    例：mount -t vfat /dev/sdb1 /mnt/usb
-                挂载fat32位格式硬盘
-</code></pre><h2 id="umount-卸载，卸载时挂载点不在使用状态，也不可在当前目录"><a href="#umount-卸载，卸载时挂载点不在使用状态，也不可在当前目录" class="headerlink" title="umount 卸载，卸载时挂载点不在使用状态，也不可在当前目录"></a>umount 卸载，卸载时挂载点不在使用状态，也不可在当前目录</h2><pre><code>umount 设备文件名或挂载点
-例：umount /mnt/cdrom
-</code></pre><h2 id="fdisk-查看硬盘设备"><a href="#fdisk-查看硬盘设备" class="headerlink" title="fdisk 查看硬盘设备"></a>fdisk 查看硬盘设备</h2><pre><code>fdisk [选项]
-    -l 列出硬盘
-</code></pre><h2 id="w-查看用户登录信息"><a href="#w-查看用户登录信息" class="headerlink" title="w 查看用户登录信息"></a>w 查看用户登录信息</h2><pre><code>w [用户名]
-</code></pre><h2 id="who-查看用户登录信息"><a href="#who-查看用户登录信息" class="headerlink" title="who  查看用户登录信息"></a>who  查看用户登录信息</h2><pre><code>who [用户名]
-</code></pre><h2 id="last-查询当前目录和过去登录的用户信息"><a href="#last-查询当前目录和过去登录的用户信息" class="headerlink" title="last 查询当前目录和过去登录的用户信息"></a>last 查询当前目录和过去登录的用户信息</h2><pre><code>默认是读取/var/log/wtmp文件的数据
-</code></pre><h2 id="lastlog-查看用户最后一次登录时间"><a href="#lastlog-查看用户最后一次登录时间" class="headerlink" title="lastlog 查看用户最后一次登录时间"></a>lastlog 查看用户最后一次登录时间</h2><h2 id="shell-命令行解释器，配置在-etc-shells，可以通过exit退出"><a href="#shell-命令行解释器，配置在-etc-shells，可以通过exit退出" class="headerlink" title="shell 命令行解释器，配置在/etc/shells，可以通过exit退出"></a>shell 命令行解释器，配置在/etc/shells，可以通过exit退出</h2><pre><code>sh或csh 进入相应shell命令
-</code></pre><h2 id="echo-输出命令，输出的内容如果含有空格，则需要用双引号包裹"><a href="#echo-输出命令，输出的内容如果含有空格，则需要用双引号包裹" class="headerlink" title="echo 输出命令，输出的内容如果含有空格，则需要用双引号包裹"></a>echo 输出命令，输出的内容如果含有空格，则需要用双引号包裹</h2><pre><code>echo [选项] [输出内容]
-    -e 支持反斜线空值的字符转换
-        控制字符        作用
-            \a                输出警告音
-            \b                退格键，也就是一个向左删除键
-            \n                换行符
-            \r                回车符
-            \v                垂直制表符
-            \onnn            八进制输出字符
-            \xhh            十六进制输出字符
-            \t                制表符tab
-输出颜色
-    #30m = 黑，31m = 红，32m = 绿，33m = 黄，34m = 蓝，35m = 洋红，36m = 青，37m = 白
-例：echo -e &quot;\e[1;31mhelloworld\e[0m&quot;
-    \e 调用颜色
-    [1; 开启颜色，\e[1;31m
-    [0m 关闭颜色, \e[0m
-</code></pre><h2 id="脚本执行"><a href="#脚本执行" class="headerlink" title="脚本执行"></a>脚本执行</h2><pre><code>#代表注释
-#！/bin/bash 代表以下内容为shell脚本，如果不是纯shell语言则必须加
-执行方法：
-    1. 赋予执行权限，直接运行
-        chmod 755 hello.sh
-        ./hello.sh
-    2. 通过Bash调用执行脚本
-        bash shell.sh
-</code></pre><h2 id="alias-给命令添加别名（关机后消失）"><a href="#alias-给命令添加别名（关机后消失）" class="headerlink" title="alias 给命令添加别名（关机后消失）"></a>alias 给命令添加别名（关机后消失）</h2><pre><code>alias 别名=&apos;命令&apos;
-    例：alias ls=&apos;ls --color=never&apos;
-在~/.bashrc 添加别名，可永久生效，可通过source .bashrc
-命令生效顺序:
-    1. 用绝对路径或相对路径执行命令
-    2. 别名
-    3. Bash的内部命令
-    4. 按照$PATH环境变量找到的第一个命令
-</code></pre><h2 id="unalias-删除别名（临时删除）"><a href="#unalias-删除别名（临时删除）" class="headerlink" title="unalias 删除别名（临时删除）"></a>unalias 删除别名（临时删除）</h2><h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><pre><code>ctrl + c 终止当前命令
-ctrl + l 清屏
-ctrl + a 光标移至行首
-ctrl + e 光标移至行尾
-ctrl + u 从光标位置删除至行首
-ctrl + z 将命令放置后台
-ctrl + r 在历史命令中搜索
-</code></pre><h2 id="history-历史命令"><a href="#history-历史命令" class="headerlink" title="history 历史命令"></a>history 历史命令</h2><pre><code>history [选项] [历史命令保存文件]
-    -c 清空历史命令
-    -w 缓存中的历史命令保存文件 ~/.bash_history
-</code></pre><h2 id="wc-统计信息"><a href="#wc-统计信息" class="headerlink" title="wc 统计信息"></a>wc 统计信息</h2><pre><code>wc [选项] [文件名] 
-    -c 统计字符数
-    -w 统计单词数
-    -l 统计行数
-例：
-    wc -wcl test.txt
-    输出内容：
-        行数        单词数    字节数    路径
-</code></pre><h2 id="标准输入输出"><a href="#标准输入输出" class="headerlink" title="标准输入输出"></a>标准输入输出</h2><pre><code>键盘        /dev/stdin    0
-显示器    /dev/stdout    1
-显示器    /dev/stderr    2
-</code></pre><h2 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h2><pre><code>&gt; 覆盖
-&gt;&gt; 追加
-&gt; 只存储命令正确执行时内容
-    例：
-        ls &gt; test.txt            ls列表内容存入到test.txt文件中，只存命令正确执行时的内容
-2&gt; 只存储命令错误执行内容
-    例：
-        lss 2&gt; test.txt        ls列表内容存入到test.txt文件中，只存命令错误执行时的内容
-&amp;&gt; 或 2&gt;&amp;1 命令正确或者错误执行后输出内容都保存
-    例：
-        ls &gt; test.txt 2&gt;&amp;1
-        ls &amp;&gt; test.txt
-&gt; 文件一 2&gt; 文件二 命令正确和错误执行后内容分开执行
-    例：
-        ls &gt; test.txt 2&gt; test_error.txt
-</code></pre><h2 id="dev-null-黑洞"><a href="#dev-null-黑洞" class="headerlink" title="/dev/null 黑洞"></a>/dev/null 黑洞</h2><pre><code>例：
-    ls &gt; test.txt 2&gt; /dev/null
-</code></pre><h2 id="输入重定向-不懂"><a href="#输入重定向-不懂" class="headerlink" title="输入重定向, 不懂"></a>输入重定向, 不懂</h2><pre><code>&lt;
-&lt;&lt;
-</code></pre><h2 id="多命令顺序执行"><a href="#多命令顺序执行" class="headerlink" title="多命令顺序执行"></a>多命令顺序执行</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">多命令执行符</th>
-<th style="text-align:center">格式</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">;</td>
-<td style="text-align:center">cmd1;cmd2</td>
-<td>多个命令顺序执行，命令之间无任何逻辑关系，无论哪个cmd出错都会顺序执行下一个</td>
-</tr>
-<tr>
-<td style="text-align:center">&amp;&amp;</td>
-<td style="text-align:center">cmd1&amp;&amp;cmd2</td>
-<td>逻辑与，cmd1正确执行后才会执行cmd2</td>
-</tr>
-<tr>
-<td style="text-align:center">丨</td>
-<td style="text-align:center">cmd1丨丨cmd2</td>
-<td>逻辑或，cmd1正确执行后不会执行cmd2，cmd1错误执行后cmd2才会执行</td>
-</tr>
-</tbody>
-</table>
-<pre><code>例：
-    ls &amp;&amp; echo success || echo fail
-        正确 --&gt; success X--&gt;
-        错误 X--&gt;                 --&gt; fail
-    ls || echo fail &amp;&amp; echo success
-      逻辑混乱，不建议
-</code></pre><h2 id="管道符，管道符前面的命令输出作为后面命令的操作对象"><a href="#管道符，管道符前面的命令输出作为后面命令的操作对象" class="headerlink" title="| 管道符，管道符前面的命令输出作为后面命令的操作对象"></a>| 管道符，管道符前面的命令输出作为后面命令的操作对象</h2><pre><code>cmd1 | cmd2
-    cmd1的处理结果送于cmd2作为处理对象
-</code></pre><h2 id="Bash中其他特殊符号"><a href="#Bash中其他特殊符号" class="headerlink" title="Bash中其他特殊符号"></a>Bash中其他特殊符号</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">符号</th>
-<th style="text-align:center">名称</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">‘’</td>
-<td style="text-align:center">单引号</td>
-<td>在单引号中所有的特殊字符都无特殊含义</td>
-</tr>
-<tr>
-<td style="text-align:center">“”</td>
-<td style="text-align:center">双引号</td>
-<td>取消特殊含义，$和\</td>
-</tr>
-<tr>
-<td style="text-align:center">$()</td>
-<td style="text-align:center"></td>
-<td>变量的值，引用命令，转义符等特殊含义</td>
-</tr>
-<tr>
-<td style="text-align:center">··</td>
-<td style="text-align:center">反引号</td>
-<td>同$()， 建议使用$()</td>
-</tr>
-<tr>
-<td style="text-align:center">#</td>
-<td style="text-align:center">井号</td>
-<td>在shell脚本中代表注释</td>
-</tr>
-<tr>
-<td style="text-align:center">$</td>
-<td style="text-align:center"></td>
-<td>用于调用变量的值，例：$name</td>
-</tr>
-<tr>
-<td style="text-align:center">\</td>
-<td style="text-align:center">转义符</td>
-<td>转义其后的字符，相当于用单引号括起来</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[IT技术网站]]></title>
-      <url>https://smallhamburger.github.io/blog/2016/08/01/IT%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99/</url>
+      <url>https://smallhamburger.github.io/2016/08/01/IT%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99/</url>
       <content type="html"><![CDATA[<p><a href="http://www.imooc.com/" target="_blank" rel="external">慕课网：免费视频教学</a></p>
 <p><a href="http://www.csdn.net/" target="_blank" rel="external">CSDN：最大的中文IT社区</a></p>
 <p><a href="http://www.oschina.net/" target="_blank" rel="external">开源中国社区：很多源码</a></p>
