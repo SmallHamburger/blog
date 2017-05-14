@@ -745,7 +745,7 @@ canvas.drawBitmapMesh(bitmap,WIDTH,HEIGHT,verts,0,null,0,null);
     </entry>
     
     <entry>
-      <title><![CDATA[笔记-MYSQL使用]]></title>
+      <title><![CDATA[笔记-MySQL使用]]></title>
       <url>http://jeson.org/2017/04/20/%E7%AC%94%E8%AE%B0-MySQL%E4%BD%BF%E7%94%A8/</url>
       <content type="html"><![CDATA[<h1 id="MYSQL学习笔记"><a href="#MYSQL学习笔记" class="headerlink" title="MYSQL学习笔记"></a>MYSQL学习笔记</h1><hr>
 <h2 id="MYSQL提示符"><a href="#MYSQL提示符" class="headerlink" title="MYSQL提示符"></a>MYSQL提示符</h2><blockquote>
