@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[笔记-JavaWeb]]></title>
-      <url>https://smallhamburger.github.io/2017/04/25/%E7%AC%94%E8%AE%B0-JavaWeb/</url>
+      <url>http://jeson.org/2017/04/25/%E7%AC%94%E8%AE%B0-JavaWeb/</url>
       <content type="html"><![CDATA[<h1 id="Java-Web-学习笔记"><a href="#Java-Web-学习笔记" class="headerlink" title="Java Web 学习笔记"></a>Java Web 学习笔记</h1><hr>
 <h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><h3 id="JDBC接口"><a href="#JDBC接口" class="headerlink" title="JDBC接口"></a>JDBC接口</h3><ol>
 <li><p>驱动管理</p>
@@ -63,7 +63,7 @@
     
     <entry>
       <title><![CDATA[Android中常用的第三方框架]]></title>
-      <url>https://smallhamburger.github.io/2017/04/23/Android%E5%B8%B8%E7%94%A8%E6%A1%86%E6%9E%B6/</url>
+      <url>http://jeson.org/2017/04/23/Android%E5%B8%B8%E7%94%A8%E6%A1%86%E6%9E%B6/</url>
       <content type="html"><![CDATA[<h1 id="Android中常用的第三方框架"><a href="#Android中常用的第三方框架" class="headerlink" title="Android中常用的第三方框架"></a>Android中常用的第三方框架</h1><h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><table>
 <thead>
 <tr>
@@ -418,7 +418,7 @@
     
     <entry>
       <title><![CDATA[Android群英传-笔记]]></title>
-      <url>https://smallhamburger.github.io/2017/04/23/%E7%AC%94%E8%AE%B0-Android%E7%BE%A4%E8%8B%B1%E4%BC%A0/</url>
+      <url>http://jeson.org/2017/04/23/%E7%AC%94%E8%AE%B0-Android%E7%BE%A4%E8%8B%B1%E4%BC%A0/</url>
       <content type="html"><![CDATA[<ol>
 <li><p>大色块使用</p>
 </li>
@@ -746,7 +746,7 @@ canvas.drawBitmapMesh(bitmap,WIDTH,HEIGHT,verts,0,null,0,null);
     
     <entry>
       <title><![CDATA[笔记-MYSQL使用]]></title>
-      <url>https://smallhamburger.github.io/2017/04/20/%E7%AC%94%E8%AE%B0-MySQL%E4%BD%BF%E7%94%A8/</url>
+      <url>http://jeson.org/2017/04/20/%E7%AC%94%E8%AE%B0-MySQL%E4%BD%BF%E7%94%A8/</url>
       <content type="html"><![CDATA[<h1 id="MYSQL学习笔记"><a href="#MYSQL学习笔记" class="headerlink" title="MYSQL学习笔记"></a>MYSQL学习笔记</h1><hr>
 <h2 id="MYSQL提示符"><a href="#MYSQL提示符" class="headerlink" title="MYSQL提示符"></a>MYSQL提示符</h2><blockquote>
 <p><code>prompt \u</code></p>
@@ -1597,7 +1597,7 @@ canvas.drawBitmapMesh(bitmap,WIDTH,HEIGHT,verts,0,null,0,null);
     
     <entry>
       <title><![CDATA[程序员，你真的会写简历吗？]]></title>
-      <url>https://smallhamburger.github.io/2017/03/01/%E7%A8%8B%E5%BA%8F%E5%91%98%EF%BC%8C%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E5%86%99%E7%AE%80%E5%8E%86%E5%90%97%EF%BC%9F/</url>
+      <url>http://jeson.org/2017/03/01/%E7%A8%8B%E5%BA%8F%E5%91%98%EF%BC%8C%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E5%86%99%E7%AE%80%E5%8E%86%E5%90%97%EF%BC%9F/</url>
       <content type="html"><![CDATA[<p><em>本文摘自<strong>慕课网</strong>，作者<strong>七月在夏天</strong>，<a href="http://www.imooc.com/article/16649" target="_blank" rel="external">程序员，你真的会写简历吗？</a></em></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;又是一年跳槽季，金三银四毫不夸张。 简历是我们找工作的行头，重要性不言而喻。可你真的会写简历吗？</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面试其实就是面试官和你的一次约会。他是女你是男，能不能在一起取决于你能否讨他的欢心。一份整洁的简历，重要性不亚于你约会时的行头和装束。</p>
@@ -1654,13 +1654,13 @@ canvas.drawBitmapMesh(bitmap,WIDTH,HEIGHT,verts,0,null,0,null);
     
     <entry>
       <title><![CDATA[第一行代码（第二版）]]></title>
-      <url>https://smallhamburger.github.io/2017/01/01/%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89/</url>
+      <url>http://jeson.org/2017/01/01/%E7%AC%94%E8%AE%B0-%E7%AC%AC%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81%EF%BC%88%E7%AC%AC%E4%BA%8C%E7%89%88%EF%BC%89/</url>
       <content type="html"></content>
     </entry>
     
     <entry>
       <title><![CDATA[Android源码设计模式解析与实战]]></title>
-      <url>https://smallhamburger.github.io/2016/12/01/%E7%AC%94%E8%AE%B0-Android%E6%BA%90%E7%A0%81%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90%E4%B8%8E%E5%AE%9E%E6%88%98/</url>
+      <url>http://jeson.org/2016/12/01/%E7%AC%94%E8%AE%B0-Android%E6%BA%90%E7%A0%81%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E8%A7%A3%E6%9E%90%E4%B8%8E%E5%AE%9E%E6%88%98/</url>
       <content type="html"><![CDATA[<h1 id="面向对象的六大原则"><a href="#面向对象的六大原则" class="headerlink" title="面向对象的六大原则"></a>面向对象的六大原则</h1><p>稳定性 扩展性 健壮性 灵活性 高内聚 低耦合</p>
 <h2 id="1、单一职责原则"><a href="#1、单一职责原则" class="headerlink" title="1、单一职责原则"></a>1、单一职责原则</h2><p>一个类应该是一组相关性很高的函数、数据的封装。</p>
 <h2 id="2、开闭原则"><a href="#2、开闭原则" class="headerlink" title="2、开闭原则"></a>2、开闭原则</h2><p>软件中的对象（类、模块、函数等）应该对扩展是开放的，对修改是封闭的。</p>
@@ -1984,7 +1984,7 @@ canvas.drawBitmapMesh(bitmap,WIDTH,HEIGHT,verts,0,null,0,null);
     
     <entry>
       <title><![CDATA[Linux基本使用]]></title>
-      <url>https://smallhamburger.github.io/2016/09/01/%E7%AC%94%E8%AE%B0-Linux%E4%BD%BF%E7%94%A8/</url>
+      <url>http://jeson.org/2016/09/01/%E7%AC%94%E8%AE%B0-Linux%E4%BD%BF%E7%94%A8/</url>
       <content type="html"><![CDATA[<h1 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h1><h2 id="ls-查询目录中的内容"><a href="#ls-查询目录中的内容" class="headerlink" title="ls 查询目录中的内容"></a>ls 查询目录中的内容</h2><pre><code>ls [选项] [文件或者目录]
     -a 所有文件，包括隐藏文件
     -l 详细信息
@@ -2295,7 +2295,7 @@ ctrl + r 在历史命令中搜索
     
     <entry>
       <title><![CDATA[IT技术网站]]></title>
-      <url>https://smallhamburger.github.io/2016/08/01/IT%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99/</url>
+      <url>http://jeson.org/2016/08/01/IT%E6%8A%80%E6%9C%AF%E7%BD%91%E7%AB%99/</url>
       <content type="html"><![CDATA[<p><a href="http://www.imooc.com/" target="_blank" rel="external">慕课网：免费视频教学</a></p>
 <p><a href="http://www.csdn.net/" target="_blank" rel="external">CSDN：最大的中文IT社区</a></p>
 <p><a href="http://www.oschina.net/" target="_blank" rel="external">开源中国社区：很多源码</a></p>
