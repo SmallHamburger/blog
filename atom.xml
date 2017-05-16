@@ -821,7 +821,7 @@ canvas.drawBitmapMesh(bitmap,WIDTH,HEIGHT,verts,0,null,0,null);
     <link href="http://jeson.org/2017/04/20/%E7%AC%94%E8%AE%B0-MySQL%E4%BD%BF%E7%94%A8/"/>
     <id>http://jeson.org/2017/04/20/笔记-MySQL使用/</id>
     <published>2017-04-19T16:00:00.000Z</published>
-    <updated>2017-05-14T07:01:02.564Z</updated>
+    <updated>2017-05-16T12:27:25.199Z</updated>
     
     <content type="html"><![CDATA[<h1 id="MySQL学习笔记"><a href="#MySQL学习笔记" class="headerlink" title="MySQL学习笔记"></a>MySQL学习笔记</h1><hr>
 <h2 id="MySQL提示符"><a href="#MySQL提示符" class="headerlink" title="MySQL提示符"></a>MySQL提示符</h2><blockquote>
@@ -1721,6 +1721,109 @@ canvas.drawBitmapMesh(bitmap,WIDTH,HEIGHT,verts,0,null,0,null);
 <li>存储过程实现的功能要复杂些, 而函数的针对性更强</li>
 <li>存储过程可以返回多个值, 而函数只能返回一个值</li>
 <li>存储过程一般独立执行, 而函数可以作为其他sql语句的组成部分执行</li>
+</ul>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li>创建存储过程或者自定义函数时需要通过<code>DILIMITER</code>语句修改定界符</li>
+<li>如果函数体或者过程体由多个语句, 需要包含在<code>BEGIN...END</code>语句块中</li>
+<li>存储过程通过该<code>CALL</code>来调用</li>
+</ul>
+<h2 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h2><p>MySQL可以将数据以不同的技术存储在文件(内存)中, 这种技术就称为存储引擎</p>
+<h3 id="存储引擎特点"><a href="#存储引擎特点" class="headerlink" title="存储引擎特点"></a>存储引擎特点</h3><table>
+<thead>
+<tr>
+<th>特点</th>
+<th style="text-align:center">MyISAM</th>
+<th style="text-align:center">InnoDB</th>
+<th style="text-align:center">Memory</th>
+<th style="text-align:center">Archive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>存储限制</td>
+<td style="text-align:center">256TB</td>
+<td style="text-align:center">64TB</td>
+<td style="text-align:center">有</td>
+<td style="text-align:center">无</td>
+</tr>
+<tr>
+<td>事务安全</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">支持</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td>支持索引</td>
+<td style="text-align:center">支持</td>
+<td style="text-align:center">支持</td>
+<td style="text-align:center">支持</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td>锁颗粒</td>
+<td style="text-align:center">表锁</td>
+<td style="text-align:center">行锁</td>
+<td style="text-align:center">表锁</td>
+<td style="text-align:center">行锁</td>
+</tr>
+<tr>
+<td>数据压缩</td>
+<td style="text-align:center">支持</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">支持</td>
+</tr>
+<tr>
+<td>支持外键</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">支持</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h3><ul>
+<li><p>共享锁(读锁)</p>
+<p>  在同一时间段内, 多个用户可以读取同一个资源, 读取过程中数据不会发生任何变化</p>
+</li>
+<li><p>排它锁(写锁)</p>
+<p>  在任何时候只能有一个用户写入资源, 当进行写锁时会阻塞其他的读锁或者写锁操作</p>
+</li>
+</ul>
+<h3 id="锁颗粒"><a href="#锁颗粒" class="headerlink" title="锁颗粒"></a>锁颗粒</h3><ul>
+<li><p>表锁</p>
+<p>  一种开销最小的锁, 但并发不好</p>
+</li>
+<li><p>行锁</p>
+<p>  一种开销最大的锁, 但并发性好</p>
+</li>
+</ul>
+<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><p>用于保证数据库的完整性</p>
+<h3 id="事务的特性"><a href="#事务的特性" class="headerlink" title="事务的特性"></a>事务的特性</h3><ul>
+<li>原子性(Atomicity)</li>
+<li>一致性(Consistency)</li>
+<li>隔离性(Isolation)</li>
+<li>持久性(Durability)</li>
+</ul>
+<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><p>是对数据表中一列或多列的值进行排序的一种结构</p>
+<ul>
+<li>普通索引</li>
+<li>唯一索引</li>
+<li>全文索引</li>
+<li>btree索引</li>
+<li>hash索引</li>
+</ul>
+<h3 id="修改存储引擎"><a href="#修改存储引擎" class="headerlink" title="修改存储引擎"></a>修改存储引擎</h3><ul>
+<li><p>修改MySQL配置文件实现</p>
+<p>  <code>default-storage-engine = engine</code></p>
+</li>
+<li><p>通过创建数据表命令实现</p>
+<p>  <code>CREATE TABLE tbl_name(...) ENGINE = engine;</code></p>
+</li>
+<li><p>通过修改数据表命令实现</p>
+<p>  <code>ALTER TABLE tbl_name ENGINE [=] engine_name;</code></p>
+</li>
 </ul>
 ]]></content>
     
