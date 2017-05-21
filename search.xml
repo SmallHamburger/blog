@@ -6,8 +6,7 @@
     <entry>
       <title><![CDATA[笔记-JavaWeb]]></title>
       <url>http://jeson.org/2017/04/25/%E7%AC%94%E8%AE%B0-JavaWeb/</url>
-      <content type="html"><![CDATA[<h1 id="Java-Web-学习笔记"><a href="#Java-Web-学习笔记" class="headerlink" title="Java Web 学习笔记"></a>Java Web 学习笔记</h1><hr>
-<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="JDBC接口"><a href="#JDBC接口" class="headerlink" title="JDBC接口"></a>JDBC接口</h2><ol>
+      <content type="html"><![CDATA[<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="JDBC接口"><a href="#JDBC接口" class="headerlink" title="JDBC接口"></a>JDBC接口</h2><ol>
 <li><p>驱动管理</p>
 <ul>
 <li>DriveManager</li>
@@ -133,6 +132,7 @@
 <li>通常该类中的属性名与字段一致</li>
 <li>通常该类中的属性都使用封装类型, 如 <code>Integer</code>代替<code>int</code></li>
 </ol>
+<hr>
 <h1 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h1><h2 id="开发Servlet"><a href="#开发Servlet" class="headerlink" title="开发Servlet"></a>开发Servlet</h2><h3 id="编写Servlet"><a href="#编写Servlet" class="headerlink" title="编写Servlet"></a>编写Servlet</h3><ol>
 <li>创建package</li>
 <li>创建一个类, 名为XXXServlet</li>

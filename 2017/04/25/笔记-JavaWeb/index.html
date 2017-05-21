@@ -31,8 +31,7 @@ ga('send', 'pageview');
     
     
     <meta name="keywords" content="java,JDBC">
-    <meta name="description" content="Java Web 学习笔记
-JDBCJDBC接口
+    <meta name="description" content="JDBCJDBC接口
 驱动管理
 
 DriveManager
@@ -60,13 +59,13 @@ ResultSetMetaData
 
 JDBC使用步骤
 导入JDBC的jar包
-加载驱动">
+加载驱动
+获取Connection对">
 <meta property="og:type" content="article">
 <meta property="og:title" content="笔记-JavaWeb">
 <meta property="og:url" content="http://jeson.org/2017/04/25/笔记-JavaWeb/index.html">
 <meta property="og:site_name" content="学习笔记">
-<meta property="og:description" content="Java Web 学习笔记
-JDBCJDBC接口
+<meta property="og:description" content="JDBCJDBC接口
 驱动管理
 
 DriveManager
@@ -94,12 +93,12 @@ ResultSetMetaData
 
 JDBC使用步骤
 导入JDBC的jar包
-加载驱动">
-<meta property="og:updated_time" content="2017-05-21T14:05:19.917Z">
+加载驱动
+获取Connection对">
+<meta property="og:updated_time" content="2017-05-21T14:07:02.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔记-JavaWeb">
-<meta name="twitter:description" content="Java Web 学习笔记
-JDBCJDBC接口
+<meta name="twitter:description" content="JDBCJDBC接口
 驱动管理
 
 DriveManager
@@ -127,7 +126,8 @@ ResultSetMetaData
 
 JDBC使用步骤
 导入JDBC的jar包
-加载驱动">
+加载驱动
+获取Connection对">
     
         <link rel="alternate" type="application/atom+xml" title="学习笔记" href="/atom.xml">
     
@@ -244,7 +244,7 @@ JDBC使用步骤
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Java-Web-学习笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">Java Web 学习笔记</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JDBC"><span class="post-toc-number">2.</span> <span class="post-toc-text">JDBC</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JDBC接口"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">JDBC接口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JDBC使用步骤"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">JDBC使用步骤</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#读取属性文件-Properties"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">读取属性文件, Properties</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用方式"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">使用方式</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#连接池"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">连接池</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DBCP-database-connect-pool"><span class="post-toc-number">2.4.1.</span> <span class="post-toc-text">DBCP(database connect pool)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#PreparedStatement"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">PreparedStatement</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ResultSetMetaData"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">ResultSetMetaData</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#事务处理"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">事务处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#事务"><span class="post-toc-number">2.7.1.</span> <span class="post-toc-text">事务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JDBC对事务的支持"><span class="post-toc-number">2.7.2.</span> <span class="post-toc-text">JDBC对事务的支持</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#批量更新"><span class="post-toc-number">2.7.3.</span> <span class="post-toc-text">批量更新</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行SQL时获取字段值"><span class="post-toc-number">2.7.4.</span> <span class="post-toc-text">执行SQL时获取字段值</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DAO"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">DAO</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现方式"><span class="post-toc-number">2.8.1.</span> <span class="post-toc-text">实现方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JavaBean"><span class="post-toc-number">2.8.2.</span> <span class="post-toc-text">JavaBean</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Servlet"><span class="post-toc-number">3.</span> <span class="post-toc-text">Servlet</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开发Servlet"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">开发Servlet</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#编写Servlet"><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">编写Servlet</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置Servlet"><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">配置Servlet</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JDBC"><span class="post-toc-number">1.</span> <span class="post-toc-text">JDBC</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JDBC接口"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">JDBC接口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JDBC使用步骤"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">JDBC使用步骤</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#读取属性文件-Properties"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">读取属性文件, Properties</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用方式"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">使用方式</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#连接池"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">连接池</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DBCP-database-connect-pool"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">DBCP(database connect pool)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#PreparedStatement"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">PreparedStatement</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ResultSetMetaData"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">ResultSetMetaData</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#事务处理"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">事务处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#事务"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">事务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JDBC对事务的支持"><span class="post-toc-number">1.7.2.</span> <span class="post-toc-text">JDBC对事务的支持</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#批量更新"><span class="post-toc-number">1.7.3.</span> <span class="post-toc-text">批量更新</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行SQL时获取字段值"><span class="post-toc-number">1.7.4.</span> <span class="post-toc-text">执行SQL时获取字段值</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DAO"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">DAO</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现方式"><span class="post-toc-number">1.8.1.</span> <span class="post-toc-text">实现方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JavaBean"><span class="post-toc-number">1.8.2.</span> <span class="post-toc-text">JavaBean</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Servlet"><span class="post-toc-number">2.</span> <span class="post-toc-text">Servlet</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开发Servlet"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">开发Servlet</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#编写Servlet"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">编写Servlet</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置Servlet"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">配置Servlet</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -271,8 +271,7 @@ JDBC使用步骤
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="Java-Web-学习笔记"><a href="#Java-Web-学习笔记" class="headerlink" title="Java Web 学习笔记"></a>Java Web 学习笔记</h1><hr>
-<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="JDBC接口"><a href="#JDBC接口" class="headerlink" title="JDBC接口"></a>JDBC接口</h2><ol>
+            <h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="JDBC接口"><a href="#JDBC接口" class="headerlink" title="JDBC接口"></a>JDBC接口</h2><ol>
 <li><p>驱动管理</p>
 <ul>
 <li>DriveManager</li>
@@ -398,6 +397,7 @@ JDBC使用步骤
 <li>通常该类中的属性名与字段一致</li>
 <li>通常该类中的属性都使用封装类型, 如 <code>Integer</code>代替<code>int</code></li>
 </ol>
+<hr>
 <h1 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h1><h2 id="开发Servlet"><a href="#开发Servlet" class="headerlink" title="开发Servlet"></a>开发Servlet</h2><h3 id="编写Servlet"><a href="#编写Servlet" class="headerlink" title="编写Servlet"></a>编写Servlet</h3><ol>
 <li>创建package</li>
 <li>创建一个类, 名为XXXServlet</li>
@@ -427,7 +427,7 @@ JDBC使用步骤
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-05-21T14:05:19.917Z" itemprop="dateUpdated">2017-05-21 22:05:19</time>
+    最后更新时间：<time datetime="2017-05-21T14:07:02.865Z" itemprop="dateUpdated">2017-05-21 22:07:02</time>
 </span><br>
 
 

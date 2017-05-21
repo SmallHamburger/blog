@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jeson.org/"/>
-  <updated>2017-05-21T14:05:19.917Z</updated>
+  <updated>2017-05-21T14:07:02.865Z</updated>
   <id>http://jeson.org/</id>
   
   <author>
@@ -20,10 +20,9 @@
     <link href="http://jeson.org/2017/04/25/%E7%AC%94%E8%AE%B0-JavaWeb/"/>
     <id>http://jeson.org/2017/04/25/笔记-JavaWeb/</id>
     <published>2017-04-24T16:00:00.000Z</published>
-    <updated>2017-05-21T14:05:19.917Z</updated>
+    <updated>2017-05-21T14:07:02.865Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Java-Web-学习笔记"><a href="#Java-Web-学习笔记" class="headerlink" title="Java Web 学习笔记"></a>Java Web 学习笔记</h1><hr>
-<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="JDBC接口"><a href="#JDBC接口" class="headerlink" title="JDBC接口"></a>JDBC接口</h2><ol>
+    <content type="html"><![CDATA[<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="JDBC接口"><a href="#JDBC接口" class="headerlink" title="JDBC接口"></a>JDBC接口</h2><ol>
 <li><p>驱动管理</p>
 <ul>
 <li>DriveManager</li>
@@ -149,6 +148,7 @@
 <li>通常该类中的属性名与字段一致</li>
 <li>通常该类中的属性都使用封装类型, 如 <code>Integer</code>代替<code>int</code></li>
 </ol>
+<hr>
 <h1 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h1><h2 id="开发Servlet"><a href="#开发Servlet" class="headerlink" title="开发Servlet"></a>开发Servlet</h2><h3 id="编写Servlet"><a href="#编写Servlet" class="headerlink" title="编写Servlet"></a>编写Servlet</h3><ol>
 <li>创建package</li>
 <li>创建一个类, 名为XXXServlet</li>
@@ -175,8 +175,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Java-Web-学习笔记&quot;&gt;&lt;a href=&quot;#Java-Web-学习笔记&quot; class=&quot;headerlink&quot; title=&quot;Java Web 学习笔记&quot;&gt;&lt;/a&gt;Java Web 学习笔记&lt;/h1&gt;&lt;hr&gt;
-&lt;h1 id=&quot;JDBC&quot;&gt;&lt;a href=&quot;#
+      &lt;h1 id=&quot;JDBC&quot;&gt;&lt;a href=&quot;#JDBC&quot; class=&quot;headerlink&quot; title=&quot;JDBC&quot;&gt;&lt;/a&gt;JDBC&lt;/h1&gt;&lt;h2 id=&quot;JDBC接口&quot;&gt;&lt;a href=&quot;#JDBC接口&quot; class=&quot;headerlink&quot; title=&quot;JDBC接
     
     </summary>
     
