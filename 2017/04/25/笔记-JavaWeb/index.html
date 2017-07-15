@@ -30,7 +30,7 @@ ga('send', 'pageview');
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="java,JDBC">
+    <meta name="keywords" content="java,JDBC,JSP,Servlet">
     <meta name="description" content="JDBCJDBC接口
 驱动管理
 
@@ -96,7 +96,14 @@ JDBC使用步骤
 加载驱动
 获取Connection对">
 <meta property="og:image" content="http://jeson.org/img/ServeletFlowChart.png">
-<meta property="og:updated_time" content="2017-05-22T14:18:26.856Z">
+<meta property="og:image" content="http://static.zybuluo.com/898801681/gbcm2zukdmrjiz080gxxa5yw/ServeletFlowChart.png">
+<meta property="og:image" content="http://jeson.org/img/Servlet运行原理.png">
+<meta property="og:image" content="http://static.zybuluo.com/898801681/3lkot5nk2fawpr64hcpu35ka/Servlet%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86.png">
+<meta property="og:image" content="http://jeson.org/img/Servlet生命周期.png">
+<meta property="og:image" content="http://static.zybuluo.com/898801681/p4sjwsld3ny5hiu6p8a9y4yt/Servlet%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png">
+<meta property="og:image" content="http://jeson.org/img/Servlet接口及实现类.png">
+<meta property="og:image" content="http://static.zybuluo.com/898801681/xnexb3p2ctdw6ybft8nkjh08/Servlet%E6%8E%A5%E5%8F%A3%E5%8F%8A%E5%AE%9E%E7%8E%B0%E7%B1%BB.png">
+<meta property="og:updated_time" content="2017-07-09T12:08:30.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔记-JavaWeb">
 <meta name="twitter:description" content="JDBCJDBC接口
@@ -246,7 +253,7 @@ JDBC使用步骤
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JDBC"><span class="post-toc-number">1.</span> <span class="post-toc-text">JDBC</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JDBC接口"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">JDBC接口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JDBC使用步骤"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">JDBC使用步骤</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#读取属性文件-Properties"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">读取属性文件, Properties</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用方式"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">使用方式</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#连接池"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">连接池</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DBCP-database-connect-pool"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">DBCP(database connect pool)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#PreparedStatement"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">PreparedStatement</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ResultSetMetaData"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">ResultSetMetaData</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#事务处理"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">事务处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#事务"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">事务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JDBC对事务的支持"><span class="post-toc-number">1.7.2.</span> <span class="post-toc-text">JDBC对事务的支持</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#批量更新"><span class="post-toc-number">1.7.3.</span> <span class="post-toc-text">批量更新</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行SQL时获取字段值"><span class="post-toc-number">1.7.4.</span> <span class="post-toc-text">执行SQL时获取字段值</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DAO"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">DAO</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现方式"><span class="post-toc-number">1.8.1.</span> <span class="post-toc-text">实现方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JavaBean"><span class="post-toc-number">1.8.2.</span> <span class="post-toc-text">JavaBean</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Servlet"><span class="post-toc-number">2.</span> <span class="post-toc-text">Servlet</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开发Servlet"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">开发Servlet</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#编写Servlet"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">编写Servlet</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置Servlet"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">配置Servlet</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Servlet工作流程"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">Servlet工作流程</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JDBC"><span class="post-toc-number">1.</span> <span class="post-toc-text">JDBC</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JDBC接口"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">JDBC接口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JDBC使用步骤"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">JDBC使用步骤</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#读取属性文件-Properties"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">读取属性文件, Properties</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用方式"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">使用方式</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#连接池"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">连接池</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DBCP-database-connect-pool"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">DBCP(database connect pool)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#PreparedStatement"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">PreparedStatement</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ResultSetMetaData"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">ResultSetMetaData</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#事务处理"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">事务处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#事务"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">事务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JDBC对事务的支持"><span class="post-toc-number">1.7.2.</span> <span class="post-toc-text">JDBC对事务的支持</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#批量更新"><span class="post-toc-number">1.7.3.</span> <span class="post-toc-text">批量更新</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行SQL时获取字段值"><span class="post-toc-number">1.7.4.</span> <span class="post-toc-text">执行SQL时获取字段值</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DAO"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">DAO</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现方式"><span class="post-toc-number">1.8.1.</span> <span class="post-toc-text">实现方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JavaBean"><span class="post-toc-number">1.8.2.</span> <span class="post-toc-text">JavaBean</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Servlet"><span class="post-toc-number">2.</span> <span class="post-toc-text">Servlet</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开发Servlet"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">开发Servlet</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#编写Servlet"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">编写Servlet</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置Servlet"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">配置Servlet</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Servlet工作流程"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">Servlet工作流程</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#HTTP协议"><span class="post-toc-number">3.</span> <span class="post-toc-text">HTTP协议</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如何通信"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">如何通信</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据格式"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">数据格式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#请求数据"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">请求数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#响应数据"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">响应数据</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Servlet运行原理"><span class="post-toc-number">4.</span> <span class="post-toc-text">Servlet运行原理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Servlet使用"><span class="post-toc-number">5.</span> <span class="post-toc-text">Servlet使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置编码"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">设置编码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JavaBean-1"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">JavaBean</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#GET-POST使用场景"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">GET/POST使用场景</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重定向"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">重定向</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从request中获取访问路径"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">从request中获取访问路径</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如何配置Servlet访问路径"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">如何配置Servlet访问路径</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#精确匹配"><span class="post-toc-number">5.6.1.</span> <span class="post-toc-text">精确匹配</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#通配符"><span class="post-toc-number">5.6.2.</span> <span class="post-toc-text">通配符</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#后缀-建议使用"><span class="post-toc-number">5.6.3.</span> <span class="post-toc-text">后缀(建议使用)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Servelt生命周期"><span class="post-toc-number">5.7.</span> <span class="post-toc-text">Servelt生命周期</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ServletConfig和ServletContext"><span class="post-toc-number">5.8.</span> <span class="post-toc-text">ServletConfig和ServletContext</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ServletConfig"><span class="post-toc-number">5.8.1.</span> <span class="post-toc-text">ServletConfig</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ServletContext"><span class="post-toc-number">5.8.2.</span> <span class="post-toc-text">ServletContext</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Servlet接口及实现类"><span class="post-toc-number">5.8.3.</span> <span class="post-toc-text">Servlet接口及实现类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线程安全问题"><span class="post-toc-number">5.8.4.</span> <span class="post-toc-text">线程安全问题</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JSP"><span class="post-toc-number">5.9.</span> <span class="post-toc-text">JSP</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JSP表达式"><span class="post-toc-number">5.9.1.</span> <span class="post-toc-text">JSP表达式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JSP小脚本"><span class="post-toc-number">5.9.2.</span> <span class="post-toc-text">JSP小脚本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JSP声明"><span class="post-toc-number">5.9.3.</span> <span class="post-toc-text">JSP声明</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JSP指令"><span class="post-toc-number">5.9.4.</span> <span class="post-toc-text">JSP指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#page指令"><span class="post-toc-number">5.9.5.</span> <span class="post-toc-text">page指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#include指令"><span class="post-toc-number">5.9.6.</span> <span class="post-toc-text">include指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JSP页面中的隐含对象"><span class="post-toc-number">5.9.7.</span> <span class="post-toc-text">JSP页面中的隐含对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MVC模式"><span class="post-toc-number">5.9.8.</span> <span class="post-toc-text">MVC模式</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Servlet转发和重定向"><span class="post-toc-number">5.10.</span> <span class="post-toc-text">Servlet转发和重定向</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Servlet转发"><span class="post-toc-number">5.10.1.</span> <span class="post-toc-text">Servlet转发</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重定向-1"><span class="post-toc-number">5.10.2.</span> <span class="post-toc-text">重定向</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用"><span class="post-toc-number">5.10.3.</span> <span class="post-toc-text">使用</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#EL和JSTL表达式"><span class="post-toc-number">5.11.</span> <span class="post-toc-text">EL和JSTL表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#初步使用EL表达式"><span class="post-toc-number">5.11.1.</span> <span class="post-toc-text">初步使用EL表达式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#EL的取值范围"><span class="post-toc-number">5.11.2.</span> <span class="post-toc-text">EL的取值范围</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用EL表达式进行运算"><span class="post-toc-number">5.11.3.</span> <span class="post-toc-text">使用EL表达式进行运算</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用EL表达式获取请求参数值"><span class="post-toc-number">5.11.4.</span> <span class="post-toc-text">使用EL表达式获取请求参数值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JSTL的简单使用"><span class="post-toc-number">5.11.5.</span> <span class="post-toc-text">JSTL的简单使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自定义标签"><span class="post-toc-number">5.11.6.</span> <span class="post-toc-text">自定义标签</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#项目"><span class="post-toc-number">5.12.</span> <span class="post-toc-text">项目</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#异常"><span class="post-toc-number">5.12.1.</span> <span class="post-toc-text">异常</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#访问网页"><span class="post-toc-number">5.12.2.</span> <span class="post-toc-text">访问网页</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -436,6 +443,301 @@ JDBC使用步骤
                 </div>
                 <div class="image-caption">Servelet流程图</div>
             </figure>
+<p><img src="http://static.zybuluo.com/898801681/gbcm2zukdmrjiz080gxxa5yw/ServeletFlowChart.png" alt="Servelet流程图"></p>
+<h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><p>定义如何通信以及通信的数据格式</p>
+<h2 id="如何通信"><a href="#如何通信" class="headerlink" title="如何通信"></a>如何通信</h2><p>一次请求一次连接, 降低服务器压力</p>
+<ol>
+<li>建立连接</li>
+<li>发送请求</li>
+<li>接受响应</li>
+<li>断开连接</li>
+</ol>
+<h2 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h2><h3 id="请求数据"><a href="#请求数据" class="headerlink" title="请求数据"></a>请求数据</h3><ul>
+<li>请求行: 请求的基本信息</li>
+<li>消息头: 请求数据的描述</li>
+<li>空行: 分割</li>
+<li>实体内容: 具体的业务数据</li>
+</ul>
+<h3 id="响应数据"><a href="#响应数据" class="headerlink" title="响应数据"></a>响应数据</h3><ul>
+<li>状态行: 响应的基本信息, 数据由服务器自动填充</li>
+<li>消息头: 响应数据的描述, 大部分数据由服务器填充, 但返回类型需手动指定</li>
+<li>空行: 分割</li>
+<li>实体内容: 具体的返回数据</li>
+</ul>
+<blockquote>
+<p>例: 获取消息头信息<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 迭代器模式</span></div><div class="line">Enumeration&lt;String&gt; headers = request.getHeaderNames();</div><div class="line"><span class="keyword">while</span> (headers.hasMoreElements()) &#123;</div><div class="line">	String key = (String) headers.nextElement();</div><div class="line">	String value = request.getHeader(key);</div><div class="line">	System.out.println(key + <span class="string">": "</span> + value);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="Servlet运行原理"><a href="#Servlet运行原理" class="headerlink" title="Servlet运行原理"></a>Servlet运行原理</h1><p>如图:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/Servlet运行原理.png" alt="Servlet运行原理" title="">
+                </div>
+                <div class="image-caption">Servlet运行原理</div>
+            </figure>
+<p><img src="http://static.zybuluo.com/898801681/3lkot5nk2fawpr64hcpu35ka/Servlet%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86.png" alt="Servlet运行原理"></p>
+<h1 id="Servlet使用"><a href="#Servlet使用" class="headerlink" title="Servlet使用"></a>Servlet使用</h1><h2 id="设置编码"><a href="#设置编码" class="headerlink" title="设置编码"></a>设置编码</h2><blockquote>
+<p>请求:</p>
+<ol>
+<li>万能方式, 将乱码后的字符串先按照乱码的编码转换为byte数组, 然后再以真正的编码格式转换比较麻烦</li>
+<li>针对GET请求路径, 在server.xml文件修改<code>&lt;Connector /&gt;</code>标签, 添加属性<code>URIEncoding=&quot;utf-8&quot;</code></li>
+<li>针对POST请求实体内容, 在接受参数前, 调用<code>request.setCharacterEncoding(&quot;utf-8&quot;);</code></li>
+</ol>
+<p>响应:</p>
+<ol>
+<li>设置ContentType: <code>res.setContentType(&quot;text/html;charset=utf-8&quot;);</code></li>
+<li>设置编码方式: <code>res.setCharacterEncoding(&quot;utf-8&quot;);</code><br>Unit02 pm 16:30</li>
+</ol>
+</blockquote>
+<h2 id="JavaBean-1"><a href="#JavaBean-1" class="headerlink" title="JavaBean"></a>JavaBean</h2><blockquote>
+<p>满足如下规范的类:</p>
+<ul>
+<li>有单独的包</li>
+<li>有默认的构造器</li>
+<li>实现序列化接口</li>
+<li>有get/set方法</li>
+</ul>
+<p>建议:</p>
+<ul>
+<li>尽量使用封装类型, 因为它比基本类型多了<code>null</code></li>
+<li>使用<code>java.sql</code>包下的日期, 因为JDBC支持这样的类型</li>
+<li>dao也要实现序列化接口</li>
+</ul>
+</blockquote>
+<h2 id="GET-POST使用场景"><a href="#GET-POST使用场景" class="headerlink" title="GET/POST使用场景"></a>GET/POST使用场景</h2><blockquote>
+<p>建议:</p>
+<ul>
+<li>查询数据时用GET, 因为通常查询条件较少</li>
+<li>提交数据(表单)时用POST, 因为通常提交的数据较多</li>
+</ul>
+</blockquote>
+<h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><p><code>response.sendRedirect(&quot;/find&quot;);</code></p>
+<p>使用场景</p>
+<ol>
+<li>解决两个网站之间的跳转问题</li>
+<li>解决一个网站内两个独立组件间的跳转</li>
+<li>一般增加,修改,删除后重定向</li>
+</ol>
+<h2 id="从request中获取访问路径"><a href="#从request中获取访问路径" class="headerlink" title="从request中获取访问路径"></a>从request中获取访问路径</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 结果为req.getServletPath()) = </span></div><div class="line"><span class="comment">// 获取结果为相对路径, 可能为空, 因此此方法不可靠</span></div><div class="line">System.out.println(<span class="string">"req.getServletPath()) = "</span> + req.getServletPath());</div><div class="line"><span class="comment">// 结果为req.getContextPath()) = /jeson-project</span></div><div class="line"><span class="comment">// 获取结果为项目路径</span></div><div class="line">System.out.println(<span class="string">"req.getContextPath()) = "</span> + req.getContextPath());</div><div class="line"><span class="comment">// 结果为req.getRequestURI()) = /jeson-project/findAll</span></div><div class="line"><span class="comment">// 获取结果为用户用户访问路径的绝对路径</span></div><div class="line">System.out.println(<span class="string">"req.getRequestURI()) = "</span> + req.getRequestURI());</div><div class="line"><span class="comment">// 结果为req.getRequestURL()) = http://localhost:8080/jeson-project/findAll</span></div><div class="line"><span class="comment">// 获取结果为浏览器路径</span></div><div class="line">System.out.println(<span class="string">"req.getRequestURL()) = "</span> + req.getRequestURL());</div></pre></td></tr></table></figure>
+<h2 id="如何配置Servlet访问路径"><a href="#如何配置Servlet访问路径" class="headerlink" title="如何配置Servlet访问路径"></a>如何配置Servlet访问路径</h2><h3 id="精确匹配"><a href="#精确匹配" class="headerlink" title="精确匹配"></a>精确匹配</h3><p>例: /abc</p>
+<ul>
+<li>只有/abc才能访问这个Servlet</li>
+<li>此Servelt只能处理这一个请求</li>
+<li>适合规模比较小的项目</li>
+</ul>
+<h3 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h3><p>例: /*</p>
+<ul>
+<li>所有路径都能访问此路径</li>
+<li>此Servelt能处理所有请求</li>
+<li>适合一个项目(某一个模块)只写一个Servelt</li>
+</ul>
+<h3 id="后缀-建议使用"><a href="#后缀-建议使用" class="headerlink" title="后缀(建议使用)"></a>后缀(建议使用)</h3><p>例: *.hi</p>
+<ul>
+<li>所有以hi为后缀的请求都能访问此Servelet</li>
+<li>此Servlet能处理多个请求</li>
+<li>适合一个项目写少量的几个Servelt</li>
+</ul>
+<h2 id="Servelt生命周期"><a href="#Servelt生命周期" class="headerlink" title="Servelt生命周期"></a>Servelt生命周期</h2><p>管理Servlet的生命周期, 便于开发者在Servelt某个生命阶段做不同的处理</p>
+<ol>
+<li>默认首次访问Servlet时Tomcat实例化它, 也可以修改为启动Tomcat时就实例化(当前图为这种情况, 在web.xml的servelt标签下添加<code>&lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</code>, 中间的值为实例化的顺序)</li>
+<li>默认的执行顺序为new –&gt; init() –&gt; service() –&gt; destroy</li>
+<li>每次请求都会执行service()</li>
+<li>每个Servlet都是单例模式</li>
+</ol>
+<p>生命周期图:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="img/Servlet生命周期.png" alt="Servlet生命周期" title="">
+                </div>
+                <div class="image-caption">Servlet生命周期</div>
+            </figure>
+<p><img src="http://static.zybuluo.com/898801681/p4sjwsld3ny5hiu6p8a9y4yt/Servlet%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="Servlet生命周期"></p>
+<h2 id="ServletConfig和ServletContext"><a href="#ServletConfig和ServletContext" class="headerlink" title="ServletConfig和ServletContext"></a>ServletConfig和ServletContext</h2><h3 id="ServletConfig"><a href="#ServletConfig" class="headerlink" title="ServletConfig"></a>ServletConfig</h3><ul>
+<li>每一个Servlet实例配置一个ServletConfig</li>
+<li>给单个Servlet预置数据时使用</li>
+<li>在Servlet实例init()之前创建</li>
+<li>可以在web.xml中配置</li>
+</ul>
+<p>使用:<br>在web.xml文件相应的Servlet标签下添加如下代码段<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>maxOnline<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>1000<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>在java文件中<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String maxOnline = getServletConfig().getInitParameter(<span class="string">"maxOnline"</span>);</div></pre></td></tr></table></figure></p>
+<h3 id="ServletContext"><a href="#ServletContext" class="headerlink" title="ServletContext"></a>ServletContext</h3><ul>
+<li>单例模式, 整个项目中共享</li>
+<li>给所有Servlet预置数据时使用</li>
+<li>在Tomcat启动时就会创建</li>
+</ul>
+<p>使用:<br>在web.xml文件根标签web-app下添加如下代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>maxOnline<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>1000<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>在java文件中<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String maxOnline = getServletContext().getInitParameter(<span class="string">"maxOnline"</span>);</div></pre></td></tr></table></figure></p>
+<p>技巧:</p>
+<ul>
+<li>单独写一个<code>InitServlet</code>, 在<code>init(ServletConfig config)</code>方法中完成自己需要完成的初始化工作, 需要在web.xml文件这个Servlet相应标签下添加<code>&lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</code>, 不需要配置<code>servlet-mapping</code></li>
+<li>可以在ServletContext中设置变量, 记录某些值, 如访问次数</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// InitServlet下初始化属性initCount</span></div><div class="line">getServletContext().setAttribute(<span class="string">"initCount"</span>, <span class="number">0</span>);</div><div class="line"><span class="comment">// 其他Servlet设置initCount, 或者获取initCount值</span></div><div class="line">getServletContext().getAttribute(<span class="string">"initCount"</span>);</div></pre></td></tr></table></figure>
+<h3 id="Servlet接口及实现类"><a href="#Servlet接口及实现类" class="headerlink" title="Servlet接口及实现类"></a>Servlet接口及实现类</h3><p>如图:</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/Servlet接口及实现类.png" alt="Servelet流程图" title="">
+                </div>
+                <div class="image-caption">Servelet流程图</div>
+            </figure>
+<p><img src="http://static.zybuluo.com/898801681/xnexb3p2ctdw6ybft8nkjh08/Servlet%E6%8E%A5%E5%8F%A3%E5%8F%8A%E5%AE%9E%E7%8E%B0%E7%B1%BB.png" alt="Servlet接口及实现类"></p>
+<h3 id="线程安全问题"><a href="#线程安全问题" class="headerlink" title="线程安全问题"></a>线程安全问题</h3><ol>
+<li>尽量使用局部变量</li>
+<li>使用到全局变量时使用<code>synchronized</code>关键字</li>
+</ol>
+<h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><h3 id="JSP表达式"><a href="#JSP表达式" class="headerlink" title="JSP表达式"></a>JSP表达式</h3><ul>
+<li>语法规则: &lt;%= …%&gt;</li>
+<li>合法内容: 变量、变量加运算符组合的表达式、有返回值的方法</li>
+<li>转译成Servlet时的规则: 在<code>service()</code>方法中用<code>out.print</code>语句输出该变量、表达式、方法的值</li>
+</ul>
+<h3 id="JSP小脚本"><a href="#JSP小脚本" class="headerlink" title="JSP小脚本"></a>JSP小脚本</h3><ul>
+<li>语法规则: &lt;% …%&gt;</li>
+<li>合法内容: 能够写在方法里的java代码片段都可以作为小脚本</li>
+<li>转译成Servlet时的规则: 原封不动成为Servlet类的<code>service()</code>方法里面的一段代码</li>
+</ul>
+<h3 id="JSP声明"><a href="#JSP声明" class="headerlink" title="JSP声明"></a>JSP声明</h3><ul>
+<li>语法规则: &lt;%! …%&gt;</li>
+<li>合法内容: 成员属性或成员方法的声明</li>
+<li>转译成Servlet时的规则: 成为JSP页面转译成Servlet类中成员属性或者成员方法</li>
+</ul>
+<blockquote>
+<p>例:</p>
+</blockquote>
+<ul>
+<li>jsp文件</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;%@page pageEncoding="utf-8"%&gt;</div><div class="line"></div><div class="line">&lt;!doctype html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;meta charset="utf-8"&gt;</div><div class="line">		&lt;title&gt;hello&lt;/title&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;%!private double x100(double num) &#123;</div><div class="line">			return num * 100;</div><div class="line">		&#125;%&gt;</div><div class="line">		</div><div class="line">		&lt;ul&gt;</div><div class="line">		</div><div class="line">			&lt;%</div><div class="line">				for (int i = 0; i &lt; 10; i++) &#123;</div><div class="line">			%&gt;</div><div class="line">			</div><div class="line">			&lt;li&gt;&lt;%=x100(Math.random())%&gt;&lt;/li&gt;</div><div class="line">			</div><div class="line">			&lt;%</div><div class="line">				&#125;</div><div class="line">			%&gt;</div><div class="line">			</div><div class="line">		&lt;/ul&gt;</div><div class="line">		</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>web.xml中的配置, 可以配置, 也可以不配置</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">jsp-file</span>&gt;</span>/Hello.jsp<span class="tag">&lt;/<span class="name">jsp-file</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="JSP指令"><a href="#JSP指令" class="headerlink" title="JSP指令"></a>JSP指令</h3><ul>
+<li>语法规则: &lt;%@指令名 属性=值 %&gt;</li>
+<li>作用: 控制JSP在转译成Servlet类时生成的内容</li>
+<li>常用指令: page指令, include指令, taglib指令</li>
+</ul>
+<h3 id="page指令"><a href="#page指令" class="headerlink" title="page指令"></a>page指令</h3><ul>
+<li>作用: 用于导包, 设置页面属性</li>
+</ul>
+<blockquote>
+<p>例:</p>
+</blockquote>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;%-- 导包 --&gt;</div><div class="line">&lt;%<span class="meta">@page</span> <span class="keyword">import</span>=<span class="string">"java.util.*"</span> %&gt;</div><div class="line"></div><div class="line">&lt;%-- 设置response.setContentType()方法的参数 --&gt;</div><div class="line">&lt;%<span class="meta">@page</span> contentType=<span class="string">"image/git"</span> %&gt;</div><div class="line"></div><div class="line">&lt;%-- 设置容器读取该文件时的解码 --&gt;</div><div class="line">&lt;%<span class="meta">@page</span> pageEncoding=<span class="string">"UTF-8"</span> %&gt;</div></pre></td></tr></table></figure>
+<h3 id="include指令"><a href="#include指令" class="headerlink" title="include指令"></a>include指令</h3><ul>
+<li>作用: </li>
+</ul>
+<ol>
+<li>在JSP页面转换成Servlet时, 能够将其他文件包含进来. 可以包含JSP文件, 可以是静态的HTML文件.</li>
+<li>通过该语句能方便的在每个JSP页面中包含导航栏, 版权声明, logo等</li>
+</ol>
+<ul>
+<li>语法: &lt;%@include file=”footer.html”%&gt;</li>
+</ul>
+<p>Unit05： 转发 、 JSP开发常见问题 am</p>
+<h3 id="JSP页面中的隐含对象"><a href="#JSP页面中的隐含对象" class="headerlink" title="JSP页面中的隐含对象"></a>JSP页面中的隐含对象</h3><ul>
+<li>输入输出对象<ul>
+<li>request: HttpServletRequest, 请求信息</li>
+<li>response: HttpServletResponse, 响应信息</li>
+<li>out: JSPWriter, 输出的数据流</li>
+</ul>
+</li>
+<li>作用域通信对象<ul>
+<li>session: HttpSeeesion, 会话</li>
+<li>application: ServletContext, 全局的上下文对象</li>
+<li>pageContext: PageContext, JSP页面上下文, 可以获取其他八个隐含对象</li>
+</ul>
+</li>
+<li>Servlet对象<ul>
+<li>page: Object, JSP页面本身</li>
+<li>config: ServletConfig, Servlet配置对象</li>
+</ul>
+</li>
+<li>异常对象<ul>
+<li>exception: Throwable, 捕获页面异常</li>
+</ul>
+</li>
+</ul>
+<h3 id="MVC模式"><a href="#MVC模式" class="headerlink" title="MVC模式"></a>MVC模式</h3><p>Model: DAO<br>View: JSP<br>Control: Servlet</p>
+<blockquote>
+<p>例: Servlet转发</p>
+</blockquote>
+<p>Servlet相关代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 将数据放入emp属性中</span></div><div class="line">request.setAttribute(<span class="string">"emps"</span>, <span class="keyword">new</span> ArrayList&lt;&gt;());</div><div class="line"><span class="comment">// 将请求转发到JSP文件中</span></div><div class="line">request.getRequestDispatcher(<span class="string">"/Emp.jsp"</span>).forward(request, response);</div></pre></td></tr></table></figure></p>
+<p>Emp.jsp相关代码<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;ul&gt;</div><div class="line">	&lt;%</div><div class="line">	    // 从隐含对象request中取出emps属性值显示</div><div class="line">		for (EMP emp : ((List&lt;EMP&gt;)request.getAttribute("emps"))) &#123;</div><div class="line">	%&gt;</div><div class="line">	&lt;li&gt;&lt;%=emp.toString() %&gt;&lt;/li&gt;</div><div class="line">	&lt;%</div><div class="line">		&#125;</div><div class="line">	%&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="Servlet转发和重定向"><a href="#Servlet转发和重定向" class="headerlink" title="Servlet转发和重定向"></a>Servlet转发和重定向</h2><h3 id="Servlet转发"><a href="#Servlet转发" class="headerlink" title="Servlet转发"></a>Servlet转发</h3><ul>
+<li>一次请求</li>
+<li>Servlet组件间跳转</li>
+<li>表现在服务器端</li>
+</ul>
+<h3 id="重定向-1"><a href="#重定向-1" class="headerlink" title="重定向"></a>重定向</h3><ul>
+<li>两次请求</li>
+<li>两个地址间的跳转</li>
+<li>表现在客户端</li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
+<li>查询时用转发</li>
+<li>增加, 修改, 删除后用重定向</li>
+</ul>
+<h2 id="EL和JSTL表达式"><a href="#EL和JSTL表达式" class="headerlink" title="EL和JSTL表达式"></a>EL和JSTL表达式</h2><h3 id="初步使用EL表达式"><a href="#初步使用EL表达式" class="headerlink" title="初步使用EL表达式"></a>初步使用EL表达式</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- EL获取Bean的属性 --&gt;</div><div class="line">&lt;!-- 和get/set对应的属性叫Bean属性, EL会通过类反射获取 --&gt;</div><div class="line">&lt;!-- 下面一行代码相当于request.getAttribute("stu").getName() --&gt;</div><div class="line">&lt;p&gt;姓名: $&#123;stu.name&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;姓名: $&#123;stu["name"]&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;姓名: $&#123;stu.course.id&#125;&lt;/p&gt;</div></pre></td></tr></table></figure>
+<h3 id="EL的取值范围"><a href="#EL的取值范围" class="headerlink" title="EL的取值范围"></a>EL的取值范围</h3><ul>
+<li>EL依次从以下四个对象依次取值<code>page, request, session, application</code>, 这四个隐含对象是EL默认的取值范围</li>
+<li>也可以指定取值范围, 例如从request中取值, <code>${requestScope.stu.name}</code></li>
+<li>设计默认取值范围是为了简化EL表达式, 不必经常写范围</li>
+</ul>
+<h3 id="使用EL表达式进行运算"><a href="#使用EL表达式进行运算" class="headerlink" title="使用EL表达式进行运算"></a>使用EL表达式进行运算</h3><ul>
+<li>算术运算: <code>+ - * / %</code>, 其中<code>+</code>只能进行算数运算, 不能做字符串的连接</li>
+<li>逻辑运算: <code>&amp;&amp; || !</code></li>
+<li>关系运算: <code>&gt; &gt;= &lt; &lt;= == !=</code></li>
+<li>判空运算: <code>empty</code>, 判断字符串是否为空或者集合是否为空, 以下四种情况为true:空字符串, 空集合, 值为null, 找不到对应的值</li>
+</ul>
+<blockquote>
+<p>例: EL表达式进行运算</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;年龄 + 5: $&#123;stu.age + 5&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;年龄 20~30: $&#123;stu.age &gt;=20 &amp;&amp; stu.age &lt;30&#125;&lt;/p&gt;</div><div class="line">&lt;p&gt;判空: $&#123;stu.course.empty&#125;&lt;/p&gt;</div></pre></td></tr></table></figure>
+<h3 id="使用EL表达式获取请求参数值"><a href="#使用EL表达式获取请求参数值" class="headerlink" title="使用EL表达式获取请求参数值"></a>使用EL表达式获取请求参数值</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!-- request.getParameter("name") --&gt;</div><div class="line">&lt;p&gt;姓名: $&#123;param.name&#125;&lt;/p&gt;</div><div class="line">&lt;!-- request.getParameterValues("cities") --&gt;</div><div class="line">&lt;p&gt;姓名: $&#123;paramValues.cities&#125;&lt;/p&gt;</div></pre></td></tr></table></figure>
+<h3 id="JSTL的简单使用"><a href="#JSTL的简单使用" class="headerlink" title="JSTL的简单使用"></a>JSTL的简单使用</h3><ol>
+<li>将JSTL标签对应的jar文件复制到WEB-INF/lib目录下</li>
+<li>使用taglib指令导入要使用的JSP标签, 如<code>&lt;%@taglib uri=&quot;&quot; prefix=&quot;&quot;%&gt;</code>, uri表示JSP标签的命名空间, prefix表示命名空间的前缀</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;!-- if --&gt;</div><div class="line">&lt;c:if test="$&#123;stu.sex=='M' &#125;"&gt;男&lt;/c:if&gt;</div><div class="line"></div><div class="line">&lt;!-- choose --&gt;</div><div class="line">&lt;c:choose&gt;</div><div class="line">	&lt;c:when test="$&#123;stu.sex=='M' &#125;"&gt;男&lt;/c:when&gt;</div><div class="line">	&lt;c:otherwise&gt;女&lt;/c:otherwise&gt;</div><div class="line">&lt;/c:choose&gt;</div><div class="line"></div><div class="line">&lt;!-- forEach --&gt;</div><div class="line">&lt;!-- items: 声明要遍历的数据 --&gt;</div><div class="line">&lt;!-- var: 每次循环所获得的数据命名 --&gt;</div><div class="line">&lt;c:forEach items = "$&#123;stu.courses&#125;" var = "course"&gt;</div><div class="line">	$&#123;i.name&#125;</div><div class="line">&lt;/c:forEach&gt;</div></pre></td></tr></table></figure>
+<h3 id="自定义标签"><a href="#自定义标签" class="headerlink" title="自定义标签"></a>自定义标签</h3><p>// TODO</p>
+<h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><ol>
+<li><p>导包</p>
+<ol>
+<li>javaEE</li>
+<li>jdbc</li>
+<li>dbcp</li>
+<li>jstl</li>
+</ol>
+</li>
+<li><p>开发步骤</p>
+<ol>
+<li>根据操作分析本功能包含的请求</li>
+<li>画图分析流程</li>
+<li>按照执行流程的倒序逐个开发</li>
+</ol>
+</li>
+</ol>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>异常记录到日志中, log4j</p>
+<h3 id="访问网页"><a href="#访问网页" class="headerlink" title="访问网页"></a>访问网页</h3><ol>
+<li>浏览器访问服务器获取网页的过程包含多个请求<ol>
+<li>先获取网页</li>
+<li>加载head</li>
+<li>获取CSS, link标签</li>
+<li>加载body</li>
+<li>获取图片</li>
+</ol>
+</li>
+<li>WEB-INF目录具有保护作用, 放在其内的资源无法直接访问, 必须通过转发访问<ol>
+<li>如果jsp文件没有放到WEB-INF下, 就可以直接访问</li>
+<li>在MVC模式下, 直接访问jsp会使其丢失数据来源, 导致报错</li>
+<li>将其放到WEB-INF下, 就是保护jsp不被直接访问, 从而避免报错</li>
+<li>webApp下放置的静态资源可以直接被访问, 如CSS, img</li>
+</ol>
+</li>
+</ol>
+<p>Unit7  pm</p>
 
         </div>
 
@@ -443,7 +745,7 @@ JDBC使用步骤
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-05-22T14:18:26.856Z" itemprop="dateUpdated">2017-05-22 22:18:26</time>
+    最后更新时间：<time datetime="2017-07-09T12:08:30.086Z" itemprop="dateUpdated">2017-07-09 20:08:30</time>
 </span><br>
 
 
@@ -466,7 +768,7 @@ JDBC使用步骤
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDBC/">JDBC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDBC/">JDBC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSP/">JSP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Servlet/">Servlet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
 
 
             
