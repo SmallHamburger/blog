@@ -53,7 +53,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[笔记-JavaWeb]]></title>
+      <title><![CDATA[笔记-JavaWeb (一)]]></title>
       <url>http://jeson.org/2017/04/25/%E7%AC%94%E8%AE%B0-JavaWeb/</url>
       <content type="html"><![CDATA[<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="JDBC接口"><a href="#JDBC接口" class="headerlink" title="JDBC接口"></a>JDBC接口</h2><ol>
 <li><p>驱动管理</p>
@@ -218,7 +218,6 @@
                 </div>
                 <div class="image-caption">Servelet流程图</div>
             </figure>
-<p><img src="http://static.zybuluo.com/898801681/gbcm2zukdmrjiz080gxxa5yw/ServeletFlowChart.png" alt="Servelet流程图"></p>
 <h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><p>定义如何通信以及通信的数据格式</p>
 <h2 id="如何通信"><a href="#如何通信" class="headerlink" title="如何通信"></a>如何通信</h2><p>一次请求一次连接, 降低服务器压力</p>
 <ol>
@@ -250,7 +249,6 @@
                 </div>
                 <div class="image-caption">Servlet运行原理</div>
             </figure>
-<p><img src="http://static.zybuluo.com/898801681/3lkot5nk2fawpr64hcpu35ka/Servlet%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86.png" alt="Servlet运行原理"></p>
 <h1 id="Servlet使用"><a href="#Servlet使用" class="headerlink" title="Servlet使用"></a>Servlet使用</h1><h2 id="设置编码"><a href="#设置编码" class="headerlink" title="设置编码"></a>设置编码</h2><blockquote>
 <p>请求:</p>
 <ol>
@@ -327,7 +325,6 @@
                 </div>
                 <div class="image-caption">Servlet生命周期</div>
             </figure>
-<p><img src="http://static.zybuluo.com/898801681/p4sjwsld3ny5hiu6p8a9y4yt/Servlet%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="Servlet生命周期"></p>
 <h2 id="ServletConfig和ServletContext"><a href="#ServletConfig和ServletContext" class="headerlink" title="ServletConfig和ServletContext"></a>ServletConfig和ServletContext</h2><h3 id="ServletConfig"><a href="#ServletConfig" class="headerlink" title="ServletConfig"></a>ServletConfig</h3><ul>
 <li>每一个Servlet实例配置一个ServletConfig</li>
 <li>给单个Servlet预置数据时使用</li>
@@ -357,7 +354,6 @@
                 </div>
                 <div class="image-caption">Servelet流程图</div>
             </figure>
-<p><img src="http://static.zybuluo.com/898801681/xnexb3p2ctdw6ybft8nkjh08/Servlet%E6%8E%A5%E5%8F%A3%E5%8F%8A%E5%AE%9E%E7%8E%B0%E7%B1%BB.png" alt="Servlet接口及实现类"></p>
 <h3 id="线程安全问题"><a href="#线程安全问题" class="headerlink" title="线程安全问题"></a>线程安全问题</h3><ol>
 <li>尽量使用局部变量</li>
 <li>使用到全局变量时使用<code>synchronized</code>关键字</li>
@@ -512,7 +508,70 @@
 </ol>
 </li>
 </ol>
-<p>Unit7  pm</p>
+<h3 id="配置错误页面"><a href="#配置错误页面" class="headerlink" title="配置错误页面"></a>配置错误页面</h3><ol>
+<li>tomcat是所有服务器端代码调用的入口, 他在调用代码时会尝试捕获异常</li>
+<li>默认的它捕获到异常时会自动转发到对应的错误页面, 如404.html/500.html</li>
+<li>我们可以通过配置改变这个默认的行为, 明确告诉tomcat哪个异常去哪个错误页面, 这件事本身解决不了异常, 仅仅是让用户看起来更友好而已</li>
+<li>声明错误页面时需要写绝对路径, 但是由于是转发过去, 只能访问此项目内部资源, 所以tomcat会自动帮我们加上项目名</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!--通过异常类型进行配置--&gt;</div><div class="line">&lt;error-page&gt;</div><div class="line">    &lt;exception-type&gt;java.lang.Exception&lt;/exception-type&gt;</div><div class="line">    &lt;location&gt;/WEB-INF/error.jsp&lt;/location&gt;</div><div class="line">&lt;/error-page&gt;</div><div class="line">&lt;!--通过异常编号(404/405/500)进行配置--&gt;</div><div class="line">&lt;error-page&gt;</div><div class="line">    &lt;error-code&gt;&lt;/error-code&gt;</div><div class="line">    &lt;location&gt;&lt;/location&gt;</div><div class="line">&lt;/error-page&gt;</div></pre></td></tr></table></figure>
+<h1 id="cookie和session"><a href="#cookie和session" class="headerlink" title="cookie和session"></a>cookie和session</h1><h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><h3 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h3><ul>
+<li>登录时要记录账号</li>
+<li>以后访问查询, 修改, 增加页面时要修改账号</li>
+</ul>
+<h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><ul>
+<li>浏览器和服务器是多对一关系</li>
+</ul>
+<h3 id="使用如下对象"><a href="#使用如下对象" class="headerlink" title="使用如下对象"></a>使用如下对象</h3><h4 id="错误情况"><a href="#错误情况" class="headerlink" title="错误情况"></a>错误情况</h4><ul>
+<li>request: 登录, 查询是不同的请求, 使用不同的request</li>
+<li>config: 开发时使用多个servlet处理不同的请求, 如登录用一个servlet, 查询用另外一个servlet, 多个servlet用不同的servlet,  没有读写变量的能力</li>
+<li>context: 会串包, tomcat只有这一个对象, 多个存入会有冲突</li>
+</ul>
+<h4 id="正确情况"><a href="#正确情况" class="headerlink" title="正确情况"></a>正确情况</h4><p>使用cookie或者session </p>
+<ul>
+<li>cookie: 存储在浏览器上, 服务器压力小, 但数据不安全</li>
+<li>session: 存储在服务器上, 服务器压力大, 但数据安全</li>
+</ul>
+<h4 id="使用情况"><a href="#使用情况" class="headerlink" title="使用情况"></a>使用情况</h4><ul>
+<li>重要数据存在session上</li>
+<li>一般数据存储在cookie上</li>
+</ul>
+<h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span></div><div class="line">        <span class="keyword">throws</span> ServletException, IOException &#123;</div><div class="line">    String code =   req.getParameter(<span class="string">"code"</span>);</div><div class="line">    <span class="comment">// 每个cookie只能存一条数据, 包括key或者value, 都是字符串</span></div><div class="line">    Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"code"</span>, code);</div><div class="line">    <span class="comment">// 将cookie发送给浏览器, 浏览器接收到会自动保存</span></div><div class="line">    resp.addCookie(cookie);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span></div><div class="line">        <span class="keyword">throws</span> ServletException, IOException &#123;</div><div class="line">    <span class="comment">//  获取cookie</span></div><div class="line">    Cookie[] cookies = req.getCookies();</div><div class="line">    <span class="keyword">if</span> (cookies != <span class="keyword">null</span>) &#123;</div><div class="line">        resp.setContentType(<span class="string">"text/html;charset=utf-8"</span>);</div><div class="line">        PrintWriter pw = resp.getWriter();</div><div class="line">        <span class="keyword">for</span> (Cookie cookie : cookies) &#123;</div><div class="line">            pw.println(cookie.getName() + <span class="string">": "</span> + cookie.getValue() + <span class="string">"&lt;br/&gt;"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>4K大小</li>
+<li>cookie保存在浏览器上</li>
+<li>多个请求可以共用一组cookie</li>
+<li>多个Servlet可以共用一组cookie</li>
+<li>每个用户(浏览器)访问服务器, 都会获得一组cookie</li>
+</ul>
+<h3 id="生存时间"><a href="#生存时间" class="headerlink" title="生存时间"></a>生存时间</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cookie.setMaxAge(Integer.MAX_VALUE);</div></pre></td></tr></table></figure>
+<ul>
+<li>second &gt; 0: 浏览器要保存Cookie的最长时间为设置的参数值, 如果超过指定的时间, 浏览器会自动删除这个cookie, 此时保存到硬盘上</li>
+<li>second == 0: 删除cookie, 在修改cookie的生存时间为0后, 随着response发送回客户端, 替换原有的cookie, 因生命周期到了将直接删除</li>
+<li>second &lt; 0: 缺省值, 浏览器会将cookie存储到内存中</li>
+</ul>
+<h3 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h3><p>默认在某一个路径下创建的cookie, 只在相同路径下有效, 可以设置路径</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cookie.setPath(<span class="string">"/"</span>);</div></pre></td></tr></table></figure>
+<h2 id="session"><a href="#session" class="headerlink" title="session"></a>session</h2><p>session大致工作流程</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/session_1.png" alt="session大致流程" title="">
+                </div>
+                <div class="image-caption">session大致流程</div>
+            </figure>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span></div><div class="line">        <span class="keyword">throws</span> ServletException, IOException &#123;</div><div class="line">    String code = req.getParameter(<span class="string">"code"</span>);</div><div class="line">    <span class="comment">// 响应时服务器会自动创建cookie, 将session的ID通过cookie发送给浏览器</span></div><div class="line">    <span class="comment">// Cookie cookie = new Cookie("JSESSION", session.getId());</span></div><div class="line">    HttpSession session = req.getSession();</div><div class="line">    <span class="comment">// 可以保存任意对象</span></div><div class="line">    session.setAttribute(<span class="string">"code"</span>, code);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span></div><div class="line">        <span class="keyword">throws</span> ServletException, IOException &#123;</div><div class="line">    HttpSession session = req.getSession();</div><div class="line">    <span class="comment">// 本次请求浏览器传入了SID, 服务器就根据此找到旧的session, 可以从中读取之前存储的数据</span></div><div class="line">    session.getAttribute(<span class="string">"code"</span>);</div><div class="line">    <span class="comment">// 销毁session</span></div><div class="line">    session.invalidate();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>浏览器第一次访问浏览器时, 服务器会给它创建一个session</li>
+<li>服务器会使用cookie返回给服务器</li>
+<li>浏览器再次访问服务器时会传入SID</li>
+<li>多个Servlet可以共用一个session</li>
+<li>不同的浏览器使用不同的session</li>
+</ul>
+<h3 id="超时"><a href="#超时" class="headerlink" title="超时"></a>超时</h3><p>为避免过度浪费空间, 默认超时时间为30分钟, 最短为1分钟, 但一般tomcat检查session时间间隔为2分钟</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--在web.xml设置超时时间--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">session-config</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">session-timeout</span>&gt;</span>1<span class="tag">&lt;/<span class="name">session-timeout</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">session-config</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// session 设置超时, 最短为1分钟</span></div><div class="line">session.setMaxInactiveInterval(<span class="number">1</span>);</div></pre></td></tr></table></figure>
 ]]></content>
     </entry>
     
