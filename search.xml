@@ -54,7 +54,7 @@
     
     <entry>
       <title><![CDATA[笔记-JavaWeb (一)]]></title>
-      <url>http://jeson.org/2017/04/25/%E7%AC%94%E8%AE%B0-JavaWeb/</url>
+      <url>http://jeson.org/2017/04/25/%E7%AC%94%E8%AE%B0-JavaWeb(%E4%B8%80)/</url>
       <content type="html"><![CDATA[<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h2 id="JDBC接口"><a href="#JDBC接口" class="headerlink" title="JDBC接口"></a>JDBC接口</h2><ol>
 <li><p>驱动管理</p>
 <ul>
@@ -218,6 +218,7 @@
                 </div>
                 <div class="image-caption">Servelet流程图</div>
             </figure>
+<p><img src="http://static.zybuluo.com/898801681/gbcm2zukdmrjiz080gxxa5yw/ServeletFlowChart.png" alt="Servelet流程图"></p>
 <h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><p>定义如何通信以及通信的数据格式</p>
 <h2 id="如何通信"><a href="#如何通信" class="headerlink" title="如何通信"></a>如何通信</h2><p>一次请求一次连接, 降低服务器压力</p>
 <ol>
@@ -249,6 +250,7 @@
                 </div>
                 <div class="image-caption">Servlet运行原理</div>
             </figure>
+<p><img src="http://static.zybuluo.com/898801681/3lkot5nk2fawpr64hcpu35ka/Servlet%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86.png" alt="Servlet运行原理"></p>
 <h1 id="Servlet使用"><a href="#Servlet使用" class="headerlink" title="Servlet使用"></a>Servlet使用</h1><h2 id="设置编码"><a href="#设置编码" class="headerlink" title="设置编码"></a>设置编码</h2><blockquote>
 <p>请求:</p>
 <ol>
@@ -325,6 +327,7 @@
                 </div>
                 <div class="image-caption">Servlet生命周期</div>
             </figure>
+<p><img src="http://static.zybuluo.com/898801681/p4sjwsld3ny5hiu6p8a9y4yt/Servlet%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="Servlet生命周期"></p>
 <h2 id="ServletConfig和ServletContext"><a href="#ServletConfig和ServletContext" class="headerlink" title="ServletConfig和ServletContext"></a>ServletConfig和ServletContext</h2><h3 id="ServletConfig"><a href="#ServletConfig" class="headerlink" title="ServletConfig"></a>ServletConfig</h3><ul>
 <li>每一个Servlet实例配置一个ServletConfig</li>
 <li>给单个Servlet预置数据时使用</li>
@@ -354,6 +357,7 @@
                 </div>
                 <div class="image-caption">Servelet流程图</div>
             </figure>
+<p><img src="http://static.zybuluo.com/898801681/xnexb3p2ctdw6ybft8nkjh08/Servlet%E6%8E%A5%E5%8F%A3%E5%8F%8A%E5%AE%9E%E7%8E%B0%E7%B1%BB.png" alt="Servlet接口及实现类"></p>
 <h3 id="线程安全问题"><a href="#线程安全问题" class="headerlink" title="线程安全问题"></a>线程安全问题</h3><ol>
 <li>尽量使用局部变量</li>
 <li>使用到全局变量时使用<code>synchronized</code>关键字</li>
@@ -515,7 +519,22 @@
 <li>声明错误页面时需要写绝对路径, 但是由于是转发过去, 只能访问此项目内部资源, 所以tomcat会自动帮我们加上项目名</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!--通过异常类型进行配置--&gt;</div><div class="line">&lt;error-page&gt;</div><div class="line">    &lt;exception-type&gt;java.lang.Exception&lt;/exception-type&gt;</div><div class="line">    &lt;location&gt;/WEB-INF/error.jsp&lt;/location&gt;</div><div class="line">&lt;/error-page&gt;</div><div class="line">&lt;!--通过异常编号(404/405/500)进行配置--&gt;</div><div class="line">&lt;error-page&gt;</div><div class="line">    &lt;error-code&gt;&lt;/error-code&gt;</div><div class="line">    &lt;location&gt;&lt;/location&gt;</div><div class="line">&lt;/error-page&gt;</div></pre></td></tr></table></figure>
-<h1 id="cookie和session"><a href="#cookie和session" class="headerlink" title="cookie和session"></a>cookie和session</h1><h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><h3 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h3><ul>
+<h1 id="cookie和session"><a href="#cookie和session" class="headerlink" title="cookie和session"></a>cookie和session</h1><p>作用:</p>
+<ol>
+<li>通俗理解<ul>
+<li>这些数据在不同的请求中可以共用</li>
+<li>这些数据在不同的Servelt中可以共用</li>
+<li>每个浏览器都有这样一组数据</li>
+</ul>
+</li>
+<li>专业描述<ul>
+<li>http是无状态协议, 即服务器没有记住浏览器</li>
+<li>cookie和session就是用来管理状态的让服务器记住浏览器数据</li>
+<li>表名身份, 浏览器曾经访问过服务器的证据(数据)</li>
+</ul>
+</li>
+</ol>
+<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><h3 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h3><ul>
 <li>登录时要记录账号</li>
 <li>以后访问查询, 修改, 增加页面时要修改账号</li>
 </ul>
@@ -553,25 +572,87 @@
 <h3 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h3><p>默认在某一个路径下创建的cookie, 只在相同路径下有效, 可以设置路径</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cookie.setPath(<span class="string">"/"</span>);</div></pre></td></tr></table></figure>
 <h2 id="session"><a href="#session" class="headerlink" title="session"></a>session</h2><p>session大致工作流程</p>
-<figure class="image-bubble">
+<p><img src="http://static.zybuluo.com/898801681/uz2b58s0k883qn9tseqgzngj/session_1.png" alt="session大致流程"><br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="/img/session_1.png" alt="session大致流程" title="">
                 </div>
                 <div class="image-caption">session大致流程</div>
-            </figure>
+            </figure></p>
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span></div><div class="line">        <span class="keyword">throws</span> ServletException, IOException &#123;</div><div class="line">    String code = req.getParameter(<span class="string">"code"</span>);</div><div class="line">    <span class="comment">// 响应时服务器会自动创建cookie, 将session的ID通过cookie发送给浏览器</span></div><div class="line">    <span class="comment">// Cookie cookie = new Cookie("JSESSION", session.getId());</span></div><div class="line">    HttpSession session = req.getSession();</div><div class="line">    <span class="comment">// 可以保存任意对象</span></div><div class="line">    session.setAttribute(<span class="string">"code"</span>, code);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span></div><div class="line">        <span class="keyword">throws</span> ServletException, IOException &#123;</div><div class="line">    HttpSession session = req.getSession();</div><div class="line">    <span class="comment">// 本次请求浏览器传入了SID, 服务器就根据此找到旧的session, 可以从中读取之前存储的数据</span></div><div class="line">    session.getAttribute(<span class="string">"code"</span>);</div><div class="line">    <span class="comment">// 销毁session</span></div><div class="line">    session.invalidate();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> </span></div><div class="line">        <span class="keyword">throws</span> ServletException, IOException &#123;</div><div class="line">    <span class="comment">// 相当于req.getSession(true), 无论如何都会获取一个session</span></div><div class="line">    HttpSession session = req.getSession();</div><div class="line">    <span class="comment">// 本次请求浏览器传入了SID, 服务器就根据此找到旧的session, 可以从中读取之前存储的数据</span></div><div class="line">    session.getAttribute(<span class="string">"code"</span>);</div><div class="line">    <span class="comment">// 销毁session, 退出, 注销功能  </span></div><div class="line">    session.invalidate();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ul>
 <li>浏览器第一次访问浏览器时, 服务器会给它创建一个session</li>
 <li>服务器会使用cookie返回给服务器</li>
 <li>浏览器再次访问服务器时会传入SID</li>
 <li>多个Servlet可以共用一个session</li>
 <li>不同的浏览器使用不同的session</li>
+<li>仅访问Servlet不会创建Session, 转发jsp或者获取时才会创建, Session是jsp的内置对象</li>
 </ul>
 <h3 id="超时"><a href="#超时" class="headerlink" title="超时"></a>超时</h3><p>为避免过度浪费空间, 默认超时时间为30分钟, 最短为1分钟, 但一般tomcat检查session时间间隔为2分钟</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--在web.xml设置超时时间--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">session-config</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">session-timeout</span>&gt;</span>1<span class="tag">&lt;/<span class="name">session-timeout</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">session-config</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// session 设置超时, 最短为1分钟</span></div><div class="line">session.setMaxInactiveInterval(<span class="number">1</span>);</div></pre></td></tr></table></figure>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
+<li>在使用session返回验证码图片时,浏览器可能因为图片地址没有改变就不会再次访问, 需要做点小手脚</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 路径可以改为</span></div><div class="line">imageCode.jsp?x=Math.random();</div></pre></td></tr></table></figure>
+<h1 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h1><p>作用:</p>
+<ul>
+<li>用来处理项目中的公共需求, 例: 记录日志, 过滤敏感词, 权限检查<ul>
+<li>公共需求: 很过请求都包含的业务</li>
+</ul>
+</li>
+</ul>
+<p>使用</p>
+<ol>
+<li>创建一个类, 实现过滤器接口Filter</li>
+<li>在web.xml里面配置这个类, 过滤器由服务器自动调用</li>
+</ol>
+<p>LogFilter.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LogFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</div><div class="line">    <span class="comment">// tomcat启动时会自动实例化Filter, 探后调用其init来初始化Filter, 调用此方法时会传图config, 该对象和Filter是一对一关系, 可以给Filter在web.xml预置参数, 该对象和ServletConfig用法一致</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig config)</span> <span class="keyword">throws</span> ServletException </span>&#123;</div><div class="line">        System.out.println(<span class="string">"LogFilter init!"</span>);</div><div class="line">        System.out.println(<span class="string">"name: "</span> + config.getInitParameter(<span class="string">"name"</span>));</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// Filter相当于Servlet 的管家, tomcat在调用Servlet之前会将请求提交给Filter, Filter有权请求的继续或者终止</span></div><div class="line">    <span class="comment">// tomcat就是调用doFilter方法统一处理请求, 调用前它会创建好request和response并传入</span></div><div class="line">    <span class="comment">// 创建的类型: RequestFacade和ResponseFacade</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest req, ServletResponse resp, FilterChain chain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</div><div class="line">        System.out.println(<span class="string">"LogFilter doFilter start!"</span>);</div><div class="line">        <span class="comment">// 调用这个方法后才会将请求继续, 否则拦截</span></div><div class="line">        chain.doFilter(req, resp);</div><div class="line">        System.out.println(<span class="string">"LogFilter doFilter end!"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 关闭tomcat时自动调用此方法</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"LogFilter destroy!"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>web.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>log<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>com.jeson.test.LogFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>name<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>Log<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>log<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!--声明此Filter可以过滤哪些请求--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="监听器"><a href="#监听器" class="headerlink" title="监听器"></a>监听器</h1><h2 id="生命周期相关的事件"><a href="#生命周期相关的事件" class="headerlink" title="生命周期相关的事件"></a>生命周期相关的事件</h2><p>容器创建或者销毁request, session, ServletContext时产生的事件</p>
+<ul>
+<li>ServletRequestListener<ul>
+<li>requestDestroyed(ServletRequestEvent enent)</li>
+<li>requestInitialized(ServletRequestEvent enent)</li>
+</ul>
+</li>
+<li>HttpSessionListener<ul>
+<li>sessionCreaterd(HttpSessionEvent event)</li>
+<li>sessionDestroyed(HttpSessionEvent event)</li>
+</ul>
+</li>
+<li>ServletContextLinster<ul>
+<li>contextDestroyed(ServletContextEvent event)</li>
+<li>contextInitialized(ServletContextEvent event)</li>
+</ul>
+</li>
+</ul>
+<h2 id="绑定数据相关的事件"><a href="#绑定数据相关的事件" class="headerlink" title="绑定数据相关的事件"></a>绑定数据相关的事件</h2><p>调用了request, session, ServletContext的setAttribute(), removeAttribute()方法时产生的事件</p>
+<ul>
+<li>ServletRequestAttributeLinster<ul>
+<li>attributeAdded(ServletRequestAttributeEvent event)</li>
+<li>attributeRemoved(ServletRequestAttributeEvent event)</li>
+<li>attributeReplaced(ServletRequestAttributeEvent event)</li>
+</ul>
+</li>
+<li>HttpSessionAttributeLinstener<ul>
+<li>参考API doc</li>
+</ul>
+</li>
+<li>ServletContextAttribute<ul>
+<li>参考API doc</li>
+</ul>
+</li>
+</ul>
+<p>实现</p>
+<p>RequestListener.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RequestListener</span> <span class="keyword">implements</span> <span class="title">ServletRequestListener</span> </span>&#123;</div><div class="line">    <span class="comment">// tomcat销毁request前最后一刻调用此方法</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">requestDestroyed</span><span class="params">(ServletRequestEvent event)</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"销毁request"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// tomcat创建request之后自动调用此方法</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">requestInitialized</span><span class="params">(ServletRequestEvent servletRequestEvent)</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"创建request"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>web.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">listener</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>com.jeson.test.RequestListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">listener</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Unit9  pm</p>
 ]]></content>
     </entry>
     
